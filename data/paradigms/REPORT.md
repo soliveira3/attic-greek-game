@@ -7,12 +7,12 @@ Do not edit by hand; rerun the pipeline. Decisions about this report go in `data
 
 | POS | candidates | included | not in dump | no Attic table | out of scope | incomplete | excluded |
 |---|---|---|---|---|---|---|---|
-| noun | 145 | 131 | 3 | 5 | 5 | 1 | 0 |
-| adj | 109 | 83 | 1 | 10 | 10 | 5 | 0 |
+| noun | 147 | 130 | 3 | 5 | 5 | 1 | 3 |
+| adj | 110 | 84 | 1 | 10 | 10 | 5 | 0 |
 | article | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
-| verb | 151 | 87 | 0 | 2 | 62 | 0 | 0 |
+| verb | 151 | 85 | 0 | 2 | 62 | 0 | 2 |
 
-Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj-3-es` 3, `adj-3-on` 7, `article` 1, `decl1-a-long` 10, `decl1-a-short` 4, `decl1-eta` 20, `decl1-masc-as` 1, `decl1-masc-es` 4, `decl2-mf` 36, `decl2-n` 10, `decl3-dental` 18, `decl3-eu` 2, `decl3-i` 6, `decl3-liquid` 5, `decl3-s` 12, `decl3-u` 2, `decl3-velar` 1, `verb-thematic` 87
+Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj-3-es` 3, `adj-3-on` 8, `article` 1, `decl1-a-long` 10, `decl1-a-short` 4, `decl1-eta` 20, `decl1-masc-as` 1, `decl1-masc-es` 4, `decl2-mf` 35, `decl2-n` 10, `decl3-dental` 17, `decl3-eu` 2, `decl3-i` 6, `decl3-labial` 1, `decl3-liquid` 5, `decl3-nt` 1, `decl3-s` 12, `decl3-u` 1, `decl3-velar` 1, `verb-thematic` 85
 
 ## Attic substitutions (DCC headword → Attic entry)
 
@@ -143,17 +143,53 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 
 ## Excluded by data/exclude.txt
 
-(none)
+- ἔρομαι (verb): ἔρομαι
+- πρέσβυς (noun): πρέσβυς
+- λαός (noun): λαός
+- ἀπαλλάσσω (verb): ἀπαλλάσσω
+- εἰκός (noun): εἰκός
 
 ## Verb blocks dropped
 
+- λαμβάνω `perf.mp`: missing 3.pl
 - φύω `aor.act`: root aorist (out of scope)
 - φαίνω `perf.mp`: missing 2.sg, 3.pl
+- γράφω `perf.mp`: missing 3.pl
+- φέρω `perf.mp`: missing 3.pl
+- ὑπάρχω `perf.mp`: missing 3.pl
+- ἄρχω `perf.mp`: missing 3.pl
 - γιγνώσκω `aor.act`: root aorist (out of scope)
-- συμβαίνω `aor.act`: root aorist (out of scope)
+- γιγνώσκω `perf.mp`: missing 3.pl
+- τυγχάνω `perf.mp`: missing 3.pl
+- ἄγω `perf.mp`: missing 3.pl
 - οἴομαι `pres.act`: missing 2.sg, 3.sg, 1.pl, 2.pl, 3.pl
+- πείθω `perf.mp`: missing 3.pl
+- νομίζω `perf.mp`: missing 3.pl
+- ὀνομάζω `perf.mp`: missing 3.pl
+- κελεύω `perf.mp`: missing 3.pl
+- φεύγω `perf.mp`: missing 3.pl
+- σῴζω `perf.mp`: missing 3.pl
+- πέμπω `perf.mp`: missing 3.pl
+- διδάσκω `perf.mp`: missing 3.pl
+- δέχομαι `perf.mp`: missing 3.pl
+- ἐργάζομαι `perf.mp`: missing 3.pl
+- τρέφω `perf.mp`: missing 3.pl
+- θαυμάζω `perf.mp`: missing 3.pl
+- καταλαμβάνω `perf.mp`: missing 3.pl
+- αἴρω `perf.mp`: missing 3.pl
+- κατασκευάζω `perf.mp`: missing 3.pl
+- διαφθείρω `perf.mp`: missing 3.pl
+- πυνθάνομαι `perf.mp`: missing 3.pl
+- ὑπολαμβάνω `perf.mp`: missing 3.pl
+- τρέπω `perf.mp`: missing 3.pl
+- λείπω `perf.mp`: missing 3.pl
+- τίκτω `perf.mp`: missing 3.pl
+- κομίζω `perf.mp`: missing 3.pl
+- παρασκευάζω `perf.mp`: missing 3.pl
 - ἁλίσκομαι `aor.act`: root aorist (out of scope)
-- βαίνω `aor.act`: root aorist (out of scope)
+- διώκω `perf.mp`: missing 3.pl
+- φράζω `perf.mp`: missing 3.pl
+- ἀγγέλλω `perf.mp`: missing 3.pl
 
 ## Competing forms (all kept as alternates; movable-ν pairs not listed)
 
@@ -167,11 +203,8 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - ἔχω `fut.mid.ind.2.sg`: σχήσῃ / σχήσει
 - ἔχω `fut.pass.ind.2.sg`: σχεθήσῃ / σχεθήσει
 - πόλις `nom.du`: πόλη / πόλει
-- πόλις `gen.pl`: πόλεων / πολήων
-- πόλις `dat.sg`: πόλει / πόλῑ / πόλῃ
 - πόλις `acc.du`: πόλη / πόλει
 - πόλις `voc.du`: πόλη / πόλει
-- ἄνθρωπος `voc.sg`: ᾰ̓́νθρωπε / ὦνθρωπε / ὤνθρωπε
 - λαμβάνω `pres.mp.ind.2.sg`: λᾰμβᾰ́νῃ / λᾰμβᾰ́νει
 - λαμβάνω `fut.mid.ind.2.sg`: λήψῃ / λήψει
 - λαμβάνω `fut.pass.ind.2.sg`: ληφθήσῃ / ληφθήσει
@@ -203,18 +236,7 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - εὑρίσκω `fut.mid.ind.2.sg`: εὑρήσῃ / εὑρήσει
 - εὑρίσκω `fut.pass.ind.2.sg`: εὑρεθήσῃ / εὑρεθήσει
 - ἔρχομαι `fut.mid.ind.2.sg`: ἐλεύσῃ / ἐλεύσει
-- ἔρχομαι `perf.act.ind.2.du`: ἐληλῠ́θᾰτον / ἐλήλῠτον
-- ἔρχομαι `perf.act.ind.3.du`: ἐληλῠ́θᾰτον / ἐλήλῠτον
-- ἔρχομαι `perf.act.ind.1.pl`: ἐληλῠ́θᾰμεν / ἐλήλῠμεν
-- ἔρχομαι `perf.act.ind.2.pl`: ἐληλῠ́θᾰτε / ἐλήλῠτε
 - ἔρχομαι `pres.mp.ind.2.sg`: ἔρχῃ / ἔρχει
-- ἔρχομαι `impf.mp.ind.1.sg`: ᾖᾰ / ᾔειν
-- ἔρχομαι `impf.mp.ind.2.sg`: ᾔεισ / ᾔεισθᾰ
-- ἔρχομαι `impf.mp.ind.2.du`: ᾖτον / ᾔειτον
-- ἔρχομαι `impf.mp.ind.3.du`: ᾔτην / ᾐείτην
-- ἔρχομαι `impf.mp.ind.1.pl`: ᾖμεν / ᾔειμεν
-- ἔρχομαι `impf.mp.ind.2.pl`: ᾖτε / ᾔειτε
-- ἔρχομαι `impf.mp.ind.3.pl`: ᾖσᾰν / ᾔεσᾰν / ᾔεισᾰν
 - ἴδιος `nom.sg.f`: ῐ̓́δῐος / ῐ̓δῐ́ᾱ
 - ἴδιος `nom.du.f`: ῐ̓δῐ́ω / ῐ̓δῐ́ᾱ
 - ἴδιος `nom.pl.f`: ῐ̓́δῐοι / ῐ̓́δῐαι
@@ -246,9 +268,7 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - οἴομαι `fut.mid.ind.2.sg`: οἰήσῃ / οἰήσει
 - οἴομαι `pres.mp.ind.1.sg`: οἴομαι / οἶμαι
 - οἴομαι `pres.mp.ind.2.sg`: οἴῃ / οἴει
-- οἴομαι `impf.mp.ind.1.sg`: ᾤομην / ᾤμην
 - πάσχω `fut.mid.ind.2.sg`: πείσῃ / πείσει
-- πάσχω `perf.act.ind.2.pl`: πεπόνθᾰτε / πέπασθε / πέποσθε
 - μέλλω `pres.mp.ind.2.sg`: μέλλῃ / μέλλει
 - μέλλω `impf.act.ind.1.sg`: ἔμελλον / ἤμελλον
 - μέλλω `impf.act.ind.2.sg`: ἔμελλες / ἤμελλες
@@ -258,14 +278,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - μέλλω `impf.act.ind.1.pl`: ἐμέλλομεν / ἠμέλλομεν
 - μέλλω `impf.act.ind.2.pl`: ἐμέλλετε / ἠμέλλετε
 - μέλλω `impf.act.ind.3.pl`: ἔμελλον / ἤμελλον
-- μέλλω `impf.mp.ind.1.sg`: ἐμελλόμην / ἠμελλόμην
-- μέλλω `impf.mp.ind.2.sg`: ἐμέλλου / ἠμέλλου
-- μέλλω `impf.mp.ind.3.sg`: ἐμέλλετο / ἠμέλλετο
-- μέλλω `impf.mp.ind.2.du`: ἐμέλλεσθον / ἠμέλλεσθον
-- μέλλω `impf.mp.ind.3.du`: ἐμελλέσθην / ἠμελλέσθην
-- μέλλω `impf.mp.ind.1.pl`: ἐμελλόμεθᾰ / ἠμελλόμεθᾰ
-- μέλλω `impf.mp.ind.2.pl`: ἐμέλλεσθε / ἠμέλλεσθε
-- μέλλω `impf.mp.ind.3.pl`: ἐμέλλοντο / ἠμέλλοντο
 - μέλλω `fut.mid.ind.2.sg`: μελλήσῃ / μελλήσει
 - πείθω `pres.mp.ind.2.sg`: πείθῃ / πείθει
 - πείθω `fut.mid.ind.2.sg`: πείσῃ / πείσει
@@ -297,8 +309,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - κελεύω `pres.mp.ind.2.sg`: κελεύῃ / κελεύει
 - κελεύω `fut.mid.ind.2.sg`: κελεύσῃ / κελεύσει
 - κελεύω `fut.pass.ind.2.sg`: κελευσθήσῃ / κελευσθήσει
-- ἔρομαι `pres.mp.ind.2.sg`: ἔρῃ / ἔρει
-- ἔρομαι `fut.mid.ind.2.sg`: ἐρήσῃ / ἐρήσει
 - ἀδελφός `voc.sg`: ᾰ̓δελφέ / ᾰ̓́δελφε
 - πίνω `pres.mp.ind.2.sg`: πῑ́νῃ / πῑ́νει
 - πίνω `fut.mid.ind.2.sg`: πῑ́ῃ / πῑ́ει
@@ -372,7 +382,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - πλέων `voc.pl.n`: πλέονᾰ / πλέω
 - προσήκω `pres.mp.ind.2.sg`: προσήκῃ / προσήκει
 - προσήκω `fut.mid.ind.2.sg`: προσήξῃ / προσήξει
-- πρέσβυς `gen.sg`: πρέσβεως / πρέσβεος
 - παύω `pres.mp.ind.2.sg`: παύῃ / παύει
 - παύω `fut.mid.ind.2.sg`: παύσῃ / παύσει
 - παύω `fut.pass.ind.2.sg`: παυσθήσῃ / παυσθήσει
@@ -381,7 +390,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - θαυμάζω `fut.pass.ind.2.sg`: θαυμᾰσθήσῃ / θαυμᾰσθήσει
 - αἰσθάνομαι `pres.mp.ind.2.sg`: αἰσθάνῃ / αἰσθάνει
 - αἰσθάνομαι `fut.mid.ind.2.sg`: αἰσθήσῃ / αἰσθήσει
-- αἰσθάνομαι `fut.pass.ind.2.sg`: αἰσθηθήσῃ / αἰσθηθήσει
 - χαίρω `pres.mp.ind.2.sg`: χαίρῃ / χαίρει
 - καταλαμβάνω `pres.mp.ind.2.sg`: κᾰτᾰλᾰμβᾰ́νῃ / κᾰτᾰλᾰμβᾰ́νει
 - καταλαμβάνω `fut.mid.ind.2.sg`: κᾰτᾰλήψῃ / κᾰτᾰλήψει
@@ -421,7 +429,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - πυνθάνομαι `fut.mid.ind.2.sg`: πεύσῃ / πεύσει
 - τέμνω `pres.mp.ind.2.sg`: τέμνῃ / τέμνει
 - τέμνω `fut.mid.ind.2.sg`: τεμεῖ / τεμῇ
-- τέμνω `fut.pass.ind.2.sg`: τεμήσῃ / τεμήσει
 - ὑπολαμβάνω `pres.mp.ind.2.sg`: ῠ̔πολᾰμβᾰ́νῃ / ῠ̔πολᾰμβᾰ́νει
 - ὑπολαμβάνω `fut.mid.ind.2.sg`: ῠ̔πολήψῃ / ῠ̔πολήψει
 - ὑπολαμβάνω `fut.pass.ind.2.sg`: ῠ̔ποληφθήσῃ / ῠ̔ποληφθήσει
@@ -444,7 +451,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - ἀποκρίνω `pres.mp.ind.2.sg`: ᾰ̓ποκρῑ́νῃ / ᾰ̓ποκρῑ́νει
 - ἀποκρίνω `fut.mid.ind.2.sg`: ᾰ̓ποκρῐνεῖ / ᾰ̓ποκρῐνῇ
 - ἀποκρίνω `fut.pass.ind.2.sg`: ᾰ̓ποκρῐθήσῃ / ᾰ̓ποκρῐθήσει
-- κίνδυνος `dat.sg`: κῐνδῡ́νῳ / κῐ́νδῡνῐ
 - τρέπω `pres.mp.ind.2.sg`: τρέπῃ / τρέπει
 - τρέπω `fut.mid.ind.2.sg`: τρέψῃ / τρέψει
 - τρέπω `fut.pass.ind.2.sg`: τραπήσῃ / τραπήσει
@@ -461,9 +467,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - κομίζω `fut.pass.ind.2.sg`: κομῐσθήσῃ / κομῐσθήσει
 - βλέπω `pres.mp.ind.2.sg`: βλέπῃ / βλέπει
 - βλέπω `fut.mid.ind.2.sg`: βλέψῃ / βλέψει
-- στάδιον `nom.pl`: στᾰ́δῐᾰ / στᾰ́δῐοι
-- στάδιον `acc.pl`: στᾰ́δῐᾰ / στᾰ́δῐους
-- στάδιον `voc.pl`: στᾰ́δῐᾰ / στᾰ́δῐοι
 - παρασκευάζω `pres.mp.ind.2.sg`: πᾰρᾰσκευᾰ́ζῃ / πᾰρᾰσκευᾰ́ζει
 - παρασκευάζω `fut.mid.ind.2.sg`: πᾰρᾰσκευᾰ́σῃ / πᾰρᾰσκευᾰ́σει
 - θύω `pres.mp.ind.2.sg`: θῡ́ῃ / θῡ́ει
@@ -494,9 +497,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - χείρων `voc.pl.m`: χείρονες / χείρους
 - χείρων `voc.pl.f`: χείρονες / χείρους
 - χείρων `voc.pl.n`: χείρονᾰ / χείρω
-- ἀπαλλάσσω `pres.mp.ind.2.sg`: ἀπᾰλλᾰ́σσῃ / ἀπᾰλλᾰ́σσει
-- ἀπαλλάσσω `fut.mid.ind.2.sg`: ἀπᾰλλᾰ́ξῃ / ἀπᾰλλᾰ́ξει
-- ἀπαλλάσσω `fut.pass.ind.2.sg`: ἀπᾰλλᾰχθήσῃ / ἀπᾰλλᾰχθήσει
 - βουλεύω `pres.mp.ind.2.sg`: βουλεύῃ / βουλεύει
 - βουλεύω `fut.mid.ind.2.sg`: βουλεύσῃ / βουλεύσει
 - διώκω `pres.mp.ind.2.sg`: δῐώκῃ / δῐώκει
@@ -510,9 +510,6 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 - ἀγγέλλω `pres.mp.ind.2.sg`: ἀγγέλλῃ / ἀγγέλλει
 - ἀγγέλλω `fut.mid.ind.2.sg`: ἀγγελεῖ / ἀγγελῇ
 - ἀγγέλλω `fut.pass.ind.2.sg`: ἀγγελθήσῃ / ἀγγελθήσει
-- ἄστυ `nom.pl`: ᾰ̓́στη / ᾰ̓́στεᾰ
-- ἄστυ `acc.pl`: ᾰ̓́στη / ᾰ̓́στεᾰ
-- ἄστυ `voc.pl`: ᾰ̓́στη / ᾰ̓́στεᾰ
 
 ## Source anomalies (rows dropped)
 
@@ -536,9 +533,9 @@ Included lemmas by class: `adj-212-alpha` 33, `adj-212-eta` 36, `adj-22` 4, `adj
 |---|---|
 | article stripped from form | 58 |
 | empty-cell placeholders skipped | 9 |
-| infinitive with person/number tags | 69 |
+| infinitive with person/number tags | 66 |
 | middle-only present/imperfect/perfect filed as middle/passive | 5 |
-| romanization rows dropped | 130 |
+| romanization rows dropped | 133 |
 
 Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; used the one glossed 'to say; to speak'), δῆμος (2 entries in dump; used the one glossed 'any relatively distinct territory'), ἕπομαι (2 entries in dump; used the one glossed 'to follow, obey'), οἰκία (2 entries in dump; used the one glossed 'house, dwelling, lair'), γράμμα (2 entries in dump; used the one glossed 'that which is written, that which is drawn, picture'), θύω (2 entries in dump; used the one glossed 'to offer in sacrifice; to slay; to burn; to immolate')
 
@@ -643,7 +640,6 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - πλέων: Epic declension-3
 - τιμή: Epic declension-1
 - παύω: Epic aorist
-- λαός: Epic declension-2, Doric declension-2
 - νῆσος: Epic declension-2, Ionic declension-2
 - ἐπιστήμη: Ionic declension-1
 - θαυμάζω: Epic imperfect, Epic aorist
@@ -700,6 +696,8 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - ἀγγέλλω: Epic future, Ionic future, Koine future, Doric future, Epic aorist, Koine aorist
 - νεανίας: Doric declension-1
 - ἄστυ: Epic declension-3
+- γέρων: Epic declension-3, Ionic declension-3
+- σώφρων: Ionic declension-3
 
 ## Attic tables superseded by a better-ranked table of the same tense
 
@@ -792,7 +790,6 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - θύω imperfect (table 3): ignored
 - ἐλαύνω Attic future (table 4): ignored
 - ἁλίσκομαι perfect (table 6): ignored
-- ἀπαλλάσσω aorist (table 5): ignored
 - διώκω aorist (table 5): ignored
 - βαίνω aorist (table 5): used for pass
 - βαίνω aorist (table 6): ignored
@@ -802,12 +799,90 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 
 ## data/exclude.txt rules
 
-(none)
+- line 6 `ἀπαλλάσσω`: removed lemma
+- line 7 `ἔρομαι`: removed lemma
+- line 8 `εἰκός`: removed lemma
+- line 9 `πρέσβυς`: removed lemma
+- line 10 `λαός`: removed lemma
+- line 13 `ἁμαρτάνω  fut.act`: removed 9 cells
+- line 14 `ἥκω       perf.act`: removed 9 cells
+- line 15 `προσήκω   perf.act`: removed 9 cells
+- line 16 `λανθάνω   perf`: removed 18 cells
+- line 17 `οἴομαι    aor.mid`: removed 9 cells
+- line 18 `αἰσθάνομαι  aor.pass`: removed 9 cells
+- line 19 `αἰσθάνομαι  fut.pass`: removed 9 cells
+- line 20 `ἔρχομαι   impf`: removed 8 cells
+- line 21 `ἀποκτείνω perf.mp`: removed 9 cells
+- line 22 `συμφέρω   perf.mp`: removed 9 cells
+- line 23 `βλέπω     perf`: removed 18 cells
+- line 24 `τέμνω     fut.pass`: removed 9 cells
+- line 25 `μέλλω     impf.mp`: removed 8 cells
+- line 26 `χαίρω     aor.act`: removed 9 cells
+- line 27 `βαίνω     aor`: removed 27 cells
+- line 28 `συμβαίνω  aor`: removed 18 cells
+- line 34 `λαμβάνω  perf.mp.ind.3.pl  εἰλήφᾰται`: removed 1 form
+- line 35 `γράφω  perf.mp.ind.3.pl  γεγρᾰ́φᾰται`: removed 1 form
+- line 36 `φέρω  perf.mp.ind.3.pl  ἐνηνέγᾰται`: removed 1 form
+- line 37 `ὑπάρχω  perf.mp.ind.3.pl  ῠ̔πήρχᾰται`: removed 1 form
+- line 38 `ἄρχω  perf.mp.ind.3.pl  ἤρχᾰται`: removed 1 form
+- line 39 `γιγνώσκω  perf.mp.ind.3.pl  ἐγνώσᾰται`: removed 1 form
+- line 40 `τυγχάνω  perf.mp.ind.3.pl  τετεύχᾰται`: removed 1 form
+- line 41 `ἄγω  perf.mp.ind.3.pl  ἤγᾰται`: removed 1 form
+- line 42 `πείθω  perf.mp.ind.3.pl  πεπείσᾰται`: removed 1 form
+- line 43 `νομίζω  perf.mp.ind.3.pl  νενομῐ́δᾰται`: removed 1 form
+- line 44 `ὀνομάζω  perf.mp.ind.3.pl  ὠνομᾰ́σᾰται`: removed 1 form
+- line 45 `κελεύω  perf.mp.ind.3.pl  κεκελεύσᾰται`: removed 1 form
+- line 46 `φεύγω  perf.mp.ind.3.pl  πεφῠ́γᾰται`: removed 1 form
+- line 47 `σῴζω  perf.mp.ind.3.pl  σεσῴσᾰται`: removed 1 form
+- line 48 `πέμπω  perf.mp.ind.3.pl  πεπέμπᾰται`: removed 1 form
+- line 49 `διδάσκω  perf.mp.ind.3.pl  δεδῐδᾰ́κᾰται`: removed 1 form
+- line 50 `δέχομαι  perf.mp.ind.3.pl  δεδέχᾰται`: removed 1 form
+- line 51 `ἐργάζομαι  perf.mp.ind.3.pl  εἰργᾰ́σᾰται`: removed 1 form
+- line 52 `τρέφω  perf.mp.ind.3.pl  τεθρᾰ́πᾰται`: removed 1 form
+- line 53 `θαυμάζω  perf.mp.ind.3.pl  τεθαυμᾰ́δᾰται`: removed 1 form
+- line 54 `καταλαμβάνω  perf.mp.ind.3.pl  κᾰτειλήφᾰται`: removed 1 form
+- line 55 `αἴρω  perf.mp.ind.3.pl  ἤρᾰται`: removed 1 form
+- line 56 `ἀποκτείνω  perf.mp.ind.3.pl  ἀπεκτᾰ́νᾰται`: removed 0 forms
+- line 57 `κατασκευάζω  perf.mp.ind.3.pl  κᾰτεσκευᾰ́σᾰται`: removed 1 form
+- line 58 `διαφθείρω  perf.mp.ind.3.pl  δῐεφθᾰ́ρᾰται`: removed 1 form
+- line 59 `πυνθάνομαι  perf.mp.ind.3.pl  πεπῠ́σᾰται`: removed 1 form
+- line 60 `ὑπολαμβάνω  perf.mp.ind.3.pl  ῠ̔πειλήβᾰται`: removed 1 form
+- line 61 `λανθάνω  perf.mp.ind.3.pl  λελᾰ́θᾰται`: removed 0 forms
+- line 62 `τρέπω  perf.mp.ind.3.pl  τετράφᾰται`: removed 1 form
+- line 63 `λείπω  perf.mp.ind.3.pl  λελείπᾰται`: removed 1 form
+- line 64 `τίκτω  perf.mp.ind.3.pl  τετέκᾰται`: removed 1 form
+- line 65 `κομίζω  perf.mp.ind.3.pl  κεκομῐ́δᾰται`: removed 1 form
+- line 66 `βλέπω  perf.mp.ind.3.pl  βεβλέπᾰται`: removed 0 forms
+- line 67 `παρασκευάζω  perf.mp.ind.3.pl  πᾰρεσκευᾰ́σᾰται`: removed 1 form
+- line 68 `ἀπαλλάσσω  perf.mp.ind.3.pl  ἀπηλλᾰ́χᾰται`: removed lemma
+- line 69 `διώκω  perf.mp.ind.3.pl  δεδῐώχᾰται`: removed 1 form
+- line 70 `φράζω  perf.mp.ind.3.pl  πεφρᾰ́δᾰται`: removed 1 form
+- line 71 `ἀγγέλλω  perf.mp.ind.3.pl  ἠγγέλᾰται`: removed 1 form
+- line 75 `ἔρχομαι  perf.act.ind.2.du  ἐλήλῠτον`: removed 1 form
+- line 76 `ἔρχομαι  perf.act.ind.3.du  ἐλήλῠτον`: removed 1 form
+- line 77 `ἔρχομαι  perf.act.ind.1.pl  ἐλήλῠμεν`: removed 1 form
+- line 78 `ἔρχομαι  perf.act.ind.2.pl  ἐλήλῠτε`: removed 1 form
+- line 79 `πάσχω  perf.act.ind.2.pl  πέπασθε`: removed 1 form
+- line 80 `πάσχω  perf.act.ind.2.pl  πέποσθε`: removed 1 form
+- line 82 `οἴομαι  impf.mp.ind.1.sg  ᾤομην`: removed 1 form
+- line 84 `τρέπω  perf.mp.inf  τετρᾶφθαι`: removed 1 form
+- line 86 `πόλις  gen.pl  πολήων`: removed 1 form
+- line 87 `πόλις  dat.sg  πόλῑ`: removed 1 form
+- line 88 `πόλις  dat.sg  πόλῃ`: removed 1 form
+- line 90 `ἄστυ  nom.pl  ᾰ̓́στεᾰ`: removed 1 form
+- line 91 `ἄστυ  acc.pl  ᾰ̓́στεᾰ`: removed 1 form
+- line 92 `ἄστυ  voc.pl  ᾰ̓́στεᾰ`: removed 1 form
+- line 94 `ἄνθρωπος  voc.sg  ὦνθρωπε`: removed 1 form
+- line 95 `ἄνθρωπος  voc.sg  ὤνθρωπε`: removed 1 form
+- line 97 `κίνδυνος  dat.sg  κῐ́νδῡνῐ`: removed 1 form
+- line 99 `στάδιον  nom.pl  στᾰ́δῐοι`: removed 1 form
+- line 100 `στάδιον  acc.pl  στᾰ́δῐους`: removed 1 form
+- line 101 `στάδιον  voc.pl  στᾰ́δῐοι`: removed 1 form
 
 <!-- morpheus:start -->
 ## Morpheus cross-check
 
-Checked 13936 forms of 302 lemmas with libmorpheus v0.3.2 (Linux x86-64 glibc release archive), perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e): 13294 agree, 123 feature mismatches, 352 parsed as another lemma, 167 not recognised.
+Checked 13326 forms of 300 lemmas with libmorpheus v0.3.2 (Linux x86-64 glibc release archive), perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e): 12983 agree, 87 feature mismatches, 226 parsed as another lemma, 30 not recognised.
 
 Morpheus does not know every lemma or alternate, so *not recognised* is weak evidence. A *feature mismatch* (Morpheus knows the lemma but parses the form differently) is the strongest signal.
 
@@ -817,23 +892,6 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - χείρ `voc.sg` χείρ — Morpheus: noun nom sg f
 - χείρ `voc.pl` χεῖρες — Morpheus: noun nom pl f
 - πούς `voc.sg` πούς — Morpheus: noun nom sg m
-- πρέσβυς `acc.pl` πρέσβεις — Morpheus: noun nom/voc pl m
-- εἰκός `nom.sg` εἰκός — Morpheus: verb acc/nom/voc perf act sg n
-- εἰκός `gen.sg` εἰκότος — Morpheus: verb gen perf act sg m/n
-- εἰκός `dat.sg` εἰκότῐ — Morpheus: verb dat perf act sg m/n
-- εἰκός `acc.sg` εἰκός — Morpheus: verb acc/nom/voc perf act sg n
-- εἰκός `voc.sg` εἰκός — Morpheus: verb acc/nom/voc perf act sg n
-- εἰκός `nom.du` εἰκότε — Morpheus: verb acc/nom/voc perf act du m/n
-- εἰκός `gen.du` εἰκότοιν — Morpheus: verb dat/gen perf act du m/n
-- εἰκός `dat.du` εἰκότοιν — Morpheus: verb dat/gen perf act du m/n
-- εἰκός `acc.du` εἰκότε — Morpheus: verb acc/nom/voc perf act du m/n
-- εἰκός `voc.du` εἰκότε — Morpheus: verb acc/nom/voc perf act du m/n
-- εἰκός `nom.pl` εἰκότᾰ — Morpheus: verb acc perf act sg m; verb acc/nom/voc perf act pl n
-- εἰκός `gen.pl` εἰκότων — Morpheus: verb gen perf act pl m/n
-- εἰκός `dat.pl` εἰκόσῐ — Morpheus: verb dat perf act pl m/n
-- εἰκός `dat.pl` εἰκόσῐν — Morpheus: verb dat perf act pl m/n
-- εἰκός `acc.pl` εἰκότᾰ — Morpheus: verb acc perf act sg m; verb acc/nom/voc perf act pl n
-- εἰκός `voc.pl` εἰκότᾰ — Morpheus: verb acc perf act sg m; verb acc/nom/voc perf act pl n
 - φῶς `nom.pl` φῶτᾰ — Morpheus: noun acc sg m
 - φῶς `acc.pl` φῶτᾰ — Morpheus: noun acc sg m
 - φῶς `voc.pl` φῶτᾰ — Morpheus: noun acc sg m
@@ -876,10 +934,6 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - ὀνομάζω `perf.act.ind.3.du` ὠνομᾰ́κᾰτον — Morpheus: verb perf ind act 2 du
 - παρέχω `perf.act.ind.3.du` πᾰρεσχήκᾰτον — Morpheus: verb perf ind act 2 du
 - κελεύω `perf.act.ind.3.du` κεκελεύκᾰτον — Morpheus: verb perf ind act 2 du
-- ἔρομαι `pres.mp.ind.2.du` ἔρεσθον — Morpheus: verb aor ind mid 2 du; verb aor mid 2 du
-- ἔρομαι `pres.mp.ind.3.du` ἔρεσθον — Morpheus: verb aor ind mid 2 du; verb aor mid 2 du
-- ἔρομαι `pres.mp.ind.1.pl` ἐρόμεθᾰ — Morpheus: verb aor ind mid 1 pl
-- ἔρομαι `pres.mp.ind.2.pl` ἔρεσθε — Morpheus: verb aor ind mid 2 pl; verb aor mid 2 pl
 - πίνω `perf.act.ind.3.du` πεπώκᾰτον — Morpheus: verb perf ind act 2 du
 - μανθάνω `perf.act.ind.3.du` μεμᾰθήκᾰτον — Morpheus: verb perf ind act 2 du
 - φεύγω `perf.act.ind.3.du` πεφεύγᾰτον — Morpheus: verb perf ind act 2 du
@@ -888,13 +942,9 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - μένω `perf.act.ind.3.du` μεμενήκᾰτον — Morpheus: verb perf ind act 2 du
 - ἀποθνῄσκω `perf.act.ind.3.du` ᾰ̓ποτεθνήκᾰτον — Morpheus: verb perf ind act 2 du
 - κρίνω `perf.act.ind.3.du` κεκρῐ́κᾰτον — Morpheus: verb perf ind act 2 du
-- ἥκω `perf.act.ind.3.sg` ἧκε — Morpheus: verb impf ind act 3 sg; verb pres act 2 sg
-- ἥκω `perf.act.ind.3.sg` ἧκεν — Morpheus: verb impf ind act 3 sg
 - πιστεύω `perf.act.ind.3.du` πεπῐστεύκᾰτον — Morpheus: verb perf ind act 2 du
 - διδάσκω `perf.act.ind.3.du` δεδῐδᾰ́χᾰτον — Morpheus: verb perf ind act 2 du
 - τρέφω `perf.act.ind.3.du` τετρόφᾰτον — Morpheus: verb perf ind act 2 du
-- προσήκω `perf.act.ind.3.sg` προσῆκε — Morpheus: verb impf ind act 3 sg
-- προσήκω `perf.act.ind.3.sg` προσῆκεν — Morpheus: verb impf ind act 3 sg
 - παύω `perf.act.ind.3.du` πεπαύκᾰτον — Morpheus: verb perf ind act 2 du
 - θαυμάζω `perf.act.ind.3.du` τεθαυμᾰ́κᾰτον — Morpheus: verb perf ind act 2 du
 - χαίρω `perf.act.ind.3.du` κεχᾰρήκᾰτον — Morpheus: verb perf ind act 2 du
@@ -907,23 +957,12 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - πίπτω `perf.act.ind.3.du` πεπτώκᾰτον — Morpheus: verb perf ind act 2 du
 - κατασκευάζω `perf.act.ind.3.du` κᾰτεσκευᾰ́κᾰτον — Morpheus: verb perf ind act 2 du
 - κωλύω `perf.act.ind.3.du` κεκωλῡ́κᾰτον — Morpheus: verb perf ind act 2 du
-- ἁμαρτάνω `fut.act.ind.1.sg` ᾰ̔μᾰρτήσω — Morpheus: verb aor act 1 sg; verb aor ind mid 2 sg
-- ἁμαρτάνω `fut.act.ind.2.sg` ᾰ̔μᾰρτήσεις — Morpheus: verb aor act 2 sg
-- ἁμαρτάνω `fut.act.ind.3.sg` ᾰ̔μᾰρτήσει — Morpheus: verb aor act 3 sg; verb fut ind mid 2 sg
-- ἁμαρτάνω `fut.act.ind.2.du` ᾰ̔μᾰρτήσετον — Morpheus: verb aor act 2 du; verb aor act 3 du
-- ἁμαρτάνω `fut.act.ind.3.du` ᾰ̔μᾰρτήσετον — Morpheus: verb aor act 2 du; verb aor act 3 du
-- ἁμαρτάνω `fut.act.ind.1.pl` ᾰ̔μᾰρτήσομεν — Morpheus: verb aor act 1 pl
-- ἁμαρτάνω `fut.act.ind.2.pl` ᾰ̔μᾰρτήσετε — Morpheus: verb aor act 2 pl
-- ἁμαρτάνω `fut.act.ind.3.pl` ᾰ̔μᾰρτήσουσῐ — Morpheus: verb aor act 3 pl
-- ἁμαρτάνω `fut.act.ind.3.pl` ᾰ̔μᾰρτήσουσῐν — Morpheus: verb aor act 3 pl
 - ἁμαρτάνω `perf.act.ind.3.du` ἡμᾰρτήκᾰτον — Morpheus: verb perf ind act 2 du
 - διαφθείρω `perf.act.ind.3.du` δῐεφθᾰ́ρκᾰτον — Morpheus: verb perf ind act 2 du
 - βάλλω `perf.act.ind.3.du` βεβλήκᾰτον — Morpheus: verb perf ind act 2 du
 - συμφέρω `perf.act.ind.3.du` συνενηνόχᾰτον — Morpheus: verb perf ind act 2 du
 - τέμνω `perf.act.ind.3.du` τετμήκᾰτον — Morpheus: verb perf ind act 2 du
 - ὑπολαμβάνω `perf.act.ind.3.du` ῠ̔πειλήφᾰτον — Morpheus: verb perf ind act 2 du
-- λανθάνω `perf.act.ind.3.sg` λέλᾰθε — Morpheus: verb aor act 2 sg; verb aor ind act 3 sg
-- λανθάνω `perf.act.ind.3.sg` λέλᾰθεν — Morpheus: verb aor ind act 3 sg
 - τρέπω `perf.act.ind.3.du` τετρόφᾰτον — Morpheus: verb perf ind act 2 du
 - λείπω `perf.act.ind.3.du` λελοίπᾰτον — Morpheus: verb perf ind act 2 du
 - τίκτω `perf.act.ind.3.du` τετόκᾰτον — Morpheus: verb perf ind act 2 du
@@ -1078,18 +1117,6 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - ἔχω `perf.mp.ind.2.pl` ἔσχησθε — Morpheus lemma: ei)s-xa/w, i)sxne/omai, sxa/w
 - ἔχω `perf.mp.ind.3.pl` ἔσχηνται — Morpheus lemma: ei)s-xa/w, i)sxne/omai, sxa/w
 - ἔχω `perf.mp.inf` ἐσχῆσθαι — Morpheus lemma: ei)s-xa/w, ei)sxe/w, i)sxne/omai, sxa/w
-- ἔρχομαι `impf.mp.ind.1.sg` ᾖᾰ — Morpheus lemma: ei)=mi, h)/ia, h)=|a
-- ἔρχομαι `impf.mp.ind.1.sg` ᾔειν — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.2.sg` ᾔεισ — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.2.sg` ᾔεισθᾰ — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.3.sg` ᾔει — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.3.sg` ᾔειν — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.2.du` ᾖτον — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.3.du` ᾔτην — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.1.pl` ᾖμεν — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.2.pl` ᾖτε — Morpheus lemma: ei)=mi
-- ἔρχομαι `impf.mp.ind.3.pl` ᾖσᾰν — Morpheus lemma: a)ei/dw, ei)=mi, oi)=da
-- ἔρχομαι `impf.mp.ind.3.pl` ᾔεσᾰν — Morpheus lemma: ei)=mi
 - συμβαίνω `pres.act.ind.1.sg` σῠμβαίνω — Morpheus lemma: sumbasei/w
 - συμβαίνω `pres.act.ind.2.sg` σῠμβαίνεις — Morpheus lemma: sumbasei/w
 - συμβαίνω `pres.act.ind.3.sg` σῠμβαίνει — Morpheus lemma: sumbasei/w
@@ -1147,15 +1174,6 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - συμβαίνω `fut.mid.ind.2.pl` σῠμβήσεσθε — Morpheus lemma: sumbasei/w
 - συμβαίνω `fut.mid.ind.3.pl` σῠμβήσονται — Morpheus lemma: sumbasei/w
 - συμβαίνω `fut.mid.inf` σῠμβήσεσθαι — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.1.sg` σῠνεβᾰ́θην — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.2.sg` σῠνεβᾰ́θης — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.3.sg` σῠνεβᾰ́θη — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.2.du` σῠνεβᾰ́θητον — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.3.du` σῠνεβᾰθήτην — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.1.pl` σῠνεβᾰ́θημεν — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.2.pl` σῠνεβᾰ́θητε — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.ind.3.pl` σῠνεβᾰ́θησᾰν — Morpheus lemma: sumbasei/w
-- συμβαίνω `aor.pass.inf` σῠμβᾰθῆναι — Morpheus lemma: sumbasei/w
 - συμβαίνω `perf.act.ind.1.sg` σῠμβέβηκᾰ — Morpheus lemma: sumbasei/w
 - συμβαίνω `perf.act.ind.2.sg` σῠμβέβηκᾰς — Morpheus lemma: sumbasei/w
 - συμβαίνω `perf.act.ind.3.sg` σῠμβέβηκε — Morpheus lemma: sumbasei/w
@@ -1176,16 +1194,6 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - συμβαίνω `perf.mp.ind.2.pl` σῠμβέβᾰσθε — Morpheus lemma: su/n-ba/zw, sumbasei/w
 - συμβαίνω `perf.mp.ind.3.pl` σῠμβέβᾰνται — Morpheus lemma: sumbasei/w
 - συμβαίνω `perf.mp.inf` σῠμβεβᾰ́σθαι — Morpheus lemma: su/n-ba/zw
-- οἴομαι `aor.mid.ind.1.sg` ᾠησᾰ́μην — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.2.sg` ᾠήσω — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.3.sg` ᾠήσᾰτο — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.2.du` ᾠήσᾰσθον — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.3.du` ᾠησᾰ́σθην — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.1.pl` ᾠησᾰ́μεθᾰ — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.2.pl` ᾠήσᾰσθε — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.ind.3.pl` ᾠήσᾰντο — Morpheus lemma: oi)a/w
-- οἴομαι `aor.mid.inf` οἰήσᾰσθαι — Morpheus lemma: oi)a/w
-- πάσχω `perf.act.ind.2.pl` πέπασθε — Morpheus lemma: pa/omai, pa/ssw, pate/omai
 - παρέχω `perf.mp.ind.1.sg` πᾰρέσχημαι — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
 - παρέχω `perf.mp.ind.2.sg` πᾰρέσχησαι — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
 - παρέχω `perf.mp.ind.3.sg` πᾰρέσχηται — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
@@ -1195,142 +1203,12 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - παρέχω `perf.mp.ind.2.pl` πᾰρέσχησθε — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
 - παρέχω `perf.mp.ind.3.pl` πᾰρέσχηνται — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
 - παρέχω `perf.mp.inf` πᾰρεσχῆσθαι — Morpheus lemma: para/,ei)s-xa/w, para/-ei)sxe/w, para/-i)sxne/omai, para/-sxa/w
-- ἥκω `perf.act.ind.1.sg` ἧκᾰ — Morpheus lemma: i(/hmi
-- ἥκω `perf.act.ind.2.sg` ἧκᾰς — Morpheus lemma: i(/hmi
-- ἥκω `perf.act.ind.2.du` ἥκᾰτον — Morpheus lemma: i(/hmi
-- ἥκω `perf.act.ind.3.du` ἥκᾰτον — Morpheus lemma: i(/hmi
-- ἥκω `perf.act.ind.1.pl` ἥκᾰμεν — Morpheus lemma: i(/hmi
-- ἥκω `perf.act.ind.2.pl` ἥκᾰτε — Morpheus lemma: i(/hmi
-- προσήκω `perf.act.ind.1.sg` προσῆκᾰ — Morpheus lemma: prosi/hmi
-- προσήκω `perf.act.ind.2.sg` προσῆκᾰς — Morpheus lemma: prosi/hmi
-- προσήκω `perf.act.ind.2.du` προσήκᾰτον — Morpheus lemma: prosi/hmi
-- προσήκω `perf.act.ind.3.du` προσήκᾰτον — Morpheus lemma: prosi/hmi
-- προσήκω `perf.act.ind.1.pl` προσήκᾰμεν — Morpheus lemma: prosi/hmi
-- προσήκω `perf.act.ind.2.pl` προσήκᾰτε — Morpheus lemma: prosi/hmi
-- αἰσθάνομαι `aor.pass.ind.1.sg` ᾐσθήθην — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.2.sg` ᾐσθήθης — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.3.sg` ᾐσθήθη — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.2.du` ᾐσθήθητον — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.3.du` ᾐσθηθήτην — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.1.pl` ᾐσθήθημεν — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.2.pl` ᾐσθήθητε — Morpheus lemma: ei)sqe/w
-- αἰσθάνομαι `aor.pass.ind.3.pl` ᾐσθήθησᾰν — Morpheus lemma: ei)sqe/w
-- ἁμαρτάνω `fut.act.inf` ᾰ̔μᾰρτήσειν — Morpheus lemma: a(marte/w
-- συμφέρω `perf.mp.ind.2.du` συνενήνεσθον — Morpheus lemma: su/n,e)n-a)/nw1
-- συμφέρω `perf.mp.ind.3.du` συνενήνεσθον — Morpheus lemma: su/n,e)n-a)/nw1
-- συμφέρω `perf.mp.ind.2.pl` συνενήνεσθε — Morpheus lemma: su/n,e)n-a)/nw1
-- λανθάνω `perf.mp.ind.1.sg` λέλᾰσμαι — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.ind.2.sg` λέλᾰσαι — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.ind.3.sg` λέλᾰσται — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.ind.2.du` λέλᾰσθον — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.ind.3.du` λέλᾰσθον — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.ind.1.pl` λελᾰ́σμεθᾰ — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.ind.2.pl` λέλᾰσθε — Morpheus lemma: la/zomai, la/zw
-- λανθάνω `perf.mp.inf` λελᾰ́σθαι — Morpheus lemma: la/zomai, la/zw
-- ἀπαλλάσσω `impf.act.ind.1.sg` ἀπήλλᾰσσον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.2.sg` ἀπήλλᾰσσες — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.3.sg` ἀπήλλᾰσσε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.3.sg` ἀπήλλᾰσσεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.2.du` ἀπηλλᾰ́σσετον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.3.du` ἀπηλλᾰσσέτην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.1.pl` ἀπηλλᾰ́σσομεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.2.pl` ἀπηλλᾰ́σσετε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.act.ind.3.pl` ἀπήλλᾰσσον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.1.sg` ἀπηλλᾰσσόμην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.2.sg` ἀπηλλᾰ́σσου — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.3.sg` ἀπηλλᾰ́σσετο — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.2.du` ἀπηλλᾰ́σσεσθον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.3.du` ἀπηλλᾰσσέσθην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.1.pl` ἀπηλλᾰσσόμεθᾰ — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.2.pl` ἀπηλλᾰ́σσεσθε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `impf.mp.ind.3.pl` ἀπηλλᾰ́σσοντο — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.1.sg` ἀπήλλᾰξᾰ — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.2.sg` ἀπήλλᾰξᾰς — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.3.sg` ἀπήλλᾰξε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.3.sg` ἀπήλλᾰξεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.2.du` ἀπηλλᾰ́ξᾰτον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.3.du` ἀπηλλᾰξᾰ́την — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.1.pl` ἀπηλλᾰ́ξᾰμεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.2.pl` ἀπηλλᾰ́ξᾰτε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.act.ind.3.pl` ἀπήλλᾰξᾰν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.1.sg` ἀπηλλᾰξᾰ́μην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.2.sg` ἀπηλλᾰ́ξω — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.3.sg` ἀπηλλᾰ́ξᾰτο — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.2.du` ἀπηλλᾰ́ξᾰσθον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.3.du` ἀπηλλᾰξᾰ́σθην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.1.pl` ἀπηλλᾰξᾰ́μεθᾰ — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.2.pl` ἀπηλλᾰ́ξᾰσθε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.mid.ind.3.pl` ἀπηλλᾰ́ξᾰντο — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.1.sg` ἀπηλλᾰ́χθην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.2.sg` ἀπηλλᾰ́χθης — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.3.sg` ἀπηλλᾰ́χθη — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.2.du` ἀπηλλᾰ́χθητον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.3.du` ἀπηλλᾰχθήτην — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.1.pl` ἀπηλλᾰ́χθημεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.2.pl` ἀπηλλᾰ́χθητε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `aor.pass.ind.3.pl` ἀπηλλᾰ́χθησᾰν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.1.sg` ἀπήλλᾰχᾰ — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.2.sg` ἀπήλλᾰχᾰς — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.3.sg` ἀπήλλᾰχε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.3.sg` ἀπήλλᾰχεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.2.du` ἀπηλλᾰ́χᾰτον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.3.du` ἀπηλλᾰ́χᾰτον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.1.pl` ἀπηλλᾰ́χᾰμεν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.2.pl` ἀπηλλᾰ́χᾰτε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.3.pl` ἀπηλλᾰ́χᾱσῐ — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.ind.3.pl` ἀπηλλᾰ́χᾱσῐν — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.act.inf` ἀπηλλᾰχέναι — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.1.sg` ἀπήλλᾰγμαι — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.2.sg` ἀπήλλᾰξαι — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.3.sg` ἀπήλλᾰκται — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.2.du` ἀπήλλᾰχθον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.3.du` ἀπήλλᾰχθον — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.1.pl` ἀπηλλᾰ́γμεθᾰ — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.2.pl` ἀπήλλᾰχθε — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.ind.3.pl` ἀπηλλᾰ́χᾰται — Morpheus lemma: a)pallacei/w
-- ἀπαλλάσσω `perf.mp.inf` ἀπηλλᾰ́χθαι — Morpheus lemma: a)pallacei/w
 - βαίνω `perf.mp.inf` βεβᾰ́σθαι — Morpheus lemma: ba/zw
-- ἀγγέλλω `perf.mp.ind.3.pl` ἠγγέλᾰται — Morpheus lemma: e)ggela/w
 
 ### Not recognised, by lemma
 
-- αἰσθάνομαι: 11/65: αἰσθηθήσομαι `fut.pass.ind.1.sg`, αἰσθηθήσῃ `fut.pass.ind.2.sg`, αἰσθηθήσει `fut.pass.ind.2.sg`, αἰσθηθήσεται `fut.pass.ind.3.sg`, αἰσθηθήσεσθον `fut.pass.ind.2.du`, αἰσθηθήσεσθον `fut.pass.ind.3.du`, αἰσθηθησόμεθᾰ `fut.pass.ind.1.pl`, αἰσθηθήσεσθε `fut.pass.ind.2.pl`, αἰσθηθήσονται `fut.pass.ind.3.pl`, αἰσθηθήσεσθαι `fut.pass.inf`, αἰσθηθῆναι `aor.pass.inf`
-- βαίνω: 9/95: ἐβᾰ́θην `aor.pass.ind.1.sg`, ἐβᾰ́θης `aor.pass.ind.2.sg`, ἐβᾰ́θη `aor.pass.ind.3.sg`, ἐβᾰ́θητον `aor.pass.ind.2.du`, ἐβᾰθήτην `aor.pass.ind.3.du`, ἐβᾰ́θημεν `aor.pass.ind.1.pl`, ἐβᾰ́θητε `aor.pass.ind.2.pl`, ἐβᾰ́θησᾰν `aor.pass.ind.3.pl`, βᾰθῆναι `aor.pass.inf`
-- βλέπω: 20/95: βέβλεφᾰ `perf.act.ind.1.sg`, βέβλεφᾰς `perf.act.ind.2.sg`, βέβλεφε `perf.act.ind.3.sg`, βέβλεφεν `perf.act.ind.3.sg`, βεβλέφᾰτον `perf.act.ind.2.du`, βεβλέφᾰτον `perf.act.ind.3.du`, βεβλέφᾰμεν `perf.act.ind.1.pl`, βεβλέφᾰτε `perf.act.ind.2.pl`, βεβλέφᾱσῐ `perf.act.ind.3.pl`, βεβλέφᾱσῐν `perf.act.ind.3.pl`, βεβλεφέναι `perf.act.inf`, βέβλεμμαι `perf.mp.ind.1.sg`, βέβλεψαι `perf.mp.ind.2.sg`, βέβλεπται `perf.mp.ind.3.sg`, βέβλεφθον `perf.mp.ind.2.du`, βέβλεφθον `perf.mp.ind.3.du`, βεβλέμμεθᾰ `perf.mp.ind.1.pl`, βέβλεφθε `perf.mp.ind.2.pl`, βεβλέπᾰται `perf.mp.ind.3.pl`, βεβλέφθαι `perf.mp.inf`
-- γιγνώσκω: 1/85: ἐγνώσᾰται `perf.mp.ind.3.pl`
-- διδάσκω: 1/115: δεδῐδᾰ́κᾰται `perf.mp.ind.3.pl`
-- κίνδυνος: 1/16: κῐ́νδῡνῐ `dat.sg`
-- κατασκευάζω: 1/105: κᾰτεσκευᾰ́σᾰται `perf.mp.ind.3.pl`
-- κελεύω: 1/123: κεκελεύσᾰται `perf.mp.ind.3.pl`
-- λανθάνω: 10/96: λέλᾰθᾰ `perf.act.ind.1.sg`, λέλᾰθᾰς `perf.act.ind.2.sg`, λελᾰ́θᾰτον `perf.act.ind.2.du`, λελᾰ́θᾰτον `perf.act.ind.3.du`, λελᾰ́θᾰμεν `perf.act.ind.1.pl`, λελᾰ́θᾰτε `perf.act.ind.2.pl`, λελᾰ́θᾱσῐ `perf.act.ind.3.pl`, λελᾰ́θᾱσῐν `perf.act.ind.3.pl`, λελᾰθέναι `perf.act.inf`, λελᾰ́θᾰται `perf.mp.ind.3.pl`
-- λείπω: 1/115: λελείπᾰται `perf.mp.ind.3.pl`
-- μέλλω: 8/93: ἠμελλόμην `impf.mp.ind.1.sg`, ἠμέλλου `impf.mp.ind.2.sg`, ἠμέλλετο `impf.mp.ind.3.sg`, ἠμέλλεσθον `impf.mp.ind.2.du`, ἠμελλέσθην `impf.mp.ind.3.du`, ἠμελλόμεθᾰ `impf.mp.ind.1.pl`, ἠμέλλεσθε `impf.mp.ind.2.pl`, ἠμέλλοντο `impf.mp.ind.3.pl`
-- οἴομαι: 1/47: ᾤομην `impf.mp.ind.1.sg`
-- πέμπω: 1/115: πεπέμπᾰται `perf.mp.ind.3.pl`
-- παρασκευάζω: 1/94: πᾰρεσκευᾰ́σᾰται `perf.mp.ind.3.pl`
-- πείθω: 1/115: πεπείσᾰται `perf.mp.ind.3.pl`
-- προσήκω: 3/87: προσήκᾱσῐ `perf.act.ind.3.pl`, προσήκᾱσῐν `perf.act.ind.3.pl`, προσηκέναι `perf.act.inf`
-- πυνθάνομαι: 1/46: πεπῠ́σᾰται `perf.mp.ind.3.pl`
-- στάδιον: 1/18: στᾰ́δῐους `acc.pl`
-- συμφέρω: 6/105: συνενήνεμαι `perf.mp.ind.1.sg`, συνενήνεσαι `perf.mp.ind.2.sg`, συνενήνεται `perf.mp.ind.3.sg`, συνενηνέμεθᾰ `perf.mp.ind.1.pl`, συνενήνενται `perf.mp.ind.3.pl`, συνενηνέσθαι `perf.mp.inf`
-- σῴζω: 1/115: σεσῴσᾰται `perf.mp.ind.3.pl`
-- τέμνω: 10/115: τεμήσομαι `fut.pass.ind.1.sg`, τεμήσῃ `fut.pass.ind.2.sg`, τεμήσει `fut.pass.ind.2.sg`, τεμήσεται `fut.pass.ind.3.sg`, τεμήσεσθον `fut.pass.ind.2.du`, τεμήσεσθον `fut.pass.ind.3.du`, τεμησόμεθᾰ `fut.pass.ind.1.pl`, τεμήσεσθε `fut.pass.ind.2.pl`, τεμήσονται `fut.pass.ind.3.pl`, τεμήσεσθαι `fut.pass.inf`
-- τίκτω: 1/115: τετέκᾰται `perf.mp.ind.3.pl`
-- τρέπω: 1/115: τετρᾶφθαι `perf.mp.inf`
-- τρέφω: 10/115: ἐθρέφθην `aor.pass.ind.1.sg`, ἐθρέφθης `aor.pass.ind.2.sg`, ἐθρέφθη `aor.pass.ind.3.sg`, ἐθρέφθητον `aor.pass.ind.2.du`, ἐθρεφθήτην `aor.pass.ind.3.du`, ἐθρέφθημεν `aor.pass.ind.1.pl`, ἐθρέφθητε `aor.pass.ind.2.pl`, ἐθρέφθησᾰν `aor.pass.ind.3.pl`, θρεφθῆναι `aor.pass.inf`, τεθρᾰ́πᾰται `perf.mp.ind.3.pl`
-- φέρω: 1/115: ἐνηνέγᾰται `perf.mp.ind.3.pl`
-- φεύγω: 1/77: πεφῠ́γᾰται `perf.mp.ind.3.pl`
+- τρέφω: 9/107: ἐθρέφθην `aor.pass.ind.1.sg`, ἐθρέφθης `aor.pass.ind.2.sg`, ἐθρέφθη `aor.pass.ind.3.sg`, ἐθρέφθητον `aor.pass.ind.2.du`, ἐθρεφθήτην `aor.pass.ind.3.du`, ἐθρέφθημεν `aor.pass.ind.1.pl`, ἐθρέφθητε `aor.pass.ind.2.pl`, ἐθρέφθησᾰν `aor.pass.ind.3.pl`, θρεφθῆναι `aor.pass.inf`
 - φῶς: 2/16: φώτοιν `gen.du`, φώτοιν `dat.du`
-- χαίρω: 10/77: ἐχαίρησᾰ `aor.act.ind.1.sg`, ἐχαίρησᾰς `aor.act.ind.2.sg`, ἐχαίρησε `aor.act.ind.3.sg`, ἐχαίρησεν `aor.act.ind.3.sg`, ἐχαιρήσᾰτον `aor.act.ind.2.du`, ἐχαιρησᾰ́την `aor.act.ind.3.du`, ἐχαιρήσᾰμεν `aor.act.ind.1.pl`, ἐχαιρήσᾰτε `aor.act.ind.2.pl`, ἐχαίρησᾰν `aor.act.ind.3.pl`, χαιρῆσαι `aor.act.inf`
-- ἀγγέλλω: 3/115: ἤγγελθον `perf.mp.ind.2.du`, ἤγγελθον `perf.mp.ind.3.du`, ἤγγελθε `perf.mp.ind.2.pl`
-- ἀποκτείνω: 9/105: ἀπέκτᾰσμαι `perf.mp.ind.1.sg`, ἀπέκτᾰνσαι `perf.mp.ind.2.sg`, ἀπέκτᾰνται `perf.mp.ind.3.sg`, ἀπέκτᾰνθον `perf.mp.ind.2.du`, ἀπέκτᾰνθον `perf.mp.ind.3.du`, ἀπεκτᾰ́σμεθᾰ `perf.mp.ind.1.pl`, ἀπέκτᾰνθε `perf.mp.ind.2.pl`, ἀπεκτᾰ́νᾰται `perf.mp.ind.3.pl`, ἀπεκτάνθαι `perf.mp.inf`
-- ἄγω: 1/115: ἤγᾰται `perf.mp.ind.3.pl`
-- ἐργάζομαι: 1/65: εἰργᾰ́σᾰται `perf.mp.ind.3.pl`
-- ἔρομαι: 4/37: ἔρομαι `pres.mp.ind.1.sg`, ἔρεται `pres.mp.ind.3.sg`, ἔρονται `pres.mp.ind.3.pl`, ἔρεσθαι `pres.mp.inf`
-- ἔρχομαι: 9/61: ᾔειτον `impf.mp.ind.2.du`, ᾐείτην `impf.mp.ind.3.du`, ᾔειμεν `impf.mp.ind.1.pl`, ᾔειτε `impf.mp.ind.2.pl`, ᾔεισᾰν `impf.mp.ind.3.pl`, ἐλήλῠτον `perf.act.ind.2.du`, ἐλήλῠτον `perf.act.ind.3.du`, ἐλήλῠμεν `perf.act.ind.1.pl`, ἐλήλῠτε `perf.act.ind.2.pl`
 - ἔχω: 19/115: σχεθήσομαι `fut.pass.ind.1.sg`, σχεθήσῃ `fut.pass.ind.2.sg`, σχεθήσει `fut.pass.ind.2.sg`, σχεθήσεται `fut.pass.ind.3.sg`, σχεθήσεσθον `fut.pass.ind.2.du`, σχεθήσεσθον `fut.pass.ind.3.du`, σχεθησόμεθᾰ `fut.pass.ind.1.pl`, σχεθήσεσθε `fut.pass.ind.2.pl`, σχεθήσονται `fut.pass.ind.3.pl`, σχεθήσεσθαι `fut.pass.inf`, ἐσχέθην `aor.pass.ind.1.sg`, ἐσχέθης `aor.pass.ind.2.sg`, ἐσχέθη `aor.pass.ind.3.sg`, ἐσχέθητον `aor.pass.ind.2.du`, ἐσχεθήτην `aor.pass.ind.3.du`, ἐσχέθημεν `aor.pass.ind.1.pl`, ἐσχέθητε `aor.pass.ind.2.pl`, ἐσχέθησᾰν `aor.pass.ind.3.pl`, σχεθῆναι `aor.pass.inf`
-- ἥκω: 3/87: ἥκᾱσῐ `perf.act.ind.3.pl`, ἥκᾱσῐν `perf.act.ind.3.pl`, ἡκέναι `perf.act.inf`
-- ὀνομάζω: 1/115: ὠνομᾰ́σᾰται `perf.mp.ind.3.pl`
-- ὑπολαμβάνω: 1/105: ῠ̔πειλήβᾰται `perf.mp.ind.3.pl`
 
 <!-- morpheus:end -->

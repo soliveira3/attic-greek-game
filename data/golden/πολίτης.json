@@ -1,0 +1,26 @@
+{
+  "lemma": "πολίτης",
+  "pos": "noun",
+  "class": "decl1-masc-es",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["πολῑ́της"],
+    "gen.sg": ["πολῑ́του"],
+    "dat.sg": ["πολῑ́τῃ"],
+    "acc.sg": ["πολῑ́την"],
+    "voc.sg": ["πολῖτᾰ"],
+    "nom.du": ["πολῑ́τᾱ"],
+    "gen.du": ["πολῑ́ταιν"],
+    "dat.du": ["πολῑ́ταιν"],
+    "acc.du": ["πολῑ́τᾱ"],
+    "voc.du": ["πολῑ́τᾱ"],
+    "nom.pl": ["πολῖται"],
+    "gen.pl": ["πολῑτῶν"],
+    "dat.pl": ["πολῑ́ταις"],
+    "acc.pl": ["πολῑ́τᾱς"],
+    "voc.pl": ["πολῖται"]
+  }
+}

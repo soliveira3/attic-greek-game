@@ -1,0 +1,26 @@
+{
+  "lemma": "φύλαξ",
+  "pos": "noun",
+  "class": "decl3-velar",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["φῠ́λᾰξ"],
+    "gen.sg": ["φῠ́λᾰκος"],
+    "dat.sg": ["φῠ́λᾰκῐ"],
+    "acc.sg": ["φῠ́λᾰκᾰ"],
+    "voc.sg": ["φῠ́λᾰξ"],
+    "nom.du": ["φῠ́λᾰκε"],
+    "gen.du": ["φῠλᾰ́κοιν"],
+    "dat.du": ["φῠλᾰ́κοιν"],
+    "acc.du": ["φῠ́λᾰκε"],
+    "voc.du": ["φῠ́λᾰκε"],
+    "nom.pl": ["φῠ́λᾰκες"],
+    "gen.pl": ["φῠλᾰ́κων"],
+    "dat.pl": ["φῠ́λᾰξῐ", "φῠ́λᾰξῐν"],
+    "acc.pl": ["φῠ́λᾰκᾰς"],
+    "voc.pl": ["φῠ́λᾰκες"]
+  }
+}

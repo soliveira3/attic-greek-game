@@ -1,0 +1,26 @@
+{
+  "lemma": "βασιλεύς",
+  "pos": "noun",
+  "class": "decl3-eu",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["βᾰσῐλεύς"],
+    "gen.sg": ["βᾰσῐλέως"],
+    "dat.sg": ["βᾰσῐλεῖ"],
+    "acc.sg": ["βᾰσῐλέᾱ"],
+    "voc.sg": ["βᾰσῐλεῦ"],
+    "nom.du": ["βᾰσῐλῆ"],
+    "gen.du": ["βᾰσῐλέοιν"],
+    "dat.du": ["βᾰσῐλέοιν"],
+    "acc.du": ["βᾰσῐλῆ"],
+    "voc.du": ["βᾰσῐλῆ"],
+    "nom.pl": ["βᾰσῐλῆς", "βᾰσῐλεῖς"],
+    "gen.pl": ["βᾰσῐλέων"],
+    "dat.pl": ["βᾰσῐλεῦσῐ", "βᾰσῐλεῦσῐν"],
+    "acc.pl": ["βᾰσῐλέᾱς"],
+    "voc.pl": ["βᾰσῐλῆς", "βᾰσῐλεῖς"]
+  }
+}

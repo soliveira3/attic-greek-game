@@ -1,0 +1,26 @@
+{
+  "lemma": "νεανίας",
+  "pos": "noun",
+  "class": "decl1-masc-as",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["νεᾱνῐ́ᾱς"],
+    "gen.sg": ["νεᾱνῐ́ου"],
+    "dat.sg": ["νεᾱνῐ́ᾳ"],
+    "acc.sg": ["νεᾱνῐ́ᾱν"],
+    "voc.sg": ["νεᾱνῐ́ᾱ"],
+    "nom.du": ["νεᾱνῐ́ᾱ"],
+    "gen.du": ["νεᾱνῐ́αιν"],
+    "dat.du": ["νεᾱνῐ́αιν"],
+    "acc.du": ["νεᾱνῐ́ᾱ"],
+    "voc.du": ["νεᾱνῐ́ᾱ"],
+    "nom.pl": ["νεᾱνῐ́αι"],
+    "gen.pl": ["νεᾱνῐῶν"],
+    "dat.pl": ["νεᾱνῐ́αις"],
+    "acc.pl": ["νεᾱνῐ́ᾱς"],
+    "voc.pl": ["νεᾱνῐ́αι"]
+  }
+}

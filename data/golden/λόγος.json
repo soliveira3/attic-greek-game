@@ -1,0 +1,26 @@
+{
+  "lemma": "λόγος",
+  "pos": "noun",
+  "class": "decl2-mf",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["λόγος"],
+    "gen.sg": ["λόγου"],
+    "dat.sg": ["λόγῳ"],
+    "acc.sg": ["λόγον"],
+    "voc.sg": ["λόγε"],
+    "nom.du": ["λόγω"],
+    "gen.du": ["λόγοιν"],
+    "dat.du": ["λόγοιν"],
+    "acc.du": ["λόγω"],
+    "voc.du": ["λόγω"],
+    "nom.pl": ["λόγοι"],
+    "gen.pl": ["λόγων"],
+    "dat.pl": ["λόγοις"],
+    "acc.pl": ["λόγους"],
+    "voc.pl": ["λόγοι"]
+  }
+}

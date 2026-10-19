@@ -1,0 +1,101 @@
+# Exclusions applied by pipeline/build_paradigms.py (format: see pipeline/exclusions.py).
+# Nothing here edits a form; each rule only removes source data from the output.
+# Reviewed 2026-10-19 against data/paradigms/REPORT.md (Morpheus cross-check + competing forms).
+
+## Whole lemmas
+ἀπαλλάσσω   # Wiktionary has no Attic -ττ- entry; every form is spelt with -σσ- (not Attic)
+ἔρομαι      # present system is not Attic (Attic uses ἐρωτάω); Morpheus parses the 'present' forms as 2nd aorist
+εἰκός       # a perfect participle used as a noun; Morpheus parses every form as a participle; not a model dental stem
+πρέσβυς     # irregular (Attic plural comes from another stem); Morpheus disagrees with the acc. pl.
+λαός        # not the Attic word (Attic is the Attic-declension λεώς, out of scope)
+
+## Tense-voice blocks
+ἁμαρτάνω  fut.act     # the Attic future is middle; Morpheus does not parse these as futures
+ἥκω       perf.act    # 'perfect' forms are doubtful; Morpheus parses them as imperfect / forms of ἵημι
+προσήκω   perf.act    # same as ἥκω
+λανθάνω   perf        # perfect forms are non-Attic; Morpheus does not recognise them or parses them as aorist
+οἴομαι    aor.mid     # not the Attic aorist; Morpheus does not recognise these forms
+αἰσθάνομαι  aor.pass  # rare/late; Morpheus does not recognise these forms
+αἰσθάνομαι  fut.pass  # rare/late; Morpheus does not recognise these forms
+ἔρχομαι   impf        # these are the imperfect of εἶμι, active in form but tagged middle in the source
+ἀποκτείνω perf.mp     # not Attic; Morpheus does not recognise these forms
+συμφέρω   perf.mp     # doubtful forms; Morpheus does not recognise them
+βλέπω     perf        # late forms; Morpheus does not recognise them
+τέμνω     fut.pass    # not the usual Attic future passive; Morpheus does not recognise it
+μέλλω     impf.mp     # Morpheus does not recognise these forms
+χαίρω     aor.act     # late form; Morpheus does not recognise it (the Attic aorist is passive in form)
+βαίνω     aor         # active aorist is a root aorist (out of scope); the middle and passive left over are rare
+συμβαίνω  aor         # as βαίνω
+
+## Perfect middle/passive 3rd plural in -αται
+# Ionic/old-Attic forms. Ordinary Attic uses a periphrasis (participle + εἰσί), which v1 does
+# not model, so these cells are removed; the perfect middle/passive block of each verb is then
+# dropped as incomplete (see REPORT.md). Backlog: periphrastic 3rd plural.
+λαμβάνω  perf.mp.ind.3.pl  εἰλήφᾰται
+γράφω  perf.mp.ind.3.pl  γεγρᾰ́φᾰται
+φέρω  perf.mp.ind.3.pl  ἐνηνέγᾰται
+ὑπάρχω  perf.mp.ind.3.pl  ῠ̔πήρχᾰται
+ἄρχω  perf.mp.ind.3.pl  ἤρχᾰται
+γιγνώσκω  perf.mp.ind.3.pl  ἐγνώσᾰται
+τυγχάνω  perf.mp.ind.3.pl  τετεύχᾰται
+ἄγω  perf.mp.ind.3.pl  ἤγᾰται
+πείθω  perf.mp.ind.3.pl  πεπείσᾰται
+νομίζω  perf.mp.ind.3.pl  νενομῐ́δᾰται
+ὀνομάζω  perf.mp.ind.3.pl  ὠνομᾰ́σᾰται
+κελεύω  perf.mp.ind.3.pl  κεκελεύσᾰται
+φεύγω  perf.mp.ind.3.pl  πεφῠ́γᾰται
+σῴζω  perf.mp.ind.3.pl  σεσῴσᾰται
+πέμπω  perf.mp.ind.3.pl  πεπέμπᾰται
+διδάσκω  perf.mp.ind.3.pl  δεδῐδᾰ́κᾰται
+δέχομαι  perf.mp.ind.3.pl  δεδέχᾰται
+ἐργάζομαι  perf.mp.ind.3.pl  εἰργᾰ́σᾰται
+τρέφω  perf.mp.ind.3.pl  τεθρᾰ́πᾰται
+θαυμάζω  perf.mp.ind.3.pl  τεθαυμᾰ́δᾰται
+καταλαμβάνω  perf.mp.ind.3.pl  κᾰτειλήφᾰται
+αἴρω  perf.mp.ind.3.pl  ἤρᾰται
+ἀποκτείνω  perf.mp.ind.3.pl  ἀπεκτᾰ́νᾰται
+κατασκευάζω  perf.mp.ind.3.pl  κᾰτεσκευᾰ́σᾰται
+διαφθείρω  perf.mp.ind.3.pl  δῐεφθᾰ́ρᾰται
+πυνθάνομαι  perf.mp.ind.3.pl  πεπῠ́σᾰται
+ὑπολαμβάνω  perf.mp.ind.3.pl  ῠ̔πειλήβᾰται
+λανθάνω  perf.mp.ind.3.pl  λελᾰ́θᾰται
+τρέπω  perf.mp.ind.3.pl  τετράφᾰται
+λείπω  perf.mp.ind.3.pl  λελείπᾰται
+τίκτω  perf.mp.ind.3.pl  τετέκᾰται
+κομίζω  perf.mp.ind.3.pl  κεκομῐ́δᾰται
+βλέπω  perf.mp.ind.3.pl  βεβλέπᾰται
+παρασκευάζω  perf.mp.ind.3.pl  πᾰρεσκευᾰ́σᾰται
+ἀπαλλάσσω  perf.mp.ind.3.pl  ἀπηλλᾰ́χᾰται
+διώκω  perf.mp.ind.3.pl  δεδῐώχᾰται
+φράζω  perf.mp.ind.3.pl  πεφρᾰ́δᾰται
+ἀγγέλλω  perf.mp.ind.3.pl  ἠγγέλᾰται
+
+## Single non-Attic, poetic or crasis alternates
+# syncopated poetic perfects (Attic: -θαμεν, -θατε); Morpheus does not recognise them
+ἔρχομαι  perf.act.ind.2.du  ἐλήλῠτον
+ἔρχομαι  perf.act.ind.3.du  ἐλήλῠτον
+ἔρχομαι  perf.act.ind.1.pl  ἐλήλῠμεν
+ἔρχομαι  perf.act.ind.2.pl  ἐλήλῠτε
+πάσχω  perf.act.ind.2.pl  πέπασθε
+πάσχω  perf.act.ind.2.pl  πέποσθε
+# typo in the source (accent cannot stand on the antepenult before long -ην)
+οἴομαι  impf.mp.ind.1.sg  ᾤομην
+# irregular accent; Morpheus does not recognise it
+τρέπω  perf.mp.inf  τετρᾶφθαι
+# Epic / old dative alternates; the Attic forms πόλεων, πόλει remain
+πόλις  gen.pl  πολήων
+πόλις  dat.sg  πόλῑ
+πόλις  dat.sg  πόλῃ
+# uncontracted (Ionic/poetic) alternate; the Attic contracted form remains
+ἄστυ  nom.pl  ᾰ̓́στεᾰ
+ἄστυ  acc.pl  ᾰ̓́στεᾰ
+ἄστυ  voc.pl  ᾰ̓́στεᾰ
+# crasis of ὦ + vocative, not a vocative form of the noun
+ἄνθρωπος  voc.sg  ὦνθρωπε
+ἄνθρωπος  voc.sg  ὤνθρωπε
+# 3rd-declension variant of a 2nd-declension noun
+κίνδυνος  dat.sg  κῐ́νδῡνῐ
+# masculine plural variant; the lemma is neuter
+στάδιον  nom.pl  στᾰ́δῐοι
+στάδιον  acc.pl  στᾰ́δῐους
+στάδιον  voc.pl  στᾰ́δῐοι

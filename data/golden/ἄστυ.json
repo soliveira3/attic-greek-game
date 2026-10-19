@@ -1,0 +1,26 @@
+{
+  "lemma": "ἄστυ",
+  "pos": "noun",
+  "class": "decl3-u",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["ᾰ̓́στῠ"],
+    "gen.sg": ["ᾰ̓́στεως"],
+    "dat.sg": ["ᾰ̓́στει"],
+    "acc.sg": ["ᾰ̓́στῠ"],
+    "voc.sg": ["ᾰ̓́στῠ"],
+    "nom.du": ["ᾰ̓́στει"],
+    "gen.du": ["ᾰ̓στέοιν"],
+    "dat.du": ["ᾰ̓στέοιν"],
+    "acc.du": ["ᾰ̓́στει"],
+    "voc.du": ["ᾰ̓́στει"],
+    "nom.pl": ["ᾰ̓́στη"],
+    "gen.pl": ["ᾰ̓́στεων"],
+    "dat.pl": ["ᾰ̓́στεσῐ", "ᾰ̓́στεσῐν"],
+    "acc.pl": ["ᾰ̓́στη"],
+    "voc.pl": ["ᾰ̓́στη"]
+  }
+}

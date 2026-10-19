@@ -1,0 +1,26 @@
+{
+  "lemma": "σῶμα",
+  "pos": "noun",
+  "class": "decl3-dental",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["σῶμᾰ"],
+    "gen.sg": ["σώμᾰτος"],
+    "dat.sg": ["σώμᾰτῐ"],
+    "acc.sg": ["σῶμᾰ"],
+    "voc.sg": ["σῶμᾰ"],
+    "nom.du": ["σώμᾰτε"],
+    "gen.du": ["σωμᾰ́τοιν"],
+    "dat.du": ["σωμᾰ́τοιν"],
+    "acc.du": ["σώμᾰτε"],
+    "voc.du": ["σώμᾰτε"],
+    "nom.pl": ["σώμᾰτᾰ"],
+    "gen.pl": ["σωμᾰ́των"],
+    "dat.pl": ["σώμᾰσῐ", "σώμᾰσῐν"],
+    "acc.pl": ["σώμᾰτᾰ"],
+    "voc.pl": ["σώμᾰτᾰ"]
+  }
+}

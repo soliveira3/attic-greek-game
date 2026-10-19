@@ -1,0 +1,26 @@
+{
+  "lemma": "ἡγεμών",
+  "pos": "noun",
+  "class": "decl3-liquid",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["ἡγεμών"],
+    "gen.sg": ["ἡγεμόνος"],
+    "dat.sg": ["ἡγεμόνῐ"],
+    "acc.sg": ["ἡγεμόνᾰ"],
+    "voc.sg": ["ἡγεμών"],
+    "nom.du": ["ἡγεμόνε"],
+    "gen.du": ["ἡγεμόνοιν"],
+    "dat.du": ["ἡγεμόνοιν"],
+    "acc.du": ["ἡγεμόνε"],
+    "voc.du": ["ἡγεμόνε"],
+    "nom.pl": ["ἡγεμόνες"],
+    "gen.pl": ["ἡγεμόνων"],
+    "dat.pl": ["ἡγεμόσῐ", "ἡγεμόσῐν"],
+    "acc.pl": ["ἡγεμόνᾰς"],
+    "voc.pl": ["ἡγεμόνες"]
+  }
+}

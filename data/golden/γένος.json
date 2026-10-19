@@ -1,0 +1,26 @@
+{
+  "lemma": "γένος",
+  "pos": "noun",
+  "class": "decl3-s",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["γένος"],
+    "gen.sg": ["γένους"],
+    "dat.sg": ["γένει"],
+    "acc.sg": ["γένος"],
+    "voc.sg": ["γένος"],
+    "nom.du": ["γένει"],
+    "gen.du": ["γενοῖν"],
+    "dat.du": ["γενοῖν"],
+    "acc.du": ["γένει"],
+    "voc.du": ["γένει"],
+    "nom.pl": ["γένη"],
+    "gen.pl": ["γενῶν"],
+    "dat.pl": ["γένεσῐ", "γένεσῐν"],
+    "acc.pl": ["γένη"],
+    "voc.pl": ["γένη"]
+  }
+}

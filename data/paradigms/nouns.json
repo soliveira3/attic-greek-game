@@ -68,7 +68,7 @@
       "cells": [
         {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["πόλῐς"]},
         {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["πόλεως"]},
-        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["πόλει", "πόλῑ", "πόλῃ"]},
+        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["πόλει"]},
         {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["πόλῐν"]},
         {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["πόλῐ"]},
         {"key": "nom.du", "case": "nom", "number": "du", "forms": ["πόλη", "πόλει"]},
@@ -77,7 +77,7 @@
         {"key": "acc.du", "case": "acc", "number": "du", "forms": ["πόλη", "πόλει"]},
         {"key": "voc.du", "case": "voc", "number": "du", "forms": ["πόλη", "πόλει"]},
         {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["πόλεις"]},
-        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["πόλεων", "πολήων"]},
+        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["πόλεων"]},
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["πόλεσῐ", "πόλεσῐν"]},
         {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["πόλεις"]},
         {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["πόλεις"]}
@@ -97,7 +97,7 @@
         {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["ᾰ̓νθρώπου"]},
         {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["ᾰ̓νθρώπῳ"]},
         {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["ᾰ̓́νθρωπον"]},
-        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["ᾰ̓́νθρωπε", "ὦνθρωπε", "ὤνθρωπε"]},
+        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["ᾰ̓́νθρωπε"]},
         {"key": "nom.du", "case": "nom", "number": "du", "forms": ["ᾰ̓νθρώπω"]},
         {"key": "gen.du", "case": "gen", "number": "du", "forms": ["ᾰ̓νθρώποιν"]},
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["ᾰ̓νθρώποιν"]},
@@ -2298,60 +2298,6 @@
       ]
     },
     {
-      "id": "πρέσβυς",
-      "lemma": "πρέσβυς",
-      "dccLemma": "πρέσβυς",
-      "pos": "noun",
-      "class": "decl3-u",
-      "gender": ["m"],
-      "gloss": "old man; (pl.) ambassadors",
-      "rank": 363,
-      "cells": [
-        {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["πρέσβῠς"]},
-        {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["πρέσβεως", "πρέσβεος"]},
-        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["πρέσβει"]},
-        {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["πρέσβῠν"]},
-        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["πρέσβῠ"]},
-        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["πρέσβει"]},
-        {"key": "gen.du", "case": "gen", "number": "du", "forms": ["πρεσβέοιν"]},
-        {"key": "dat.du", "case": "dat", "number": "du", "forms": ["πρεσβέοιν"]},
-        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["πρέσβει"]},
-        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["πρέσβει"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["πρέσβεις"]},
-        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["πρέσβεων"]},
-        {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["πρέσβεσῐ", "πρέσβεσῐν"]},
-        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["πρέσβεις"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["πρέσβεις"]}
-      ]
-    },
-    {
-      "id": "λαός",
-      "lemma": "λαός",
-      "dccLemma": "λαός",
-      "pos": "noun",
-      "class": "decl2-mf",
-      "gender": ["m"],
-      "gloss": "the people, folk",
-      "rank": 367,
-      "cells": [
-        {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["λᾱός"]},
-        {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["λᾱοῦ"]},
-        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["λᾱῷ"]},
-        {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["λᾱόν"]},
-        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["λᾱέ"]},
-        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["λᾱώ"]},
-        {"key": "gen.du", "case": "gen", "number": "du", "forms": ["λᾱοῖν"]},
-        {"key": "dat.du", "case": "dat", "number": "du", "forms": ["λᾱοῖν"]},
-        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["λᾱώ"]},
-        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["λᾱώ"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["λᾱοί"]},
-        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["λᾱῶν"]},
-        {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["λᾱοῖς"]},
-        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["λᾱούς"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["λᾱοί"]}
-      ]
-    },
-    {
       "id": "οἰκία",
       "lemma": "οἰκία",
       "dccLemma": "οἰκία",
@@ -2741,7 +2687,7 @@
       "cells": [
         {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["κῐ́νδῡνος"]},
         {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["κῐνδῡ́νου"]},
-        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["κῐνδῡ́νῳ", "κῐ́νδῡνῐ"]},
+        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["κῐνδῡ́νῳ"]},
         {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["κῐ́νδῡνον"]},
         {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["κῐ́νδῡνε"]},
         {"key": "nom.du", "case": "nom", "number": "du", "forms": ["κῐνδῡ́νω"]},
@@ -2965,11 +2911,11 @@
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["στᾰδῐ́οιν"]},
         {"key": "acc.du", "case": "acc", "number": "du", "forms": ["στᾰδῐ́ω"]},
         {"key": "voc.du", "case": "voc", "number": "du", "forms": ["στᾰδῐ́ω"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["στᾰ́δῐᾰ", "στᾰ́δῐοι"]},
+        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["στᾰ́δῐᾰ"]},
         {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["στᾰδῐ́ων"]},
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["στᾰδῐ́οις"]},
-        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["στᾰ́δῐᾰ", "στᾰ́δῐους"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["στᾰ́δῐᾰ", "στᾰ́δῐοι"]}
+        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["στᾰ́δῐᾰ"]},
+        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["στᾰ́δῐᾰ"]}
       ]
     },
     {
@@ -3159,33 +3105,6 @@
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["δεσπόταις"]},
         {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["δεσπότᾱς"]},
         {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["δεσπόται"]}
-      ]
-    },
-    {
-      "id": "εἰκός",
-      "lemma": "εἰκός",
-      "dccLemma": "εἰκός",
-      "pos": "noun",
-      "class": "decl3-dental",
-      "gender": ["n"],
-      "gloss": "likelihood, probability; εἰκός (ἐστι) it is likely (+infin.) →ἔοικα",
-      "rank": 488,
-      "cells": [
-        {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["εἰκός"]},
-        {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["εἰκότος"]},
-        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["εἰκότῐ"]},
-        {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["εἰκός"]},
-        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["εἰκός"]},
-        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["εἰκότε"]},
-        {"key": "gen.du", "case": "gen", "number": "du", "forms": ["εἰκότοιν"]},
-        {"key": "dat.du", "case": "dat", "number": "du", "forms": ["εἰκότοιν"]},
-        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["εἰκότε"]},
-        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["εἰκότε"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["εἰκότᾰ"]},
-        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["εἰκότων"]},
-        {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["εἰκόσῐ", "εἰκόσῐν"]},
-        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["εἰκότᾰ"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["εἰκότᾰ"]}
       ]
     },
     {
@@ -3405,6 +3324,33 @@
       ]
     },
     {
+      "id": "γέρων",
+      "lemma": "γέρων",
+      "dccLemma": null,
+      "pos": "noun",
+      "class": "decl3-nt",
+      "gender": ["m"],
+      "gloss": "an old man",
+      "rank": null,
+      "cells": [
+        {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["γέρων"]},
+        {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["γέροντος"]},
+        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["γέροντῐ"]},
+        {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["γέροντᾰ"]},
+        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["γέρον"]},
+        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["γέροντε"]},
+        {"key": "gen.du", "case": "gen", "number": "du", "forms": ["γερόντοιν"]},
+        {"key": "dat.du", "case": "dat", "number": "du", "forms": ["γερόντοιν"]},
+        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["γέροντε"]},
+        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["γέροντε"]},
+        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["γέροντες"]},
+        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["γερόντων"]},
+        {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["γέρουσῐ", "γέρουσῐν"]},
+        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["γέροντᾰς"]},
+        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["γέροντες"]}
+      ]
+    },
+    {
       "id": "δῶρον",
       "lemma": "δῶρον",
       "dccLemma": null,
@@ -3486,6 +3432,33 @@
       ]
     },
     {
+      "id": "φλέψ",
+      "lemma": "φλέψ",
+      "dccLemma": null,
+      "pos": "noun",
+      "class": "decl3-labial",
+      "gender": ["f"],
+      "gloss": "vein",
+      "rank": null,
+      "cells": [
+        {"key": "nom.sg", "case": "nom", "number": "sg", "forms": ["φλέψ"]},
+        {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["φλεβός"]},
+        {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["φλεβῐ́"]},
+        {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["φλέβᾰ"]},
+        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["φλέψ"]},
+        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["φλέβε"]},
+        {"key": "gen.du", "case": "gen", "number": "du", "forms": ["φλεβοῖν"]},
+        {"key": "dat.du", "case": "dat", "number": "du", "forms": ["φλεβοῖν"]},
+        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["φλέβε"]},
+        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["φλέβε"]},
+        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["φλέβες"]},
+        {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["φλεβῶν"]},
+        {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["φλεψῐ́", "φλεψῐ́ν"]},
+        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["φλέβᾰς"]},
+        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["φλέβες"]}
+      ]
+    },
+    {
       "id": "φύλαξ",
       "lemma": "φύλαξ",
       "dccLemma": null,
@@ -3532,11 +3505,11 @@
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["ᾰ̓στέοιν"]},
         {"key": "acc.du", "case": "acc", "number": "du", "forms": ["ᾰ̓́στει"]},
         {"key": "voc.du", "case": "voc", "number": "du", "forms": ["ᾰ̓́στει"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["ᾰ̓́στη", "ᾰ̓́στεᾰ"]},
+        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["ᾰ̓́στη"]},
         {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["ᾰ̓́στεων"]},
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["ᾰ̓́στεσῐ", "ᾰ̓́στεσῐν"]},
-        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["ᾰ̓́στη", "ᾰ̓́στεᾰ"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["ᾰ̓́στη", "ᾰ̓́στεᾰ"]}
+        {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["ᾰ̓́στη"]},
+        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["ᾰ̓́στη"]}
       ]
     }
   ]

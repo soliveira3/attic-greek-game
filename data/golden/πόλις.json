@@ -1,0 +1,26 @@
+{
+  "lemma": "πόλις",
+  "pos": "noun",
+  "class": "decl3-i",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["πόλῐς"],
+    "gen.sg": ["πόλεως"],
+    "dat.sg": ["πόλει"],
+    "acc.sg": ["πόλῐν"],
+    "voc.sg": ["πόλῐ"],
+    "nom.du": ["πόλη", "πόλει"],
+    "gen.du": ["πολέοιν"],
+    "dat.du": ["πολέοιν"],
+    "acc.du": ["πόλη", "πόλει"],
+    "voc.du": ["πόλη", "πόλει"],
+    "nom.pl": ["πόλεις"],
+    "gen.pl": ["πόλεων"],
+    "dat.pl": ["πόλεσῐ", "πόλεσῐν"],
+    "acc.pl": ["πόλεις"],
+    "voc.pl": ["πόλεις"]
+  }
+}

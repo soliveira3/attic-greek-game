@@ -1,0 +1,26 @@
+{
+  "lemma": "γέρων",
+  "pos": "noun",
+  "class": "decl3-nt",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["γέρων"],
+    "gen.sg": ["γέροντος"],
+    "dat.sg": ["γέροντῐ"],
+    "acc.sg": ["γέροντᾰ"],
+    "voc.sg": ["γέρον"],
+    "nom.du": ["γέροντε"],
+    "gen.du": ["γερόντοιν"],
+    "dat.du": ["γερόντοιν"],
+    "acc.du": ["γέροντε"],
+    "voc.du": ["γέροντε"],
+    "nom.pl": ["γέροντες"],
+    "gen.pl": ["γερόντων"],
+    "dat.pl": ["γέρουσῐ", "γέρουσῐν"],
+    "acc.pl": ["γέροντᾰς"],
+    "voc.pl": ["γέροντες"]
+  }
+}

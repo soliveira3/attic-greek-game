@@ -1,0 +1,26 @@
+{
+  "lemma": "δῶρον",
+  "pos": "noun",
+  "class": "decl2-n",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["δῶρον"],
+    "gen.sg": ["δώρου"],
+    "dat.sg": ["δώρῳ"],
+    "acc.sg": ["δῶρον"],
+    "voc.sg": ["δῶρον"],
+    "nom.du": ["δώρω"],
+    "gen.du": ["δώροιν"],
+    "dat.du": ["δώροιν"],
+    "acc.du": ["δώρω"],
+    "voc.du": ["δώρω"],
+    "nom.pl": ["δῶρᾰ"],
+    "gen.pl": ["δώρων"],
+    "dat.pl": ["δώροις"],
+    "acc.pl": ["δῶρᾰ"],
+    "voc.pl": ["δῶρᾰ"]
+  }
+}

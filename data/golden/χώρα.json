@@ -1,0 +1,26 @@
+{
+  "lemma": "χώρα",
+  "pos": "noun",
+  "class": "decl1-a-long",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["χώρᾱ"],
+    "gen.sg": ["χώρᾱς"],
+    "dat.sg": ["χώρᾳ"],
+    "acc.sg": ["χώρᾱν"],
+    "voc.sg": ["χώρᾱ"],
+    "nom.du": ["χώρᾱ"],
+    "gen.du": ["χώραιν"],
+    "dat.du": ["χώραιν"],
+    "acc.du": ["χώρᾱ"],
+    "voc.du": ["χώρᾱ"],
+    "nom.pl": ["χῶραι"],
+    "gen.pl": ["χωρῶν"],
+    "dat.pl": ["χώραις"],
+    "acc.pl": ["χώρᾱς"],
+    "voc.pl": ["χῶραι"]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "lemma": "θάλαττα",
+  "pos": "noun",
+  "class": "decl1-a-short",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["θᾰ́λᾰττᾰ"],
+    "gen.sg": ["θᾰλᾰ́ττης"],
+    "dat.sg": ["θᾰλᾰ́ττῃ"],
+    "acc.sg": ["θᾰ́λᾰττᾰν"],
+    "voc.sg": ["θᾰ́λᾰττᾰ"],
+    "nom.du": ["θᾰλᾰ́ττᾱ"],
+    "gen.du": ["θᾰλᾰ́τταιν"],
+    "dat.du": ["θᾰλᾰ́τταιν"],
+    "acc.du": ["θᾰλᾰ́ττᾱ"],
+    "voc.du": ["θᾰλᾰ́ττᾱ"],
+    "nom.pl": ["θᾰ́λᾰτται"],
+    "gen.pl": ["θᾰλᾰττῶν"],
+    "dat.pl": ["θᾰλᾰ́τταις"],
+    "acc.pl": ["θᾰλᾰ́ττᾱς"],
+    "voc.pl": ["θᾰ́λᾰτται"]
+  }
+}

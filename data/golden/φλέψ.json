@@ -1,0 +1,26 @@
+{
+  "lemma": "φλέψ",
+  "pos": "noun",
+  "class": "decl3-labial",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["φλέψ"],
+    "gen.sg": ["φλεβός"],
+    "dat.sg": ["φλεβῐ́"],
+    "acc.sg": ["φλέβᾰ"],
+    "voc.sg": ["φλέψ"],
+    "nom.du": ["φλέβε"],
+    "gen.du": ["φλεβοῖν"],
+    "dat.du": ["φλεβοῖν"],
+    "acc.du": ["φλέβε"],
+    "voc.du": ["φλέβε"],
+    "nom.pl": ["φλέβες"],
+    "gen.pl": ["φλεβῶν"],
+    "dat.pl": ["φλεψῐ́", "φλεψῐ́ν"],
+    "acc.pl": ["φλέβᾰς"],
+    "voc.pl": ["φλέβες"]
+  }
+}

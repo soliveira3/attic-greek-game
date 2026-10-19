@@ -1,0 +1,26 @@
+{
+  "lemma": "τιμή",
+  "pos": "noun",
+  "class": "decl1-eta",
+  "verified": false,
+  "verifiedBy": "",
+  "verifiedOn": "",
+  "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
+  "cells": {
+    "nom.sg": ["τῑμή"],
+    "gen.sg": ["τῑμῆς"],
+    "dat.sg": ["τῑμῇ"],
+    "acc.sg": ["τῑμήν"],
+    "voc.sg": ["τῑμή"],
+    "nom.du": ["τῑμᾱ́"],
+    "gen.du": ["τῑμαῖν"],
+    "dat.du": ["τῑμαῖν"],
+    "acc.du": ["τῑμᾱ́"],
+    "voc.du": ["τῑμᾱ́"],
+    "nom.pl": ["τῑμαί"],
+    "gen.pl": ["τῑμῶν"],
+    "dat.pl": ["τῑμαῖς"],
+    "acc.pl": ["τῑμᾱ́ς"],
+    "voc.pl": ["τῑμαί"]
+  }
+}

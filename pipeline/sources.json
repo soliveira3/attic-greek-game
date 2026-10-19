@@ -1,0 +1,18 @@
+{
+  "kaikki": {
+    "url": "https://kaikki.org/dictionary/Ancient%20Greek/kaikki.org-dictionary-AncientGreek.jsonl",
+    "file": "raw/kaikki-grc.jsonl",
+    "extracted": "2026-10-03",
+    "wiktionary_dump": "2026-09-02",
+    "sha256": "69d7185819de51cc746d96f8033eb6c3f3e2016a314c2ee640ec09ce80623029"
+  },
+  "dcc": {
+    "url": "https://dcc.dickinson.edu/greek-core-list",
+    "file": "raw/dcc-greek-core.html",
+    "retrieved": "2026-10-19"
+  },
+  "morpheus": {
+    "native": "libmorpheus v0.3.2 (Linux x86-64 glibc release archive)",
+    "stemlib": "perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e)"
+  }
+}

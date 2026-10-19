@@ -1,0 +1,525 @@
+lemma,pos,gloss,rank,dcc_pos,headword
+ὁ,article,the,1,definite article,ὁ ἡ τό
+αὐτός,adj,"him- her- itself etc. (for emphasis); the same (with article); (pron.) him, her, it etc. (in oblique cases)",2,adjective: 1st and 2nd declension,αὐτός αὐτή αὐτό
+καί,other,"and, also, even; καί...καί both...and",3,conjunction: coordinating,καί
+δέ,other,and; but,4,conjunction: coordinating,δέ
+τίς,other,who? what? which? (interrog. pron./adj.),5,pronoun,τίς τί
+εἰμί,verb,"be, exist",6,verb: irregular,"εἰμί, ἔσομαι, impf. ἦν, infin. εἶναι"
+οὗτος,other,"this, these; μετὰ ταῦτα after this",7,pronoun,οὗτος αὕτη τοῦτο
+ἤ,other,or; than (after a comparative); ἤ...ἤ either...or,8,conjunction: coordinating,ἤ
+ἐν,other,"in, among (+dat.)",9,preposition,ἐν
+μέν...δέ,other,on the one hand...on the other hand (often untranslated); μέν (by itself) indeed,10,conjunction: coordinating,μέν...δέ
+τις,other,"someone, something, anyone, anything, some, any (enclitic indef. pron./adj.)",11,pronoun,τις τι
+ὅς,other,"who, which, that",12,pronoun,ὅς ἥ ὅ
+γάρ,other,"for (explanatory), indeed, in fact (confirming)",13,conjunction: coordinating,γάρ
+οὐ,other,not (with indicative verbs),14,adverb,"οὐ, οὐκ, οὐχ"
+λέγω,verb,"say, speak (of), recount; pick up, collect, count",15,verb: irregular,"λέγω, ἐρῶ, εἶπον, εἴρηκα, λέλεγμαι, ἐλέχθην and ἐρρήθην"
+ὡς,other,"as, since; (introducing purpose clause) so that (+subj./opt.); (introducing indir. statement) that",16,conjunction: subordinating,ὡς
+τε,other,and; τε…τε both…and,17,conjunction: coordinating,τε
+εἰς,other,"into, to, towards (+acc.)",18,preposition,εἰς
+ἐπί,other,"at (+gen.); on (+dat.); on to, against (+acc.)",19,preposition,ἐπί
+κατά,other,"down, down (from or along), throughout, according to; κατὰ γῆν by land; κατὰ φύσιν in accordance with nature; κατ’ ἔθνη by nations; καθ᾿ἕνα one by one.",20,preposition,κατά
+ἐγώ,other,"I, we",21,pronoun,"ἐγώ ἐμοῦ, (pl.) ἡμεῖς, ἡμῶν"
+πρός,other,"from the side of, in the presence of (+gen.); near, at, in addition to (+dat.); to, towards, in relation to (+acc.)",22,preposition,πρός
+γίγνομαι,verb,"become; be born; happen, be",23,verb: deponent,"γίγνομαι, γενήσομαι, 2 aor. ἐγενόμην, γέγονα, γεγένημαι, ἐγενήθην"
+ἐάν,other,if (+subj.),24,conjunction: subordinating,ἐάν (εἰ-ἄν)
+διά,other,"through, during, because of (+gen., acc.)",25,preposition,διά
+ἀλλά,other,but,26,conjunction: coordinating,ἀλλά
+πᾶς,noun,"every, all; whole (with article)",27,noun: 3rd declension irregular,πᾶς πᾶσα πᾶν
+ἔχω,verb,"have, hold, keep",28,verb: irregular,"ἔχω, ἕξω or σχήσω, 2 aor. ἔσχον, ἔσχηκα, impf. εἶχον"
+ἐκ,other,"from, out of (+gen.)",29,preposition,"ἐκ, ἐξ"
+πολύς,noun,"much, many; ὡς ἐπὶ τὸ πολύ for the most part",30,noun: 3rd declension irregular,πολύς πολλή πολύ
+περί,other,"around, about; concerning (+gen.)",31,preposition,περί
+μή,other,"not (marks the negative as subjective or conditional); εἰ μή if not, except",32,conjunction: subordinating,μή
+ὅστις,other,"anyone who, anything which; (in indir. quest.) who, which, what",33,pronoun,ὅστις ἥτις ὅ τι
+ἄν,other,"[marks verbs as potential (with optative), or generalizing (with subjunctive)]",34,adverb,ἄν
+σύ,other,you,35,pronoun,"σύ, σοῦ, (pl.) ὑμεῖς, ὑμῶν"
+ἀνά,other,"up, on; throughout",36,preposition,ἀνά
+ὅτι,other,"because, that; (with superl.) as...as possible",37,conjunction: subordinating,ὅτι
+εἰ,other,if (+indic. or opt.); εἴπερ if indeed,38,conjunction: subordinating,εἰ
+ἄλλος,adj,"other, another",39,adjective: 1st and 2nd declension,ἄλλος ἄλλη ἄλλο
+ἀπό,other,from (+gen.),40,preposition,ἀπό
+φημί,verb,"say, assert, declare; οὐ φημί deny, refuse, say that...not",41,verb: -μι,"φημί, φήσω, impf. ἔφην"
+ὑπό,other,"under (+gen., dat.); by (+gen. of personal agent); down under (+acc.)",42,preposition,ὑπό
+ποιέω,verb,"make, produce, cause, do; (mid.) consider, reckon",43,verb: contracted,"ποιέω, ποιήσω, ἐποίησα, πεποίηκα, πεποίημαι, ἐποιήθην"
+οὖν,other,"therefore, accordingly; at any rate",44,adverb,οὖν
+λόγος,noun,"word, speech, discourse; thought, reason, account",45,noun: 2nd declension,"λόγος λόγου, ὁ"
+παρά,other,"from (+gen.); beside (+dat.); to, to the side of, contrary to (+acc.)",46,preposition,παρά
+οὕτως,other,in this way,47,adverb,οὕτως
+πρότερος,adj,"before, earlier; τὸ πρότερον previously, before",48,adjective: 1st and 2nd declension,πρότερος προτέρα πρότερον
+θεός,noun,"god, goddess",49,noun: 2nd declension,"θεός θεοῦ, ὁ/ἡ"
+μετά,other,with (+gen.); after (+acc.),50,preposition,μετά
+ἑαυτοῦ,other,him- her- itself (reflexive pron.),51,pronoun,ἑαυτοῦ ἑαυτῆς ἑαυτοῦ
+μέγας,adj,"big, great, powerful",52,adjective: 1st and 2nd declension,μέγας μεγάλη μέγα
+οὐδέ,other,"and not, but not, nor; οὐδέ...οὐδέ not even...nor yet",53,conjunction: coordinating,οὐδέ
+ἐκεῖνος,other,that person or thing; ἐκεῖνος…οὗτος the former…the latter,54,pronoun,ἐκεῖνος ἐκείνη ἐκεῖνο
+τοιοῦτος,adj,"such, of such a sort",55,adjective: 1st and 2nd declension,τοιοῦτος τοιαύτη τοιοῦτο
+οὐδείς,other,"no one, nothing",56,pronoun,οὐδείς οὐδεμία οὐδέν
+εἶπον,verb,"I said, I spoke, 2 aor. → λέγω, φημί",57,verb: irregular,εἶπον
+ἀγαθός,adj,"good, virtuous, brave, noble",58,adjective: 1st and 2nd declension,ἀγαθός ἀγαθή ἀγαθόν
+γε,other,"(enclitic) indeed; at least, at any rate",59,adverb,γε
+δή,other,"surely, really, now, in fact, indeed (gives greater exactness)",60,adverb,δή
+πόλις,noun,"city, city-state",61,noun: 3rd declension ι-stem,"πόλις πόλεως, ἡ"
+εἷς,adj,one,62,adjective: numeral,εἷς μία ἕν
+ἵημι,verb,"put in motion, let go, shoot; (mid.) hasten, rush",63,verb: -μι,"ἵημι, ἥσω, ἧκα, -εἷκα, εἷμαι, -εἵθην"
+δέω,verb,"lack, miss, stand in need of (+gen.)",64,verb: contracted,"δέω, δεήσω, ἐδέησα, δεδέηκα, δεδέημαι, ἐδεήθην"
+ἄνθρωπος,noun,human being,65,noun: 2nd declension,"ἄνθρωπος –ου, ὁ/ἡ"
+ὁράω,verb,"see, look (to)",66,verb: irregular,"ὁράω, ὄψομαι, 2 aor. εἶδον, ἑόρακα and ἑώρακα, ὤφθην, impf. ἑώρων"
+μόνος,adj,"alone, single",67,adjective: 1st and 2nd declension,μόνος μόνη μόνον
+οὔτε...οὔτε,other,neither...nor,68,conjunction: coordinating,οὔτε...οὔτε
+οἷος,adj,"such as, of what sort, like, (exclam.) what a!, how! ; οἷός τε (+infin.) fit or able to; οἷόν τε (+infin.) it is possible to",69,adjective: 1st and 2nd declension,οἷος οἵα οἷον
+λαμβάνω,verb,"take, grasp, seize; receive, get",70,verb: -ω labial stem,"λαμβάνω, λήψομαι, ἔλαβον, εἴληφα, εἴλημμαι, ἐλήφθην"
+δοκέω,verb,"think, suppose, imagine (+acc. and infin.); seem, seem good; (impers.) δοκεῖ μοι it seems to me",71,verb: contracted,"δοκέω, δόξω, ἔδοξα"
+ἕτερος,adj,"the other (of two); other, another",72,adjective: 1st and 2nd declension,ἕτερος ἑτέρα ἕτερον
+κακός,adj,"bad, wicked, cowardly",73,adjective: 1st and 2nd declension,κακός –ή –όν
+ἀνήρ,noun,"man, husband",74,noun: 3rd declension irregular,"ἀνήρ ἀνδρός, ὁ"
+ἐπεί,other,"after, since, when",75,conjunction: subordinating,ἐπεί
+ὅσος,adj,however much; as great as; (in pl.) as many as; ὅσον (adv.) as much as,76,adjective: 1st and 2nd declension,ὅσος ὅση ὅσον
+καλέω,verb,"call, summon",77,verb: contracted,"καλέω, καλῶ, ἐκάλεσα, κέκληκα, κέκλημαι, ἐκλήθην"
+σῶμα,noun,body,78,noun: 3rd declension consonant stem,"σῶμα σώματος, τό"
+δεῖ,verb,"it is necessary, one must, one ought (+acc. and infin.)",79,verb: impersonal,"δεῖ, δεήσει, impf. ἔδει"
+ὥσπερ,other,"just as, as if",80,conjunction: subordinating,ὥσπερ
+δίδωμι,verb,"give, grant, offer",81,verb: -μι,"δίδωμι, δώσω, ἔδωκα, δέδωκα, δέδομαι, ἐδόθην"
+ἔτι,other,"still, yet",82,adverb,ἔτι
+φύσις,noun,nature; (of the mind) one’s nature or disposition; regular order of nature,83,noun: 3rd declension ι-stem,"φύσις φύσεως, ἡ"
+μικρός,adj,"small, little, short",84,adjective: 1st and 2nd declension,μικρός –ά –όν
+δύναμαι,verb,"(+infin.) to be able (to), be strong enough (to)",85,verb: deponent,"δύναμαι, δυνήσομαι, ἐδυνήθην, δεδύνημαι"
+ὥστε,other,"(introducing natural or actual result clause) so as, so that, (with the result) that",86,conjunction: subordinating,ὥστε
+ἀρχή,noun,"beginning, origin; rule, empire, realm; magistracy",87,noun: 1st declension,"ἀρχή ἀρχῆς, ἡ"
+ἕκαστος,other,each (of several),88,pronoun,ἕκαστος ἑκάστη ἕκαστον
+ἡμέρα,noun,day,89,noun: 1st declension,"ἡμέρα ἡμέρας, ἡ"
+φύω,verb,"bring forth, produce, beget; 2 aor. ἔφυν grew, pf. πέφυκα be by nature",90,verb: -ω vowel stem,"φύω, φύσω, ἔφυσα"
+ἅπας,noun,all together,91,noun: 3rd declension irregular,ἅπας ἅπασα ἅπαν
+ὅμοιος,adj,"like, resembling (+dat.)",92,adjective: 1st and 2nd declension,ὅμοιος ὁμοία ὅμοιον
+νῦν,other,now,93,adverb,"νῦν, νυνί"
+γῆ,noun,earth,94,noun: 1st declension,"γῆ γῆς, ἡ"
+δύναμις,noun,"power, strength, ability",95,noun: 3rd declension ι-stem,"δύναμις δυνάμεως, ἡ"
+καλός,adj,"beautiful, noble, honorable",96,adjective: 1st and 2nd declension,καλός –ή –όν
+κύριος,noun,"lord, master",97,noun: 2nd declension,"κύριος κυρίου, ὁ"
+μᾶλλον,other,"more, rather; μᾶλλον...ἤ rather than",98,adverb,μᾶλλον
+ὅδε,other,this,99,pronoun,ὅδε ἥδε τόδε
+ὅλος,adj,"whole, entire, complete",100,adjective: 1st and 2nd declension,ὅλος ὅλη ὅλον
+μέρος,noun,"part, share",101,noun: 3rd declension σ-stem,"μέρος μέρους, τό"
+ἄρα,other,"therefore, then (drawing an inference)",102,adverb,ἄρα
+ἐμός,adj,"my, mine",103,adjective: 1st and 2nd declension,ἐμός ἐμή ἐμόν
+χράομαι,verb,"use, experience, suffer (+dat.); treat someone in a certain way (+dat. and adv.)",104,verb: deponent,"χράομαι, χρήσομαι, ἐχρησάμην, κέχρημαι, ἐχρήσθην"
+δύο,adj,two,105,adjective: numeral,δύο
+χρόνος,noun,time,106,noun: 2nd declension,"χρόνος χρόνου, ὁ"
+ἴσος,adj,"equal, the same as (+dat.)",107,adjective: 1st and 2nd declension,ἴσος ἴση ἴσον
+ὅταν,other,whenever (+subj.),108,conjunction: subordinating,ὅταν (ὅτε-ἄν)
+μόνον,other,only,109,adverb,μόνον
+οἶδα,verb,to know (pf. in pres. sense); to know how to (+infin.),110,verb: irregular,"οἶδα, infin. εἰδέναι, imper. ἴσθι, plupf. used as impf. ᾔδειν"
+βασιλεύς,noun,king,111,"noun: 3rd declension -εύς, -έως","βασιλεύς βασιλέως, ὁ"
+ὦ,other,oh! (unemphatic when with the vocative),112,interjection,ὦ
+βούλομαι,verb,"(+infin.) will, wish (to); be willing (to); ὁ βουλόμενος anyone who likes",113,verb: deponent,"βούλομαι, βουλήσομαι, βεβούλημαι, ἐβουλήθην"
+φαίνω,verb,"bring to light, make appear, make clear; (pass.) come to light, be seen, appear, appear to be (+ptc. or infin.)",114,verb: -ω liquid stem,"φαίνω, φανῶ, ἔφηνα, πέφηνα, πέφασμαι, ἐφάνην"
+γράφω,verb,write,115,verb: -ω labial stem,"γράφω, γράψω, ἔγραψα, γέγραφα, γέγραμμαι, ἐγράφην"
+φέρω,verb,"carry, bring, fetch; carry off or away; φέρε come now, well",116,verb: irregular,"φέρω, οἴσω, 1 aor. ἤνεγκα, 2 aor. ἤνεγκον, ἐνήνοχα, ἐνήνεγμαι, ἠνέχθην"
+ψυχή,noun,"breath, life, soul",117,noun: 1st declension,"ψυχή ψυχῆς, ἡ"
+μηδείς,other,"no one, nothing",118,pronoun,μηδείς μηδεμία μηδέν
+αἴτιος,adj,"responsible, guilty",119,adjective: 1st and 2nd declension,αἴτιος αἰτία αἴτιον
+πάλιν,other,"back, backwards; again",120,adverb,πάλιν
+μάλιστα,other,"most, most of all; (in replies) certainly",121,adverb,μάλιστα
+ὑπάρχω,verb,"exist, be, belong to; τὰ ὑπάρχοντα existing circumstances",122,verb: -ω palatal stem,"ὑπάρχω, ὑπάρξω, ὑπῆρξα, ὑπῆργμαι, ὑπήρχθην"
+ἄρχω,verb,"begin (+gen.); lead, rule, govern (+gen.)",123,verb: -ω palatal stem,"ἄρχω, ἄρξω, ἦρξα, ἦργμαι, ἤρχθην"
+γυνή,noun,"woman, wife",124,noun: 3rd declension irregular,"γυνή γυναικός, ἡ"
+ποτε,other,"at some time, ever, in the world",125,adverb,ποτε (enclitic)
+ἵνα,other,in order that (conj. +subj. or opt.); where (rel. adv. +indic.),126,conjunction: subordinating,ἵνα
+ὄνομα,noun,name; fame,127,noun: 3rd declension consonant stem,"ὄνομα ὀνόματος, τό"
+ὑπέρ,other,"for (+gen), beyond (+acc.)",128,preposition,ὑπέρ
+ἤδη,other,"already, now (of the immediate past); presently (of the immediate future)",129,adverb,ἤδη
+πατήρ,noun,father,130,noun: 3rd declension irregular,"πατήρ πατρός, ὁ"
+ἀκούω,verb,"listen (to), hear (of)",131,verb: -ω vowel stem,"ἀκούω, ἀκούσομαι, ἤκουσα, ἀκήκοα, plup. ἠκηκόη or ἀκηκόη, ἠκούσθην"
+γένος,noun,"race, family; kind, class",132,noun: 3rd declension σ-stem,"γένος γένους, τό"
+τόπος,noun,place; topic,133,noun: 2nd declension,"τόπος τόπου, ὁ"
+πράσσω,verb,"do, achieve, accomplish; do or fare in a certain way (+adv.)",134,verb: -ω dental stem,"πράσσω, πράξω, ἔπραξα, πέπραχα, πέπραγμαι, ἐπράχθην"
+πρῶτος,adj,"first, foremost, earliest; (adv.) τὸ πρῶτον in the first place",135,adjective: 1st and 2nd declension,πρῶτος πρώτη πρῶτον
+εὑρίσκω,verb,"find (out), discover, devise",136,verb: -ω palatal stem,"εὑρίσκω, εὑρήσω, 2 aor. ηὗρον or εὗρον, ηὕρηκα or εὕρηκα, εὕρημαι, εὑρέθην"
+παῖς,noun,"son, daughter, child; slave",137,noun: 3rd declension consonant stem,"παῖς παιδός, ὁ/ἡ"
+ἔρχομαι,verb,"come, go",138,verb: deponent,"ἔρχομαι, fut. εἶμι or ἐλεύσομαι, 2 aor. ἦλθον, ἐλήλυθα"
+υἱός,noun,son,139,noun: 2nd declension,"υἱός υἱοῦ, ὁ"
+ὕδωρ,noun,water,140,noun: 3rd declension consonant stem,"ὕδωρ ὕδατος, τό"
+ἴδιος,adj,"one’s own; peculiar, separate, distinct",141,adjective: 1st and 2nd declension,ἴδιος ἰδία ἴδιον
+σός,adj,"your, yours (sg.; ὑμέτερος = pl.)",142,adjective: 1st and 2nd declension,σός σή σόν
+γιγνώσκω,verb,"come to know, learn; judge, think, or determine that (+acc. and infin.)",143,verb: irregular,"γιγνώσκω, γνώσομαι, ἔγνων, ἔγνωκα, ἔγνωσμαι, ἐγνώσθην"
+τυγχάνω,verb,"hit, light upon, meet by chance (+gen.); reach, gain, obtain; happen to be (+ptc.)",144,verb: -ω palatal stem,"τυγχάνω, τεύξομαι, ἔτυχον, τετύχηκα, τέτυγμαι, ἐτύχθην"
+ἵστημι,verb,"make to stand, set",145,verb: -μι,"ἵστημι στήσω will set, ἔστησα set, caused to stand, 2 aor. ἔστην stood, ἕστηκα stand, plup. εἱστήκη stood, ἐστάθην stood"
+ἅμα,other,at the same time; (prep.) together with (+dat.),146,adverb,ἅμα
+ἄγω,verb,"lead, carry, bring; pass (time)",147,verb: -ω palatal stem,"ἄγω, ἄξω, ἤγαγον, ἦχα, ἦγμαι, ἤχθην"
+τρόπος,noun,"way, manner, fashion; way of life, habit, custom",148,noun: 2nd declension,"τρόπος τρόπου, ὁ"
+μήτε...μήτε,other,neither...nor,149,conjunction: coordinating,μήτε...μήτε
+μέσος,adj,"middle, in the middle, moderate; τὸ μέσον midst",150,adjective: 1st and 2nd declension,μέσος μέση μέσον
+ἀλλήλων,other,"(oblique cases plural only) one another, each other",151,pronoun,ἀλλήλων –οις
+ἀεί,other,always,152,adverb,ἀεί
+φίλος,adj,"beloved, dear; friendly",153,adjective: 1st and 2nd declension,φίλος φίλη φίλον
+συμβαίνω,verb,"meet, come to an agreement, correspond; happen, occur, come to pass; turn out in a certain way (+adv.), result",154,verb: -ω liquid stem,"συμβαίνω, συμβήσομαι, 2 aor. συνέβην, συμβέβηκα"
+ἔργον,noun,"work, achievement, exploit",155,noun: 2nd declension,"ἔργον ἔργου, τό"
+πλέω,verb,sail,156,verb: contracted,"πλέω, πλεύσομαι, ἔπλευσα, πέπλευκα, πέπλευσμαι, ἐπλεύσθην"
+τότε,other,"then, at that time; οἱ τότε the men of that time (opp. οἱ νῦν)",157,adverb,τότε
+μήν,other,[emphasizes preceding particle],158,adverb,μήν
+χρή,verb,"it is necessary, it is fated, one ought (+infin. or +acc. and infin.)",159,verb: impersonal,"χρή, impf. χρῆν or ἐχρῆν, infin. χρῆναι"
+δείκνυμι,verb,"show, point out",160,verb: -μι,"δείκνυμι, δείξω, ἔδειξα, δέδειχα, δέδειγμαι, ἐδείχθην"
+ζῷον,noun,"living being, animal",161,noun: 2nd declension,"ζῷον ζῴου, τό"
+πρᾶγμα,noun,"thing; (pl.) circumstances, affairs, business",162,noun: 3rd declension consonant stem,"πρᾶγμα πράγματος, τό"
+ἐναντίος,adj,"opposite, facing; opposing",163,adjective: 1st and 2nd declension,ἐναντίος ἐναντία ἐναντίον
+τίθημι,verb,"to put, place; establish, ordain, institute; put in a certain state",164,verb: -μι,"τίθημι, θήσω, ἔθηκα, τέθηκα, τέθειμαι (but usu. κεῖμαι instead), ἐτέθην"
+εἶδον,verb,I saw,165,verb: irregular,"εἶδον, 2 aor. of ὁράω, act. infin. ἰδεῖν, mid.infin. ἰδέσθαι"
+χείρ,noun,hand,166,noun: 3rd declension consonant stem,"χείρ χειρός, ἡ"
+μηδέ,other,and not,167,conjunction: coordinating,μηδέ
+ὀλίγος,adj,"little, small, few",168,adjective: 1st and 2nd declension,ὀλίγος ὀλίγη ὀλίγον
+νόμος,noun,"custom, tradition, law",169,noun: 2nd declension,"νόμος νόμου, ὁ"
+κοινός,adj,"common, shared, mutual",170,adjective: 1st and 2nd declension,κοινός –ή –όν
+οἴομαι,verb,"think, suppose, imagine (+acc. and infin.)",171,verb: deponent,"οἴομαι or οἶμαι, οἰήσομαι, impf. ᾤμην, aor. ᾠήθην"
+κινέω,verb,"set in motion, move, rouse",172,verb: contracted,"κινέω, κινήσω, ἐκίνησα, κεκίνηκα, κεκίνημαι, ἐκινήθην"
+πάσχω,verb,"suffer, experience, be affected in a certain way (+adv.)",173,verb: -ω dental stem,"πάσχω, πείσομαι, ἔπαθον, πέπονθα"
+πῶς,other,how?,174,adverb,πῶς
+ὅσπερ,other,"the very one who, the very thing which",175,pronoun,ὅσπερ ἥπερ ὅπερ
+τοσοῦτος,adj,"so large, so much",176,adjective: 1st and 2nd declension,τοσοῦτος –αύτη –οῦτο(ν)
+σύν,other,with (+ dat. of accompaniment or means),177,preposition,σύν
+εἶτα,other,"then, next",178,adverb,εἶτα
+ἀληθής,adj,true,179,"adjective: 3rd declension -ης, -ες",ἀληθής –ές
+δίκαιος,adj,"right, just",180,adjective: 1st and 2nd declension,δίκαιος δικαία δίκαιον
+μέλλω,verb,"(+infin.) think of doing, intend to, be about to",181,verb: -ω liquid stem,"μέλλω, μελλήσω, ἐμέλλησα"
+ἐθέλω,verb,(+infin.) wish (to); be willing (to),182,verb: -ω liquid stem,"ἐθέλω, ἐθελήσω, ἠθέλησα, ἠθέληκα"
+λοιπός,adj,"rest, remaining, rest-of-the",183,adjective: 1st and 2nd declension,λοιπός –ή –όν
+ἀνάγκη,noun,necessity,184,noun: 1st declension,"ἀνάγκη ἀνάγκης, ἡ"
+ὅτε,other,"when, whenever (+indic. or opt.)",185,conjunction: subordinating,ὅτε
+δεύτερος,adj,second,186,adjective: numeral,δεύτερος –α –ον
+πόλεμος,noun,war,187,noun: 2nd declension,πόλεμος πολέμου ὁ
+χώρα,noun,land; place,188,noun: 1st declension,"χώρα χώρας, ἡ"
+ζάω,verb,live,189,verb: contracted,"ζάω, ζήσω, ἔζησα, ἔζηκα"
+πλῆθος,noun,"mass, throng, crowd; number",190,noun: 3rd declension σ-stem,"πλῆθος πλήθους, τό"
+ἥλιος,noun,sun,191,noun: 2nd declension,"ἥλιος ἡλίου, ὁ"
+αἰτία,noun,"cause, origin; charge, accusation",192,noun: 1st declension,"αἰτία αἰτίας, ἡ"
+πείθω,verb,"persuade, win over; (mid. and pass.) obey, believe in, trust in (+dat.)",193,verb: -ω dental stem,"πείθω, πείσω, ἔπεισα, πέποιθα, πέπεισμαι, ἐπείσθην"
+πάρειμι,verb,"be present, be ready or at hand; (impers.) πάρεστί μοι it depends on me, it is in my power; τὰ παρόντα the present circumstances; τὸ παρόν just now",194,verb: irregular,πάρειμι
+πλεῖστος,adj,"most, greatest, largest (superl. of πολύς)",195,adjective: 1st and 2nd declension,πλεῖστος πλείστη πλεῖστον
+εἶδος,noun,"form, shape, figure; class, kind, sort",196,noun: 3rd declension σ-stem,"εἶδος εἴδους, τό"
+ὅπως,other,"how, as; so that, in order that (+subj. or opt.)",197,conjunction: subordinating,ὅπως
+τρεῖς,adj,three,198,adjective: numeral,τρεῖς τρία
+βίος,noun,life,199,noun: 2nd declension,"βίος βίου, ὁ"
+νομίζω,verb,"think, believe that (+acc. and infin.); hold as a custom, be accustomed to (+infin.)",200,verb: -ω dental stem,"νομίζω, νομιῶ, ἐνόμισα, νενόμικα, νενόμισμαι, ἐνομίσθην"
+κύκλος,noun,"circle, ring, orb, disc, circular motion",201,noun: 2nd declension,"κύκλος κύκλου, ὁ"
+πάθος,noun,"incident, accident, misfortune, experience; passion, emotion; state, condition",202,noun: 3rd declension σ-stem,"πάθος πάθους, τό"
+πρό,other,"before, in front of (+gen.)",203,preposition,πρό
+ὀνομάζω,verb,call by name,204,verb: -ω dental stem,"ὀνομάζω, ὀνομάσω, ὠνόμασα, ὠνόμακα, ὠνόμασμαι, ὠνομάσθην"
+μέντοι,other,however; of course,205,adverb,μέντοι
+ἀρετή,noun,"goodness, excellence; virtue; valor, bravery",206,noun: 1st declension,"ἀρετή ἀρετῆς, ἡ"
+ὑμέτερος,adj,"your, yours (pl.; σός = sg.)",207,adjective: 1st and 2nd declension,ὑμέτερος ὑμετέρα ὑμέτερον
+ἔτος,noun,year,208,noun: 3rd declension σ-stem,"ἔτος ἔτους, τό"
+ἀντί,other,opposite (+gen.),209,preposition,ἀντί
+ναῦς,noun,ship,210,noun: 3rd declension irregular,"ναῦς νεώς, ἡ"
+τρίτος,adj,third,211,adjective: numeral,τρίτος –η –ον
+πνεῦμα,noun,"wind, breath, spirit",212,noun: 3rd declension consonant stem,"πνεῦμα πνεύματος, τό"
+ὀρθός,adj,"upright, straight, true, regular",213,adjective: 1st and 2nd declension,ὀρθός –ή –όν
+θάλασσα,noun,the sea,214,noun: 1st declension,"θάλασσα θαλάσσης, ἡ"
+διαφέρω,verb,"carry in different ways, spread; differ; (impers.) διαφέρει it makes a difference to (+dat.)",215,verb: -ω liquid stem,"διαφέρω, διοίσω, 1 aor. διήνεγκα, 2 aor. διήνεγκον, διενήνοχα, διενήνεγμαι"
+μέχρι,other,"until (conj.); as far as, up to (prep. +gen.)",216,preposition,μέχρι
+δόξα,noun,"opinion, judgment; reputation, honor, glory",217,noun: 1st declension,"δόξα δόξης, ἡ"
+κεφαλή,noun,head,218,noun: 1st declension,"κεφαλή –ῆς, ἡ"
+πῦρ,noun,fire,219,noun: 3rd declension consonant stem,"πῦρ πυρός, τό"
+ἐλάσσων,adj,"smaller, less, fewer (comp. of μικρός)",220,"adjective: 3rd declension -ων, -ον",ἐλάσσων ἔλασσον
+πούς,noun,foot,221,noun: 3rd declension consonant stem,"πούς ποδός, ὁ"
+ἱερός,adj,"holy, venerated, divine",222,adjective: 1st and 2nd declension,ἱερός –ά –όν
+εὐθύς,adj,"straight, direct; (adv.) immediately",223,"adjective: -ύς, -εῖα, -ύ",εὐθύς εὐθεῖα εὐθύ
+εἶμι,verb,I will go (fut. of ἔρχομαι),224,verb: -μι,"εἶμι, infin. ἰέναι, ptc. ἰών, ἰοῦσα, ἰόν"
+ταχύς,adj,"quick, fast; (adv.) τάχα quickly; perhaps",225,"adjective: -ύς, -εῖα, -ύ",ταχύς ταχεῖα ταχύ
+ποταμός,noun,"river, stream",226,noun: 2nd declension,"ποταμός –οῦ, ὁ"
+οὐσία,noun,"substance, property; essence",227,noun: 1st declension,"οὐσία οὐσίας, ἡ"
+ἀριθμός,noun,number,228,noun: 2nd declension,"ἀριθμός –οῦ, ὁ"
+ὕστερος,adj,"coming after, following (+gen.); next, later; (adv.) ὕστερον afterwards",229,adjective: 1st and 2nd declension,ὕστερος ὑστέρα ὕστερον
+φυλάσσω,verb,"watch, guard, defend; (mid.) be on one’s guard against (+acc.)",230,verb: -ω palatal stem,"φυλάσσω, φυλάξω, ἐφύλαξα, πεφύλαχα, πεφύλαγμαι, ἐφυλάχθην"
+καιρός,noun,the right time,231,noun: 2nd declension,"καιρός καιροῦ, ὁ"
+οἰκέω,verb,"inhabit, occupy",232,verb: contracted,"οἰκέω, οἰκήσω, ᾤκησα, ᾤκηκα, ᾠκήθην"
+ἀμφότερος,adj,both,233,adjective: 1st and 2nd declension,ἀμφότερος ἀμφοτέρα ἀμφότερον
+σημεῖον,noun,"sign, signal, mark",234,noun: 2nd declension,"σημεῖον σημείου, τό"
+παρέχω,verb,"provide, present, offer; allow, grant",235,verb: -ω palatal stem,"παρέχω, παρέξω, παρέσχον, παρέσχηκα, impf. παρεῖχον"
+ἑκάτερος,other,each (of two),236,pronoun,ἑκάτερος ἑκατέρα ἑκάτερον
+δηλόω,verb,"show, declare, explain",237,verb: contracted,"δηλόω, δηλώσω, ἐδήλωσα, δεδήλωκα, ἐδηλώθην"
+οἰκεῖος,adj,"domestic, of the house; one’s own; fitting, suitable",238,adjective: 1st and 2nd declension,οἰκεῖος οἰκεία οἰκεῖον
+κελεύω,verb,"order, bid, command (+acc. and infin.)",239,verb: -ω vowel stem,"κελεύω, κελεύσω, ἐκέλευσα, κεκέλευκα, κεκέλευσμαι, ἐκελεύσθην"
+τέλος,noun,"end, fulfillment, achievement",240,noun: 3rd declension σ-stem,"τέλος τέλους, τό"
+ἡγέομαι,verb,"lead, be the leader; regard, believe, think",241,verb: deponent,"ἡγέομαι, ἡγήσομαι, ἡγησάμην, ἥγημαι"
+ἄξιος,adj,"worthy, deserving",242,adjective: 1st and 2nd declension,ἄξιος ἀξία ἄξιον
+ἦ,other,truly (emphasizes what follows),243,adverb,ἦ
+δῆλος,adj,"visible, clear, manifest",244,adjective: 1st and 2nd declension,δῆλος δήλη δῆλον
+τοίνυν,other,"therefore, accordingly (inferential); further, moreover (transitional)",245,adverb,τοίνυν (τοί-νυν)
+πολέμιος,adj,hostile; οἱ πολέμιοι the enemy,246,adjective: 1st and 2nd declension,πολέμιος πολεμία πολέμιον
+ἔρομαι,verb,"ask, ask one about (+double acc.)",247,verb: deponent,"ἔρομαι, ἐρήσομαι, 2 aor. ἠρόμην"
+ἀδελφός,noun,brother,248,noun: 2nd declension,"ἀδελφός –οῦ, ὁ"
+μέγεθος,noun,"greatness, size, magnitude",249,noun: 3rd declension σ-stem,"μέγεθος μεγέθους, τό"
+εἴτε…εἴτε,other,whether…or,250,conjunction: coordinating,εἴτε…εἴτε
+κεῖμαι,verb,"to lie, be situated, be laid up in store, be set up, be established or ordained (used as pf. pass. of τίθημι)",251,verb: deponent,"κεῖμαι, κείσομαι"
+πολλάκις,other,often,252,adverb,πολλάκις
+πίνω,verb,drink,253,verb: -ω liquid stem,"πίνω, πίομαι, 2 aor. ἔπιον, πέπωκα, -πέπομαι, -επόθην"
+χάρις,noun,"splendor, honor, glory; favor, goodwill, gratitude, thanks",254,noun: 3rd declension consonant stem,"χάρις χάριτος, ἡ"
+ἔπειτα,other,"then, next",255,adverb,ἔπειτα
+ζητέω,verb,seek,256,verb: contracted,"ζητέω, ζητήσω, ἐζήτησα, ἐζήτηκα"
+σχῆμα,noun,"form, figure, appearance, character",257,noun: 3rd declension consonant stem,"σχῆμα σχήματος, τό"
+τροφή,noun,"nourishment, food",258,noun: 1st declension,"τροφή τροφῆς, ἡ"
+μανθάνω,verb,"learn, ascertain",259,verb: -ω liquid stem,"μανθάνω, μαθήσομαι, ἔμαθον, μεμάθηκα"
+ἐνταῦθα,other,"here, there",260,adverb,ἐνταῦθα
+φεύγω,verb,"flee, run away, avoid, shun",261,verb: -ω palatal stem,"φεύγω, φεύξομαι, ἔφυγον, πέφευγα"
+ἵππος,noun,horse,262,noun: 2nd declension,"ἵππος ἵππου, ὁ"
+κόσμος,noun,"order; ornament, decoration, adornment; world, universe",263,noun: 2nd declension,"κόσμος κόσμου, ὁ"
+αἷμα,noun,blood,264,noun: 3rd declension consonant stem,"αἷμα αἵματος, τό"
+αἱρέω,verb,"take, grasp, take by force; (mid.) choose",265,verb: contracted,"αἱρέω, αἱρήσω, 2 aor. εἷλον, ᾕρηκα, ᾕρημαι, ᾑρέθην"
+προστίθημι,verb,add; (med.) join,266,verb: -μι,"προστίθημι, προσθήσω, προσέθηκα, προστέθηκα, προστέθειμαι (but commonly προσκεῖμαι instead), προσετέθην"
+ἀξιόω,verb,"consider worthy; require, demand, ask, claim",267,verb: contracted,"ἀξιόω, ἀξιώσω, ἠξίωσα, ἠξίωκα, ἠξίωμαι, ἠξιώθην"
+ἕως,other,"until; while, so long as",268,conjunction: subordinating,ἕως
+νέος,adj,"young, new, fresh",269,adjective: 1st and 2nd declension,νέος νέα νέον
+ἔοικα,verb,"be like, look like (+dat.); seem; befit",270,verb: irregular,"ἔοικα, ptc. εἰκώς"
+κἄν,other,even if (+subj.),271,conjunction: subordinating,κἄν (καὶ-ἄν)
+καθίστημι,verb,"set down, establish; bring into a certain state, render",272,verb: -μι,"καθίστημι, καταστήσω, κατέστησα, κατέστην, καθέστηκα, plupf. καθειστήκη, κατεστάθην"
+τέχνη,noun,"art, skill, craft",273,noun: 1st declension,"τέχνη τέχνης, ἡ"
+χρῆμα,noun,"thing, matter; (more commonly in pl.) goods or property, esp. money",274,noun: 3rd declension consonant stem,"χρῆμα χρήματος, τό"
+σῴζω,verb,save,275,verb: -ω dental stem,"σῴζω, σώσω, ἔσωσα, σέσωκα, ἐσώθην"
+πέμπω,verb,send,276,verb: -ω labial stem,"πέμπω, πέμψω, ἔπεμψα, πέπομφα, πέπεμμαι, ἐπέμφθην"
+φωνή,noun,"sound, voice",277,noun: 1st declension,"φωνή φωνῆς, ἡ"
+ἕνεκα,other,"on account of, for the sake of (+gen.)",278,preposition,ἕνεκα
+ἀπόλλυμι,verb,"kill, destroy; (mid.) perish, die",279,verb: -μι,"ἀπόλλυμι, ἀπολῶ, ἀπώλεσα, 2 aor. mid. ἀπωλόμην, pf. ἀπολώλεκα (“I have utterly destroyed”) or ἀπόλωλα (“I am undone”)"
+θάνατος,noun,death,280,noun: 2nd declension,"θάνατος θανάτου, ὁ"
+νύξ,noun,night,281,noun: 3rd declension consonant stem,"νύξ νυκτός, ἡ"
+ὁδός,noun,"road, way, path",282,noun: 2nd declension,"ὁδός ὁδοῦ, ἡ"
+ἔθνος,noun,nation,283,noun: 3rd declension σ-stem,"ἔθνος ἔθνους, τό"
+ἀποδίδωμι,verb,give back; render; allow; (mid.) sell,284,verb: -μι,"ἀποδίδωμι, ἀποδώσω, ἀπέδωκα, ἀποδέδωκα, ἀποδέδομαι, ἀπεδόθην"
+νοῦς,noun,"mind, perception, sense",285,noun: 2nd declension,"νοῦς, νοῦ, ὁ (other dialects: νόος, νόου, ὁ)"
+μένω,verb,"stay, remain, endure, await",286,verb: -ω liquid stem,"μένω, μενῶ, ἔμεινα, μεμένηκα"
+ἀποθνῄσκω,verb,die,287,verb: -ω palatal stem,"ἀποθνῄσκω, ἀποθανοῦμαι, 2 aor. ἀπέθανον, ἀποτέθνηκα"
+πάνυ,other,"altogether, entirely",288,adverb,πάνυ
+εὖ,other,"well (opp. κακῶς); thoroughly, competently; happily, fortunately",289,adverb,εὖ
+κρίνω,verb,"judge, decide, determine",290,verb: -ω liquid stem,"κρίνω, κρινῶ, ἔκρινα, κέκρικα, κέκριμαι, ἐκρίθην"
+ἀναιρέω,verb,"raise, take up; kill, destroy",291,verb: contracted,"ἀναιρέω, ἀναιρήσω, ἀνεῖλον, ἀνῄρηκα, ἀνῄρημαι, ἀνῃρέθην"
+μακρός,adj,"long, tall, large, long-lasting",292,adjective: 1st and 2nd declension,μακρός –ά –όν
+ἥκω,verb,"I have come, I am present",293,verb: -ω palatal stem,"ἥκω, ἥξω, pf. ἧκα"
+ἡδονή,noun,"pleasure, enjoyment",294,noun: 1st declension,"ἡδονή –ῆς, ἡ"
+μήτηρ,noun,mother,295,noun: 3rd declension irregular,"μήτηρ μητρός, ἡ"
+δεινός,adj,"awesome, terrible; clever, clever at (+infin.)",296,adjective: 1st and 2nd declension,δεινός –ή –όν
+διαφορά,noun,"difference, disagreement",297,noun: 1st declension,"διαφορά –ᾶς, ἡ"
+κρατέω,verb,"be victorious, conquer, rule, surpass, excel (+gen.)",298,verb: contracted,"κρατέω, κρατήσω, ἐκράτησα, κεκράτηκα, κεκράτημαι, ἐκρατήθην"
+δῆμος,noun,the (common) people; country district (opp. πόλις),299,noun: 2nd declension,"δῆμος δήμου, ὁ"
+οὐρανός,noun,"sky, heaven",300,noun: 2nd declension,"οὐρανός –οῦ, ὁ"
+ἕπομαι,verb,follow,301,verb: deponent,"ἕπομαι ἕψομαι, 2 aor. ἑσπόμην"
+ἥσσων,adj,"less, weaker (comp. of κακός or μικρός)",302,"adjective: 3rd declension -ων, -ον",ἥσσων ἧσσον
+ὄρος,noun,"mountain, hill",303,noun: 3rd declension σ-stem,"ὄρος ὄρους, τό"
+πλήν,other,"(prep.) except (+gen.); (conj.) except that, unless, but",304,preposition,πλήν
+τέσσαρες,adj,four,305,adjective: numeral,τέσσαρες τέσσαρα
+δυνατός,adj,"strong, powerful, able",306,adjective: 1st and 2nd declension,δυνατός –ή –όν
+οἶκος,noun,"house, home, family",307,noun: 2nd declension,"οἶκος οἴκου, ὁ"
+ἄριστος,adj,"best, noblest (superl. of ἀγαθός)",308,adjective: 1st and 2nd declension,ἄριστος ἀρίστη ἄριστον
+ῥᾴδιος,adj,easy,309,adjective: 1st and 2nd declension,ῥᾴδιος ῥᾳδία ῥᾴδιον
+ἀφαιρέω,verb,"take from, take away",310,verb: contracted,"ἀφαιρέω, ἀφαιρήσω, ἀφεῖλον, ἀφῄρηκα, ἀφῄρημαι, ἀφῃρέθην"
+τύχη,noun,"luck, fortune (good or bad), fate, chance",311,noun: 1st declension,"τύχη τύχης, ἡ"
+φανερός,adj,"clear, evident",312,adjective: 1st and 2nd declension,φανερός –ά –όν
+πρόσωπον,noun,"face, mask, person",313,noun: 2nd declension,"πρόσωπον προσώπου, τό"
+πιστεύω,verb,"trust, rely on, believe in (+dat.)",314,verb: -ω vowel stem,"πιστεύω, πιστεύσω, ἐπίστευσα, πεπίστευκα, πεπίστευμαι, ἐπιστεύθην"
+διδάσκω,verb,teach,315,verb: -ω palatal stem,"διδάσκω, διδάξω, ἐδίδαξα, δεδίδαχα, δεδίδαγμαι, ἐδιδάχθην"
+ἄνω,other,"up, upwards",316,adverb,ἄνω
+τάσσω,verb,"arrange, put in order",317,verb: -ω palatal stem,"τάσσω, τάξω, ἔταξα, τέταχα, τέταγμαι, ἐτάχθην"
+ὀφθαλμός,noun,eye,318,noun: 2nd declension,"ὀφθαλμός –οῦ, ὁ"
+δέχομαι,verb,"take, accept; welcome, entertain",319,verb: deponent,"δέχομαι, δέξομαι, ἐδεξάμην, δέδεγμαι, -εδέχθην"
+ἀφικνέομαι,verb,"come to, arrive at",320,verb: deponent,"ἀφικνέομαι, ἀφίξομαι, 2 aor. ἀφικόμην, ἀφῖγμαι"
+ἱκανός,adj,"sufficient, enough; competent, able to (+infin.)",321,adjective: 1st and 2nd declension,ἱκανός –ή –όν
+ἐργάζομαι,verb,"work, labor",322,verb: deponent,"ἐργάζομαι, ἐργάσομαι, εἰργασάμην, εἴργασμαι"
+μάχη,noun,battle,323,noun: 1st declension,"μάχη μάχης, ἡ"
+τρέφω,verb,"nourish, feed, support, maintain; rear, educate",324,verb: -ω labial stem,"τρέφω, θρέψω, ἔθρεψα, τέθραμμαι, ἐτράφην"
+ἀδύνατος,adj,impossible; powerless,325,adjective: 1st and 2nd declension,ἀδύνατος –ον
+ἀκριβής,adj,"exact, accurate, precise",326,"adjective: 3rd declension -ης, -ες",ἀκριβής –ές
+που,other,"(enclitic) somewhere; I suppose, perhaps (to qualify an assertion)",327,adverb,που
+ὅθεν,other,"from where, whence",328,adverb,ὅθεν
+στόμα,noun,"mouth, face, opening",329,noun: 3rd declension consonant stem,"στόμα στόματος, τό"
+χωρίς,other,"separately, apart; (+gen.) without, separate from",330,adverb,χωρίς
+κρείσσων,adj,"stronger, mightier; better, more excellent (comp. of ἀγαθός)",331,"adjective: 3rd declension -ων, -ον",κρείσσων κρεῖσσον
+βραχύς,adj,"brief, short",332,"adjective: -ύς, -εῖα, -ύ",βραχύς βραχεῖα βραχύ
+ἰσχυρός,adj,strong,333,adjective: 1st and 2nd declension,ἰσχυρός –ά –όν
+ἀλήθεια,noun,truth,334,noun: 1st declension,"ἀλήθεια ἀληθείας, ἡ"
+δίκη,noun,"justice, lawsuit, trial, penalty",335,noun: 1st declension,"δίκη δίκης, ἡ"
+χωρίον,noun,"place, spot, district",336,noun: 2nd declension,"χωρίον χωρίου, τό"
+ἡδύς,adj,"sweet, pleasant",337,"adjective: -ύς, -εῖα, -ύ",ἡδύς ἡδεῖα ἡδύ
+νόσος,noun,"disease, sickness",338,noun: 2nd declension,"νόσος νόσου, ἡ"
+λίθος,noun,stone,339,noun: 2nd declension,"λίθος λίθου, ὁ"
+παλαιός,adj,"old, ancient",340,adjective: 1st and 2nd declension,παλαιός –ά –όν
+ἀφίημι,verb,"send away, let go; let alone, neglect",341,verb: -μι,"ἀφίημι, ἀφήσω, ἀφῆκα, ἀφεῖκα, ἀφεῖμαι, ἀφείθην"
+ἄλλως,other,otherwise,342,adverb,ἄλλως
+πρᾶξις,noun,"action, transaction, business",343,noun: 3rd declension ι-stem,"πρᾶξις πράξεως, ἡ"
+σαφής,adj,"clear, distinct, plain",344,"adjective: 3rd declension -ης, -ες",σαφής σαφές
+σοφός,adj,"wise, clever, skilled",345,adjective: 1st and 2nd declension,σοφός –ή –όν
+νικάω,verb,"conquer, win",346,verb: contracted,"νικάω, νικήσω, ἐνίκησα, νενίκηκα, νενίκημαι, ἐνικήθην"
+ὁμολογέω,verb,"agree with, say the same thing as (+dat.)",347,verb: contracted,"ὁμολογέω, ὁμολογήσω, ὡμολόγησα, ὡμολόγηκα, ὡμολόγημαι, ὡμολογήθην"
+ναός,noun,temple,348,noun: 2nd declension,"ναός (νεώς) ναοῦ (νεώ), ὁ"
+αὖ,other,moreover; on the other hand; back (again),349,adverb,"αὖ, αὖθις"
+πατρίς,noun,fatherland,350,noun: 3rd declension consonant stem,"πατρίς πατρίδος, ἡ"
+ὀξύς,adj,"sharp, keen, shrill, pungent",351,"adjective: -ύς, -εῖα, -ύ",ὀξύς ὀξεῖα ὀξύ
+καίτοι,other,"and indeed, and yet",352,adverb,καίτοι (καί-τοι)
+πλέον,other,"more, rather",353,adverb,πλέον
+πλέων,adj,"more, larger (comp. of πολύς)",354,"adjective: 3rd declension -ων, -ον",πλέων πλέον
+γνώμη,noun,"thought, intelligence, opinion, purpose",355,noun: 1st declension,"γνώμη γνώμης, ἡ"
+τιμή,noun,"honor, esteem; price, value; office, magistracy",356,noun: 1st declension,"τιμή τιμῆς, ἡ"
+μεταξύ,other,between (prep. + gen.); in the midst of (adv.),357,preposition,μεταξύ
+προσήκω,verb,"belong to, have to do with; be fitting for (+dat.); arrive at; οἱ προσήκοντες relatives; τὰ προσήκoντα duties",358,verb: -ω palatal stem,προσήκω προσήξω
+πρίν,other,"before, until",359,conjunction: subordinating,πρίν
+ἀδικέω,verb,do wrong; injure,360,verb: contracted,"ἀδικέω, ἀδικήσω, ἠδίκησα, ἠδίκηκα, ἠδίκημαι, ἠδικήθην"
+στρατηγός,noun,"leader of an army, commander, general",361,noun: 2nd declension,"στρατηγός –οῦ, ὁ"
+οὐκέτι,other,"no longer, no more",362,adverb,οὐκέτι
+πρέσβυς,noun,old man; (pl.) ambassadors,363,"noun: 3rd declension -εύς, -έως","πρέσβυς πρέσβεως, ὁ"
+παύω,verb,"stop, put an end to; (mid.) cease",364,verb: -ω vowel stem,"παύω, παύσω, ἔπαυσα, πέπαυκα, πέπαυμαι, ἐπαύθην"
+τελευτάω,verb,finish; die,365,verb: contracted,"τελευτάω, τελευτήσω, ἐτελεύτησα, τετελεύτηκα, τετελεύτημαι, ἐτελευτήθην"
+μίγνυμι,verb,"mix, mingle",366,verb: -μι,"μίγνυμι, μίξω, ἔμιξα, μέμιχα,μέμιγμαι, ἐμίχθην"
+λαός,noun,"the people, folk",367,noun: 2nd declension,"λαός λαοῦ, ὁ"
+θυγάτηρ,noun,daughter,368,noun: 3rd declension irregular,"θυγάτηρ θυγατρός, ἡ"
+οἰκία,noun,"building, house, dwelling",369,noun: 1st declension,"οἰκία οἰκίας, ἡ"
+παραδίδωμι,verb,"transmit, hand over, surrender",370,verb: -μι,"παραδίδωμι, παραδώσω, παρέδωκα, παραδέδωκα, παραδέδομαι, παρεδόθην"
+ἔξω,other,outside; except,371,adverb,ἔξω
+νῆσος,noun,island,372,noun: 2nd declension,"νῆσος νήσου, ἡ"
+ἐκεῖ,other,there,373,adverb,ἐκεῖ
+ἐπιστήμη,noun,"knowledge, understanding, skill",374,noun: 1st declension,"ἐπιστήμη –ης, ἡ"
+ἐάω,verb,"allow, permit (+acc. and infin.); let be, let alone",375,verb: contracted,"ἐάω, ἐάσω, εἴασα"
+θαυμάζω,verb,"to be in awe (of), be astonished (at)",376,verb: -ω dental stem,"θαυμάζω, θαυμάσομαι, ἐθαύμασα, τεθαύμακα, τεθαύμασμαι, ἐθαυμάσθην"
+αἰσθάνομαι,verb,"perceive, understand, hear, learn",377,verb: deponent,"αἰσθάνομαι, αἰσθήσομαι, 2 aor. ᾐσθόμην, ᾔσθημαι"
+χαίρω,verb,"to be happy, rejoice at (+dat.), take joy in (+ptc.); χαῖρε, (pl.) χαίρετε hello, goodbye",378,verb: -ω liquid stem,"χαίρω, χαιρήσω, κεχάρηκα, κεχάρημαι, ἐχάρην"
+χαλεπός,adj,"difficult, troublesome",379,adjective: 1st and 2nd declension,χαλεπός –ή –όν
+τέκνον,noun,child,380,noun: 2nd declension,"τέκνον τέκνου, τό"
+καταλαμβάνω,verb,"seize, catch up with, arrest, compel",381,verb: -ω labial stem,"καταλαμβάνω, καταλήψομαι, κατέλαβον, κατείληφα, κατείλημμαι, κατελήφθην"
+μάχομαι,verb,fight (against) (+dat.),382,verb: deponent,"μάχομαι, μαχοῦμαι, ἐμαχεσάμην, μεμάχημαι"
+μιμνήσκω,verb,remind; (in pf. mid.) remember,383,verb: -ω palatal stem,"μιμνήσκω, -μνήσω, -έμνησα, pf. μέμνημαι, ἐμνήσθην"
+θνῄσκω,verb,"to die, be dying",384,verb: -ω palatal stem,"θνῄσκω, 2 aor. -έθανον, τέθνηκα, θανοῦμαι"
+λύω,verb,"loosen, unbind, set free; undo, destroy",384,verb: -ω vowel stem,"λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην"
+τιμάω,verb,to honor,386,verb: contracted,"τιμάω, τιμήσω, ἐτίμησα, τετίμηκα, τετίμημαι, ἐτιμήθην"
+τεῖχος,noun,wall,387,noun: 3rd declension σ-stem,"τεῖχος τείχους, τό"
+ἴσως,other,"equally, probably, perhaps",388,adverb,ἴσως
+αἴρω,verb,"take up, lift up; remove",389,verb: -ω palatal stem,"αἴρω, ἀρῶ, ἦρα, ἦρκα, ἦρμαι, ἤρθην"
+ἀποκτείνω,verb,kill,390,verb: -ω liquid stem,"ἀποκτείνω, ἀποκτενῶ, ἀπέκτεινα, ἀπέκτονα"
+στρατιώτης,noun,soldier,391,noun: 2nd declension,"στρατιώτης –ου, ὁ"
+ἄνευ,other,without (+gen.),392,preposition,ἄνευ
+πότερος,adj,which of the two? πότερον whether,393,adjective: 1st and 2nd declension,πότερος ποτέρα πότερον
+ἁπλῶς,other,"simply, singly, in one way",394,adverb,ἁπλῶς
+πίπτω,verb,"fall, fall down",395,verb: -ω dental stem,"πίπτω, πεσοῦμαι, ἔπεσον, πέπτωκα"
+τέταρτος,adj,fourth,396,adjective: numeral,τέταρτος –η –ον
+κατασκευάζω,verb,"equip, furnish, make ready",397,verb: -ω dental stem,"κατασκευάζω, κατασκευάσω, κατεσκεύασα"
+ἐχθρός,adj,"hated, hateful; hostile to (+dat.)",398,adjective: 1st and 2nd declension,ἐχθρός –ά –όν
+ἀγών,noun,contest; struggle,399,noun: 3rd declension consonant stem,"ἀγών ἀγῶνος, ὁ"
+κωλύω,verb,"hinder, check, prevent (+acc. and infin.)",400,verb: -ω vowel stem,"κωλύω, κωλύσω, ἐκώλυσα, κεκώλυκα, κεκώλυμαι, ἐκωλύθην"
+ἁμαρτάνω,verb,"miss the mark (+gen.); fail, be wrong, make a mistake",401,verb: -ω dental stem,"ἁμαρτάνω, ἁμαρτήσομαι, ἡμάρτησα, 2 aor. ἥμαρτον, ἡμάρτηκα, ἡμάρτημαι, ἡμαρτήθην"
+διαφθείρω,verb,destroy; corrupt,402,verb: -ω liquid stem,"διαφθείρω, διαφθερῶ, διέφθειρα, διέφθαρκα, διέφθαρμαι, διεφθάρην"
+πως,other,"(enclitic) somehow, in some way, in any way",403,adverb,πως
+πόνος,noun,"work, labor; stress, trouble, pain",404,noun: 2nd declension,"πόνος πόνου, ὁ"
+ἔνθα,other,there,405,adverb,ἔνθα
+τάξις,noun,"arrangement, order; military unit",406,noun: 3rd declension ι-stem,"τάξις τάξεως, ἡ"
+πειράω,verb,"attempt, try, make a trial of (+gen.)",407,verb: contracted,"πειράω (usually mid. πειράομαι), πειράσομαι, ἐπείρασα, πεπείραμαι, ἐπειράθην"
+φοβέω,verb,"put to flight; (mid. and pass.) flee, fear",408,verb: contracted,"φοβέω, φοβήσω, ἐφόβησα, πεφόβημαι, ἐφοβήθην"
+βάλλω,verb,"throw, hurl; throw at, hit (acc.) with (dat.)",409,verb: -ω liquid stem,"βάλλω, βαλῶ, 2 aor. ἔβαλον, βέβληκα, βέβλημαι, ἐβλήθην"
+πονηρός,adj,"worthless, bad, wicked",410,adjective: 1st and 2nd declension,πονηρός –ά –όν
+ξένος,noun,"guest-friend; foreigner, stranger",411,noun: 2nd declension,"ξένος ξένου, ὁ"
+βάρβαρος,adj,"non-Greek, foreign; barbarous",412,adjective: 1st and 2nd declension,βάρβαρος –ον
+ὅπου,other,"where, wherever",413,conjunction: subordinating,ὅπου
+συμφέρω,verb,"benefit, be useful or profitable to (+dat.); (impers.) συμφέρει it is of use, expedient (+infin.); τὸ συμφέρον use, profit, advantage",414,verb: irregular,"συμφέρω, συνοίσω, 1 aor. συνήνεγκα"
+πυνθάνομαι,verb,"learn, hear, inquire concerning (+gen.)",415,verb: deponent,"πυνθάνομαι, πεύσομαι, 2 aor. ἐπυθόμην, πέπυσμαι"
+δοῦλος,noun,slave,416,noun: 2nd declension,"δοῦλος δούλου, ὁ"
+τέμνω,verb,"cut, cut down, cut to pieces",417,verb: -ω liquid stem,"τέμνω, τεμῶ, 2 aor. ἔτεμον, -τέτμηκα, τέτμημαι, ἐτμήθην"
+χρήσιμος,adj,"useful, serviceable",418,adjective: 1st and 2nd declension,χρήσιμος χρησίμη χρήσιμον
+ποῖος,adj,what sort of?,419,adjective: 1st and 2nd declension,ποῖος ποία ποῖον
+ὅπλον,noun,"weapon, tool, implement (mostly pl.)",420,noun: 2nd declension,"ὅπλον ὅπλου, τό"
+πίστις,noun,"trust in others, faith; that which gives confidence, assurance, pledge, guarantee",421,noun: 3rd declension ι-stem,"πίστις πίστεως, ἡ"
+ὑπολαμβάνω,verb,"take up, seize; answer, reply; assume, suppose",422,verb: -ω labial stem,"ὑπολαμβάνω, ὑπολήψομαι, ὑπέλαβον, ὑπείληφα, ὑπείλημμαι, ὑπελήφθην"
+ποιητής,noun,"creator, poet",423,noun: 2nd declension,"ποιητής –οῦ, ὁ"
+λανθάνω,verb,"escape the notice of (+acc. and nom. participle), be unknown; (mid. and pass.) forget",424,verb: -ω liquid stem,"λανθάνω, λήσω, ἔλαθον, λέληθα"
+βελτίων,adj,better (comp. of ἀγαθός),425,"adjective: 3rd declension -ων, -ον",βελτίων βέλτιον
+πάντως,other,"altogether, in all ways; at any rate",426,adverb,πάντως
+πορεύω,verb,"carry; (mid. and pass) go, walk, march",427,verb: -ω vowel stem,"πορεύω, πορεύσω, ἐπόρευσα, πεπόρευμαι, ἐπορεύθην"
+ἀποκρίνω,verb,"separate, set apart, choοse; (mid.) answer, reply",428,verb: -ω liquid stem,"ἀποκρίνω, ἀποκρινῶ, ἀπεκρινάμην, ἀπεκρίθη"
+πέντε,adj,five,429,adjective: numeral,πέντε
+κίνδυνος,noun,danger,430,noun: 2nd declension,"κίνδυνος κινδύνου, ὁ"
+κατηγορέω,verb,"to speak against, to accuse (+gen.)",431,verb: contracted,"κατηγορέω, κατηγορήσω, κατηγόρησα, κατηγόρηκα, κατηγόρημαι, κατηγορήθην"
+τρέπω,verb,"turn, direct towards a thing; put to flight, defeat; (pass.) turn one’s steps in a certain direction, go",432,verb: -ω labial stem,"τρέπω, τρέψω, ἔτρεψα, τέτροφα, ἐτράπην"
+ὅμως,other,"nevertheless, all the same, notwithstanding",433,adverb,ὅμως
+θεῖος,adj,divine,434,adjective: 1st and 2nd declension,θεῖος θεία θεῖον
+ἱππεύς,noun,"horseman, rider, charioteer",435,"noun: 3rd declension -εύς, -έως","ἱππεύς ἱππέως, ὁ"
+κτάομαι,verb,"get, gain, acquire",436,verb: deponent,"κτάομαι, κτήσομαι, ἐκτησάμην, κέκτημαι"
+λείπω,verb,"leave, abandon",437,verb: -ω labial stem,"λείπω, λείψω, ἔλιπον, λέλοιπα, λέλειμμαι, ἐλείφθην"
+βουλή,noun,"will, determination; counsel, piece of advice; council of elders",438,noun: 1st declension,"βουλή βουλῆς, ἡ"
+ἐλπίς,noun,hope; expectation,439,noun: 3rd declension consonant stem,"ἐλπίς ἐλπίδος, ἡ"
+γραφή,noun,"a drawing, painting, writing; indictment",440,noun: 1st declension,"γραφή γραφῆς, ἡ"
+τίκτω,verb,"beget, give birth to, produce",441,verb: -ω palatal stem,"τίκτω, τέξω or τέξομαι, ἔτεκον, τέτοκα, τέτεγμαι, ἐτέχθην"
+κομίζω,verb,"take care of, provide for",442,verb: -ω dental stem,"κομίζω, κομιῶ, ἐκόμισα, κεκόμικα, κεκόμισμαι, ἐκομίσθην"
+θυμός,noun,"life, spirit; soul, heart, mind",443,noun: 2nd declension,"θυμός θυμοῦ, ὁ"
+βλέπω,verb,"see, look (at)",444,verb: -ω labial stem,"βλέπω, βλέψομαι, ἔβλεψα"
+φόβος,noun,"panic, fear, flight",445,noun: 2nd declension,"φόβος φόβου, ὁ"
+πολιτεία,noun,"constitution, citizenship, republic",446,noun: 1st declension,"πολιτεία –ας, ἡ"
+στάδιον,noun,"stadion or stade, the longest Greek unit of linear measure, about 185 meters",447,noun: 2nd declension,"στάδιον σταδίου, τό (pl. στάδια and στάδιοι)"
+φρονέω,verb,"think, intend to (+infin.); be minded towards (+adv. and dat.)",448,verb: contracted,"φρονέω, φρονήσω, ἐφρόνησα"
+τοιόσδε,adj,"such (as this), of such a sort (as this)",449,adjective: 1st and 2nd declension,τοιόσδε τοιάδε τοιόνδε
+ὁρμάω,verb,"set in motion, urge on; (intrans.) start, hasten on",450,verb: contracted,"ὁρμάω, ὁρμήσω, ὥρμησα, ὥρμηκα, ὥρμημαι, ὡρμήθην"
+παρασκευάζω,verb,"get ready, prepare, provide",451,verb: -ω dental stem,"παρασκευάζω, παρασκευάσω, παρεσκεύασα"
+λαλέω,verb,"talk, chatter, babble",452,verb: contracted,"λαλέω, λαλήσω, ἐλάλησα, λελάληκα, ἐλαλήθην"
+δράω,verb,"do, accomplish",453,verb: contracted,"δράω, δράσω, ἔδρασα, δέδρακα, δέδραμαι, ἐδράσθην"
+σκοπέω,verb,"look at, watch; look into, consider, examine",454,verb: contracted,"σκοπέω, σκοπήσω, ἐσκόπησα"
+βοῦς,noun,"bull, ox, cow",455,noun: 3rd declension irregular,"βοῦς βοός, ὁ/ἡ"
+ἡμέτερος,adj,our,456,adjective: 1st and 2nd declension,ἡμέτερος ἡμετέρα ἡμέτρον
+γράμμα,noun,"letter, written character; (pl.) piece of writing, document(s)",457,noun: 3rd declension consonant stem,"γράμμα γράμματος, τό"
+ἐρωτάω,verb,"ask someone (acc.) something (acc.); question, beg",458,verb: contracted,"ἐρωτάω, ἐρήσομαι, 2 aor. ἠρόμην"
+πολεμέω,verb,make war,459,verb: contracted,"πολεμέω, πολεμήσω, ἐπολέμησα, πεπολέμηκα"
+θύω,verb,sacrifice,460,verb: -ω vowel stem,"θύω, θύσω, ἔθυσα, τέθυκα, τέθυμαι, ἐτύθην"
+ἐλαύνω,verb,"drive, set in motion",461,verb: -ω liquid stem,"ἐλαύνω, ἐλῶ, ἤλασα, -ελήλακα, ἐλήλαμαι, ἠλάθην"
+δέδοικα,verb,fear,462,verb: -ω dental stem,"δέδοικα, δείσομαι, ἔδεισα"
+σύμμαχος,adj,allied with (+dat.); οἱ σύμμαχοι allies,463,adjective: 1st and 2nd declension,σύμμαχος –ον
+ἡγεμών,noun,"guide, leader, commander",464,noun: 3rd declension consonant stem,"ἡγεμών ἡγεμόνος, ὁ"
+βαρύς,adj,"heavy, grievous, tiresome",465,"adjective: -ύς, -εῖα, -ύ",βαρύς βαρεῖα βαρύ
+ὧδε,other,"thus, in this way; hither, here",466,adverb,ὧδε
+αἰσχρός,adj,"ugly, shameful, disgraceful",467,adjective: 1st and 2nd declension,αἰσχρός –ά –όν
+εἰρήνη,noun,peace,468,noun: 1st declension,"εἰρήνη εἰρήνης, ἡ"
+ἁλίσκομαι,verb,"to be taken, conquered (act. supplied by αἱρέω)",469,verb: deponent,"ἁλίσκομαι, ἁλώσομαι, 2 aor. ἑάλων, ἑάλωκα"
+δέκα,adj,ten,470,adjective: numeral,δέκα
+ἀμείνων,adj,"better, abler, stronger, braver (comp. of ἀγαθός)",471,"adjective: 3rd declension -ων, -ον",ἀμείνων ἄμεινον
+χείρων,adj,"worse, inferior (comp. of κακός)",472,"adjective: 3rd declension -ων, -ον",χείρων χεῖρον
+βοηθέω,verb,"help, assist (+dat.)",473,verb: contracted,"βοηθέω, βοηθήσω, ἐβοήθησα, βεβοήθηκα"
+λαμπρός,adj,"bright, brilliant; well-known, illustrious",474,adjective: 1st and 2nd declension,λαμπρός –ά –όν
+ἀπαλλάσσω,verb,"set free, release, deliver",475,verb: -ω palatal stem,"ἀπαλλάσσω, ἀπαλλάξω, ἀπήλλαξα, ἀπήλλαχα, ἀπήλλαγμαι, ἀπηλλάχθην or ἀπηλλάγην"
+βουλεύω,verb,"plan (to), decide (to); (mid.) deliberate",476,verb: -ω vowel stem,"βουλεύω βουλεύσω, ἐβούλευσα, βεβούλευκα, βεβούλευμαι, ἐβουλεύθην"
+μάλα,other,"very, very much",477,adverb,μάλα
+αἰτέω,verb,"ask (for), beg",478,verb: contracted,"αἰτέω, αἰτήσω, ᾔτησα, ᾔτηκα, ᾔτημαι, ᾐτήθην"
+σωτηρία,noun,"safety, deliverance",479,noun: 1st declension,"σωτηρία σωτηρίας, ἡ"
+ἆρα,other,[introduces a question],480,adverb,ἆρα
+διώκω,verb,pursue,481,verb: -ω palatal stem,"διώκω, διώξομαι, ἐδίωξα, δεδίωχα, ἐδιώχθην"
+δαίμων,noun,"spirit, god, demon",482,noun: 3rd declension consonant stem,"δαίμων δαίμονος, ὁ/ἡ"
+οὐκοῦν,other,surely then (inviting assent to an inference),483,adverb,οὐκοῦν
+γλῶσσα,noun,tongue; language,484,noun: 1st declension,"γλῶσσα γλώσσης, ἡ"
+ἑπτά,adj,seven,485,adjective: numeral,ἑπτά
+τολμάω,verb,"have the courage, dare; undertake, undergo",486,verb: contracted,"τολμάω, τολμήσω, ἐτόλμησα, τετόλμηκα, τετόλμημαι, ἐτολμήθην"
+δεσπότης,noun,master (of the household); absolute ruler,487,noun: 1st declension,"δεσπότης –ου, ὁ"
+εἰκός,noun,"likelihood, probability; εἰκός (ἐστι) it is likely (+infin.) →ἔοικα",488,noun: 3rd declension consonant stem,"εἰκός εἰκότος, τό"
+ἄδικος,adj,unjust,489,adjective: 1st and 2nd declension,ἄδικος ἄδικον
+εἴκοσι(ν),adj,twenty,490,adjective: numeral,εἴκοσι(ν)
+μυρίος,adj,"countless; μύριοι 10,000; μυριάς -άδος ἡ 10,000, a countless amount",491,adjective: 1st and 2nd declension,μυρίος μυρία μυρίον
+αὐτίκα,other,"at once, immediately",492,adverb,αὐτίκα
+δέκατος,adj,tenth,493,adjective: numeral,δέκατος –η –ον
+βαίνω,verb,"walk, come, go",494,verb: -ω liquid stem,"βαίνω, βήσομαι, 2 aor. ἔβην, βέβηκα"
+περ,other,[enclitic added to pronouns and other particles for emphasis],495,adverb,περ
+ἐλεύθερος,adj,"free, independent",496,adjective: 1st and 2nd declension,ἐλεύθερος ἐλευθέρα ἐλεύθερον
+στρατιά,noun,army,497,noun: 1st declension,"στρατιά –ᾶς, ἡ"
+ἀμφί,other,"about, around",498,preposition,ἀμφί
+συμφορά,noun,"event, circumstance, misfortune",499,noun: 1st declension,"συμφορά –ᾶς, ἡ"
+ἑκατόν,adj,hundred,500,adjective: numeral,ἑκατόν
+νίκη,noun,victory,501,noun: 1st declension,"νίκη νίκης, ἡ"
+ἔπος,noun,"word, speech, tale; prophecy",502,noun: 3rd declension σ-stem,"ἔπος ἔπους, τό"
+στρατός,noun,army,503,noun: 2nd declension,"στρατός –οῦ, ὁ"
+φράζω,verb,"tell, declare; (mid. and pass.) think (about)",504,verb: -ω dental stem,"φράζω, φράσω, ἔφρασα, πέφρακα, πέφρασμαι, ἐφράσθην"
+ἀργύριον,noun,money,505,noun: 2nd declension,"ἀργύριον ἀργυρίου, τό"
+τριάκοντα,adj,thirty,506,adjective: numeral,τριάκοντα
+ἕξ,adj,six,507,adjective: numeral,ἕξ
+πεμπτός,adj,fifth,508,adjective: numeral,πεμπτός –ή –όν
+μάρτυς,noun,witness,509,noun: 3rd declension consonant stem,"μάρτυς μάρτυρος, ὁ/ἡ"
+χαλκοῦς,adj,of copper or bronze,510,adjective: 1st and 2nd declension,χαλκοῦς –ῆ –οῦν
+ἕβδομος,adj,seventh,511,adjective: numeral,ἕβδομος –η –ον
+ποῦ,other,where,512,pronoun,ποῦ
+ναί,other,"indeed, yes (used in strong affirmation)",513,adverb,ναί
+φῶς,noun,"light, daylight",514,noun: 3rd declension consonant stem,"φῶς φωτός, τό"
+ὀκτώ,adj,eight,515,adjective: numeral,ὀκτώ
+ἕκτος,adj,sixth,516,adjective: numeral,ἕκτος –η –ον
+τριακοστός,adj,thirtieth,517,adjective: numeral,τριακοστός –ή –όν
+ἐννέα,adj,nine,518,adjective: numeral,ἐννέα
+πότε,other,when?,519,adverb,πότε
+ὄγδοος,adj,eighth,520,adjective: numeral,ὄγδοος –η –ον
+ἔνατος,adj,ninth,521,adjective: numeral,ἔνατος –α –ον
+εἰκοστός,adj,twentieth,522,adjective: numeral,εἰκοστός –ή –όν
+ἀγγέλλω,verb,"report, tell",523,verb: -ω liquid stem,"ἀγγέλλω, ἀγγελῶ, ἤγγειλα, ἤγγελκα, ἤγγελμαι, ἠγγέλθην"
+ἑκατοστός,adj,hundredth,524,adjective: numeral,ἑκατοστός –ή –όν

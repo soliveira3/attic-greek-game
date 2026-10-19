@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://attic-greek-game/schema/paradigms.json",
+  "title": "Paradigm file",
+  "description": "Mirror of app/src/lib/features.ts. Keep the enums identical; app/src/lib/features.test.ts checks this.",
+  "type": "object",
+  "required": ["schemaVersion", "source", "lemmas"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": {
+      "type": "object",
+      "required": ["kaikki", "wiktionary", "dcc"],
+      "additionalProperties": false,
+      "properties": {
+        "kaikki": { "type": "string" },
+        "wiktionary": { "type": "string" },
+        "dcc": { "type": "string" }
+      }
+    },
+    "lemmas": { "type": "array", "items": { "$ref": "#/$defs/lemma" } }
+  },
+  "$defs": {
+    "pos": { "enum": ["noun", "adj", "article", "verb"] },
+    "case": { "enum": ["nom", "gen", "dat", "acc", "voc"] },
+    "number": { "enum": ["sg", "du", "pl"] },
+    "gender": { "enum": ["m", "f", "n"] },
+    "tense": { "enum": ["pres", "impf", "fut", "aor", "perf"] },
+    "voice": { "enum": ["act", "mid", "pass"] },
+    "voiceGroup": { "enum": ["act", "mid", "pass", "mp"] },
+    "mood": { "enum": ["ind", "inf"] },
+    "person": { "enum": ["1", "2", "3"] },
+    "aoristType": { "enum": ["1", "2"] },
+    "nounClass": {
+      "enum": [
+        "decl1-a-long", "decl1-a-short", "decl1-eta", "decl1-masc-es", "decl1-masc-as",
+        "decl2-mf", "decl2-n",
+        "decl3-labial", "decl3-velar", "decl3-dental", "decl3-nt", "decl3-liquid",
+        "decl3-s", "decl3-i", "decl3-u", "decl3-eu"
+      ]
+    },
+    "adjClass": { "enum": ["adj-212-eta", "adj-212-alpha", "adj-22", "adj-3-es", "adj-3-on"] },
+    "articleClass": { "enum": ["article"] },
+    "verbClass": { "enum": ["verb-thematic"] },
+    "form": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[\\u0370-\\u03FF\\u1F00-\\u1FFF\\u0300-\\u036F]+$"
+    },
+    "forms": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/form" } },
+    "nominalCell": {
+      "type": "object",
+      "required": ["key", "case", "number", "forms"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "type": "string", "pattern": "^(nom|gen|dat|acc|voc)\\.(sg|du|pl)(\\.(m|f|n))?$" },
+        "case": { "$ref": "#/$defs/case" },
+        "number": { "$ref": "#/$defs/number" },
+        "gender": { "$ref": "#/$defs/gender" },
+        "forms": { "$ref": "#/$defs/forms" }
+      }
+    },
+    "verbCell": {
+      "type": "object",
+      "required": ["key", "tense", "voice", "mood", "forms"],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^(pres|impf|fut|aor|perf)\\.(act|mid|pass|mp)\\.(inf|ind\\.[123]\\.(sg|du|pl))$"
+        },
+        "tense": { "$ref": "#/$defs/tense" },
+        "voice": {
+          "type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true,
+          "items": { "$ref": "#/$defs/voice" }
+        },
+        "mood": { "$ref": "#/$defs/mood" },
+        "person": { "$ref": "#/$defs/person" },
+        "number": { "$ref": "#/$defs/number" },
+        "forms": { "$ref": "#/$defs/forms" }
+      }
+    },
+    "lemmaBase": {
+      "type": "object",
+      "required": ["id", "lemma", "dccLemma", "pos", "class", "gloss", "rank", "cells"],
+      "properties": {
+        "id": { "$ref": "#/$defs/form" },
+        "lemma": { "$ref": "#/$defs/form" },
+        "dccLemma": { "anyOf": [{ "$ref": "#/$defs/form" }, { "type": "null" }] },
+        "gloss": { "type": "string" },
+        "rank": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }] }
+      }
+    },
+    "lemma": {
+      "oneOf": [
+        {
+          "allOf": [{ "$ref": "#/$defs/lemmaBase" }],
+          "properties": {
+            "pos": { "const": "noun" },
+            "class": { "$ref": "#/$defs/nounClass" },
+            "gender": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/gender" } },
+            "cells": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nominalCell" } }
+          },
+          "required": ["gender"],
+          "unevaluatedProperties": false
+        },
+        {
+          "allOf": [{ "$ref": "#/$defs/lemmaBase" }],
+          "properties": {
+            "pos": { "enum": ["adj", "article"] },
+            "class": { "anyOf": [{ "$ref": "#/$defs/adjClass" }, { "$ref": "#/$defs/articleClass" }] },
+            "cells": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nominalCell" } }
+          },
+          "unevaluatedProperties": false
+        },
+        {
+          "allOf": [{ "$ref": "#/$defs/lemmaBase" }],
+          "properties": {
+            "pos": { "const": "verb" },
+            "class": { "$ref": "#/$defs/verbClass" },
+            "aoristType": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/aoristType" } },
+            "cells": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/verbCell" } }
+          },
+          "required": ["aoristType"],
+          "unevaluatedProperties": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+pipeline/raw/
+app/test-results/
+app/playwright-report/
+app/blob-report/
+.DS_Store
+*.log

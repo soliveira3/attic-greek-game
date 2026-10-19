@@ -3,8 +3,8 @@
 | Phase | Status |
 |---|---|
 | 0 — Scaffold | done |
-| 1 — Spec 🧑 | in progress |
-| 2 — Data pipeline 🧑 | not started |
+| 1 — Spec 🧑 | done (approved 2026-10-19) |
+| 2 — Data pipeline 🧑 | in progress |
 | 3 — Core library | not started |
 | 4 — Game modes | not started |
 | 5 — Spaced repetition & progress | not started |
@@ -12,7 +12,7 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 1 — draft docs/SPEC.md and get it approved.
+Phase 2 — data pipeline (see docs/plans/phase-2.md).
 
 ## Waiting on the user
 (nothing yet)
@@ -33,5 +33,7 @@ Phase 1 — draft docs/SPEC.md and get it approved.
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-19 — Phase 1: SPEC.md written from the plan defaults (user chose default scope,
+  ignore-accents default, plan-as-written "done", all in-scope DCC lemmas) and approved.
 - 2026-10-19 — Phase 0: git repo, Vite React-TS app with Vitest + RTL, pipeline venv with pytest
   and libmorpheus, check.sh runs both suites (verified it exits 1 on a failing test).

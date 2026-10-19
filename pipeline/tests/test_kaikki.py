@@ -59,3 +59,34 @@ def test_pick_tables_skips_out_of_scope_tenses(sample_entries):
     picked = pick_tables(tables(sample_entries[("λύω", "verb")]), "verb")
     assert {t.tense for t in picked.kept} == {"pres", "impf", "fut", "aor", "perf"}
     assert {"pluperfect", "future perfect"} <= set(picked.out_of_scope)
+
+
+def _labels(*labels):
+    from kaikki import Table
+
+    return [Table(label=label) for label in labels]
+
+
+def test_contracted_table_supersedes_only_its_uncontracted_partner():
+    # γιγνώσκω: an independent future, then an uncontracted/contracted pair.
+    ts = _labels("future", "future", "contracted future")
+    picked = pick_tables(ts, "verb")
+    assert picked.kept == [ts[0], ts[2]] and picked.kept[0] is ts[0]
+    assert picked.superseded == ["future"]
+
+
+def test_contracted_table_before_plain_keeps_both():
+    picked = pick_tables(_labels("contracted present", "present"), "verb")
+    assert [t.label for t in picked.kept] == ["contracted present", "present"]
+
+
+def test_plain_group_with_contracted_table_is_not_superseded_by_attic_label():
+    # βάλλω: the plain contracted future is the usual Attic one; "Attic future" is a rarer variant.
+    picked = pick_tables(_labels("future", "contracted future", "Attic future"), "verb")
+    assert [t.label for t in picked.kept] == ["contracted future", "Attic future"]
+    assert picked.superseded == ["future"]
+
+
+def test_attic_label_beats_plain_group_without_contraction():
+    picked = pick_tables(_labels("imperfect", "Attic imperfect"), "verb")
+    assert [t.label for t in picked.kept] == ["Attic imperfect"]

@@ -103,17 +103,36 @@ class Picked:
     out_of_scope: list[str] = field(default_factory=list)
 
 
-def _rank(t: Table) -> tuple[bool, bool]:
-    return (t.parsed.attic_labelled, t.parsed.contracted)
+def _pick_group(group: list[Table], picked: Picked) -> None:
+    """Choose the tables of one tense (or of the declension), keeping source order.
+
+    1. A contracted table supersedes its uncontracted partner: the nearest earlier plain table
+       with the same dialect words (Wiktionary prints the pair "future" / "contracted future").
+       Other plain tables are independent paradigms and stay.
+    2. "Attic"-labelled tables beat unlabelled ones, unless the unlabelled tables include a
+       contracted one (then both are Attic paradigms and both stay).
+    """
+    gone: set[int] = set()  # indexes into group
+    for i, t in enumerate(group):
+        if not t.parsed.contracted:
+            continue
+        for j in range(i - 1, -1, -1):
+            partner = group[j]
+            if j not in gone and not partner.parsed.contracted and partner.parsed.dialects == t.parsed.dialects:
+                gone.add(j)
+                picked.superseded.append(partner.label)
+                break
+    alive = [t for i, t in enumerate(group) if i not in gone]
+    attic = [t for t in alive if t.parsed.attic_labelled]
+    plain = [t for t in alive if not t.parsed.attic_labelled]
+    if attic and plain and not any(t.parsed.contracted for t in plain):
+        picked.superseded += [t.label for t in plain]
+        alive = attic
+    picked.kept += alive
 
 
 def pick_tables(ts: list[Table], pos: str) -> Picked:
-    """Keep the Attic tables that are in scope.
-
-    For each tense (verbs) or for the declension (nominals), only the best-ranked tables are kept:
-    an "Attic" label beats an unlabelled one, and a contracted table beats an uncontracted one.
-    Tables of equal rank are all kept and their forms become alternates.
-    """
+    """Keep the Attic tables that are in scope (see _pick_group for how one tense is chosen)."""
     picked = Picked(kept=[])
     groups: dict[str, list[Table]] = {}
     for t in ts:
@@ -126,10 +145,5 @@ def pick_tables(ts: list[Table], pos: str) -> Picked:
             continue
         groups.setdefault(group, []).append(t)
     for group in groups.values():
-        best = max(_rank(t) for t in group)
-        for t in group:
-            if _rank(t) == best:
-                picked.kept.append(t)
-            else:
-                picked.superseded.append(t.label)
+        _pick_group(group, picked)
     return picked

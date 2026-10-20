@@ -17,3 +17,10 @@ def sample_entries():
             e = json.loads(line)
             out[(key(e["word"]), e["pos"])] = e
     return out
+
+
+@pytest.fixture(scope="session")
+def all_sample_entries():
+    """Every entry in the fixture, homographs included."""
+    with (FIXTURES / "kaikki_sample.jsonl").open(encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]

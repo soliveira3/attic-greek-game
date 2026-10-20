@@ -5,15 +5,15 @@ Every comparison of Greek text in the pipeline goes through this module.
 import re
 import unicodedata
 
-MACRON = "̄"
-BREVE = "̆"
-ACUTE = "́"
-GRAVE = "̀"
-CIRCUMFLEX = "͂"
-DIAERESIS = "̈"
-SMOOTH = "̓"
-ROUGH = "̔"
-IOTA_SUBSCRIPT = "ͅ"
+MACRON = chr(0x0304)
+BREVE = chr(0x0306)
+ACUTE = chr(0x0301)
+GRAVE = chr(0x0300)
+CIRCUMFLEX = chr(0x0342)
+DIAERESIS = chr(0x0308)
+SMOOTH = chr(0x0313)
+ROUGH = chr(0x0314)
+IOTA_SUBSCRIPT = chr(0x0345)
 
 LENGTH_MARKS = frozenset({MACRON, BREVE})
 ACCENTS = frozenset({ACUTE, GRAVE, CIRCUMFLEX})

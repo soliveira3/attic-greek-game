@@ -18,8 +18,9 @@ from pathlib import Path
 from classify import aorist_types, classify_adj, classify_noun, classify_verb
 from core_list import read_core_list
 from exclusions import Rule, apply_rules, parse_exclusions
-from kaikki import GREEK_FORM, Picked, iter_entries, pick_tables, tables
+from kaikki import Picked, Table, is_greek_form, iter_entries, pick_tables, tables
 from normalize import key, nfc, strip_accents, strip_length
+from select_tables import MappedTable, principal_parts, select
 from tags import CASE, GENDER, NUMBER, Skip, nominal_cells, verb_cells
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -54,6 +55,7 @@ class Candidate:
     rank: int | None
     dcc_pos: str | None
     in_dcc: bool
+    headword: str | None = None  # DCC headword with principal parts ("λύω, λύσω, ἔλυσα, …")
 
 
 @dataclass
@@ -65,7 +67,7 @@ class Built:
     dropped_blocks: dict[str, str] = field(default_factory=dict)
     competing: dict[str, list[str]] = field(default_factory=dict)
     picked: Picked | None = None
-    partial_tables: list[str] = field(default_factory=list)
+    choices: list[str] = field(default_factory=list)  # how verb tables were chosen
 
 
 @dataclass
@@ -73,6 +75,7 @@ class Rejected:
     reason: str  # "not in dump" | "no Attic table" | "out of scope" | "incomplete" | "excluded"
     detail: str = ""
     anomalies: list[str] = field(default_factory=list)
+    excluded_by: list[Rule] = field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------- entry selection
@@ -105,10 +108,12 @@ def index_entries(entries: Iterable[dict]) -> Index:
     return index
 
 
-def select_entry(c: Candidate, index: Index) -> tuple[list[dict], str | None]:
-    """The entries to build from, and the DCC headword (None for extra lemmas).
+def select_entry(c: Candidate, index: Index) -> tuple[list[dict], str | None, list[dict]]:
+    """The entries to build from, the DCC headword (None for extra lemmas), and supplements.
 
-    A DCC headword with -σσ- is replaced by its "Attic form of" entry spelt with -ττ-.
+    A DCC headword with -σσ- is replaced by its "Attic form of" entry spelt with -ττ-; the -σσ-
+    entries are returned as supplements, since the -ττ- entry often lacks tenses whose forms
+    have no σσ at all (πράξω, ἔπραξα).
     """
     dcc_lemma = c.lemma if c.in_dcc else None
     k = key(c.lemma)
@@ -116,16 +121,16 @@ def select_entry(c: Candidate, index: Index) -> tuple[list[dict], str | None]:
         if c.in_dcc and "σσ" in k:
             attic = [e for e in index.attic_alts.get((k, pos), []) if key(e["word"]) == k.replace("σσ", "ττ")]
             if attic:
-                return attic, dcc_lemma
+                return attic, dcc_lemma, index.get((k, pos), [])
         if index.get((k, pos)):
-            return index[(k, pos)], dcc_lemma
-    return [], dcc_lemma
+            return index[(k, pos)], dcc_lemma, []
+    return [], dcc_lemma, []
 
 
 def article_forms_from(entry: dict) -> set[str]:
     """Accent-free forms of the article, for spotting an article written inside a noun form."""
     picked = pick_tables(tables(entry), "article")
-    return {strip_accents(f) for t in picked.kept for f, _ in t.forms if GREEK_FORM.match(f)}
+    return {strip_accents(f) for t in picked.kept for f, _ in t.forms if is_greek_form(f)}
 
 
 # ---------------------------------------------------------------------------- building
@@ -154,7 +159,7 @@ def _clean(raw: str, article_forms: set[str], notes: Counter, anomalies: list[st
         notes["parenthesised alternates expanded"] += 1
     out = []
     for v in variants:
-        if GREEK_FORM.match(v):
+        if is_greek_form(v):
             out.append(v)
         else:
             anomalies.append(f"{raw!r}: unexpected characters")
@@ -226,62 +231,85 @@ def _merge_middle_into_mp(features: dict[str, dict], forms: dict[str, list[str]]
         notes["middle-only present/imperfect/perfect filed as middle/passive"] += 1
 
 
-def _build_one(c: Candidate, entry: dict, dcc_lemma: str | None, article_forms: set[str], rules: list[Rule]) -> Built | Rejected:
-    picked = pick_tables(tables(entry), c.pos)
-    if not picked.kept:
-        return Rejected("no Attic table", ", ".join(picked.dropped_dialect + picked.out_of_scope) or "no tables")
-    word = nfc(entry["word"])
-    notes: Counter = Counter()
-    anomalies: list[str] = []
-    features: dict[str, dict] = {}
-    forms: dict[str, list[str]] = {}
-    # The first table of a tense (or the declension) is used whole. A later table of the same
-    # tense only supplies voice groups the earlier ones lack: such tables often hold iteratives,
-    # Ionic or crasis variants, but sometimes the only aorist passive.
-    taken: dict[str, set[str]] = {}
-    partial: list[str] = []
-    for n, t in enumerate(picked.kept, start=1):
-        group = (t.tense or "") if c.pos == "verb" else "decl"
-        before = taken.get(group)
-        if before is not None and c.pos != "verb":
-            partial.append(f"{word} {t.label} (table {n}): ignored")
-            continue
-        added: set[str] = set()
-        for raw, tags in t.forms:
-            mapped = (
-                verb_cells(tags, t.tense or "")
-                if c.pos == "verb"
-                else nominal_cells(tags, with_gender=c.pos != "noun")
-            )
-            if isinstance(mapped, Skip):
-                if mapped.anomaly:
-                    anomalies.append(f"{raw} {tags}: {mapped.reason}")
-                continue
-            if c.pos == "verb":
-                voice_group = mapped[0]["key"].split(".")[1]
-                if before is not None and voice_group in before:
-                    continue
-                added.add(voice_group)
-            for form in _clean(raw, article_forms, notes, anomalies):
-                if mapped.note:
-                    notes[mapped.note] += 1
-                for cell in mapped:
-                    features[cell["key"]] = cell
-                    if form not in forms.setdefault(cell["key"], []):
-                        forms[cell["key"]].append(form)
-        if before is not None:
-            partial.append(f"{word} {t.label} (table {n}): " + (f"used for {', '.join(sorted(added))}" if added else "ignored"))
-        taken.setdefault(group, set()).update(added)
+PRESENT_SYSTEM = ("pres", "impf", "perf")
+# Cells a block may lack: the Attic perfect middle/passive 3rd plural of consonant stems is a
+# periphrasis (participle + εἰσί), which v1 does not model.
+OPTIONAL_CELLS = {"perf.mp": {"perf.mp.ind.3.pl"}}
 
+
+def _map_table(c: Candidate, t: Table, article_forms: set[str], notes: Counter, anomalies: list[str]) -> tuple[dict[str, list[str]], dict[str, dict]]:
+    """Cells of one source table: key -> forms, and key -> features."""
+    forms: dict[str, list[str]] = {}
+    features: dict[str, dict] = {}
+    for raw, tags in t.forms:
+        mapped = (
+            verb_cells(tags, t.tense or "")
+            if c.pos == "verb"
+            else nominal_cells(tags, with_gender=c.pos != "noun")
+        )
+        if isinstance(mapped, Skip):
+            if mapped.anomaly:
+                anomalies.append(f"{raw} {tags}: {mapped.reason}")
+            continue
+        for form in _clean(raw, article_forms, notes, anomalies):
+            if mapped.note:
+                notes[mapped.note] += 1
+            for cell in mapped:
+                features[cell["key"]] = cell
+                cell_forms = forms.setdefault(cell["key"], [])
+                if strip_length(form) not in {strip_length(f) for f in cell_forms}:
+                    cell_forms.append(form)
+    return forms, features
+
+
+def _build_one(
+    c: Candidate, entry: dict, dcc_lemma: str | None, article_forms: set[str], rules: list[Rule], supplements: list[dict]
+) -> Built | Rejected:
+    picked = pick_tables(tables(entry), c.pos)
+    word = nfc(entry["word"])
+    names = {key(word)} | ({key(dcc_lemma)} if dcc_lemma else set())
+    choices: list[str] = []
     if c.pos == "verb":
-        _merge_middle_into_mp(features, forms, notes)
+        covered = {t.tense for t in picked.kept}
+        for sup in supplements:
+            for t in pick_tables(tables(sup), "verb").kept:
+                if t.tense not in covered and not any("σσ" in key(f) for f, _ in t.forms):
+                    picked.kept.append(t)
+                    choices.append(f"`{t.label}` taken from the {nfc(sup['word'])} entry (it has no -σσ- forms)")
 
     excl: list[tuple[Rule, str]] = []
+    kept: list[Table] = []
+    for t in picked.kept:
+        hits = [r for r in rules if r.scope == "table" and r.lemma in names and any(key(f) == r.form for f, _ in t.forms)]
+        excl += [(r, f"removed table `{t.label}`") for r in hits]
+        if not hits:
+            kept.append(t)
+    if not kept:
+        return Rejected("no Attic table", ", ".join(picked.dropped_dialect + picked.out_of_scope) or "no tables")
+
+    notes: Counter = Counter()
+    anomalies: list[str] = []
+    if c.pos == "verb":
+        mapped = []
+        for t in kept:
+            forms, features = _map_table(c, t, article_forms, notes, anomalies)
+            _merge_middle_into_mp(features, forms, notes)
+            mapped.append(MappedTable(t.label, t.tense or "", forms, features))
+        selection = select(word, mapped, principal_parts(c.headword))
+        forms, features = selection.cells, selection.features
+        choices += selection.notes
+        for k in [k for k in forms if k.split(".")[0] in PRESENT_SYSTEM and k.split(".")[1] == "pass"]:
+            del forms[k]
+            notes["separate passive cells in present/imperfect/perfect dropped (SPEC §2)"] += 1
+    else:
+        forms, features = _map_table(c, kept[0], article_forms, notes, anomalies)
+        choices += [f"`{t.label}` (table {n}) ignored: nominals use the first Attic table" for n, t in enumerate(kept[1:], start=2)]
+
     for name in dict.fromkeys([word, dcc_lemma] if dcc_lemma else [word]):
         remaining, effects = apply_rules(name, forms, rules)
         excl += effects
         if remaining is None:
-            return Rejected("excluded", "; ".join(r.text for r, _ in effects))
+            return Rejected("excluded", "; ".join(r.text for r, _ in effects), excluded_by=[r for r, _ in effects])
         forms = remaining
 
     lemma: dict = {"id": word, "lemma": word, "dccLemma": dcc_lemma, "pos": c.pos}
@@ -299,10 +327,16 @@ def _build_one(c: Candidate, entry: dict, dcc_lemma: str | None, article_forms: 
         for block in blocks:
             need = [f"{block}.ind.{p}.{n}" for n in ("sg", "pl") for p in PERSONS]
             missing = [k for k in need if k not in forms]
-            if missing:
+            if missing and set(missing) <= OPTIONAL_CELLS.get(block, set()):
+                notes[f"{block} kept without its periphrastic 3rd plural"] += 1
+            elif missing:
                 for k in [k for k in forms if k.startswith(block + ".ind.")]:
                     del forms[k]
                 dropped[block] = "missing " + ", ".join(m.split(".ind.")[1] for m in missing)
+        for k in [k for k in forms if k.endswith(".inf")]:
+            if not any(other.startswith(k[: -len("inf")] + "ind.") for other in forms):
+                del forms[k]
+                dropped[k] = "infinitive without an indicative block"
         if not any(k.startswith(("pres.act.ind.", "pres.mp.ind.")) for k in forms):
             return Rejected("incomplete", "no complete present indicative block", anomalies)
         lemma["class"] = cls
@@ -311,7 +345,7 @@ def _build_one(c: Candidate, entry: dict, dcc_lemma: str | None, article_forms: 
         missing = [k for k in _required_nominal(c.pos) if k not in forms]
         if missing:
             return Rejected("incomplete", "missing " + ", ".join(missing), anomalies)
-        decl = next((t.declension_class for t in picked.kept if t.declension_class), None)
+        decl = kept[0].declension_class
         if c.pos == "noun":
             genders = _noun_genders(entry)
             cls = classify_noun(decl, forms["nom.sg"][0], forms["gen.sg"][0], genders, c.dcc_pos)
@@ -334,7 +368,7 @@ def _build_one(c: Candidate, entry: dict, dcc_lemma: str | None, article_forms: 
     competing = {
         k: v for k, v in forms.items() if len({strip_length(f) for f in v}) > 1 and not _differs_only_by_nu(v)
     }
-    return Built(lemma, notes, anomalies, excl, dropped, competing, picked, partial)
+    return Built(lemma, notes, anomalies, excl, dropped, competing, picked, choices)
 
 
 _STOPWORDS = frozenset({"a", "an", "the", "to", "of", "in", "on", "and", "or", "for", "with", "be", "etc"})
@@ -358,14 +392,19 @@ def order_by_gloss(gloss: str | None, entries: list[dict]) -> list[dict]:
 
 
 def build_lemma(
-    c: Candidate, entries: list[dict], dcc_lemma: str | None, article_forms: set[str], rules: list[Rule]
+    c: Candidate,
+    entries: list[dict],
+    dcc_lemma: str | None,
+    article_forms: set[str],
+    rules: list[Rule],
+    supplements: list[dict] | None = None,
 ) -> Built | Rejected:
     if not entries:
         return Rejected("not in dump")
     entries = order_by_gloss(c.gloss, entries)
     first: Rejected | None = None
     for i, entry in enumerate(entries):
-        result = _build_one(c, entry, dcc_lemma, article_forms, rules)
+        result = _build_one(c, entry, dcc_lemma, article_forms, rules, supplements or [])
         if isinstance(result, Built):
             if len(entries) > 1:
                 result.notes[f"{len(entries)} entries in dump; used the one glossed {_first_gloss(entry)!r}"] += 1
@@ -463,12 +502,12 @@ def render_report(candidates: list[Candidate], results: dict[Candidate, Built | 
     lines += ["", "## Attic tables superseded by a better-ranked table of the same tense", ""]
     lines += _md_list([f"{b.lemma['lemma']}: {', '.join(b.picked.superseded)}" for b in built.values() if b.picked and b.picked.superseded])
 
-    lines += ["", "## Later tables of the same tense (only voice groups missing from earlier tables are used)", ""]
-    lines += _md_list([p for b in built.values() for p in b.partial_tables])
+    lines += ["", "## Table choices (see pipeline/select_tables.py)", ""]
+    lines += _md_list([f"{b.lemma['lemma']} {n}" for b in built.values() for n in b.choices])
 
     lines += ["", "## data/exclude.txt rules", ""]
     applied = {(r.line): eff for b in built.values() for r, eff in b.exclusions}
-    applied.update({r.line: "removed lemma" for c, x in rejected.items() if x.reason == "excluded" for r in rules if r.lemma in (key(c.lemma),)})
+    applied.update({r.line: "removed lemma" for x in rejected.values() for r in x.excluded_by})
     lines += _md_list([f"line {r.line} `{r.text}`: {applied.get(r.line, '**matched nothing**')}" for r in rules])
     lines.append("")
     return "\n".join(lines)
@@ -485,7 +524,7 @@ def _keep_morpheus_section(new_report: str) -> str:
 
 def load_candidates() -> list[Candidate]:
     out = [
-        Candidate(r.lemma, r.pos, r.gloss, r.rank, r.dcc_pos, True)
+        Candidate(r.lemma, r.pos, r.gloss, r.rank, r.dcc_pos, True, r.headword)
         for r in read_core_list(DATA / "core_list.csv")
         if r.pos in INFLECTED
     ]
@@ -520,8 +559,8 @@ def main() -> int:
 
     results: dict[Candidate, Built | Rejected] = {}
     for c in candidates:
-        entries, dcc_lemma = select_entry(c, index)
-        results[c] = build_lemma(c, entries, dcc_lemma, article_forms, rules)
+        entries, dcc_lemma, supplements = select_entry(c, index)
+        results[c] = build_lemma(c, entries, dcc_lemma, article_forms, rules, supplements)
 
     source = {
         "kaikki": sources["kaikki"]["extracted"],

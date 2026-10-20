@@ -1,6 +1,7 @@
 # Exclusions applied by pipeline/build_paradigms.py (format: see pipeline/exclusions.py).
 # Nothing here edits a form; each rule only removes source data from the output.
-# Reviewed 2026-10-19 against data/paradigms/REPORT.md (Morpheus cross-check + competing forms).
+# Reviewed 2026-10-19 against data/paradigms/REPORT.md (Morpheus cross-check, competing forms)
+# and the greek-checker audit of the same day.
 
 ## Whole lemmas
 ἀπαλλάσσω   # Wiktionary has no Attic -ττ- entry; every form is spelt with -σσ- (not Attic)
@@ -10,7 +11,6 @@
 λαός        # not the Attic word (Attic is the Attic-declension λεώς, out of scope)
 
 ## Tense-voice blocks
-ἁμαρτάνω  fut.act     # the Attic future is middle; Morpheus does not parse these as futures
 ἥκω       perf.act    # 'perfect' forms are doubtful; Morpheus parses them as imperfect / forms of ἵημι
 προσήκω   perf.act    # same as ἥκω
 λανθάνω   perf        # perfect forms are non-Attic; Morpheus does not recognise them or parses them as aorist
@@ -23,7 +23,6 @@
 βλέπω     perf        # late forms; Morpheus does not recognise them
 τέμνω     fut.pass    # not the usual Attic future passive; Morpheus does not recognise it
 μέλλω     impf.mp     # Morpheus does not recognise these forms
-χαίρω     aor.act     # late form; Morpheus does not recognise it (the Attic aorist is passive in form)
 βαίνω     aor         # active aorist is a root aorist (out of scope); the middle and passive left over are rare
 συμβαίνω  aor         # as βαίνω
 
@@ -37,7 +36,6 @@
 ὑπάρχω  perf.mp.ind.3.pl  ῠ̔πήρχᾰται
 ἄρχω  perf.mp.ind.3.pl  ἤρχᾰται
 γιγνώσκω  perf.mp.ind.3.pl  ἐγνώσᾰται
-τυγχάνω  perf.mp.ind.3.pl  τετεύχᾰται
 ἄγω  perf.mp.ind.3.pl  ἤγᾰται
 πείθω  perf.mp.ind.3.pl  πεπείσᾰται
 νομίζω  perf.mp.ind.3.pl  νενομῐ́δᾰται
@@ -53,22 +51,21 @@
 θαυμάζω  perf.mp.ind.3.pl  τεθαυμᾰ́δᾰται
 καταλαμβάνω  perf.mp.ind.3.pl  κᾰτειλήφᾰται
 αἴρω  perf.mp.ind.3.pl  ἤρᾰται
-ἀποκτείνω  perf.mp.ind.3.pl  ἀπεκτᾰ́νᾰται
 κατασκευάζω  perf.mp.ind.3.pl  κᾰτεσκευᾰ́σᾰται
 διαφθείρω  perf.mp.ind.3.pl  δῐεφθᾰ́ρᾰται
 πυνθάνομαι  perf.mp.ind.3.pl  πεπῠ́σᾰται
 ὑπολαμβάνω  perf.mp.ind.3.pl  ῠ̔πειλήβᾰται
-λανθάνω  perf.mp.ind.3.pl  λελᾰ́θᾰται
 τρέπω  perf.mp.ind.3.pl  τετράφᾰται
 λείπω  perf.mp.ind.3.pl  λελείπᾰται
 τίκτω  perf.mp.ind.3.pl  τετέκᾰται
 κομίζω  perf.mp.ind.3.pl  κεκομῐ́δᾰται
-βλέπω  perf.mp.ind.3.pl  βεβλέπᾰται
 παρασκευάζω  perf.mp.ind.3.pl  πᾰρεσκευᾰ́σᾰται
-ἀπαλλάσσω  perf.mp.ind.3.pl  ἀπηλλᾰ́χᾰται
 διώκω  perf.mp.ind.3.pl  δεδῐώχᾰται
 φράζω  perf.mp.ind.3.pl  πεφρᾰ́δᾰται
 ἀγγέλλω  perf.mp.ind.3.pl  ἠγγέλᾰται
+λέγω  perf.mp.ind.3.pl  λελέγᾰται
+τάττω  perf.mp.ind.3.pl  τετᾰ́γᾰται
+φυλάττω  perf.mp.ind.3.pl  πεφῠλᾰ́κᾰται
 
 ## Single non-Attic, poetic or crasis alternates
 # syncopated poetic perfects (Attic: -θαμεν, -θατε); Morpheus does not recognise them
@@ -99,3 +96,78 @@
 στάδιον  nom.pl  στᾰ́δῐοι
 στάδιον  acc.pl  στᾰ́δῐους
 στάδιον  voc.pl  στᾰ́δῐοι
+
+## From the greek-checker audit (2026-10-19)
+# Lemmas outside the v1 scope that slipped through classification:
+ἐλάττων   # comparative (SPEC: comparatives are v2)
+ἥττων     # comparative
+κρείττων  # comparative
+βελτίων   # comparative
+ἀμείνων   # comparative
+χείρων    # comparative
+πλέων     # comparative
+γῆ        # contracted noun; its plural and dual are rare and Morpheus does not parse them
+ἐμός      # possessive pronoun: its 'vocative' is template-generated and coincides with the pronoun
+σός       # as ἐμός
+οἷος      # pronominal adjective with template-generated vocatives
+ὅσος      # as οἷος
+ποῖος     # as οἷος
+πότερος   # as οἷος
+
+# ἥκω / προσήκω: Attic has no aorist and no middle/passive; DCC gives only ἥκω, ἥξω, pf. ἧκα
+ἥκω      aor
+ἥκω      fut.mid
+ἥκω      pres.mp
+ἥκω      impf.mp
+προσήκω  aor
+προσήκω  fut.mid
+προσήκω  pres.mp
+προσήκω  impf.mp
+
+# Voices Wiktionary's templates fill in but Attic does not use (intransitive verbs etc.)
+πάσχω     impf.mp
+χαίρω     pres.mp
+χαίρω     impf.mp
+τυγχάνω   pres.mp
+τυγχάνω   impf.mp
+τυγχάνω   aor.mid
+μέλλω     fut.mid
+μέλλω     aor.mid
+θαυμάζω   aor.mid
+ἀποκτείνω aor.mid
+ἁμαρτάνω  aor.mid
+βλέπω     aor.mid
+βλέπω     aor.pass   # also late (ἐβλέφθην)
+βαίνω     pres.mp
+βαίνω     impf.mp
+βαίνω     perf.mp    # Morpheus reads these as forms of βάζω
+συμβαίνω  pres.mp
+συμβαίνω  impf.mp
+συμβαίνω  perf.mp
+
+# Post-classical imperfect; the Attic εἰργαζόμην comes from another table and stays
+ἐργάζομαι  table  ἠργᾰζόμην
+
+# Non-Attic or poetic alternates (the Attic forms in the same cells remain)
+# ἔτος: not the Attic dative (Morpheus reads it as from ἔτης)
+ἔτος  dat.sg  ἔτῃ
+# χάρις: poetic accusative
+χάρις  acc.sg  χᾰ́ρῐτα
+# χείρ: Attic is χειρῶν, χερσί(ν), χεροῖν
+χείρ  gen.pl  χερῶν
+χείρ  dat.pl  χειρσῐ́
+χείρ  dat.pl  χειρσῐ́ν
+χείρ  gen.du  χειροῖν
+χείρ  dat.du  χειροῖν
+# Attic always has βούλει and οἴει in the 2nd sg. (Smyth §628)
+βούλομαι  pres.mp.ind.2.sg  βούλῃ
+οἴομαι  pres.mp.ind.2.sg  οἴῃ
+
+## Reviewed and kept although Morpheus disagrees (see REPORT.md, Morpheus section)
+# - perfect active 3rd dual in -ατον: Morpheus lists only the 2nd dual; the forms are identical.
+# - vocative = nominative (θεός, χείρ, πούς) and contracted plural vocatives: Morpheus omits voc.
+# - φῶτα etc.: Morpheus confuses φῶς with φώς 'man'; φάος, νεανίης, πλείων are Morpheus headwords.
+# - λέγω's ἐρῶ / εἴρηκα: suppletive, filed by Morpheus under ἐρῶ.
+# - συμβαίνω: Morpheus fails to map the compound to its lemma.
+# - ἔχω σχεθήσομαι / ἐσχέθην, ἀγγέλλω ἤγγελθε, φέρω ἠνέγκομεν: attested, unknown to Morpheus.
+# - γίγνομαι ἐγενήθην / γενηθήσομαι: listed by DCC; left for the user's decision (see PROGRESS).

@@ -1,6 +1,6 @@
 """Reading inflection tables from the kaikki.org (wiktextract) Ancient Greek dump."""
 import json
-import re
+import unicodedata
 from collections.abc import Iterator
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -14,7 +14,20 @@ TENSE_WORDS = {
 }
 # Rows that describe a table rather than hold a form.
 META_TAGS = frozenset({"table-tags", "inflection-template", "class", "romanization", "canonical"})
-GREEK_FORM = re.compile(r"^[Ͱ-Ͽἀ-῿̀-ͯ]+$")
+# Label words that qualify a table without changing its tense ("future imperfective",
+# "Attic intransitive perfect", "contracted present").
+LABEL_MODIFIERS = frozenset({"contracted", "imperfective", "intransitive"})
+# Combining marks a Greek form may carry: grave, acute, macron, breve, diaeresis, smooth and
+# rough breathing, circumflex, iota subscript.
+GREEK_MARKS = frozenset(map(chr, (0x300, 0x301, 0x304, 0x306, 0x308, 0x313, 0x314, 0x342, 0x345)))
+
+
+def is_greek_form(s: str) -> bool:
+    """Lowercase Greek letters (α-ω, ς) plus the polytonic marks above, and nothing else."""
+    chars = unicodedata.normalize("NFD", s)
+    return bool(chars) and chars[0] not in GREEK_MARKS and all(
+        "α" <= ch <= "ω" or ch in GREEK_MARKS for ch in chars
+    )
 
 
 def iter_entries(path: Path) -> Iterator[dict]:
@@ -34,10 +47,6 @@ class Label:
     def attic(self) -> bool:
         """Kept if the label names Attic or names no dialect at all."""
         return not self.dialects or "Attic" in self.dialects
-
-    @property
-    def attic_labelled(self) -> bool:
-        return "Attic" in self.dialects
 
     @property
     def contracted(self) -> bool:
@@ -65,14 +74,18 @@ class Table:
         return parse_label(self.label)
 
     @property
+    def _core_words(self) -> list[str]:
+        return [w for w in self.parsed.words if w not in LABEL_MODIFIERS]
+
+    @property
     def tense(self) -> str | None:
         """Canonical tense for a verb table whose label names exactly one in-scope tense."""
-        rest = [w for w in self.parsed.words if w != "contracted"]
+        rest = self._core_words
         return TENSE_WORDS.get(rest[0]) if len(rest) == 1 else None
 
     @property
     def is_declension(self) -> bool:
-        rest = [w for w in self.parsed.words if w != "contracted"]
+        rest = self._core_words
         return len(rest) == 1 and rest[0].startswith("declension-")
 
 
@@ -104,13 +117,12 @@ class Picked:
 
 
 def _pick_group(group: list[Table], picked: Picked) -> None:
-    """Choose the tables of one tense (or of the declension), keeping source order.
+    """Drop the uncontracted partner of each contracted table, keeping source order.
 
-    1. A contracted table supersedes its uncontracted partner: the nearest earlier plain table
-       with the same dialect words (Wiktionary prints the pair "future" / "contracted future").
-       Other plain tables are independent paradigms and stay.
-    2. "Attic"-labelled tables beat unlabelled ones, unless the unlabelled tables include a
-       contracted one (then both are Attic paradigms and both stay).
+    Wiktionary prints pairs like "future" / "contracted future": the contracted table is the
+    Attic paradigm and its partner is the nearest earlier plain table with the same dialect
+    words. Other tables are independent paradigms and stay; for verbs, build_paradigms chooses
+    among them per voice using the DCC principal parts.
     """
     gone: set[int] = set()  # indexes into group
     for i, t in enumerate(group):
@@ -122,17 +134,11 @@ def _pick_group(group: list[Table], picked: Picked) -> None:
                 gone.add(j)
                 picked.superseded.append(partner.label)
                 break
-    alive = [t for i, t in enumerate(group) if i not in gone]
-    attic = [t for t in alive if t.parsed.attic_labelled]
-    plain = [t for t in alive if not t.parsed.attic_labelled]
-    if attic and plain and not any(t.parsed.contracted for t in plain):
-        picked.superseded += [t.label for t in plain]
-        alive = attic
-    picked.kept += alive
+    picked.kept += [t for i, t in enumerate(group) if i not in gone]
 
 
 def pick_tables(ts: list[Table], pos: str) -> Picked:
-    """Keep the Attic tables that are in scope (see _pick_group for how one tense is chosen)."""
+    """Keep the Attic tables that are in scope, minus superseded uncontracted partners."""
     picked = Picked(kept=[])
     groups: dict[str, list[Table]] = {}
     for t in ts:

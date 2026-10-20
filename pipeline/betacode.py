@@ -4,7 +4,7 @@ Vowel-length marks are dropped (Morpheus matches without them).
 """
 import unicodedata
 
-from normalize import strip_length
+from normalize import ACUTE, CIRCUMFLEX, DIAERESIS, GRAVE, IOTA_SUBSCRIPT, ROUGH, SMOOTH, strip_length
 
 _LETTERS = {
     "α": "a", "β": "b", "γ": "g", "δ": "d", "ε": "e", "ζ": "z", "η": "h", "θ": "q",
@@ -13,8 +13,8 @@ _LETTERS = {
     "ω": "w",
 }
 _MARKS = {
-    "̓": ")", "̔": "(", "́": "/", "̀": "\\", "͂": "=",
-    "̈": "+", "ͅ": "|",
+    SMOOTH: ")", ROUGH: "(", ACUTE: "/", GRAVE: "\\", CIRCUMFLEX: "=",
+    DIAERESIS: "+", IOTA_SUBSCRIPT: "|",
 }
 # Beta code order after a letter: breathing, diaeresis, accent, iota subscript.
 _ORDER = {")": 0, "(": 0, "+": 1, "/": 2, "\\": 2, "=": 2, "|": 3}

@@ -44,15 +44,14 @@ def test_pick_tables_drops_non_attic(sample_entries):
     assert sorted(picked.dropped_dialect) == ["Epic declension-1", "Ionic declension-1", "Laconian declension-1"]
 
 
-def test_pick_tables_prefers_attic_labelled_tense(sample_entries):
+def test_pick_tables_keeps_attic_and_plain_tables_of_a_tense(sample_entries):
     ts = tables(sample_entries[("μάχομαι", "verb")])
-    labels = [t.label for t in ts]
-    assert "future" in labels and "Attic future" in labels
     picked = pick_tables(ts, "verb")
     fut = [t.label for t in picked.kept if t.tense == "fut"]
-    # "Attic future" holds the uncontracted forms; the contracted table is the Attic paradigm.
-    assert fut == ["Attic contracted future"]
-    assert sorted(picked.superseded) == ["Attic future", "future", "future"]
+    # "Attic future" holds the uncontracted partner of "Attic contracted future"; the choice
+    # among the rest is made per voice from the DCC principal parts (build_paradigms).
+    assert fut == ["future", "future", "Attic contracted future"]
+    assert picked.superseded == ["Attic future"]
 
 
 def test_pick_tables_skips_out_of_scope_tenses(sample_entries):
@@ -80,13 +79,6 @@ def test_contracted_table_before_plain_keeps_both():
     assert [t.label for t in picked.kept] == ["contracted present", "present"]
 
 
-def test_plain_group_with_contracted_table_is_not_superseded_by_attic_label():
-    # βάλλω: the plain contracted future is the usual Attic one; "Attic future" is a rarer variant.
-    picked = pick_tables(_labels("future", "contracted future", "Attic future"), "verb")
-    assert [t.label for t in picked.kept] == ["contracted future", "Attic future"]
-    assert picked.superseded == ["future"]
-
-
-def test_attic_label_beats_plain_group_without_contraction():
-    picked = pick_tables(_labels("imperfect", "Attic imperfect"), "verb")
-    assert [t.label for t in picked.kept] == ["Attic imperfect"]
+def test_label_modifiers_do_not_hide_the_tense():
+    picked = pick_tables(_labels("future imperfective", "Attic intransitive perfect"), "verb")
+    assert [t.tense for t in picked.kept] == ["fut", "perf"]

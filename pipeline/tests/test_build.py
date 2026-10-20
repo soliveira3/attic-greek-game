@@ -14,6 +14,7 @@ from build_paradigms import (
     render_json,
     select_entry,
 )
+from core_list import read_core_list
 from exclusions import parse_exclusions
 from normalize import key, strip_length
 
@@ -21,8 +22,8 @@ SCHEMA = json.loads((Path(__file__).parents[1] / "schema.json").read_text(encodi
 
 
 @pytest.fixture(scope="module")
-def index(sample_entries):
-    return index_entries(sample_entries.values())
+def index(all_sample_entries):
+    return index_entries(all_sample_entries)
 
 
 @pytest.fixture(scope="module")
@@ -30,14 +31,26 @@ def articles(sample_entries):
     return article_forms_from(sample_entries[("ὁ", "article")])
 
 
+CORE = {r.lemma: r for r in read_core_list()}
+
+
 def cand(lemma, pos, dcc_pos=None, rank=1):
-    return Candidate(lemma=lemma, pos=pos, gloss="gloss", rank=rank, dcc_pos=dcc_pos, in_dcc=True)
+    row = CORE.get(lemma)
+    return Candidate(
+        lemma=lemma,
+        pos=pos,
+        gloss=row.gloss if row else "gloss",
+        rank=rank,
+        dcc_pos=dcc_pos,
+        in_dcc=True,
+        headword=row.headword if row else None,
+    )
 
 
 def build(index, articles, lemma, pos, rules=(), **kw):
     c = cand(lemma, pos, **kw)
-    entries, dcc_lemma = select_entry(c, index)
-    return build_lemma(c, entries, dcc_lemma, articles, list(rules))
+    entries, dcc_lemma, supplements = select_entry(c, index)
+    return build_lemma(c, entries, dcc_lemma, articles, list(rules), supplements)
 
 
 def cells(built):
@@ -157,7 +170,7 @@ def test_irregular_dcc_noun_is_rejected(index, articles):
 
 
 def test_missing_entry(index):
-    entries, _ = select_entry(cand("οὐδαμῶς", "noun"), index)
+    entries, _, _ = select_entry(cand("οὐδαμῶς", "noun"), index)
     assert entries == []
 
 
@@ -202,7 +215,7 @@ def test_later_same_tense_table_does_not_add_alternates(index, articles):
     b = build(index, articles, "λαμβάνω", "verb")
     first = _first_table_forms(index, "λαμβάνω", "verb", "aorist", ["active", "indicative", "first-person", "singular"])
     assert cells(b)["aor.act.ind.1.sg"] == first
-    assert "λαμβάνω aorist" in " ".join(b.partial_tables)
+    assert any("iterative" in n for n in b.choices)
 
 
 def test_later_same_tense_table_fills_missing_voice(index, articles):
@@ -237,3 +250,117 @@ def test_middle_only_tags_in_present_system_become_middle_passive(index, article
     assert [k for k in keys if k.startswith("fut.mid.")]  # the future middle is its own form
     (cell,) = [c for c in b.lemma["cells"] if c["key"] == "pres.mp.ind.1.sg"]
     assert cell["voice"] == ["mid", "pass"]
+
+
+# --- table selection guided by the DCC principal parts (data/core_list.csv headwords) ---
+
+
+def _tables_with(index, word, form_tags, contains):
+    """Raw tables of `word` that have a row with `form_tags` whose form is in `contains`."""
+    from kaikki import tables
+    from normalize import strip_accents
+
+    entry = index[(key(word), "verb")][0]
+    want = {strip_accents(f) for f in contains}
+    return [t for t in tables(entry) if any(strip_accents(f) in want for f, _ in t.forms)]
+
+
+def test_dcc_principal_part_selects_the_aorist_passive(index, articles):
+    b = build(index, articles, "παύω", "verb")
+    c = cells(b)
+    (t,) = _tables_with(index, "παύω", None, c["aor.pass.ind.1.sg"])
+    assert t.label == "aorist"
+    # only one aorist passive: the one DCC lists
+    assert len(c["aor.pass.ind.1.sg"]) == 1
+
+
+def test_future_passive_follows_the_chosen_aorist_passive(index, articles):
+    from normalize import strip_all
+
+    c = cells(build(index, articles, "παύω", "verb"))
+    aor = strip_all(c["aor.pass.ind.1.sg"][0])
+    for fut in c["fut.pass.ind.1.sg"]:
+        assert aor[:-2].endswith(strip_all(fut)[: -len("ησομαι")])
+
+
+def test_middle_future_in_dcc_removes_the_active_future(index, articles):
+    c = cells(build(index, articles, "ἀκούω", "verb"))
+    assert not [k for k in c if k.startswith("fut.act")]
+    assert "fut.mid.ind.1.sg" in c
+
+
+def test_voices_from_tables_without_a_principal_part_are_dropped(index, articles):
+    c = cells(build(index, articles, "τυγχάνω", "verb"))
+    assert not [k for k in c if k.startswith("aor.pass")]
+    assert not [k for k in c if k.startswith("perf.mp")]
+
+
+def test_tense_missing_from_dcc_merges_all_attic_tables(index, articles):
+    c = cells(build(index, articles, "ἐργάζομαι", "verb"))
+    assert len(c["impf.mp.ind.1.sg"]) == 2
+    c = cells(build(index, articles, "βούλομαι", "verb"))
+    assert len(c["impf.mp.ind.1.sg"]) == 2
+
+
+def test_no_iterative_forms(index, articles):
+    from normalize import strip_all
+
+    for word in ("λαμβάνω", "παύω"):
+        for fs in cells(build(index, articles, word, "verb")).values():
+            assert not [f for f in fs if "σκ" in strip_all(f)], word
+
+
+def test_no_separate_passive_in_the_present_system(index, articles):
+    c = cells(build(index, articles, "κελεύω", "verb"))
+    assert not [k for k in c if k.startswith(("pres.pass", "impf.pass", "perf.pass"))]
+
+
+def test_sigma_sigma_verb_takes_missing_tenses_from_the_sigma_sigma_entry(index, articles):
+    b = build(index, articles, "πράσσω", "verb")
+    c = cells(b)
+    assert key(b.lemma["lemma"]) == key("πράττω")
+    assert "aor.act.ind.1.sg" in c and "fut.act.ind.1.sg" in c
+    assert not [f for fs in c.values() for f in fs if "σσ" in f]
+
+
+def test_perfect_middle_block_may_lack_only_the_periphrastic_third_plural(index, articles):
+    rules = parse_exclusions("λύω  perf.mp.ind.3.pl")
+    c = cells(build(index, articles, "λύω", "verb", rules=rules))
+    assert "perf.mp.ind.1.sg" in c and "perf.mp.ind.3.pl" not in c
+    rules = parse_exclusions("λύω  perf.mp.ind.3.sg")
+    c = cells(build(index, articles, "λύω", "verb", rules=rules))
+    assert not [k for k in c if k.startswith("perf.mp")]  # block and its infinitive dropped
+
+
+def test_table_exclusion_rule_drops_a_source_table(index, articles):
+    first = cells(build(index, articles, "ἐργάζομαι", "verb"))["impf.mp.ind.1.sg"][0]
+    rules = parse_exclusions(f"ἐργάζομαι  table  {first}")
+    c = cells(build(index, articles, "ἐργάζομαι", "verb", rules=rules))
+    assert first not in c["impf.mp.ind.1.sg"] and len(c["impf.mp.ind.1.sg"]) == 1
+
+
+def test_aorist_passive_principal_part_does_not_remove_the_active(index, articles):
+    # DCC's λέγω aorist is the suppletive εἶπον (another entry); its ἐλέχθην must not count as
+    # evidence that the aorist is deponent.
+    c = cells(build(index, articles, "λέγω", "verb"))
+    assert "aor.act.ind.1.sg" in c
+
+
+def test_alternates_differing_only_in_length_marks_are_merged(index, articles):
+    from normalize import strip_length
+
+    for word in ("λύω", "παύω", "πράσσω"):
+        for fs in cells(build(index, articles, word, "verb")).values():
+            assert len({strip_length(f) for f in fs}) == len(fs), (word, fs)
+
+
+def test_report_credits_rules_that_exclude_an_attic_substitute(index, articles):
+    from build_paradigms import render_report
+
+    rules = parse_exclusions("θάλαττα")
+    c = cand("θάλασσα", "noun")
+    entries, dcc_lemma, sup = select_entry(c, index)
+    result = build_lemma(c, entries, dcc_lemma, articles, rules, sup)
+    sources = {"kaikki": {"extracted": "x", "wiktionary_dump": "y"}, "dcc": {"retrieved": "z"}}
+    report = render_report([c], {c: result}, sources, rules)
+    assert "line 1 `θάλαττα`: removed lemma" in report

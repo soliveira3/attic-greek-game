@@ -104,6 +104,13 @@
     "perf.act.ind.2.pl": ["λελοίπᾰτε"],
     "perf.act.ind.3.pl": ["λελοίπᾱσῐ", "λελοίπᾱσῐν"],
     "perf.act.inf": ["λελοιπέναι"],
+    "perf.mp.ind.1.sg": ["λέλειμμαι"],
+    "perf.mp.ind.2.sg": ["λέλειψαι"],
+    "perf.mp.ind.3.sg": ["λέλειπται"],
+    "perf.mp.ind.2.du": ["λέλειφθον"],
+    "perf.mp.ind.3.du": ["λέλειφθον"],
+    "perf.mp.ind.1.pl": ["λελείμμεθᾰ"],
+    "perf.mp.ind.2.pl": ["λέλειφθε"],
     "perf.mp.inf": ["λελεῖφθαι"]
   }
 }

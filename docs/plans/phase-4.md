@@ -55,6 +55,6 @@ smoke test plays a round of each mode.
 10. greek-checker on the endings derivation and on what the modes show
 
 ## Acceptance
-- [ ] Each mode is playable end-to-end with keyboard only
-- [ ] Wrong answers show the correct form, highlight the differing part, and link to the grammar note
-- [ ] Playwright smoke test plays one round of each mode
+- [x] Each mode is playable end-to-end with keyboard only (app/e2e/smoke.spec.ts)
+- [x] Wrong answers show the correct form, highlight the differing part, and link to the grammar note
+- [x] Playwright smoke test plays one round of each mode

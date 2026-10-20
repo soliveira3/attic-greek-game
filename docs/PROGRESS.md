@@ -6,14 +6,14 @@
 | 1 — Spec 🧑 | done (approved 2026-10-19) |
 | 2 — Data pipeline 🧑 | done (golden set verified by the user 2026-10-19) |
 | 3 — Core library | done (2026-10-20) |
-| 4 — Game modes | in progress |
+| 4 — Game modes | done (2026-10-20) |
 | 5 — Spaced repetition & progress | done (2026-10-20) |
 | 6 — Grammar notes 🧑 | not started |
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 task 10: address the greek-checker review of the endings and the modes (running), then
-Phase 6 (grammar notes).
+Phase 6 — grammar notes (docs/plans/phase-6.md): writing the notes; then greek-checker review,
+then the 🧑 approval gate.
 
 ## Waiting on the user
 (nothing)
@@ -82,6 +82,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 done: the greek-checker re-check confirmed the fixes; its one new finding
+  (the sprint took -αι, the nominative plural, for the dative -ᾳ written with iota on the line)
+  is fixed.
 - 2026-10-20 — Phase 4 task 10: greek-checker review of the endings and the modes addressed
   (Parse it keeps vowel length apart when length marks are shown; -ων -ον adjectives drilled as
   nasal stems; no dual cells in adjective sprints unless drilled; aorist passive split ἐλυθ-ην;

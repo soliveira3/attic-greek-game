@@ -508,3 +508,74 @@ button.check {
     margin: 0.5rem 0 0;
   }
 }
+
+/* ---------------------------------------------------------------- sprint */
+
+.sets {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.5rem;
+}
+
+.sets button {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.set-label {
+  font-weight: 600;
+}
+
+.set-model {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.sprint-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  font-size: 1.05rem;
+}
+
+.clock {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.ending-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.ending-row .stem {
+  font-size: 1.6rem;
+}
+
+.ending-input.greek-input {
+  max-width: 9rem;
+}
+
+.last {
+  min-height: 1.6em;
+  font-size: 1.1rem;
+}
+
+.set-groups {
+  list-style: none;
+  padding: 0;
+}
+
+.set-groups h2 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0.25rem;
+}

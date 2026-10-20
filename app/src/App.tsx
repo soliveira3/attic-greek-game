@@ -4,6 +4,7 @@ import { type Page, href, useRoute } from './app/router'
 import { TypingProvider } from './components/typing'
 import type { Paradigms } from './lib/data'
 import type { Store } from './lib/storage'
+import { EndingsSprint } from './pages/EndingsSprint'
 import { FillTable } from './pages/FillTable'
 import { Home, MODES } from './pages/Home'
 import { MakeIt } from './pages/MakeIt'
@@ -41,14 +42,14 @@ function Screen() {
     case 'make':
       page = <MakeIt />
       break
+    case 'sprint':
+      page = <EndingsSprint />
+      break
     case 'settings':
       page = <SettingsPage />
       break
     case 'notes':
       page = <NotesPage topic={route.topic} />
-      break
-    case 'not-found':
-      page = <NotFound />
       break
     default:
       page = <NotFound />

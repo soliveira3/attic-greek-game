@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { greekToBeta, betaToGreek } from './betacode'
-import { checkEnding, goldenModels, sprintItems, sprintSets } from './endings'
+import { checkEnding, goldenModels, setsInScope, sprintItems, sprintSets } from './endings'
+import { DEFAULT_SETTINGS } from './settings'
 import { stripAccents, stripAll } from './normalize'
 
 const models = goldenModels()
@@ -72,5 +73,32 @@ describe('fused cells and extra model verbs', () => {
     const second = sets.filter((s) => s.block && s.lemma !== sets.find((x) => x.block)!.lemma)
     expect(second.length).toBeGreaterThan(0)
     expect(second.every((s) => s.block!.startsWith('aor.'))).toBe(true)
+  })
+})
+
+describe('shown stem and scope', () => {
+  const sets = sprintSets(models)
+  it('shows the stem with its breathing, without accents', () => {
+    for (const set of sets) {
+      expect(stripAll(set.stemShown)).toBe(set.stem)
+      expect(stripAccents(set.stemShown)).toBe(set.stemShown)
+    }
+  })
+  it('lists nominal sets in class order, then the verb blocks; a second model verb is named', () => {
+    const nominal = sets.filter((s) => !s.block).map((s) => s.cls)
+    expect(nominal.indexOf('decl1-a-long')).toBeLessThan(nominal.indexOf('decl2-mf'))
+    expect(nominal.indexOf('decl3-eu')).toBeLessThan(nominal.indexOf('adj-212-eta'))
+    expect(sets.findIndex((s) => s.block)).toBe(nominal.length)
+    const verbLemmas = [...new Set(sets.filter((s) => s.block).map((s) => s.lemma))]
+    expect(sets.filter((s) => s.lemma === verbLemmas[1]).every((s) => s.label.includes(verbLemmas[1]))).toBe(true)
+  })
+  it('keeps the sets the scope settings allow', () => {
+    const all = DEFAULT_SETTINGS.scope
+    expect(setsInScope(sets, all)).toEqual(sets)
+    expect(setsInScope(sets, { ...all, pos: ['verb'] }).every((s) => s.block)).toBe(true)
+    expect(setsInScope(sets, { ...all, classes: ['decl2-n'] }).map((s) => s.cls)).toEqual(['decl2-n'])
+    const aorists = setsInScope(sets, { ...all, pos: ['verb'], tenses: ['aor'], voices: ['pass'] })
+    expect(aorists.map((s) => s.block)).toEqual(['aor.pass'])
+    expect(setsInScope(sets, { ...all, pos: ['adj'] }).every((s) => s.cls.startsWith('adj'))).toBe(true)
   })
 })

@@ -12,7 +12,7 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md): task 8, Endings sprint.
+Phase 4 — game modes (see docs/plans/phase-4.md): task 9, Playwright smoke test.
 
 ## Waiting on the user
 (nothing)
@@ -79,6 +79,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 task 8: Endings sprint (sets in scope grouped by part of speech, stem
+  shown, 60-second clock, last answer shown with its endings, best score per set saved, Enter to
+  play again).
 - 2026-10-20 — Phase 4 task 7: Make it (one card component, reused by Review in Phase 5); a page
   keeps the focus it gives its answer box, other pages focus their heading.
 - 2026-10-20 — Phase 4 task 6: Fill the table (grid per word or tense-voice block, a few / half /

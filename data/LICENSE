@@ -1,0 +1,13 @@
+The paradigm data in this folder (data/paradigms/*.json and data/golden/*.json) is derived from
+English Wiktionary (https://en.wiktionary.org/), extracted by kaikki.org / wiktextract, and is
+licensed under the Creative Commons Attribution-ShareAlike 4.0 International license
+(CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/).
+
+Attribution: "Inflection data from Wiktionary (CC BY-SA), extracted by kaikki.org / wiktextract
+(Tatu Ylonen)."
+
+The choice and order of words and their glosses (data/core_list.csv and the gloss fields) come from
+the DCC Greek Core Vocabulary (C. Francese, Dickinson College Commentaries, 2014), CC BY-SA.
+
+The grammar notes in data/grammar/ are original work, under the project's MIT license (../LICENSE).
+Details, versions and checksums: docs/DATA_SOURCES.md.

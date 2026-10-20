@@ -75,6 +75,9 @@ from `main`. The site uses hash routes and relative asset paths, so it works fro
 
 Details, versions and checksums: [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
 
+**License.** The code and the grammar notes are MIT ([LICENSE](LICENSE)). The paradigm data is
+CC BY-SA 4.0 ([data/LICENSE](data/LICENSE)).
+
 ## Project documents
 
 - [docs/PLAN.md](docs/PLAN.md) — roadmap; [docs/PROGRESS.md](docs/PROGRESS.md) — status

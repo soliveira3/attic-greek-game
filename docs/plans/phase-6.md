@@ -30,5 +30,5 @@ git-ignored `pipeline/raw/smyth/` cache.
 5. 🧑 HUMAN GATE: the user approves the notes
 
 ## Acceptance
-- [ ] Every feature in scope links to a note
-- [ ] User approved the notes
+- [x] Every feature in scope links to a note (tested in app/src/lib/grammar.test.ts)
+- [x] User approved the notes (2026-10-20)

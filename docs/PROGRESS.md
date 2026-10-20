@@ -8,22 +8,21 @@
 | 3 — Core library | done (2026-10-20) |
 | 4 — Game modes | done (2026-10-20) |
 | 5 — Spaced repetition & progress | done (2026-10-20) |
-| 6 — Grammar notes 🧑 | in progress (drafts written; review, then user approval) |
-| 7 — Polish & ship 🧑 | not started |
+| 6 — Grammar notes 🧑 | done (approved by the user 2026-10-20) |
+| 7 — Polish & ship 🧑 | in progress (waiting on the user: repository and Pages) |
 
 ## Current task
-🧑 HUMAN GATES (Phase 6 approval, Phase 7 publishing). Everything else in PLAN.md is done; after
-the gates: push, watch CI go green, check the live site, mark v1 complete.
+🧑 HUMAN GATE (Phase 7): the user creates the GitHub repository and enables Pages. Then: push
+(with the user's go-ahead), watch CI go green, check the live site, mark v1 complete.
 
 ## Waiting on the user
-1. Phase 6 gate: approve the 18 grammar notes in data/grammar/ (shown at #/notes). They passed three
-   greek-checker rounds; the last one reported no remaining issues.
-2. Phase 7 gate: create the GitHub repository, push this repo to it, and enable GitHub Pages with
-   "GitHub Actions" as the source (Settings → Pages). Claude must not create accounts or change
-   repository settings.
-3. Choose a license for the code (data stays CC BY-SA 4.0, as Wiktionary requires).
+- Phase 7 gate: create the GitHub repository, push this repo to it (or give Claude the remote URL
+  and the go-ahead to push), and enable GitHub Pages with "GitHub Actions" as the source
+  (Settings → Pages). Claude must not create accounts or change repository settings.
 
 ## Decisions taken
+- 2026-10-20: the user approved the grammar notes and chose the MIT license for the code (data
+  stays CC BY-SA 4.0).
 - 2026-10-19: after the user replied "continue" to the recommendations, ἐγενήθην (γίγνομαι) and
   the older spellings βασιλῆς, ἱππῆς and the dual πόλη were excluded (see the "User decisions"
   block in data/exclude.txt; delete those lines to undo), and golden verification goes through
@@ -92,6 +91,8 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 6 done (notes approved). MIT LICENSE for the code, data/LICENSE for the
+  CC BY-SA data.
 - 2026-10-20 — Phase 6: third greek-checker round: one wording point, fixed; no remaining issues.
   Waiting on the user for the notes approval and the publishing gate.
 - 2026-10-20 — Phase 6: second greek-checker round on the notes addressed (irregular consonant

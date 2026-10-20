@@ -13,7 +13,7 @@
 
 ## Current task
 Phase 4 task 10 (greek-checker on the endings and the modes) is running; meanwhile Phase 5
-(docs/plans/phase-5.md), task 4: statistics and the Stats page.
+(docs/plans/phase-5.md), task 6: smoke test for Review and Progress, reload, failing storage.
 
 ## Waiting on the user
 (nothing)
@@ -82,6 +82,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 5 tasks 4–5: Progress page (#/stats: day streak, due today, answers, accuracy
+  heat maps laid out as each class's table, numbers shown as text; warning when the browser is
+  not saving); export / import of all progress as JSON (validated, confirmation before replacing).
 - 2026-10-20 — Phase 5 task 3: Review page (#/review; Make it format, counts left, a missed item
   comes back once at the end, "done for now" with the next review time); Home shows today's
   reviews.

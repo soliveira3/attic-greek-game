@@ -13,10 +13,12 @@ import { NotesPage } from './pages/NotesPage'
 import { ParseIt } from './pages/ParseIt'
 import { Review } from './pages/Review'
 import { SettingsPage } from './pages/SettingsPage'
+import { Stats } from './pages/Stats'
 
 const NAV: { page: Page; name: string }[] = [
   { page: 'review', name: 'Review' },
   ...MODES,
+  { page: 'stats', name: 'Progress' },
   { page: 'notes', name: 'Notes' },
   { page: 'settings', name: 'Settings' },
 ]
@@ -53,6 +55,9 @@ function Screen() {
       break
     case 'sprint':
       page = <EndingsSprint />
+      break
+    case 'stats':
+      page = <Stats />
       break
     case 'settings':
       page = <SettingsPage />

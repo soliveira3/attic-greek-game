@@ -13,6 +13,10 @@
   --warn-bg: #fff4d6;
   --mark: #ffd7a8;
   --focus: #e08a00;
+  --heat-1: #f4c4bd;
+  --heat-2: #f9dfae;
+  --heat-3: #d6eabf;
+  --heat-4: #a9d9b8;
   --ui-font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --greek-font: 'Gentium Plus', 'Gentium', 'Noto Serif', 'New Athena Unicode', serif;
   color-scheme: light dark;
@@ -38,6 +42,10 @@
     --warn-bg: #3a3218;
     --mark: #6b4a1e;
     --focus: #ffb547;
+    --heat-1: #5e2721;
+    --heat-2: #594516;
+    --heat-3: #33502a;
+    --heat-4: #1d5435;
   }
 }
 
@@ -590,4 +598,72 @@ button.check {
 
 .review-call a {
   font-weight: 700;
+}
+
+/* ---------------------------------------------------------------- progress */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.stat strong {
+  font-size: 1.6rem;
+}
+
+.heat {
+  overflow-x: auto;
+}
+
+.heat-map td {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.heat-map .n {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.heat-1 {
+  background: var(--heat-1);
+}
+.heat-2 {
+  background: var(--heat-2);
+}
+.heat-3 {
+  background: var(--heat-3);
+}
+.heat-4 {
+  background: var(--heat-4);
+}
+
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+label.file {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
 }

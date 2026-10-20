@@ -4,7 +4,7 @@ import nouns from '../../../data/paradigms/nouns.json'
 import verbs from '../../../data/paradigms/verbs.json'
 import { type Paradigms, lemmaRef, makeParadigms } from './data'
 import type { ParadigmFile } from './features'
-import { key } from './normalize'
+import { key, sameSpelling } from './normalize'
 import {
   DIFFICULTIES,
   blankCount,
@@ -108,6 +108,21 @@ describe('parsePrompt', () => {
       expect(p.parses.every((c) => c.forms.some((f) => key(f) === key(p.form)))).toBe(true)
       expect(p.parses.every((c) => c.number !== 'du')).toBe(true)
     }
+  })
+  it('with length marks shown, lists only parses that agree on vowel length', () => {
+    const adj = settings({ pos: ['adj'] })
+    let split = 0
+    for (const seed of Array.from({ length: 600 }, (_, i) => i + 1)) {
+      const p = parsePrompt(data, adj, seededRng(seed))!
+      expect(p.parses.every((c) => c.forms.some((f) => sameSpelling(f, p.form)))).toBe(true)
+      const homographs = data.parsesOf(p.lemma, p.form).filter((c) => c.number !== 'du')
+      if (homographs.length > p.parses.length) {
+        split++
+        const plain = parsePrompt(data, { ...adj, lengthMarks: false }, seededRng(seed))!
+        expect(plain.parses.map((c) => c.key)).toEqual(homographs.map((c) => c.key))
+      }
+    }
+    expect(split).toBeGreaterThan(0)
   })
   it('lists dual parses when the dual is drilled', () => {
     const duals = SEEDS.map((seed) => parsePrompt(data, settings({ pos: ['noun'], dual: true }), seededRng(seed))!)

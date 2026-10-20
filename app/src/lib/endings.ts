@@ -3,8 +3,9 @@
 // verb), the ending of a form is what follows the letters every form of the set shares.
 
 import { stemLength } from './data'
-import { ADJ_CLASSES, type LemmaClass, NOUN_CLASSES, type Tense, type VoiceGroup, blockLabel, classLabel } from './features'
-import { canon, stripAccents, stripAll, stripLength } from './normalize'
+import { ADJ_CLASSES, type LemmaClass, NOUN_CLASSES, type Tense, type VoiceGroup, blockLabel, classLabel, parseCellKey } from './features'
+import { adscript } from './check'
+import { canon, key, stripAccents, stripAll, stripLength } from './normalize'
 import type { Settings } from './settings'
 
 export interface GoldenModel {
@@ -38,9 +39,11 @@ export interface SprintItem {
   endings: string[]
 }
 
-// 3rd-declension consonant stems fuse stem and ending in these cells (φύλαξ, φύλαξι).
-const FUSED_CLASSES = new Set<LemmaClass>(['decl3-labial', 'decl3-velar', 'decl3-dental', 'decl3-nt', 'decl3-liquid'])
+// 3rd-declension consonant stems (nouns, and -ων -ον adjectives) fuse stem and ending in these
+// cells (φύλαξ, φύλαξι); a cell equal to the nominative or vocative singular goes too (neuter acc.).
+const FUSED_CLASSES = new Set<LemmaClass>(['decl3-labial', 'decl3-velar', 'decl3-dental', 'decl3-nt', 'decl3-liquid', 'adj-3-on'])
 const FUSED_CELLS = ['nom.sg', 'voc.sg', 'dat.pl']
+const caseNumber = (cell: string) => cell.split('.').slice(0, 2).join('.')
 
 /** The verified golden models, the article left out (it has no stem/ending split to drill). */
 export function goldenModels(): GoldenModel[] {
@@ -64,19 +67,25 @@ function tail(form: string, letters: number): string {
   return stripAccents(clusters(form).slice(letters).join(''))
 }
 
-function makeSet(model: GoldenModel, block: string | null, cells: Record<string, string[]>): SprintSet {
-  const nominative = new Set(cells['nom.sg'] ?? [])
+function makeSet(model: GoldenModel, block: string | null, cells: Record<string, string[]>, label: string): SprintSet {
+  const nominatives = new Set(
+    Object.entries(cells)
+      .filter(([k]) => ['nom.sg', 'voc.sg'].includes(caseNumber(k)))
+      .flatMap(([, forms]) => forms.map(key)),
+  )
   const fused = (k: string, forms: string[]) =>
-    FUSED_CLASSES.has(model.class) && (FUSED_CELLS.includes(k) || forms.every((f) => nominative.has(f)))
+    FUSED_CLASSES.has(model.class) && (FUSED_CELLS.includes(caseNumber(k)) || forms.every((f) => nominatives.has(key(f))))
   const keep = Object.fromEntries(Object.entries(cells).filter(([k, forms]) => !fused(k, forms)))
   const forms = Object.values(keep).flat()
-  const n = stemLength(forms)
+  // the letters all forms share, short enough to leave every form an ending (ἐλυθ-η, not ἐλυθη-)
+  let n = stemLength(forms)
+  while (n > 0 && forms.some((f) => clusters(f).length <= n)) n--
   return {
     id: `${model.lemma}:${block ?? model.class}`,
     cls: model.class,
     lemma: model.lemma,
     block,
-    label: classLabel(model.class) + (block ? ` — ${blockLabel(block)}` : ''),
+    label,
     stem: stripAll(forms[0] ?? '').slice(0, n),
     stemLength: n,
     stemShown: stripAccents(stripLength(clusters(forms[0] ?? '').slice(0, n).join(''))),
@@ -90,20 +99,38 @@ function endingsKey(set: SprintSet): string {
     .join(';')
 }
 
+/** "1st aorist active" when the model verb has one aorist type; otherwise the block's label. */
+function verbLabel(model: GoldenModel, block: string, types: readonly string[] | undefined): string {
+  const ordinal = types?.length === 1 && block !== 'aor.pass' && block.startsWith('aor.') ? `${types[0] === '1' ? '1st' : '2nd'} ` : ''
+  return `${classLabel(model.class)} — ${ordinal}${blockLabel(block)}`
+}
+
+function nominalLabel(model: GoldenModel): string {
+  const label = classLabel(model.class)
+  // a noun whose nominative is its accusative is neuter: say so where the class also has m./f. nouns
+  const same = (a: string[] = [], b: string[] = []) => a.length > 0 && a.map(key).join() === b.map(key).join()
+  const neuter = model.pos === 'noun' && !label.includes('neuter') && same(model.cells['nom.sg'], model.cells['acc.sg'])
+  return neuter ? `${label} (neuter)` : label
+}
+
 /**
- * One set per nominal model; for verbs, one per indicative tense-voice block of the fullest model
- * verb. Other model verbs add only aorist blocks whose endings differ (λείπω: the 2nd aorist).
+ * One set per nominal model; for verbs, one per indicative tense-voice block of the main model
+ * verb (a 1st-aorist verb, given `aoristTypes` from the paradigm data: lemma → aorist types).
+ * Other model verbs add only aorist blocks whose endings differ (λείπω: the 2nd aorist).
  */
-export function sprintSets(models: GoldenModel[]): SprintSet[] {
+export function sprintSets(models: GoldenModel[], aoristTypes: Record<string, readonly string[]> = {}): SprintSet[] {
   const sets: SprintSet[] = []
   const seen = new Set<string>()
   const order: readonly string[] = [...NOUN_CLASSES, ...ADJ_CLASSES]
   const nominals = models.filter((m) => m.pos !== 'verb').sort((a, b) => order.indexOf(a.class) - order.indexOf(b.class))
-  // the fullest model verb first, so the others only add what differs
-  const verbs = models.filter((m) => m.pos === 'verb').sort((a, b) => Object.keys(b.cells).length - Object.keys(a.cells).length)
+  // a 1st-aorist verb first, then the fullest, so the others only add what differs
+  const firstAorist = (m: GoldenModel) => (aoristTypes[m.lemma]?.join() === '1' ? 0 : 1)
+  const verbs = models
+    .filter((m) => m.pos === 'verb')
+    .sort((a, b) => firstAorist(a) - firstAorist(b) || Object.keys(b.cells).length - Object.keys(a.cells).length || a.lemma.localeCompare(b.lemma))
   for (const model of [...nominals, ...verbs]) {
     if (model.pos !== 'verb') {
-      sets.push(makeSet(model, null, model.cells))
+      sets.push(makeSet(model, null, model.cells, nominalLabel(model)))
       continue
     }
     const blocks = [...new Set(Object.keys(model.cells).filter((k) => k.includes('.ind.')).map((k) => k.split('.').slice(0, 2).join('.')))]
@@ -111,12 +138,13 @@ export function sprintSets(models: GoldenModel[]): SprintSet[] {
       // a later model verb adds only its own aorist (λείπω: the 2nd aorist)
       if (model !== verbs[0] && !block.startsWith('aor.')) continue
       const cells = Object.fromEntries(Object.entries(model.cells).filter(([k]) => k.startsWith(`${block}.ind.`)))
-      const set = makeSet(model, block, cells)
+      const known = aoristTypes[model.lemma]
+      const label = model === verbs[0] || known ? verbLabel(model, block, known) : `${verbLabel(model, block, known)} (like ${model.lemma})`
+      const set = makeSet(model, block, cells, label)
       const k = `${block}|${endingsKey(set)}`
       if (seen.has(k)) continue
       seen.add(k)
-      // a second model's aorist sits next to the first model's: name the type by its model word
-      sets.push(model === verbs[0] ? set : { ...set, label: `${set.label} (${model.lemma} type)` })
+      sets.push(set)
     }
   }
   return sets
@@ -124,7 +152,7 @@ export function sprintSets(models: GoldenModel[]): SprintSet[] {
 
 export function sprintItems(set: SprintSet, opts: { dual?: boolean } = {}): SprintItem[] {
   return Object.entries(set.cells)
-    .filter(([cell]) => opts.dual || !cell.endsWith('.du'))
+    .filter(([cell]) => opts.dual || parseCellKey(cell).number !== 'du')
     .map(([cell, forms]) => ({
       set: set.id,
       cell,
@@ -134,10 +162,13 @@ export function sprintItems(set: SprintSet, opts: { dual?: boolean } = {}): Spri
     .filter((item) => item.endings.length > 0)
 }
 
-/** Accents are ignored in the sprint: they belong to the word, not the ending (SPEC §5). */
+/**
+ * Accents are ignored in the sprint: they belong to the word, not the ending (SPEC §5). Iota
+ * written on the line is accepted, as in answer checking outside strict mode (SPEC §6).
+ */
 export function checkEnding(answer: string, item: SprintItem): boolean {
   const typed = stripAccents(canon(answer.replace(/^\s*[-‐–]/u, '')))
-  return typed.length > 0 && item.endings.some((e) => stripAccents(canon(e)) === typed)
+  return typed.length > 0 && item.endings.some((e) => [e, adscript(e)].some((v) => stripAccents(canon(v)) === typed))
 }
 
 /** The part of speech of a set's model word. */

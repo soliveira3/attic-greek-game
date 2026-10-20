@@ -42,10 +42,11 @@ export function verdict(r: CheckResult): Verdict {
     return { ok: true, headline: 'Correct', details }
   }
   if (r.errorKind === 'blank') return { ok: false, headline: 'No answer', details: [] }
+  const wrong = `${capitalised(listWords(r.errors))} ${r.errors.length > 1 ? 'are' : 'is'} wrong.`
   if (r.confusedWith.length) {
-    return { ok: false, headline: 'Not quite', details: [`That is ${cells(r.confusedWith)} form.`] }
+    return { ok: false, headline: 'Not quite', details: [`That is ${cells(r.confusedWith)} form.`, wrong] }
   }
-  const details = [`${capitalised(listWords(r.errors))} ${r.errors.length > 1 ? 'are' : 'is'} wrong.`]
+  const details = [wrong]
   if (r.notes.length) details.push(`Check ${listWords(r.notes)} too.`)
   return { ok: false, headline: 'Not quite', details }
 }

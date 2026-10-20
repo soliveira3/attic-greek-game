@@ -2,6 +2,7 @@ import { act, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { loadAttempts } from '../lib/attempts'
+import { loadSrs } from '../lib/srs'
 import { greekToBeta } from '../lib/betacode'
 import { goldenModels, sprintSets } from '../lib/endings'
 import { seededRng } from '../lib/prompts'
@@ -59,6 +60,8 @@ describe('EndingsSprint', () => {
     expect(attempts.every((a) => a.mode === 'sprint')).toBe(true)
     expect(attempts[1].errorKind).toBe('ending')
     expect(store.read<Record<string, number>>('sprint.best', {})[before.set.id]).toBe(1)
+    expect(attempts[0].itemKey.startsWith('sprint:')).toBe(true)
+    expect(loadSrs(store).cards).toEqual({})
   })
   it('plays again with Enter and goes back to the list', async () => {
     renderWithApp(<EndingsSprint rng={seededRng(3)} />)

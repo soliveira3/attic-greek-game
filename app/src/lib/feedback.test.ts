@@ -52,6 +52,6 @@ describe('verdict', () => {
   })
   it('another form of the word is named', () => {
     const v = verdict(result({ errorKind: 'accent', errors: ['accent'], confusedWith: ['pres.act.ind.1.sg'] }))
-    expect(v).toEqual({ ok: false, headline: 'Not quite', details: ['That is the pres. act. 1 sg. form.'] })
+    expect(v).toEqual({ ok: false, headline: 'Not quite', details: ['That is the pres. act. 1 sg. form.', 'The accent is wrong.'] })
   })
 })

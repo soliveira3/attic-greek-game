@@ -8,12 +8,10 @@ import { EmptyScope } from '../components/EmptyScope'
 import { GreekInput } from '../components/GreekInput'
 import { GreekKeyboard } from '../components/GreekKeyboard'
 import { TypingHint } from '../components/TypingHint'
-import { itemKey } from '../lib/attempts'
+import { recordAttempt } from '../lib/attempts'
 import { type SprintItem, type SprintSet, checkEnding, goldenModels, setPos, setsInScope, sprintItems, sprintSets } from '../lib/endings'
 import { cellLabel, featureKey } from '../lib/features'
-import { answer as recordAnswer } from '../lib/progress'
 import type { Rng } from '../lib/prompts'
-import { gradeFor } from '../lib/srs'
 
 const SECONDS = 60
 const GROUPS = [
@@ -44,8 +42,11 @@ function shuffled<T>(items: T[], rng: Rng): T[] {
 }
 
 export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
-  const { settings, store } = useApp()
-  const all = useMemo(() => sprintSets(goldenModels()), [])
+  const { data, settings, store } = useApp()
+  const all = useMemo(
+    () => sprintSets(goldenModels(), Object.fromEntries(data.lemmasWhere({ pos: ['verb'] }).map((l) => [l.lemma, 'aoristType' in l ? l.aoristType : []]))),
+    [data],
+  )
   const sets = setsInScope(all, settings.scope)
   const [phase, setPhase] = useState<Phase>({ kind: 'choose' })
   const [queue, setQueue] = useState<SprintItem[]>([])
@@ -87,18 +88,16 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
     if (phase.kind !== 'play') return
     const item = queue[0]
     const correct = checkEnding(value, item)
-    recordAnswer(
-      store,
-      {
-        itemKey: itemKey(`${setPos(phase.set)}:${phase.set.lemma}`, item.cell),
-        featureKey: featureKey(phase.set.cls, item.cell),
-        correct,
-        errorKind: correct ? null : value.trim() ? 'ending' : 'blank',
-        ts: Date.now(),
-        mode: 'sprint',
-      },
-      gradeFor(correct, false),
-    )
+    // logged for the statistics only: an ending is not the model word's whole form, so the
+    // spaced-repetition cards are left alone
+    recordAttempt(store, {
+      itemKey: `sprint:${phase.set.id}|${item.cell}`,
+      featureKey: featureKey(phase.set.cls, item.cell),
+      correct,
+      errorKind: correct ? null : value.trim() ? 'ending' : 'blank',
+      ts: Date.now(),
+      mode: 'sprint',
+    })
     if (correct) setScore((s) => s + 1)
     setLast({ item, typed: value, correct })
     setValue('')

@@ -102,7 +102,8 @@ function clusters(s: string): string[] {
 }
 
 /** The same form with each iota subscript written on the line (ῳ -> ωι). */
-function adscript(s: string): string {
+/** Iota subscript written on the line (ῳ → ωι). */
+export function adscript(s: string): string {
   return nfc(clusters(s).map((c) => (c.includes(IOTA_SUBSCRIPT) ? c.replace(IOTA_SUBSCRIPT, '') + 'ι' : c)).join(''))
 }
 

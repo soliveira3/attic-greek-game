@@ -82,6 +82,12 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 task 10: greek-checker review of the endings and the modes addressed
+  (Parse it keeps vowel length apart when length marks are shown; -ων -ον adjectives drilled as
+  nasal stems; no dual cells in adjective sprints unless drilled; aorist passive split ἐλυθ-ην;
+  sets named 1st / 2nd aorist and neuter models marked; rejected other forms name the error;
+  sprint accepts iota on the line and no longer schedules SRS cards; middle/passive cells link the
+  middle-passive note; SPEC §6 updated).
 - 2026-10-20 — Phase 5 done: smoke test also plays a Review round, reloads and finds the progress,
   and runs the app with a localStorage that throws.
 - 2026-10-20 — Phase 5 tasks 4–5: Progress page (#/stats: day streak, due today, answers, accuracy

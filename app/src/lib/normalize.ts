@@ -50,6 +50,26 @@ export function key(s: string): string {
   return stripLength(nfc(s))
 }
 
+/**
+ * Two stored forms are the same word with vowel length taken into account: the same letters and
+ * marks, and no vowel marked long in one and short in the other. A vowel with no length mark, or
+ * with both (Wiktionary's "either length"), agrees with any length.
+ */
+export function sameSpelling(a: string, b: string): boolean {
+  if (key(a) !== key(b)) return false
+  const lengths = (s: string) => {
+    const out: string[] = []
+    for (const ch of s.normalize('NFD')) {
+      if (!/\p{M}/u.test(ch)) out.push('')
+      else if ((ch === MACRON || ch === BREVE) && out.length) out[out.length - 1] += ch
+    }
+    return out.map((m) => (m.length === 1 ? m : ''))
+  }
+  const la = lengths(a)
+  const lb = lengths(b)
+  return la.every((m, i) => !m || !lb[i] || m === lb[i])
+}
+
 /** Order of marks after a letter, as in NFD of the stored forms (ἄ = α + breathing + accent). */
 export const MARK_ORDER = [MACRON, BREVE, DIAERESIS, SMOOTH, ROUGH, ACUTE, GRAVE, CIRCUMFLEX, IOTA_SUBSCRIPT]
 const KNOWN_MARKS = new Set(MARK_ORDER)

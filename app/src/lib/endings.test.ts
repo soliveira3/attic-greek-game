@@ -2,6 +2,11 @@ import { describe, expect, it } from 'vitest'
 import { greekToBeta, betaToGreek } from './betacode'
 import { checkEnding, goldenModels, setsInScope, sprintItems, sprintSets } from './endings'
 import { DEFAULT_SETTINGS } from './settings'
+import { parseCellKey } from './features'
+import { IOTA_SUBSCRIPT } from './normalize'
+import verbs from '../../../data/paradigms/verbs.json'
+
+const aorists = Object.fromEntries(verbs.lemmas.map((l) => [l.lemma, l.aoristType]))
 import { stripAccents, stripAll } from './normalize'
 
 const models = goldenModels()
@@ -100,5 +105,49 @@ describe('shown stem and scope', () => {
     const aorists = setsInScope(sets, { ...all, pos: ['verb'], tenses: ['aor'], voices: ['pass'] })
     expect(aorists.map((s) => s.block)).toEqual(['aor.pass'])
     expect(setsInScope(sets, { ...all, pos: ['adj'] }).every((s) => s.cls.startsWith('adj'))).toBe(true)
+  })
+})
+
+describe('review fixes (greek-checker, Phase 4)', () => {
+  const sets = sprintSets(models, aorists)
+  it('-ων -ον adjectives are nasal stems: fused cells left out, endings as in the liquid nouns', () => {
+    const adj = sets.find((s) => s.cls === 'adj-3-on')!
+    const cells = sprintItems(adj, { dual: true }).map((i) => i.cell)
+    for (const c of cells) expect(['nom.sg', 'voc.sg', 'dat.pl']).not.toContain(c.split('.').slice(0, 2).join('.'))
+    expect(cells).not.toContain('acc.sg.n')
+    const liquid = sets.find((s) => s.cls === 'decl3-liquid')!
+    const gen = (set: typeof adj, cell: string) => sprintItems(set).find((i) => i.cell === cell)!.endings
+    expect(gen(adj, 'gen.sg.m')).toEqual(gen(liquid, 'gen.sg'))
+  })
+  it('leaves out every dual cell unless asked, adjectives included', () => {
+    for (const set of sets) {
+      expect(sprintItems(set).some((i) => parseCellKey(i.cell).number === 'du'), set.id).toBe(false)
+    }
+    expect(sprintItems(sets.find((s) => s.cls === 'adj-212-eta')!, { dual: true }).some((i) => parseCellKey(i.cell).number === 'du')).toBe(true)
+  })
+  it('keeps an ending in every cell (aorist passive: the 3rd singular too)', () => {
+    for (const set of sets) expect(sprintItems(set, { dual: true }).length, set.id).toBe(Object.keys(set.cells).length)
+    expect(Object.keys(sets.find((s) => s.block === 'aor.pass')!.cells)).toContain('aor.pass.ind.3.sg')
+  })
+  it('names the 1st and the 2nd aorist, the 1st-aorist verb being the main model', () => {
+    const verbSets = sets.filter((s) => s.block)
+    expect(aorists[verbSets[0].lemma]).toEqual(['1'])
+    const aorist = verbSets.filter((s) => s.block === 'aor.act')
+    expect(aorist.map((s) => aorists[s.lemma][0])).toEqual(['1', '2'])
+    expect(aorist[0].label).toMatch(/— 1st aorist active$/)
+    expect(aorist[1].label).toMatch(/— 2nd aorist active$/)
+    // the order of the files does not matter
+    expect(sprintSets([...models].reverse(), aorists).filter((s) => s.block)[0].lemma).toBe(verbSets[0].lemma)
+  })
+  it('says when a noun model is neuter (the class may also have masculines and feminines)', () => {
+    expect(sets.find((s) => s.cls === 'decl3-dental')!.label).toMatch(/\(neuter\)$/)
+    expect(sets.find((s) => s.cls === 'decl3-velar')!.label).not.toMatch(/neuter/)
+    expect(sets.find((s) => s.cls === 'decl2-n')!.label).not.toMatch(/\(neuter\)/)
+  })
+  it('accepts iota written on the line, as answer checking does outside strict mode', () => {
+    const item = sets.flatMap((s) => sprintItems(s)).find((i) => i.endings.some((e) => e.normalize('NFD').includes(IOTA_SUBSCRIPT)))!
+    const ending = item.endings.find((e) => e.normalize('NFD').includes(IOTA_SUBSCRIPT))!
+    const onTheLine = stripAccents(ending).normalize('NFD').replace(IOTA_SUBSCRIPT, '') + betaToGreek('i')
+    expect(checkEnding(onTheLine, item)).toBe(true)
   })
 })

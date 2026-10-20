@@ -4,6 +4,7 @@
 import { itemKey } from './attempts'
 import { type Cell, type CheckContext, type Paradigms, type Scope, lemmaRef } from './data'
 import { type Lemma, cellLabel, featureKey } from './features'
+import { sameSpelling } from './normalize'
 import type { Settings } from './settings'
 
 export type Rng = () => number
@@ -97,7 +98,10 @@ export function makePromptFor(data: Paradigms, settings: Settings, lemma: Lemma,
 export interface ParsePrompt extends Item {
   /** The form shown. */
   form: string
-  /** Every cell of the lemma with that form (dual cells only when the dual is drilled). */
+  /**
+   * Every cell of the lemma with that form (dual cells only when the dual is drilled; with length
+   * marks shown, only cells that agree on vowel length).
+   */
   parses: Cell[]
 }
 
@@ -105,7 +109,11 @@ export function parsePrompt(data: Paradigms, settings: Settings, rng: Rng, avoid
   const it = pickCell(data, settings, rng, avoid)
   if (!it) return null
   const form = pick(it.cell.forms, rng)
-  const parses = data.parsesOf(it.lemma, form).filter((c) => settings.scope.dual || c.number !== 'du')
+  // With length marks shown, a long and a short vowel make different words (fem. sg. vs neut. pl.)
+  const parses = data
+    .parsesOf(it.lemma, form)
+    .filter((c) => settings.scope.dual || c.number !== 'du')
+    .filter((c) => !settings.lengthMarks || c.forms.some((f) => sameSpelling(f, form)))
   return { ...it, form, parses }
 }
 

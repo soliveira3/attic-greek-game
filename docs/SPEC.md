@@ -147,8 +147,15 @@ Refinements after the code reviews of 2026-10-19/20 (implemented in `app/src/lib
   differ, then any breathing, subscript or accent error the mode counts. Differences the mode
   forgives are listed as notes.
 - **Augment errors** cover a missing, wrong or misplaced augment, including in compounds (an
-  unaugmented compound, or the augment put before the preverb), and the imperfect typed for the
-  present. Slips inside a preverb or in the ending are stem or ending errors.
+  unaugmented compound, or the augment put before the preverb), and the present typed for the
+  imperfect or the imperfect for the present (same person, number and voice), except where the
+  augment cannot be seen (ἥκω: those count as ending errors). Slips inside a preverb or in the
+  ending are stem or ending errors.
+- With vowel-length marks shown, *Parse it* treats forms that differ only in a long or short
+  vowel as different words (a feminine singular in long α is not a neuter plural in short α);
+  with the marks hidden, every parse of the spelling is accepted.
+- The *Endings sprint* accepts iota written on the line, as answer checking does outside strict
+  mode; its answers are logged for statistics but do not schedule spaced-repetition cards.
 
 ## 7. Typing Greek
 

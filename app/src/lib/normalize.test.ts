@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import parity from './__fixtures__/normalize_parity.json'
-import { canon, displayForm, finalSigma, key, nfc, stripAccents, stripAll, stripLength } from './normalize'
+import adjectives from '../../../data/paradigms/adjectives.json'
+import { canon, displayForm, finalSigma, key, nfc, sameSpelling, stripAccents, stripAll, stripLength } from './normalize'
 
 const cp = (...codes: number[]) => String.fromCodePoint(...codes)
 const MACRON = cp(0x304)
@@ -99,5 +100,30 @@ describe('canon: more keyboard output', () => {
   it('beta-code leftovers: the capital marker is dropped, mark symbols are marks', () => {
     expect(canon(logos + '*')).toBe(logos)
     expect(canon('λο/γος')).toBe(logos)
+  })
+})
+
+describe('sameSpelling (vowel length kept)', () => {
+  const cells = adjectives.lemmas.flatMap((l) => l.cells as { key: string; forms: string[] }[])
+  const all = cells.flatMap((c) => c.forms)
+  it('tells apart forms that differ only in a long or short vowel', () => {
+    const groups = new Map<string, string[]>()
+    for (const f of new Set(all)) groups.set(key(f), [...(groups.get(key(f)) ?? []), f])
+    const pairs = [...groups.values()].flatMap((g) => g.flatMap((a) => g.filter((b) => b !== a).map((b) => [a, b])))
+    const long = (s: string) => s.normalize('NFD').includes(MACRON)
+    const differing = pairs.filter(([a, b]) => !sameSpelling(a, b))
+    expect(differing.length).toBeGreaterThan(0)
+    for (const [a, b] of differing) expect(long(a) || long(b), `${a} ${b}`).toBe(true)
+  })
+  it('is the same word when one side has no length mark, or has both marks (either length)', () => {
+    const marked = all.find((f) => f.normalize('NFD').includes(MACRON))!
+    expect(sameSpelling(marked, marked)).toBe(true)
+    expect(sameSpelling(marked, stripLength(marked))).toBe(true)
+    const either = nfc(marked.normalize('NFD').replace(MACRON, MACRON + BREVE))
+    expect(sameSpelling(either, marked)).toBe(true)
+    expect(sameSpelling(nfc(marked.normalize('NFD').replace(MACRON, BREVE)), marked)).toBe(false)
+  })
+  it('is never the same word when the letters differ', () => {
+    expect(sameSpelling(all[0], all.find((f) => key(f) !== key(all[0]))!)).toBe(false)
   })
 })

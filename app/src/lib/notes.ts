@@ -76,5 +76,6 @@ export function topicFor(cls: LemmaClass, cell: string, errorKind: ErrorKind | n
   if (group === 'pass') return 'middle-passive'
   if (tense === 'aor') return 'aorist'
   if (tense === 'perf') return 'perfect'
+  if (group === 'mp' || group === 'mid') return 'middle-passive'
   return 'verb-endings'
 }

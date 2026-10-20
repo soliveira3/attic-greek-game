@@ -1,0 +1,4602 @@
+[
+ {
+  "form": "αἱ",
+  "nfc": "αἱ",
+  "stripLength": "αἱ",
+  "stripAccents": "αἱ",
+  "stripAll": "αι",
+  "key": "αἱ",
+  "finalSigma": "αἱ",
+  "beta": "ai("
+ },
+ {
+  "form": "βᾰσῐλέοιν",
+  "nfc": "βᾰσῐλέοιν",
+  "stripLength": "βασιλέοιν",
+  "stripAccents": "βασιλεοιν",
+  "stripAll": "βασιλεοιν",
+  "key": "βασιλέοιν",
+  "finalSigma": "βᾰσῐλέοιν",
+  "beta": "basile/oin"
+ },
+ {
+  "form": "βᾰσῐλέων",
+  "nfc": "βᾰσῐλέων",
+  "stripLength": "βασιλέων",
+  "stripAccents": "βασιλεων",
+  "stripAll": "βασιλεων",
+  "key": "βασιλέων",
+  "finalSigma": "βᾰσῐλέων",
+  "beta": "basile/wn"
+ },
+ {
+  "form": "βᾰσῐλέως",
+  "nfc": "βᾰσῐλέως",
+  "stripLength": "βασιλέως",
+  "stripAccents": "βασιλεως",
+  "stripAll": "βασιλεως",
+  "key": "βασιλέως",
+  "finalSigma": "βᾰσῐλέως",
+  "beta": "basile/ws"
+ },
+ {
+  "form": "βᾰσῐλέᾱ",
+  "nfc": "βᾰσῐλέᾱ",
+  "stripLength": "βασιλέα",
+  "stripAccents": "βασιλεα",
+  "stripAll": "βασιλεα",
+  "key": "βασιλέα",
+  "finalSigma": "βᾰσῐλέᾱ",
+  "beta": "basile/a"
+ },
+ {
+  "form": "βᾰσῐλέᾱς",
+  "nfc": "βᾰσῐλέᾱς",
+  "stripLength": "βασιλέας",
+  "stripAccents": "βασιλεας",
+  "stripAll": "βασιλεας",
+  "key": "βασιλέας",
+  "finalSigma": "βᾰσῐλέᾱς",
+  "beta": "basile/as"
+ },
+ {
+  "form": "βᾰσῐλεύς",
+  "nfc": "βᾰσῐλεύς",
+  "stripLength": "βασιλεύς",
+  "stripAccents": "βασιλευς",
+  "stripAll": "βασιλευς",
+  "key": "βασιλεύς",
+  "finalSigma": "βᾰσῐλεύς",
+  "beta": "basileu/s"
+ },
+ {
+  "form": "βᾰσῐλεῖ",
+  "nfc": "βᾰσῐλεῖ",
+  "stripLength": "βασιλεῖ",
+  "stripAccents": "βασιλει",
+  "stripAll": "βασιλει",
+  "key": "βασιλεῖ",
+  "finalSigma": "βᾰσῐλεῖ",
+  "beta": "basilei="
+ },
+ {
+  "form": "βᾰσῐλεῖς",
+  "nfc": "βᾰσῐλεῖς",
+  "stripLength": "βασιλεῖς",
+  "stripAccents": "βασιλεις",
+  "stripAll": "βασιλεις",
+  "key": "βασιλεῖς",
+  "finalSigma": "βᾰσῐλεῖς",
+  "beta": "basilei=s"
+ },
+ {
+  "form": "βᾰσῐλεῦ",
+  "nfc": "βᾰσῐλεῦ",
+  "stripLength": "βασιλεῦ",
+  "stripAccents": "βασιλευ",
+  "stripAll": "βασιλευ",
+  "key": "βασιλεῦ",
+  "finalSigma": "βᾰσῐλεῦ",
+  "beta": "basileu="
+ },
+ {
+  "form": "βᾰσῐλεῦσῐ",
+  "nfc": "βᾰσῐλεῦσῐ",
+  "stripLength": "βασιλεῦσι",
+  "stripAccents": "βασιλευσι",
+  "stripAll": "βασιλευσι",
+  "key": "βασιλεῦσι",
+  "finalSigma": "βᾰσῐλεῦσῐ",
+  "beta": "basileu=si"
+ },
+ {
+  "form": "βᾰσῐλεῦσῐν",
+  "nfc": "βᾰσῐλεῦσῐν",
+  "stripLength": "βασιλεῦσιν",
+  "stripAccents": "βασιλευσιν",
+  "stripAll": "βασιλευσιν",
+  "key": "βασιλεῦσιν",
+  "finalSigma": "βᾰσῐλεῦσῐν",
+  "beta": "basileu=sin"
+ },
+ {
+  "form": "βᾰσῐλῆ",
+  "nfc": "βᾰσῐλῆ",
+  "stripLength": "βασιλῆ",
+  "stripAccents": "βασιλη",
+  "stripAll": "βασιλη",
+  "key": "βασιλῆ",
+  "finalSigma": "βᾰσῐλῆ",
+  "beta": "basilh="
+ },
+ {
+  "form": "γένει",
+  "nfc": "γένει",
+  "stripLength": "γένει",
+  "stripAccents": "γενει",
+  "stripAll": "γενει",
+  "key": "γένει",
+  "finalSigma": "γένει",
+  "beta": "ge/nei"
+ },
+ {
+  "form": "γένεσῐ",
+  "nfc": "γένεσῐ",
+  "stripLength": "γένεσι",
+  "stripAccents": "γενεσι",
+  "stripAll": "γενεσι",
+  "key": "γένεσι",
+  "finalSigma": "γένεσῐ",
+  "beta": "ge/nesi"
+ },
+ {
+  "form": "γένεσῐν",
+  "nfc": "γένεσῐν",
+  "stripLength": "γένεσιν",
+  "stripAccents": "γενεσιν",
+  "stripAll": "γενεσιν",
+  "key": "γένεσιν",
+  "finalSigma": "γένεσῐν",
+  "beta": "ge/nesin"
+ },
+ {
+  "form": "γένη",
+  "nfc": "γένη",
+  "stripLength": "γένη",
+  "stripAccents": "γενη",
+  "stripAll": "γενη",
+  "key": "γένη",
+  "finalSigma": "γένη",
+  "beta": "ge/nh"
+ },
+ {
+  "form": "γένος",
+  "nfc": "γένος",
+  "stripLength": "γένος",
+  "stripAccents": "γενος",
+  "stripAll": "γενος",
+  "key": "γένος",
+  "finalSigma": "γένος",
+  "beta": "ge/nos"
+ },
+ {
+  "form": "γένους",
+  "nfc": "γένους",
+  "stripLength": "γένους",
+  "stripAccents": "γενους",
+  "stripAll": "γενους",
+  "key": "γένους",
+  "finalSigma": "γένους",
+  "beta": "ge/nous"
+ },
+ {
+  "form": "γέρον",
+  "nfc": "γέρον",
+  "stripLength": "γέρον",
+  "stripAccents": "γερον",
+  "stripAll": "γερον",
+  "key": "γέρον",
+  "finalSigma": "γέρον",
+  "beta": "ge/ron"
+ },
+ {
+  "form": "γέροντε",
+  "nfc": "γέροντε",
+  "stripLength": "γέροντε",
+  "stripAccents": "γεροντε",
+  "stripAll": "γεροντε",
+  "key": "γέροντε",
+  "finalSigma": "γέροντε",
+  "beta": "ge/ronte"
+ },
+ {
+  "form": "γέροντες",
+  "nfc": "γέροντες",
+  "stripLength": "γέροντες",
+  "stripAccents": "γεροντες",
+  "stripAll": "γεροντες",
+  "key": "γέροντες",
+  "finalSigma": "γέροντες",
+  "beta": "ge/rontes"
+ },
+ {
+  "form": "γέροντος",
+  "nfc": "γέροντος",
+  "stripLength": "γέροντος",
+  "stripAccents": "γεροντος",
+  "stripAll": "γεροντος",
+  "key": "γέροντος",
+  "finalSigma": "γέροντος",
+  "beta": "ge/rontos"
+ },
+ {
+  "form": "γέροντᾰ",
+  "nfc": "γέροντᾰ",
+  "stripLength": "γέροντα",
+  "stripAccents": "γεροντα",
+  "stripAll": "γεροντα",
+  "key": "γέροντα",
+  "finalSigma": "γέροντᾰ",
+  "beta": "ge/ronta"
+ },
+ {
+  "form": "γέροντᾰς",
+  "nfc": "γέροντᾰς",
+  "stripLength": "γέροντας",
+  "stripAccents": "γεροντας",
+  "stripAll": "γεροντας",
+  "key": "γέροντας",
+  "finalSigma": "γέροντᾰς",
+  "beta": "ge/rontas"
+ },
+ {
+  "form": "γέροντῐ",
+  "nfc": "γέροντῐ",
+  "stripLength": "γέροντι",
+  "stripAccents": "γεροντι",
+  "stripAll": "γεροντι",
+  "key": "γέροντι",
+  "finalSigma": "γέροντῐ",
+  "beta": "ge/ronti"
+ },
+ {
+  "form": "γέρουσῐ",
+  "nfc": "γέρουσῐ",
+  "stripLength": "γέρουσι",
+  "stripAccents": "γερουσι",
+  "stripAll": "γερουσι",
+  "key": "γέρουσι",
+  "finalSigma": "γέρουσῐ",
+  "beta": "ge/rousi"
+ },
+ {
+  "form": "γέρουσῐν",
+  "nfc": "γέρουσῐν",
+  "stripLength": "γέρουσιν",
+  "stripAccents": "γερουσιν",
+  "stripAll": "γερουσιν",
+  "key": "γέρουσιν",
+  "finalSigma": "γέρουσῐν",
+  "beta": "ge/rousin"
+ },
+ {
+  "form": "γέρων",
+  "nfc": "γέρων",
+  "stripLength": "γέρων",
+  "stripAccents": "γερων",
+  "stripAll": "γερων",
+  "key": "γέρων",
+  "finalSigma": "γέρων",
+  "beta": "ge/rwn"
+ },
+ {
+  "form": "γενοῖν",
+  "nfc": "γενοῖν",
+  "stripLength": "γενοῖν",
+  "stripAccents": "γενοιν",
+  "stripAll": "γενοιν",
+  "key": "γενοῖν",
+  "finalSigma": "γενοῖν",
+  "beta": "genoi=n"
+ },
+ {
+  "form": "γενῶν",
+  "nfc": "γενῶν",
+  "stripLength": "γενῶν",
+  "stripAccents": "γενων",
+  "stripAll": "γενων",
+  "key": "γενῶν",
+  "finalSigma": "γενῶν",
+  "beta": "genw=n"
+ },
+ {
+  "form": "γερόντοιν",
+  "nfc": "γερόντοιν",
+  "stripLength": "γερόντοιν",
+  "stripAccents": "γεροντοιν",
+  "stripAll": "γεροντοιν",
+  "key": "γερόντοιν",
+  "finalSigma": "γερόντοιν",
+  "beta": "gero/ntoin"
+ },
+ {
+  "form": "γερόντων",
+  "nfc": "γερόντων",
+  "stripLength": "γερόντων",
+  "stripAccents": "γεροντων",
+  "stripAll": "γεροντων",
+  "key": "γερόντων",
+  "finalSigma": "γερόντων",
+  "beta": "gero/ntwn"
+ },
+ {
+  "form": "δώροιν",
+  "nfc": "δώροιν",
+  "stripLength": "δώροιν",
+  "stripAccents": "δωροιν",
+  "stripAll": "δωροιν",
+  "key": "δώροιν",
+  "finalSigma": "δώροιν",
+  "beta": "dw/roin"
+ },
+ {
+  "form": "δώροις",
+  "nfc": "δώροις",
+  "stripLength": "δώροις",
+  "stripAccents": "δωροις",
+  "stripAll": "δωροις",
+  "key": "δώροις",
+  "finalSigma": "δώροις",
+  "beta": "dw/rois"
+ },
+ {
+  "form": "δώρου",
+  "nfc": "δώρου",
+  "stripLength": "δώρου",
+  "stripAccents": "δωρου",
+  "stripAll": "δωρου",
+  "key": "δώρου",
+  "finalSigma": "δώρου",
+  "beta": "dw/rou"
+ },
+ {
+  "form": "δώρω",
+  "nfc": "δώρω",
+  "stripLength": "δώρω",
+  "stripAccents": "δωρω",
+  "stripAll": "δωρω",
+  "key": "δώρω",
+  "finalSigma": "δώρω",
+  "beta": "dw/rw"
+ },
+ {
+  "form": "δώρων",
+  "nfc": "δώρων",
+  "stripLength": "δώρων",
+  "stripAccents": "δωρων",
+  "stripAll": "δωρων",
+  "key": "δώρων",
+  "finalSigma": "δώρων",
+  "beta": "dw/rwn"
+ },
+ {
+  "form": "δώρῳ",
+  "nfc": "δώρῳ",
+  "stripLength": "δώρῳ",
+  "stripAccents": "δωρῳ",
+  "stripAll": "δωρω",
+  "key": "δώρῳ",
+  "finalSigma": "δώρῳ",
+  "beta": "dw/rw|"
+ },
+ {
+  "form": "δῶρον",
+  "nfc": "δῶρον",
+  "stripLength": "δῶρον",
+  "stripAccents": "δωρον",
+  "stripAll": "δωρον",
+  "key": "δῶρον",
+  "finalSigma": "δῶρον",
+  "beta": "dw=ron"
+ },
+ {
+  "form": "δῶρᾰ",
+  "nfc": "δῶρᾰ",
+  "stripLength": "δῶρα",
+  "stripAccents": "δωρα",
+  "stripAll": "δωρα",
+  "key": "δῶρα",
+  "finalSigma": "δῶρᾰ",
+  "beta": "dw=ra"
+ },
+ {
+  "form": "εὐδαίμονε",
+  "nfc": "εὐδαίμονε",
+  "stripLength": "εὐδαίμονε",
+  "stripAccents": "εὐδαιμονε",
+  "stripAll": "ευδαιμονε",
+  "key": "εὐδαίμονε",
+  "finalSigma": "εὐδαίμονε",
+  "beta": "eu)dai/mone"
+ },
+ {
+  "form": "εὐδαίμονες",
+  "nfc": "εὐδαίμονες",
+  "stripLength": "εὐδαίμονες",
+  "stripAccents": "εὐδαιμονες",
+  "stripAll": "ευδαιμονες",
+  "key": "εὐδαίμονες",
+  "finalSigma": "εὐδαίμονες",
+  "beta": "eu)dai/mones"
+ },
+ {
+  "form": "εὐδαίμονος",
+  "nfc": "εὐδαίμονος",
+  "stripLength": "εὐδαίμονος",
+  "stripAccents": "εὐδαιμονος",
+  "stripAll": "ευδαιμονος",
+  "key": "εὐδαίμονος",
+  "finalSigma": "εὐδαίμονος",
+  "beta": "eu)dai/monos"
+ },
+ {
+  "form": "εὐδαίμονᾰ",
+  "nfc": "εὐδαίμονᾰ",
+  "stripLength": "εὐδαίμονα",
+  "stripAccents": "εὐδαιμονα",
+  "stripAll": "ευδαιμονα",
+  "key": "εὐδαίμονα",
+  "finalSigma": "εὐδαίμονᾰ",
+  "beta": "eu)dai/mona"
+ },
+ {
+  "form": "εὐδαίμονᾰς",
+  "nfc": "εὐδαίμονᾰς",
+  "stripLength": "εὐδαίμονας",
+  "stripAccents": "εὐδαιμονας",
+  "stripAll": "ευδαιμονας",
+  "key": "εὐδαίμονας",
+  "finalSigma": "εὐδαίμονᾰς",
+  "beta": "eu)dai/monas"
+ },
+ {
+  "form": "εὐδαίμονῐ",
+  "nfc": "εὐδαίμονῐ",
+  "stripLength": "εὐδαίμονι",
+  "stripAccents": "εὐδαιμονι",
+  "stripAll": "ευδαιμονι",
+  "key": "εὐδαίμονι",
+  "finalSigma": "εὐδαίμονῐ",
+  "beta": "eu)dai/moni"
+ },
+ {
+  "form": "εὐδαίμοσῐ",
+  "nfc": "εὐδαίμοσῐ",
+  "stripLength": "εὐδαίμοσι",
+  "stripAccents": "εὐδαιμοσι",
+  "stripAll": "ευδαιμοσι",
+  "key": "εὐδαίμοσι",
+  "finalSigma": "εὐδαίμοσῐ",
+  "beta": "eu)dai/mosi"
+ },
+ {
+  "form": "εὐδαίμοσῐν",
+  "nfc": "εὐδαίμοσῐν",
+  "stripLength": "εὐδαίμοσιν",
+  "stripAccents": "εὐδαιμοσιν",
+  "stripAll": "ευδαιμοσιν",
+  "key": "εὐδαίμοσιν",
+  "finalSigma": "εὐδαίμοσῐν",
+  "beta": "eu)dai/mosin"
+ },
+ {
+  "form": "εὐδαίμων",
+  "nfc": "εὐδαίμων",
+  "stripLength": "εὐδαίμων",
+  "stripAccents": "εὐδαιμων",
+  "stripAll": "ευδαιμων",
+  "key": "εὐδαίμων",
+  "finalSigma": "εὐδαίμων",
+  "beta": "eu)dai/mwn"
+ },
+ {
+  "form": "εὐδαιμόνοιν",
+  "nfc": "εὐδαιμόνοιν",
+  "stripLength": "εὐδαιμόνοιν",
+  "stripAccents": "εὐδαιμονοιν",
+  "stripAll": "ευδαιμονοιν",
+  "key": "εὐδαιμόνοιν",
+  "finalSigma": "εὐδαιμόνοιν",
+  "beta": "eu)daimo/noin"
+ },
+ {
+  "form": "εὐδαιμόνων",
+  "nfc": "εὐδαιμόνων",
+  "stripLength": "εὐδαιμόνων",
+  "stripAccents": "εὐδαιμονων",
+  "stripAll": "ευδαιμονων",
+  "key": "εὐδαιμόνων",
+  "finalSigma": "εὐδαιμόνων",
+  "beta": "eu)daimo/nwn"
+ },
+ {
+  "form": "εὔδαιμον",
+  "nfc": "εὔδαιμον",
+  "stripLength": "εὔδαιμον",
+  "stripAccents": "εὐδαιμον",
+  "stripAll": "ευδαιμον",
+  "key": "εὔδαιμον",
+  "finalSigma": "εὔδαιμον",
+  "beta": "eu)/daimon"
+ },
+ {
+  "form": "θᾰ́λᾰτται",
+  "nfc": "θᾰ́λᾰτται",
+  "stripLength": "θάλατται",
+  "stripAccents": "θαλατται",
+  "stripAll": "θαλατται",
+  "key": "θάλατται",
+  "finalSigma": "θᾰ́λᾰτται",
+  "beta": "qa/lattai"
+ },
+ {
+  "form": "θᾰ́λᾰττᾰ",
+  "nfc": "θᾰ́λᾰττᾰ",
+  "stripLength": "θάλαττα",
+  "stripAccents": "θαλαττα",
+  "stripAll": "θαλαττα",
+  "key": "θάλαττα",
+  "finalSigma": "θᾰ́λᾰττᾰ",
+  "beta": "qa/latta"
+ },
+ {
+  "form": "θᾰ́λᾰττᾰν",
+  "nfc": "θᾰ́λᾰττᾰν",
+  "stripLength": "θάλατταν",
+  "stripAccents": "θαλατταν",
+  "stripAll": "θαλατταν",
+  "key": "θάλατταν",
+  "finalSigma": "θᾰ́λᾰττᾰν",
+  "beta": "qa/lattan"
+ },
+ {
+  "form": "θᾰλᾰ́τταιν",
+  "nfc": "θᾰλᾰ́τταιν",
+  "stripLength": "θαλάτταιν",
+  "stripAccents": "θαλατταιν",
+  "stripAll": "θαλατταιν",
+  "key": "θαλάτταιν",
+  "finalSigma": "θᾰλᾰ́τταιν",
+  "beta": "qala/ttain"
+ },
+ {
+  "form": "θᾰλᾰ́τταις",
+  "nfc": "θᾰλᾰ́τταις",
+  "stripLength": "θαλάτταις",
+  "stripAccents": "θαλατταις",
+  "stripAll": "θαλατταις",
+  "key": "θαλάτταις",
+  "finalSigma": "θᾰλᾰ́τταις",
+  "beta": "qala/ttais"
+ },
+ {
+  "form": "θᾰλᾰ́ττης",
+  "nfc": "θᾰλᾰ́ττης",
+  "stripLength": "θαλάττης",
+  "stripAccents": "θαλαττης",
+  "stripAll": "θαλαττης",
+  "key": "θαλάττης",
+  "finalSigma": "θᾰλᾰ́ττης",
+  "beta": "qala/tths"
+ },
+ {
+  "form": "θᾰλᾰ́ττᾱ",
+  "nfc": "θᾰλᾰ́ττᾱ",
+  "stripLength": "θαλάττα",
+  "stripAccents": "θαλαττα",
+  "stripAll": "θαλαττα",
+  "key": "θαλάττα",
+  "finalSigma": "θᾰλᾰ́ττᾱ",
+  "beta": "qala/tta"
+ },
+ {
+  "form": "θᾰλᾰ́ττᾱς",
+  "nfc": "θᾰλᾰ́ττᾱς",
+  "stripLength": "θαλάττας",
+  "stripAccents": "θαλαττας",
+  "stripAll": "θαλαττας",
+  "key": "θαλάττας",
+  "finalSigma": "θᾰλᾰ́ττᾱς",
+  "beta": "qala/ttas"
+ },
+ {
+  "form": "θᾰλᾰ́ττῃ",
+  "nfc": "θᾰλᾰ́ττῃ",
+  "stripLength": "θαλάττῃ",
+  "stripAccents": "θαλαττῃ",
+  "stripAll": "θαλαττη",
+  "key": "θαλάττῃ",
+  "finalSigma": "θᾰλᾰ́ττῃ",
+  "beta": "qala/tth|"
+ },
+ {
+  "form": "θᾰλᾰττῶν",
+  "nfc": "θᾰλᾰττῶν",
+  "stripLength": "θαλαττῶν",
+  "stripAccents": "θαλαττων",
+  "stripAll": "θαλαττων",
+  "key": "θαλαττῶν",
+  "finalSigma": "θᾰλᾰττῶν",
+  "beta": "qalattw=n"
+ },
+ {
+  "form": "λέλειμμαι",
+  "nfc": "λέλειμμαι",
+  "stripLength": "λέλειμμαι",
+  "stripAccents": "λελειμμαι",
+  "stripAll": "λελειμμαι",
+  "key": "λέλειμμαι",
+  "finalSigma": "λέλειμμαι",
+  "beta": "le/leimmai"
+ },
+ {
+  "form": "λέλειπται",
+  "nfc": "λέλειπται",
+  "stripLength": "λέλειπται",
+  "stripAccents": "λελειπται",
+  "stripAll": "λελειπται",
+  "key": "λέλειπται",
+  "finalSigma": "λέλειπται",
+  "beta": "le/leiptai"
+ },
+ {
+  "form": "λέλειφθε",
+  "nfc": "λέλειφθε",
+  "stripLength": "λέλειφθε",
+  "stripAccents": "λελειφθε",
+  "stripAll": "λελειφθε",
+  "key": "λέλειφθε",
+  "finalSigma": "λέλειφθε",
+  "beta": "le/leifqe"
+ },
+ {
+  "form": "λέλειφθον",
+  "nfc": "λέλειφθον",
+  "stripLength": "λέλειφθον",
+  "stripAccents": "λελειφθον",
+  "stripAll": "λελειφθον",
+  "key": "λέλειφθον",
+  "finalSigma": "λέλειφθον",
+  "beta": "le/leifqon"
+ },
+ {
+  "form": "λέλειψαι",
+  "nfc": "λέλειψαι",
+  "stripLength": "λέλειψαι",
+  "stripAccents": "λελειψαι",
+  "stripAll": "λελειψαι",
+  "key": "λέλειψαι",
+  "finalSigma": "λέλειψαι",
+  "beta": "le/leiyai"
+ },
+ {
+  "form": "λέλοιπε",
+  "nfc": "λέλοιπε",
+  "stripLength": "λέλοιπε",
+  "stripAccents": "λελοιπε",
+  "stripAll": "λελοιπε",
+  "key": "λέλοιπε",
+  "finalSigma": "λέλοιπε",
+  "beta": "le/loipe"
+ },
+ {
+  "form": "λέλοιπεν",
+  "nfc": "λέλοιπεν",
+  "stripLength": "λέλοιπεν",
+  "stripAccents": "λελοιπεν",
+  "stripAll": "λελοιπεν",
+  "key": "λέλοιπεν",
+  "finalSigma": "λέλοιπεν",
+  "beta": "le/loipen"
+ },
+ {
+  "form": "λέλοιπᾰ",
+  "nfc": "λέλοιπᾰ",
+  "stripLength": "λέλοιπα",
+  "stripAccents": "λελοιπα",
+  "stripAll": "λελοιπα",
+  "key": "λέλοιπα",
+  "finalSigma": "λέλοιπᾰ",
+  "beta": "le/loipa"
+ },
+ {
+  "form": "λέλοιπᾰς",
+  "nfc": "λέλοιπᾰς",
+  "stripLength": "λέλοιπας",
+  "stripAccents": "λελοιπας",
+  "stripAll": "λελοιπας",
+  "key": "λέλοιπας",
+  "finalSigma": "λέλοιπᾰς",
+  "beta": "le/loipas"
+ },
+ {
+  "form": "λέλῠκε",
+  "nfc": "λέλῠκε",
+  "stripLength": "λέλυκε",
+  "stripAccents": "λελυκε",
+  "stripAll": "λελυκε",
+  "key": "λέλυκε",
+  "finalSigma": "λέλῠκε",
+  "beta": "le/luke"
+ },
+ {
+  "form": "λέλῠκεν",
+  "nfc": "λέλῠκεν",
+  "stripLength": "λέλυκεν",
+  "stripAccents": "λελυκεν",
+  "stripAll": "λελυκεν",
+  "key": "λέλυκεν",
+  "finalSigma": "λέλῠκεν",
+  "beta": "le/luken"
+ },
+ {
+  "form": "λέλῠκᾰ",
+  "nfc": "λέλῠκᾰ",
+  "stripLength": "λέλυκα",
+  "stripAccents": "λελυκα",
+  "stripAll": "λελυκα",
+  "key": "λέλυκα",
+  "finalSigma": "λέλῠκᾰ",
+  "beta": "le/luka"
+ },
+ {
+  "form": "λέλῠκᾰς",
+  "nfc": "λέλῠκᾰς",
+  "stripLength": "λέλυκας",
+  "stripAccents": "λελυκας",
+  "stripAll": "λελυκας",
+  "key": "λέλυκας",
+  "finalSigma": "λέλῠκᾰς",
+  "beta": "le/lukas"
+ },
+ {
+  "form": "λέλῠμαι",
+  "nfc": "λέλῠμαι",
+  "stripLength": "λέλυμαι",
+  "stripAccents": "λελυμαι",
+  "stripAll": "λελυμαι",
+  "key": "λέλυμαι",
+  "finalSigma": "λέλῠμαι",
+  "beta": "le/lumai"
+ },
+ {
+  "form": "λέλῠνται",
+  "nfc": "λέλῠνται",
+  "stripLength": "λέλυνται",
+  "stripAccents": "λελυνται",
+  "stripAll": "λελυνται",
+  "key": "λέλυνται",
+  "finalSigma": "λέλῠνται",
+  "beta": "le/luntai"
+ },
+ {
+  "form": "λέλῠσαι",
+  "nfc": "λέλῠσαι",
+  "stripLength": "λέλυσαι",
+  "stripAccents": "λελυσαι",
+  "stripAll": "λελυσαι",
+  "key": "λέλυσαι",
+  "finalSigma": "λέλῠσαι",
+  "beta": "le/lusai"
+ },
+ {
+  "form": "λέλῠσθε",
+  "nfc": "λέλῠσθε",
+  "stripLength": "λέλυσθε",
+  "stripAccents": "λελυσθε",
+  "stripAll": "λελυσθε",
+  "key": "λέλυσθε",
+  "finalSigma": "λέλῠσθε",
+  "beta": "le/lusqe"
+ },
+ {
+  "form": "λέλῠσθον",
+  "nfc": "λέλῠσθον",
+  "stripLength": "λέλυσθον",
+  "stripAccents": "λελυσθον",
+  "stripAll": "λελυσθον",
+  "key": "λέλυσθον",
+  "finalSigma": "λέλῠσθον",
+  "beta": "le/lusqon"
+ },
+ {
+  "form": "λέλῠται",
+  "nfc": "λέλῠται",
+  "stripLength": "λέλυται",
+  "stripAccents": "λελυται",
+  "stripAll": "λελυται",
+  "key": "λέλυται",
+  "finalSigma": "λέλῠται",
+  "beta": "le/lutai"
+ },
+ {
+  "form": "λείπει",
+  "nfc": "λείπει",
+  "stripLength": "λείπει",
+  "stripAccents": "λειπει",
+  "stripAll": "λειπει",
+  "key": "λείπει",
+  "finalSigma": "λείπει",
+  "beta": "lei/pei"
+ },
+ {
+  "form": "λείπειν",
+  "nfc": "λείπειν",
+  "stripLength": "λείπειν",
+  "stripAccents": "λειπειν",
+  "stripAll": "λειπειν",
+  "key": "λείπειν",
+  "finalSigma": "λείπειν",
+  "beta": "lei/pein"
+ },
+ {
+  "form": "λείπεις",
+  "nfc": "λείπεις",
+  "stripLength": "λείπεις",
+  "stripAccents": "λειπεις",
+  "stripAll": "λειπεις",
+  "key": "λείπεις",
+  "finalSigma": "λείπεις",
+  "beta": "lei/peis"
+ },
+ {
+  "form": "λείπεσθαι",
+  "nfc": "λείπεσθαι",
+  "stripLength": "λείπεσθαι",
+  "stripAccents": "λειπεσθαι",
+  "stripAll": "λειπεσθαι",
+  "key": "λείπεσθαι",
+  "finalSigma": "λείπεσθαι",
+  "beta": "lei/pesqai"
+ },
+ {
+  "form": "λείπεσθε",
+  "nfc": "λείπεσθε",
+  "stripLength": "λείπεσθε",
+  "stripAccents": "λειπεσθε",
+  "stripAll": "λειπεσθε",
+  "key": "λείπεσθε",
+  "finalSigma": "λείπεσθε",
+  "beta": "lei/pesqe"
+ },
+ {
+  "form": "λείπεσθον",
+  "nfc": "λείπεσθον",
+  "stripLength": "λείπεσθον",
+  "stripAccents": "λειπεσθον",
+  "stripAll": "λειπεσθον",
+  "key": "λείπεσθον",
+  "finalSigma": "λείπεσθον",
+  "beta": "lei/pesqon"
+ },
+ {
+  "form": "λείπεται",
+  "nfc": "λείπεται",
+  "stripLength": "λείπεται",
+  "stripAccents": "λειπεται",
+  "stripAll": "λειπεται",
+  "key": "λείπεται",
+  "finalSigma": "λείπεται",
+  "beta": "lei/petai"
+ },
+ {
+  "form": "λείπετε",
+  "nfc": "λείπετε",
+  "stripLength": "λείπετε",
+  "stripAccents": "λειπετε",
+  "stripAll": "λειπετε",
+  "key": "λείπετε",
+  "finalSigma": "λείπετε",
+  "beta": "lei/pete"
+ },
+ {
+  "form": "λείπετον",
+  "nfc": "λείπετον",
+  "stripLength": "λείπετον",
+  "stripAccents": "λειπετον",
+  "stripAll": "λειπετον",
+  "key": "λείπετον",
+  "finalSigma": "λείπετον",
+  "beta": "lei/peton"
+ },
+ {
+  "form": "λείπομαι",
+  "nfc": "λείπομαι",
+  "stripLength": "λείπομαι",
+  "stripAccents": "λειπομαι",
+  "stripAll": "λειπομαι",
+  "key": "λείπομαι",
+  "finalSigma": "λείπομαι",
+  "beta": "lei/pomai"
+ },
+ {
+  "form": "λείπομεν",
+  "nfc": "λείπομεν",
+  "stripLength": "λείπομεν",
+  "stripAccents": "λειπομεν",
+  "stripAll": "λειπομεν",
+  "key": "λείπομεν",
+  "finalSigma": "λείπομεν",
+  "beta": "lei/pomen"
+ },
+ {
+  "form": "λείπονται",
+  "nfc": "λείπονται",
+  "stripLength": "λείπονται",
+  "stripAccents": "λειπονται",
+  "stripAll": "λειπονται",
+  "key": "λείπονται",
+  "finalSigma": "λείπονται",
+  "beta": "lei/pontai"
+ },
+ {
+  "form": "λείπουσῐ",
+  "nfc": "λείπουσῐ",
+  "stripLength": "λείπουσι",
+  "stripAccents": "λειπουσι",
+  "stripAll": "λειπουσι",
+  "key": "λείπουσι",
+  "finalSigma": "λείπουσῐ",
+  "beta": "lei/pousi"
+ },
+ {
+  "form": "λείπουσῐν",
+  "nfc": "λείπουσῐν",
+  "stripLength": "λείπουσιν",
+  "stripAccents": "λειπουσιν",
+  "stripAll": "λειπουσιν",
+  "key": "λείπουσιν",
+  "finalSigma": "λείπουσῐν",
+  "beta": "lei/pousin"
+ },
+ {
+  "form": "λείπω",
+  "nfc": "λείπω",
+  "stripLength": "λείπω",
+  "stripAccents": "λειπω",
+  "stripAll": "λειπω",
+  "key": "λείπω",
+  "finalSigma": "λείπω",
+  "beta": "lei/pw"
+ },
+ {
+  "form": "λείπῃ",
+  "nfc": "λείπῃ",
+  "stripLength": "λείπῃ",
+  "stripAccents": "λειπῃ",
+  "stripAll": "λειπη",
+  "key": "λείπῃ",
+  "finalSigma": "λείπῃ",
+  "beta": "lei/ph|"
+ },
+ {
+  "form": "λείψει",
+  "nfc": "λείψει",
+  "stripLength": "λείψει",
+  "stripAccents": "λειψει",
+  "stripAll": "λειψει",
+  "key": "λείψει",
+  "finalSigma": "λείψει",
+  "beta": "lei/yei"
+ },
+ {
+  "form": "λείψειν",
+  "nfc": "λείψειν",
+  "stripLength": "λείψειν",
+  "stripAccents": "λειψειν",
+  "stripAll": "λειψειν",
+  "key": "λείψειν",
+  "finalSigma": "λείψειν",
+  "beta": "lei/yein"
+ },
+ {
+  "form": "λείψεις",
+  "nfc": "λείψεις",
+  "stripLength": "λείψεις",
+  "stripAccents": "λειψεις",
+  "stripAll": "λειψεις",
+  "key": "λείψεις",
+  "finalSigma": "λείψεις",
+  "beta": "lei/yeis"
+ },
+ {
+  "form": "λείψεσθαι",
+  "nfc": "λείψεσθαι",
+  "stripLength": "λείψεσθαι",
+  "stripAccents": "λειψεσθαι",
+  "stripAll": "λειψεσθαι",
+  "key": "λείψεσθαι",
+  "finalSigma": "λείψεσθαι",
+  "beta": "lei/yesqai"
+ },
+ {
+  "form": "λείψεσθε",
+  "nfc": "λείψεσθε",
+  "stripLength": "λείψεσθε",
+  "stripAccents": "λειψεσθε",
+  "stripAll": "λειψεσθε",
+  "key": "λείψεσθε",
+  "finalSigma": "λείψεσθε",
+  "beta": "lei/yesqe"
+ },
+ {
+  "form": "λείψεσθον",
+  "nfc": "λείψεσθον",
+  "stripLength": "λείψεσθον",
+  "stripAccents": "λειψεσθον",
+  "stripAll": "λειψεσθον",
+  "key": "λείψεσθον",
+  "finalSigma": "λείψεσθον",
+  "beta": "lei/yesqon"
+ },
+ {
+  "form": "λείψεται",
+  "nfc": "λείψεται",
+  "stripLength": "λείψεται",
+  "stripAccents": "λειψεται",
+  "stripAll": "λειψεται",
+  "key": "λείψεται",
+  "finalSigma": "λείψεται",
+  "beta": "lei/yetai"
+ },
+ {
+  "form": "λείψετε",
+  "nfc": "λείψετε",
+  "stripLength": "λείψετε",
+  "stripAccents": "λειψετε",
+  "stripAll": "λειψετε",
+  "key": "λείψετε",
+  "finalSigma": "λείψετε",
+  "beta": "lei/yete"
+ },
+ {
+  "form": "λείψετον",
+  "nfc": "λείψετον",
+  "stripLength": "λείψετον",
+  "stripAccents": "λειψετον",
+  "stripAll": "λειψετον",
+  "key": "λείψετον",
+  "finalSigma": "λείψετον",
+  "beta": "lei/yeton"
+ },
+ {
+  "form": "λείψομαι",
+  "nfc": "λείψομαι",
+  "stripLength": "λείψομαι",
+  "stripAccents": "λειψομαι",
+  "stripAll": "λειψομαι",
+  "key": "λείψομαι",
+  "finalSigma": "λείψομαι",
+  "beta": "lei/yomai"
+ },
+ {
+  "form": "λείψομεν",
+  "nfc": "λείψομεν",
+  "stripLength": "λείψομεν",
+  "stripAccents": "λειψομεν",
+  "stripAll": "λειψομεν",
+  "key": "λείψομεν",
+  "finalSigma": "λείψομεν",
+  "beta": "lei/yomen"
+ },
+ {
+  "form": "λείψονται",
+  "nfc": "λείψονται",
+  "stripLength": "λείψονται",
+  "stripAccents": "λειψονται",
+  "stripAll": "λειψονται",
+  "key": "λείψονται",
+  "finalSigma": "λείψονται",
+  "beta": "lei/yontai"
+ },
+ {
+  "form": "λείψουσῐ",
+  "nfc": "λείψουσῐ",
+  "stripLength": "λείψουσι",
+  "stripAccents": "λειψουσι",
+  "stripAll": "λειψουσι",
+  "key": "λείψουσι",
+  "finalSigma": "λείψουσῐ",
+  "beta": "lei/yousi"
+ },
+ {
+  "form": "λείψουσῐν",
+  "nfc": "λείψουσῐν",
+  "stripLength": "λείψουσιν",
+  "stripAccents": "λειψουσιν",
+  "stripAll": "λειψουσιν",
+  "key": "λείψουσιν",
+  "finalSigma": "λείψουσῐν",
+  "beta": "lei/yousin"
+ },
+ {
+  "form": "λείψω",
+  "nfc": "λείψω",
+  "stripLength": "λείψω",
+  "stripAccents": "λειψω",
+  "stripAll": "λειψω",
+  "key": "λείψω",
+  "finalSigma": "λείψω",
+  "beta": "lei/yw"
+ },
+ {
+  "form": "λείψῃ",
+  "nfc": "λείψῃ",
+  "stripLength": "λείψῃ",
+  "stripAccents": "λειψῃ",
+  "stripAll": "λειψη",
+  "key": "λείψῃ",
+  "finalSigma": "λείψῃ",
+  "beta": "lei/yh|"
+ },
+ {
+  "form": "λειπόμεθᾰ",
+  "nfc": "λειπόμεθᾰ",
+  "stripLength": "λειπόμεθα",
+  "stripAccents": "λειπομεθα",
+  "stripAll": "λειπομεθα",
+  "key": "λειπόμεθα",
+  "finalSigma": "λειπόμεθᾰ",
+  "beta": "leipo/meqa"
+ },
+ {
+  "form": "λειφθήσει",
+  "nfc": "λειφθήσει",
+  "stripLength": "λειφθήσει",
+  "stripAccents": "λειφθησει",
+  "stripAll": "λειφθησει",
+  "key": "λειφθήσει",
+  "finalSigma": "λειφθήσει",
+  "beta": "leifqh/sei"
+ },
+ {
+  "form": "λειφθήσεσθαι",
+  "nfc": "λειφθήσεσθαι",
+  "stripLength": "λειφθήσεσθαι",
+  "stripAccents": "λειφθησεσθαι",
+  "stripAll": "λειφθησεσθαι",
+  "key": "λειφθήσεσθαι",
+  "finalSigma": "λειφθήσεσθαι",
+  "beta": "leifqh/sesqai"
+ },
+ {
+  "form": "λειφθήσεσθε",
+  "nfc": "λειφθήσεσθε",
+  "stripLength": "λειφθήσεσθε",
+  "stripAccents": "λειφθησεσθε",
+  "stripAll": "λειφθησεσθε",
+  "key": "λειφθήσεσθε",
+  "finalSigma": "λειφθήσεσθε",
+  "beta": "leifqh/sesqe"
+ },
+ {
+  "form": "λειφθήσεσθον",
+  "nfc": "λειφθήσεσθον",
+  "stripLength": "λειφθήσεσθον",
+  "stripAccents": "λειφθησεσθον",
+  "stripAll": "λειφθησεσθον",
+  "key": "λειφθήσεσθον",
+  "finalSigma": "λειφθήσεσθον",
+  "beta": "leifqh/sesqon"
+ },
+ {
+  "form": "λειφθήσεται",
+  "nfc": "λειφθήσεται",
+  "stripLength": "λειφθήσεται",
+  "stripAccents": "λειφθησεται",
+  "stripAll": "λειφθησεται",
+  "key": "λειφθήσεται",
+  "finalSigma": "λειφθήσεται",
+  "beta": "leifqh/setai"
+ },
+ {
+  "form": "λειφθήσομαι",
+  "nfc": "λειφθήσομαι",
+  "stripLength": "λειφθήσομαι",
+  "stripAccents": "λειφθησομαι",
+  "stripAll": "λειφθησομαι",
+  "key": "λειφθήσομαι",
+  "finalSigma": "λειφθήσομαι",
+  "beta": "leifqh/somai"
+ },
+ {
+  "form": "λειφθήσονται",
+  "nfc": "λειφθήσονται",
+  "stripLength": "λειφθήσονται",
+  "stripAccents": "λειφθησονται",
+  "stripAll": "λειφθησονται",
+  "key": "λειφθήσονται",
+  "finalSigma": "λειφθήσονται",
+  "beta": "leifqh/sontai"
+ },
+ {
+  "form": "λειφθήσῃ",
+  "nfc": "λειφθήσῃ",
+  "stripLength": "λειφθήσῃ",
+  "stripAccents": "λειφθησῃ",
+  "stripAll": "λειφθηση",
+  "key": "λειφθήσῃ",
+  "finalSigma": "λειφθήσῃ",
+  "beta": "leifqh/sh|"
+ },
+ {
+  "form": "λειφθησόμεθᾰ",
+  "nfc": "λειφθησόμεθᾰ",
+  "stripLength": "λειφθησόμεθα",
+  "stripAccents": "λειφθησομεθα",
+  "stripAll": "λειφθησομεθα",
+  "key": "λειφθησόμεθα",
+  "finalSigma": "λειφθησόμεθᾰ",
+  "beta": "leifqhso/meqa"
+ },
+ {
+  "form": "λειφθῆναι",
+  "nfc": "λειφθῆναι",
+  "stripLength": "λειφθῆναι",
+  "stripAccents": "λειφθηναι",
+  "stripAll": "λειφθηναι",
+  "key": "λειφθῆναι",
+  "finalSigma": "λειφθῆναι",
+  "beta": "leifqh=nai"
+ },
+ {
+  "form": "λειψόμεθᾰ",
+  "nfc": "λειψόμεθᾰ",
+  "stripLength": "λειψόμεθα",
+  "stripAccents": "λειψομεθα",
+  "stripAll": "λειψομεθα",
+  "key": "λειψόμεθα",
+  "finalSigma": "λειψόμεθᾰ",
+  "beta": "leiyo/meqa"
+ },
+ {
+  "form": "λελείμμεθᾰ",
+  "nfc": "λελείμμεθᾰ",
+  "stripLength": "λελείμμεθα",
+  "stripAccents": "λελειμμεθα",
+  "stripAll": "λελειμμεθα",
+  "key": "λελείμμεθα",
+  "finalSigma": "λελείμμεθᾰ",
+  "beta": "lelei/mmeqa"
+ },
+ {
+  "form": "λελεῖφθαι",
+  "nfc": "λελεῖφθαι",
+  "stripLength": "λελεῖφθαι",
+  "stripAccents": "λελειφθαι",
+  "stripAll": "λελειφθαι",
+  "key": "λελεῖφθαι",
+  "finalSigma": "λελεῖφθαι",
+  "beta": "lelei=fqai"
+ },
+ {
+  "form": "λελοίπᾰμεν",
+  "nfc": "λελοίπᾰμεν",
+  "stripLength": "λελοίπαμεν",
+  "stripAccents": "λελοιπαμεν",
+  "stripAll": "λελοιπαμεν",
+  "key": "λελοίπαμεν",
+  "finalSigma": "λελοίπᾰμεν",
+  "beta": "leloi/pamen"
+ },
+ {
+  "form": "λελοίπᾰτε",
+  "nfc": "λελοίπᾰτε",
+  "stripLength": "λελοίπατε",
+  "stripAccents": "λελοιπατε",
+  "stripAll": "λελοιπατε",
+  "key": "λελοίπατε",
+  "finalSigma": "λελοίπᾰτε",
+  "beta": "leloi/pate"
+ },
+ {
+  "form": "λελοίπᾰτον",
+  "nfc": "λελοίπᾰτον",
+  "stripLength": "λελοίπατον",
+  "stripAccents": "λελοιπατον",
+  "stripAll": "λελοιπατον",
+  "key": "λελοίπατον",
+  "finalSigma": "λελοίπᾰτον",
+  "beta": "leloi/paton"
+ },
+ {
+  "form": "λελοίπᾱσῐ",
+  "nfc": "λελοίπᾱσῐ",
+  "stripLength": "λελοίπασι",
+  "stripAccents": "λελοιπασι",
+  "stripAll": "λελοιπασι",
+  "key": "λελοίπασι",
+  "finalSigma": "λελοίπᾱσῐ",
+  "beta": "leloi/pasi"
+ },
+ {
+  "form": "λελοίπᾱσῐν",
+  "nfc": "λελοίπᾱσῐν",
+  "stripLength": "λελοίπασιν",
+  "stripAccents": "λελοιπασιν",
+  "stripAll": "λελοιπασιν",
+  "key": "λελοίπασιν",
+  "finalSigma": "λελοίπᾱσῐν",
+  "beta": "leloi/pasin"
+ },
+ {
+  "form": "λελοιπέναι",
+  "nfc": "λελοιπέναι",
+  "stripLength": "λελοιπέναι",
+  "stripAccents": "λελοιπεναι",
+  "stripAll": "λελοιπεναι",
+  "key": "λελοιπέναι",
+  "finalSigma": "λελοιπέναι",
+  "beta": "leloipe/nai"
+ },
+ {
+  "form": "λελῠ́κᾰμεν",
+  "nfc": "λελῠ́κᾰμεν",
+  "stripLength": "λελύκαμεν",
+  "stripAccents": "λελυκαμεν",
+  "stripAll": "λελυκαμεν",
+  "key": "λελύκαμεν",
+  "finalSigma": "λελῠ́κᾰμεν",
+  "beta": "lelu/kamen"
+ },
+ {
+  "form": "λελῠ́κᾰτε",
+  "nfc": "λελῠ́κᾰτε",
+  "stripLength": "λελύκατε",
+  "stripAccents": "λελυκατε",
+  "stripAll": "λελυκατε",
+  "key": "λελύκατε",
+  "finalSigma": "λελῠ́κᾰτε",
+  "beta": "lelu/kate"
+ },
+ {
+  "form": "λελῠ́κᾰτον",
+  "nfc": "λελῠ́κᾰτον",
+  "stripLength": "λελύκατον",
+  "stripAccents": "λελυκατον",
+  "stripAll": "λελυκατον",
+  "key": "λελύκατον",
+  "finalSigma": "λελῠ́κᾰτον",
+  "beta": "lelu/katon"
+ },
+ {
+  "form": "λελῠ́κᾱσῐ",
+  "nfc": "λελῠ́κᾱσῐ",
+  "stripLength": "λελύκασι",
+  "stripAccents": "λελυκασι",
+  "stripAll": "λελυκασι",
+  "key": "λελύκασι",
+  "finalSigma": "λελῠ́κᾱσῐ",
+  "beta": "lelu/kasi"
+ },
+ {
+  "form": "λελῠ́κᾱσῐν",
+  "nfc": "λελῠ́κᾱσῐν",
+  "stripLength": "λελύκασιν",
+  "stripAccents": "λελυκασιν",
+  "stripAll": "λελυκασιν",
+  "key": "λελύκασιν",
+  "finalSigma": "λελῠ́κᾱσῐν",
+  "beta": "lelu/kasin"
+ },
+ {
+  "form": "λελῠ́μεθᾰ",
+  "nfc": "λελῠ́μεθᾰ",
+  "stripLength": "λελύμεθα",
+  "stripAccents": "λελυμεθα",
+  "stripAll": "λελυμεθα",
+  "key": "λελύμεθα",
+  "finalSigma": "λελῠ́μεθᾰ",
+  "beta": "lelu/meqa"
+ },
+ {
+  "form": "λελῠ́σθαι",
+  "nfc": "λελῠ́σθαι",
+  "stripLength": "λελύσθαι",
+  "stripAccents": "λελυσθαι",
+  "stripAll": "λελυσθαι",
+  "key": "λελύσθαι",
+  "finalSigma": "λελῠ́σθαι",
+  "beta": "lelu/sqai"
+ },
+ {
+  "form": "λελῠκέναι",
+  "nfc": "λελῠκέναι",
+  "stripLength": "λελυκέναι",
+  "stripAccents": "λελυκεναι",
+  "stripAll": "λελυκεναι",
+  "key": "λελυκέναι",
+  "finalSigma": "λελῠκέναι",
+  "beta": "leluke/nai"
+ },
+ {
+  "form": "λόγε",
+  "nfc": "λόγε",
+  "stripLength": "λόγε",
+  "stripAccents": "λογε",
+  "stripAll": "λογε",
+  "key": "λόγε",
+  "finalSigma": "λόγε",
+  "beta": "lo/ge"
+ },
+ {
+  "form": "λόγοι",
+  "nfc": "λόγοι",
+  "stripLength": "λόγοι",
+  "stripAccents": "λογοι",
+  "stripAll": "λογοι",
+  "key": "λόγοι",
+  "finalSigma": "λόγοι",
+  "beta": "lo/goi"
+ },
+ {
+  "form": "λόγοιν",
+  "nfc": "λόγοιν",
+  "stripLength": "λόγοιν",
+  "stripAccents": "λογοιν",
+  "stripAll": "λογοιν",
+  "key": "λόγοιν",
+  "finalSigma": "λόγοιν",
+  "beta": "lo/goin"
+ },
+ {
+  "form": "λόγοις",
+  "nfc": "λόγοις",
+  "stripLength": "λόγοις",
+  "stripAccents": "λογοις",
+  "stripAll": "λογοις",
+  "key": "λόγοις",
+  "finalSigma": "λόγοις",
+  "beta": "lo/gois"
+ },
+ {
+  "form": "λόγον",
+  "nfc": "λόγον",
+  "stripLength": "λόγον",
+  "stripAccents": "λογον",
+  "stripAll": "λογον",
+  "key": "λόγον",
+  "finalSigma": "λόγον",
+  "beta": "lo/gon"
+ },
+ {
+  "form": "λόγος",
+  "nfc": "λόγος",
+  "stripLength": "λόγος",
+  "stripAccents": "λογος",
+  "stripAll": "λογος",
+  "key": "λόγος",
+  "finalSigma": "λόγος",
+  "beta": "lo/gos"
+ },
+ {
+  "form": "λόγου",
+  "nfc": "λόγου",
+  "stripLength": "λόγου",
+  "stripAccents": "λογου",
+  "stripAll": "λογου",
+  "key": "λόγου",
+  "finalSigma": "λόγου",
+  "beta": "lo/gou"
+ },
+ {
+  "form": "λόγους",
+  "nfc": "λόγους",
+  "stripLength": "λόγους",
+  "stripAccents": "λογους",
+  "stripAll": "λογους",
+  "key": "λόγους",
+  "finalSigma": "λόγους",
+  "beta": "lo/gous"
+ },
+ {
+  "form": "λόγω",
+  "nfc": "λόγω",
+  "stripLength": "λόγω",
+  "stripAccents": "λογω",
+  "stripAll": "λογω",
+  "key": "λόγω",
+  "finalSigma": "λόγω",
+  "beta": "lo/gw"
+ },
+ {
+  "form": "λόγων",
+  "nfc": "λόγων",
+  "stripLength": "λόγων",
+  "stripAccents": "λογων",
+  "stripAll": "λογων",
+  "key": "λόγων",
+  "finalSigma": "λόγων",
+  "beta": "lo/gwn"
+ },
+ {
+  "form": "λόγῳ",
+  "nfc": "λόγῳ",
+  "stripLength": "λόγῳ",
+  "stripAccents": "λογῳ",
+  "stripAll": "λογω",
+  "key": "λόγῳ",
+  "finalSigma": "λόγῳ",
+  "beta": "lo/gw|"
+ },
+ {
+  "form": "λῐπέσθαι",
+  "nfc": "λῐπέσθαι",
+  "stripLength": "λιπέσθαι",
+  "stripAccents": "λιπεσθαι",
+  "stripAll": "λιπεσθαι",
+  "key": "λιπέσθαι",
+  "finalSigma": "λῐπέσθαι",
+  "beta": "lipe/sqai"
+ },
+ {
+  "form": "λῐπεῖν",
+  "nfc": "λῐπεῖν",
+  "stripLength": "λιπεῖν",
+  "stripAccents": "λιπειν",
+  "stripAll": "λιπειν",
+  "key": "λιπεῖν",
+  "finalSigma": "λῐπεῖν",
+  "beta": "lipei=n"
+ },
+ {
+  "form": "λῠθήσει",
+  "nfc": "λῠθήσει",
+  "stripLength": "λυθήσει",
+  "stripAccents": "λυθησει",
+  "stripAll": "λυθησει",
+  "key": "λυθήσει",
+  "finalSigma": "λῠθήσει",
+  "beta": "luqh/sei"
+ },
+ {
+  "form": "λῠθήσεσθαι",
+  "nfc": "λῠθήσεσθαι",
+  "stripLength": "λυθήσεσθαι",
+  "stripAccents": "λυθησεσθαι",
+  "stripAll": "λυθησεσθαι",
+  "key": "λυθήσεσθαι",
+  "finalSigma": "λῠθήσεσθαι",
+  "beta": "luqh/sesqai"
+ },
+ {
+  "form": "λῠθήσεσθε",
+  "nfc": "λῠθήσεσθε",
+  "stripLength": "λυθήσεσθε",
+  "stripAccents": "λυθησεσθε",
+  "stripAll": "λυθησεσθε",
+  "key": "λυθήσεσθε",
+  "finalSigma": "λῠθήσεσθε",
+  "beta": "luqh/sesqe"
+ },
+ {
+  "form": "λῠθήσεσθον",
+  "nfc": "λῠθήσεσθον",
+  "stripLength": "λυθήσεσθον",
+  "stripAccents": "λυθησεσθον",
+  "stripAll": "λυθησεσθον",
+  "key": "λυθήσεσθον",
+  "finalSigma": "λῠθήσεσθον",
+  "beta": "luqh/sesqon"
+ },
+ {
+  "form": "λῠθήσεται",
+  "nfc": "λῠθήσεται",
+  "stripLength": "λυθήσεται",
+  "stripAccents": "λυθησεται",
+  "stripAll": "λυθησεται",
+  "key": "λυθήσεται",
+  "finalSigma": "λῠθήσεται",
+  "beta": "luqh/setai"
+ },
+ {
+  "form": "λῠθήσομαι",
+  "nfc": "λῠθήσομαι",
+  "stripLength": "λυθήσομαι",
+  "stripAccents": "λυθησομαι",
+  "stripAll": "λυθησομαι",
+  "key": "λυθήσομαι",
+  "finalSigma": "λῠθήσομαι",
+  "beta": "luqh/somai"
+ },
+ {
+  "form": "λῠθήσονται",
+  "nfc": "λῠθήσονται",
+  "stripLength": "λυθήσονται",
+  "stripAccents": "λυθησονται",
+  "stripAll": "λυθησονται",
+  "key": "λυθήσονται",
+  "finalSigma": "λῠθήσονται",
+  "beta": "luqh/sontai"
+ },
+ {
+  "form": "λῠθήσῃ",
+  "nfc": "λῠθήσῃ",
+  "stripLength": "λυθήσῃ",
+  "stripAccents": "λυθησῃ",
+  "stripAll": "λυθηση",
+  "key": "λυθήσῃ",
+  "finalSigma": "λῠθήσῃ",
+  "beta": "luqh/sh|"
+ },
+ {
+  "form": "λῠθησόμεθᾰ",
+  "nfc": "λῠθησόμεθᾰ",
+  "stripLength": "λυθησόμεθα",
+  "stripAccents": "λυθησομεθα",
+  "stripAll": "λυθησομεθα",
+  "key": "λυθησόμεθα",
+  "finalSigma": "λῠθησόμεθᾰ",
+  "beta": "luqhso/meqa"
+ },
+ {
+  "form": "λῠθῆναι",
+  "nfc": "λῠθῆναι",
+  "stripLength": "λυθῆναι",
+  "stripAccents": "λυθηναι",
+  "stripAll": "λυθηναι",
+  "key": "λυθῆναι",
+  "finalSigma": "λῠθῆναι",
+  "beta": "luqh=nai"
+ },
+ {
+  "form": "λῡ́ει",
+  "nfc": "λῡ́ει",
+  "stripLength": "λύει",
+  "stripAccents": "λυει",
+  "stripAll": "λυει",
+  "key": "λύει",
+  "finalSigma": "λῡ́ει",
+  "beta": "lu/ei"
+ },
+ {
+  "form": "λῡ́ειν",
+  "nfc": "λῡ́ειν",
+  "stripLength": "λύειν",
+  "stripAccents": "λυειν",
+  "stripAll": "λυειν",
+  "key": "λύειν",
+  "finalSigma": "λῡ́ειν",
+  "beta": "lu/ein"
+ },
+ {
+  "form": "λῡ́εις",
+  "nfc": "λῡ́εις",
+  "stripLength": "λύεις",
+  "stripAccents": "λυεις",
+  "stripAll": "λυεις",
+  "key": "λύεις",
+  "finalSigma": "λῡ́εις",
+  "beta": "lu/eis"
+ },
+ {
+  "form": "λῡ́εσθαι",
+  "nfc": "λῡ́εσθαι",
+  "stripLength": "λύεσθαι",
+  "stripAccents": "λυεσθαι",
+  "stripAll": "λυεσθαι",
+  "key": "λύεσθαι",
+  "finalSigma": "λῡ́εσθαι",
+  "beta": "lu/esqai"
+ },
+ {
+  "form": "λῡ́εσθε",
+  "nfc": "λῡ́εσθε",
+  "stripLength": "λύεσθε",
+  "stripAccents": "λυεσθε",
+  "stripAll": "λυεσθε",
+  "key": "λύεσθε",
+  "finalSigma": "λῡ́εσθε",
+  "beta": "lu/esqe"
+ },
+ {
+  "form": "λῡ́εσθον",
+  "nfc": "λῡ́εσθον",
+  "stripLength": "λύεσθον",
+  "stripAccents": "λυεσθον",
+  "stripAll": "λυεσθον",
+  "key": "λύεσθον",
+  "finalSigma": "λῡ́εσθον",
+  "beta": "lu/esqon"
+ },
+ {
+  "form": "λῡ́εται",
+  "nfc": "λῡ́εται",
+  "stripLength": "λύεται",
+  "stripAccents": "λυεται",
+  "stripAll": "λυεται",
+  "key": "λύεται",
+  "finalSigma": "λῡ́εται",
+  "beta": "lu/etai"
+ },
+ {
+  "form": "λῡ́ετε",
+  "nfc": "λῡ́ετε",
+  "stripLength": "λύετε",
+  "stripAccents": "λυετε",
+  "stripAll": "λυετε",
+  "key": "λύετε",
+  "finalSigma": "λῡ́ετε",
+  "beta": "lu/ete"
+ },
+ {
+  "form": "λῡ́ετον",
+  "nfc": "λῡ́ετον",
+  "stripLength": "λύετον",
+  "stripAccents": "λυετον",
+  "stripAll": "λυετον",
+  "key": "λύετον",
+  "finalSigma": "λῡ́ετον",
+  "beta": "lu/eton"
+ },
+ {
+  "form": "λῡ́ομαι",
+  "nfc": "λῡ́ομαι",
+  "stripLength": "λύομαι",
+  "stripAccents": "λυομαι",
+  "stripAll": "λυομαι",
+  "key": "λύομαι",
+  "finalSigma": "λῡ́ομαι",
+  "beta": "lu/omai"
+ },
+ {
+  "form": "λῡ́ομεν",
+  "nfc": "λῡ́ομεν",
+  "stripLength": "λύομεν",
+  "stripAccents": "λυομεν",
+  "stripAll": "λυομεν",
+  "key": "λύομεν",
+  "finalSigma": "λῡ́ομεν",
+  "beta": "lu/omen"
+ },
+ {
+  "form": "λῡ́ονται",
+  "nfc": "λῡ́ονται",
+  "stripLength": "λύονται",
+  "stripAccents": "λυονται",
+  "stripAll": "λυονται",
+  "key": "λύονται",
+  "finalSigma": "λῡ́ονται",
+  "beta": "lu/ontai"
+ },
+ {
+  "form": "λῡ́ουσῐ",
+  "nfc": "λῡ́ουσῐ",
+  "stripLength": "λύουσι",
+  "stripAccents": "λυουσι",
+  "stripAll": "λυουσι",
+  "key": "λύουσι",
+  "finalSigma": "λῡ́ουσῐ",
+  "beta": "lu/ousi"
+ },
+ {
+  "form": "λῡ́ουσῐν",
+  "nfc": "λῡ́ουσῐν",
+  "stripLength": "λύουσιν",
+  "stripAccents": "λυουσιν",
+  "stripAll": "λυουσιν",
+  "key": "λύουσιν",
+  "finalSigma": "λῡ́ουσῐν",
+  "beta": "lu/ousin"
+ },
+ {
+  "form": "λῡ́σει",
+  "nfc": "λῡ́σει",
+  "stripLength": "λύσει",
+  "stripAccents": "λυσει",
+  "stripAll": "λυσει",
+  "key": "λύσει",
+  "finalSigma": "λῡ́σει",
+  "beta": "lu/sei"
+ },
+ {
+  "form": "λῡ́σειν",
+  "nfc": "λῡ́σειν",
+  "stripLength": "λύσειν",
+  "stripAccents": "λυσειν",
+  "stripAll": "λυσειν",
+  "key": "λύσειν",
+  "finalSigma": "λῡ́σειν",
+  "beta": "lu/sein"
+ },
+ {
+  "form": "λῡ́σεις",
+  "nfc": "λῡ́σεις",
+  "stripLength": "λύσεις",
+  "stripAccents": "λυσεις",
+  "stripAll": "λυσεις",
+  "key": "λύσεις",
+  "finalSigma": "λῡ́σεις",
+  "beta": "lu/seis"
+ },
+ {
+  "form": "λῡ́σεσθαι",
+  "nfc": "λῡ́σεσθαι",
+  "stripLength": "λύσεσθαι",
+  "stripAccents": "λυσεσθαι",
+  "stripAll": "λυσεσθαι",
+  "key": "λύσεσθαι",
+  "finalSigma": "λῡ́σεσθαι",
+  "beta": "lu/sesqai"
+ },
+ {
+  "form": "λῡ́σεσθε",
+  "nfc": "λῡ́σεσθε",
+  "stripLength": "λύσεσθε",
+  "stripAccents": "λυσεσθε",
+  "stripAll": "λυσεσθε",
+  "key": "λύσεσθε",
+  "finalSigma": "λῡ́σεσθε",
+  "beta": "lu/sesqe"
+ },
+ {
+  "form": "λῡ́σεσθον",
+  "nfc": "λῡ́σεσθον",
+  "stripLength": "λύσεσθον",
+  "stripAccents": "λυσεσθον",
+  "stripAll": "λυσεσθον",
+  "key": "λύσεσθον",
+  "finalSigma": "λῡ́σεσθον",
+  "beta": "lu/sesqon"
+ },
+ {
+  "form": "λῡ́σεται",
+  "nfc": "λῡ́σεται",
+  "stripLength": "λύσεται",
+  "stripAccents": "λυσεται",
+  "stripAll": "λυσεται",
+  "key": "λύσεται",
+  "finalSigma": "λῡ́σεται",
+  "beta": "lu/setai"
+ },
+ {
+  "form": "λῡ́σετε",
+  "nfc": "λῡ́σετε",
+  "stripLength": "λύσετε",
+  "stripAccents": "λυσετε",
+  "stripAll": "λυσετε",
+  "key": "λύσετε",
+  "finalSigma": "λῡ́σετε",
+  "beta": "lu/sete"
+ },
+ {
+  "form": "λῡ́σετον",
+  "nfc": "λῡ́σετον",
+  "stripLength": "λύσετον",
+  "stripAccents": "λυσετον",
+  "stripAll": "λυσετον",
+  "key": "λύσετον",
+  "finalSigma": "λῡ́σετον",
+  "beta": "lu/seton"
+ },
+ {
+  "form": "λῡ́σομαι",
+  "nfc": "λῡ́σομαι",
+  "stripLength": "λύσομαι",
+  "stripAccents": "λυσομαι",
+  "stripAll": "λυσομαι",
+  "key": "λύσομαι",
+  "finalSigma": "λῡ́σομαι",
+  "beta": "lu/somai"
+ },
+ {
+  "form": "λῡ́σομεν",
+  "nfc": "λῡ́σομεν",
+  "stripLength": "λύσομεν",
+  "stripAccents": "λυσομεν",
+  "stripAll": "λυσομεν",
+  "key": "λύσομεν",
+  "finalSigma": "λῡ́σομεν",
+  "beta": "lu/somen"
+ },
+ {
+  "form": "λῡ́σονται",
+  "nfc": "λῡ́σονται",
+  "stripLength": "λύσονται",
+  "stripAccents": "λυσονται",
+  "stripAll": "λυσονται",
+  "key": "λύσονται",
+  "finalSigma": "λῡ́σονται",
+  "beta": "lu/sontai"
+ },
+ {
+  "form": "λῡ́σουσῐ",
+  "nfc": "λῡ́σουσῐ",
+  "stripLength": "λύσουσι",
+  "stripAccents": "λυσουσι",
+  "stripAll": "λυσουσι",
+  "key": "λύσουσι",
+  "finalSigma": "λῡ́σουσῐ",
+  "beta": "lu/sousi"
+ },
+ {
+  "form": "λῡ́σουσῐν",
+  "nfc": "λῡ́σουσῐν",
+  "stripLength": "λύσουσιν",
+  "stripAccents": "λυσουσιν",
+  "stripAll": "λυσουσιν",
+  "key": "λύσουσιν",
+  "finalSigma": "λῡ́σουσῐν",
+  "beta": "lu/sousin"
+ },
+ {
+  "form": "λῡ́σω",
+  "nfc": "λῡ́σω",
+  "stripLength": "λύσω",
+  "stripAccents": "λυσω",
+  "stripAll": "λυσω",
+  "key": "λύσω",
+  "finalSigma": "λῡ́σω",
+  "beta": "lu/sw"
+ },
+ {
+  "form": "λῡ́σᾰσθαι",
+  "nfc": "λῡ́σᾰσθαι",
+  "stripLength": "λύσασθαι",
+  "stripAccents": "λυσασθαι",
+  "stripAll": "λυσασθαι",
+  "key": "λύσασθαι",
+  "finalSigma": "λῡ́σᾰσθαι",
+  "beta": "lu/sasqai"
+ },
+ {
+  "form": "λῡ́σῃ",
+  "nfc": "λῡ́σῃ",
+  "stripLength": "λύσῃ",
+  "stripAccents": "λυσῃ",
+  "stripAll": "λυση",
+  "key": "λύσῃ",
+  "finalSigma": "λῡ́σῃ",
+  "beta": "lu/sh|"
+ },
+ {
+  "form": "λῡ́ω",
+  "nfc": "λῡ́ω",
+  "stripLength": "λύω",
+  "stripAccents": "λυω",
+  "stripAll": "λυω",
+  "key": "λύω",
+  "finalSigma": "λῡ́ω",
+  "beta": "lu/w"
+ },
+ {
+  "form": "λῡ́ῃ",
+  "nfc": "λῡ́ῃ",
+  "stripLength": "λύῃ",
+  "stripAccents": "λυῃ",
+  "stripAll": "λυη",
+  "key": "λύῃ",
+  "finalSigma": "λῡ́ῃ",
+  "beta": "lu/h|"
+ },
+ {
+  "form": "λῡσόμεθᾰ",
+  "nfc": "λῡσόμεθᾰ",
+  "stripLength": "λυσόμεθα",
+  "stripAccents": "λυσομεθα",
+  "stripAll": "λυσομεθα",
+  "key": "λυσόμεθα",
+  "finalSigma": "λῡσόμεθᾰ",
+  "beta": "luso/meqa"
+ },
+ {
+  "form": "λῡόμεθᾰ",
+  "nfc": "λῡόμεθᾰ",
+  "stripLength": "λυόμεθα",
+  "stripAccents": "λυομεθα",
+  "stripAll": "λυομεθα",
+  "key": "λυόμεθα",
+  "finalSigma": "λῡόμεθᾰ",
+  "beta": "luo/meqa"
+ },
+ {
+  "form": "λῦσαι",
+  "nfc": "λῦσαι",
+  "stripLength": "λῦσαι",
+  "stripAccents": "λυσαι",
+  "stripAll": "λυσαι",
+  "key": "λῦσαι",
+  "finalSigma": "λῦσαι",
+  "beta": "lu=sai"
+ },
+ {
+  "form": "νεᾱνῐ́αι",
+  "nfc": "νεᾱνῐ́αι",
+  "stripLength": "νεανίαι",
+  "stripAccents": "νεανιαι",
+  "stripAll": "νεανιαι",
+  "key": "νεανίαι",
+  "finalSigma": "νεᾱνῐ́αι",
+  "beta": "neani/ai"
+ },
+ {
+  "form": "νεᾱνῐ́αιν",
+  "nfc": "νεᾱνῐ́αιν",
+  "stripLength": "νεανίαιν",
+  "stripAccents": "νεανιαιν",
+  "stripAll": "νεανιαιν",
+  "key": "νεανίαιν",
+  "finalSigma": "νεᾱνῐ́αιν",
+  "beta": "neani/ain"
+ },
+ {
+  "form": "νεᾱνῐ́αις",
+  "nfc": "νεᾱνῐ́αις",
+  "stripLength": "νεανίαις",
+  "stripAccents": "νεανιαις",
+  "stripAll": "νεανιαις",
+  "key": "νεανίαις",
+  "finalSigma": "νεᾱνῐ́αις",
+  "beta": "neani/ais"
+ },
+ {
+  "form": "νεᾱνῐ́ου",
+  "nfc": "νεᾱνῐ́ου",
+  "stripLength": "νεανίου",
+  "stripAccents": "νεανιου",
+  "stripAll": "νεανιου",
+  "key": "νεανίου",
+  "finalSigma": "νεᾱνῐ́ου",
+  "beta": "neani/ou"
+ },
+ {
+  "form": "νεᾱνῐ́ᾱ",
+  "nfc": "νεᾱνῐ́ᾱ",
+  "stripLength": "νεανία",
+  "stripAccents": "νεανια",
+  "stripAll": "νεανια",
+  "key": "νεανία",
+  "finalSigma": "νεᾱνῐ́ᾱ",
+  "beta": "neani/a"
+ },
+ {
+  "form": "νεᾱνῐ́ᾱν",
+  "nfc": "νεᾱνῐ́ᾱν",
+  "stripLength": "νεανίαν",
+  "stripAccents": "νεανιαν",
+  "stripAll": "νεανιαν",
+  "key": "νεανίαν",
+  "finalSigma": "νεᾱνῐ́ᾱν",
+  "beta": "neani/an"
+ },
+ {
+  "form": "νεᾱνῐ́ᾱς",
+  "nfc": "νεᾱνῐ́ᾱς",
+  "stripLength": "νεανίας",
+  "stripAccents": "νεανιας",
+  "stripAll": "νεανιας",
+  "key": "νεανίας",
+  "finalSigma": "νεᾱνῐ́ᾱς",
+  "beta": "neani/as"
+ },
+ {
+  "form": "νεᾱνῐ́ᾳ",
+  "nfc": "νεᾱνῐ́ᾳ",
+  "stripLength": "νεανίᾳ",
+  "stripAccents": "νεανιᾳ",
+  "stripAll": "νεανια",
+  "key": "νεανίᾳ",
+  "finalSigma": "νεᾱνῐ́ᾳ",
+  "beta": "neani/a|"
+ },
+ {
+  "form": "νεᾱνῐῶν",
+  "nfc": "νεᾱνῐῶν",
+  "stripLength": "νεανιῶν",
+  "stripAccents": "νεανιων",
+  "stripAll": "νεανιων",
+  "key": "νεανιῶν",
+  "finalSigma": "νεᾱνῐῶν",
+  "beta": "neaniw=n"
+ },
+ {
+  "form": "οἱ",
+  "nfc": "οἱ",
+  "stripLength": "οἱ",
+  "stripAccents": "οἱ",
+  "stripAll": "οι",
+  "key": "οἱ",
+  "finalSigma": "οἱ",
+  "beta": "oi("
+ },
+ {
+  "form": "πολέοιν",
+  "nfc": "πολέοιν",
+  "stripLength": "πολέοιν",
+  "stripAccents": "πολεοιν",
+  "stripAll": "πολεοιν",
+  "key": "πολέοιν",
+  "finalSigma": "πολέοιν",
+  "beta": "pole/oin"
+ },
+ {
+  "form": "πολῑ́ταιν",
+  "nfc": "πολῑ́ταιν",
+  "stripLength": "πολίταιν",
+  "stripAccents": "πολιταιν",
+  "stripAll": "πολιταιν",
+  "key": "πολίταιν",
+  "finalSigma": "πολῑ́ταιν",
+  "beta": "poli/tain"
+ },
+ {
+  "form": "πολῑ́ταις",
+  "nfc": "πολῑ́ταις",
+  "stripLength": "πολίταις",
+  "stripAccents": "πολιταις",
+  "stripAll": "πολιταις",
+  "key": "πολίταις",
+  "finalSigma": "πολῑ́ταις",
+  "beta": "poli/tais"
+ },
+ {
+  "form": "πολῑ́την",
+  "nfc": "πολῑ́την",
+  "stripLength": "πολίτην",
+  "stripAccents": "πολιτην",
+  "stripAll": "πολιτην",
+  "key": "πολίτην",
+  "finalSigma": "πολῑ́την",
+  "beta": "poli/thn"
+ },
+ {
+  "form": "πολῑ́της",
+  "nfc": "πολῑ́της",
+  "stripLength": "πολίτης",
+  "stripAccents": "πολιτης",
+  "stripAll": "πολιτης",
+  "key": "πολίτης",
+  "finalSigma": "πολῑ́της",
+  "beta": "poli/ths"
+ },
+ {
+  "form": "πολῑ́του",
+  "nfc": "πολῑ́του",
+  "stripLength": "πολίτου",
+  "stripAccents": "πολιτου",
+  "stripAll": "πολιτου",
+  "key": "πολίτου",
+  "finalSigma": "πολῑ́του",
+  "beta": "poli/tou"
+ },
+ {
+  "form": "πολῑ́τᾱ",
+  "nfc": "πολῑ́τᾱ",
+  "stripLength": "πολίτα",
+  "stripAccents": "πολιτα",
+  "stripAll": "πολιτα",
+  "key": "πολίτα",
+  "finalSigma": "πολῑ́τᾱ",
+  "beta": "poli/ta"
+ },
+ {
+  "form": "πολῑ́τᾱς",
+  "nfc": "πολῑ́τᾱς",
+  "stripLength": "πολίτας",
+  "stripAccents": "πολιτας",
+  "stripAll": "πολιτας",
+  "key": "πολίτας",
+  "finalSigma": "πολῑ́τᾱς",
+  "beta": "poli/tas"
+ },
+ {
+  "form": "πολῑ́τῃ",
+  "nfc": "πολῑ́τῃ",
+  "stripLength": "πολίτῃ",
+  "stripAccents": "πολιτῃ",
+  "stripAll": "πολιτη",
+  "key": "πολίτῃ",
+  "finalSigma": "πολῑ́τῃ",
+  "beta": "poli/th|"
+ },
+ {
+  "form": "πολῑτῶν",
+  "nfc": "πολῑτῶν",
+  "stripLength": "πολιτῶν",
+  "stripAccents": "πολιτων",
+  "stripAll": "πολιτων",
+  "key": "πολιτῶν",
+  "finalSigma": "πολῑτῶν",
+  "beta": "politw=n"
+ },
+ {
+  "form": "πολῖται",
+  "nfc": "πολῖται",
+  "stripLength": "πολῖται",
+  "stripAccents": "πολιται",
+  "stripAll": "πολιται",
+  "key": "πολῖται",
+  "finalSigma": "πολῖται",
+  "beta": "poli=tai"
+ },
+ {
+  "form": "πολῖτᾰ",
+  "nfc": "πολῖτᾰ",
+  "stripLength": "πολῖτα",
+  "stripAccents": "πολιτα",
+  "stripAll": "πολιτα",
+  "key": "πολῖτα",
+  "finalSigma": "πολῖτᾰ",
+  "beta": "poli=ta"
+ },
+ {
+  "form": "πόλει",
+  "nfc": "πόλει",
+  "stripLength": "πόλει",
+  "stripAccents": "πολει",
+  "stripAll": "πολει",
+  "key": "πόλει",
+  "finalSigma": "πόλει",
+  "beta": "po/lei"
+ },
+ {
+  "form": "πόλεις",
+  "nfc": "πόλεις",
+  "stripLength": "πόλεις",
+  "stripAccents": "πολεις",
+  "stripAll": "πολεις",
+  "key": "πόλεις",
+  "finalSigma": "πόλεις",
+  "beta": "po/leis"
+ },
+ {
+  "form": "πόλεσῐ",
+  "nfc": "πόλεσῐ",
+  "stripLength": "πόλεσι",
+  "stripAccents": "πολεσι",
+  "stripAll": "πολεσι",
+  "key": "πόλεσι",
+  "finalSigma": "πόλεσῐ",
+  "beta": "po/lesi"
+ },
+ {
+  "form": "πόλεσῐν",
+  "nfc": "πόλεσῐν",
+  "stripLength": "πόλεσιν",
+  "stripAccents": "πολεσιν",
+  "stripAll": "πολεσιν",
+  "key": "πόλεσιν",
+  "finalSigma": "πόλεσῐν",
+  "beta": "po/lesin"
+ },
+ {
+  "form": "πόλεων",
+  "nfc": "πόλεων",
+  "stripLength": "πόλεων",
+  "stripAccents": "πολεων",
+  "stripAll": "πολεων",
+  "key": "πόλεων",
+  "finalSigma": "πόλεων",
+  "beta": "po/lewn"
+ },
+ {
+  "form": "πόλεως",
+  "nfc": "πόλεως",
+  "stripLength": "πόλεως",
+  "stripAccents": "πολεως",
+  "stripAll": "πολεως",
+  "key": "πόλεως",
+  "finalSigma": "πόλεως",
+  "beta": "po/lews"
+ },
+ {
+  "form": "πόλῐ",
+  "nfc": "πόλῐ",
+  "stripLength": "πόλι",
+  "stripAccents": "πολι",
+  "stripAll": "πολι",
+  "key": "πόλι",
+  "finalSigma": "πόλῐ",
+  "beta": "po/li"
+ },
+ {
+  "form": "πόλῐν",
+  "nfc": "πόλῐν",
+  "stripLength": "πόλιν",
+  "stripAccents": "πολιν",
+  "stripAll": "πολιν",
+  "key": "πόλιν",
+  "finalSigma": "πόλῐν",
+  "beta": "po/lin"
+ },
+ {
+  "form": "πόλῐς",
+  "nfc": "πόλῐς",
+  "stripLength": "πόλις",
+  "stripAccents": "πολις",
+  "stripAll": "πολις",
+  "key": "πόλις",
+  "finalSigma": "πόλῐς",
+  "beta": "po/lis"
+ },
+ {
+  "form": "σωμᾰ́τοιν",
+  "nfc": "σωμᾰ́τοιν",
+  "stripLength": "σωμάτοιν",
+  "stripAccents": "σωματοιν",
+  "stripAll": "σωματοιν",
+  "key": "σωμάτοιν",
+  "finalSigma": "σωμᾰ́τοιν",
+  "beta": "swma/toin"
+ },
+ {
+  "form": "σωμᾰ́των",
+  "nfc": "σωμᾰ́των",
+  "stripLength": "σωμάτων",
+  "stripAccents": "σωματων",
+  "stripAll": "σωματων",
+  "key": "σωμάτων",
+  "finalSigma": "σωμᾰ́των",
+  "beta": "swma/twn"
+ },
+ {
+  "form": "σώμᾰσῐ",
+  "nfc": "σώμᾰσῐ",
+  "stripLength": "σώμασι",
+  "stripAccents": "σωμασι",
+  "stripAll": "σωμασι",
+  "key": "σώμασι",
+  "finalSigma": "σώμᾰσῐ",
+  "beta": "sw/masi"
+ },
+ {
+  "form": "σώμᾰσῐν",
+  "nfc": "σώμᾰσῐν",
+  "stripLength": "σώμασιν",
+  "stripAccents": "σωμασιν",
+  "stripAll": "σωμασιν",
+  "key": "σώμασιν",
+  "finalSigma": "σώμᾰσῐν",
+  "beta": "sw/masin"
+ },
+ {
+  "form": "σώμᾰτε",
+  "nfc": "σώμᾰτε",
+  "stripLength": "σώματε",
+  "stripAccents": "σωματε",
+  "stripAll": "σωματε",
+  "key": "σώματε",
+  "finalSigma": "σώμᾰτε",
+  "beta": "sw/mate"
+ },
+ {
+  "form": "σώμᾰτος",
+  "nfc": "σώμᾰτος",
+  "stripLength": "σώματος",
+  "stripAccents": "σωματος",
+  "stripAll": "σωματος",
+  "key": "σώματος",
+  "finalSigma": "σώμᾰτος",
+  "beta": "sw/matos"
+ },
+ {
+  "form": "σώμᾰτᾰ",
+  "nfc": "σώμᾰτᾰ",
+  "stripLength": "σώματα",
+  "stripAccents": "σωματα",
+  "stripAll": "σωματα",
+  "key": "σώματα",
+  "finalSigma": "σώμᾰτᾰ",
+  "beta": "sw/mata"
+ },
+ {
+  "form": "σώμᾰτῐ",
+  "nfc": "σώμᾰτῐ",
+  "stripLength": "σώματι",
+  "stripAccents": "σωματι",
+  "stripAll": "σωματι",
+  "key": "σώματι",
+  "finalSigma": "σώμᾰτῐ",
+  "beta": "sw/mati"
+ },
+ {
+  "form": "σῶμᾰ",
+  "nfc": "σῶμᾰ",
+  "stripLength": "σῶμα",
+  "stripAccents": "σωμα",
+  "stripAll": "σωμα",
+  "key": "σῶμα",
+  "finalSigma": "σῶμᾰ",
+  "beta": "sw=ma"
+ },
+ {
+  "form": "τήν",
+  "nfc": "τήν",
+  "stripLength": "τήν",
+  "stripAccents": "την",
+  "stripAll": "την",
+  "key": "τήν",
+  "finalSigma": "τήν",
+  "beta": "th/n"
+ },
+ {
+  "form": "ταῖς",
+  "nfc": "ταῖς",
+  "stripLength": "ταῖς",
+  "stripAccents": "ταις",
+  "stripAll": "ταις",
+  "key": "ταῖς",
+  "finalSigma": "ταῖς",
+  "beta": "tai=s"
+ },
+ {
+  "form": "τούς",
+  "nfc": "τούς",
+  "stripLength": "τούς",
+  "stripAccents": "τους",
+  "stripAll": "τους",
+  "key": "τούς",
+  "finalSigma": "τούς",
+  "beta": "tou/s"
+ },
+ {
+  "form": "τοῖν",
+  "nfc": "τοῖν",
+  "stripLength": "τοῖν",
+  "stripAccents": "τοιν",
+  "stripAll": "τοιν",
+  "key": "τοῖν",
+  "finalSigma": "τοῖν",
+  "beta": "toi=n"
+ },
+ {
+  "form": "τοῖς",
+  "nfc": "τοῖς",
+  "stripLength": "τοῖς",
+  "stripAccents": "τοις",
+  "stripAll": "τοις",
+  "key": "τοῖς",
+  "finalSigma": "τοῖς",
+  "beta": "toi=s"
+ },
+ {
+  "form": "τοῦ",
+  "nfc": "τοῦ",
+  "stripLength": "τοῦ",
+  "stripAccents": "του",
+  "stripAll": "του",
+  "key": "τοῦ",
+  "finalSigma": "τοῦ",
+  "beta": "tou="
+ },
+ {
+  "form": "τό",
+  "nfc": "τό",
+  "stripLength": "τό",
+  "stripAccents": "το",
+  "stripAll": "το",
+  "key": "τό",
+  "finalSigma": "τό",
+  "beta": "to/"
+ },
+ {
+  "form": "τόν",
+  "nfc": "τόν",
+  "stripLength": "τόν",
+  "stripAccents": "τον",
+  "stripAll": "τον",
+  "key": "τόν",
+  "finalSigma": "τόν",
+  "beta": "to/n"
+ },
+ {
+  "form": "τώ",
+  "nfc": "τώ",
+  "stripLength": "τώ",
+  "stripAccents": "τω",
+  "stripAll": "τω",
+  "key": "τώ",
+  "finalSigma": "τώ",
+  "beta": "tw/"
+ },
+ {
+  "form": "τᾰ́",
+  "nfc": "τᾰ́",
+  "stripLength": "τά",
+  "stripAccents": "τα",
+  "stripAll": "τα",
+  "key": "τά",
+  "finalSigma": "τᾰ́",
+  "beta": "ta/"
+ },
+ {
+  "form": "τᾱ́ς",
+  "nfc": "τᾱ́ς",
+  "stripLength": "τάς",
+  "stripAccents": "τας",
+  "stripAll": "τας",
+  "key": "τάς",
+  "finalSigma": "τᾱ́ς",
+  "beta": "ta/s"
+ },
+ {
+  "form": "τῆς",
+  "nfc": "τῆς",
+  "stripLength": "τῆς",
+  "stripAccents": "της",
+  "stripAll": "της",
+  "key": "τῆς",
+  "finalSigma": "τῆς",
+  "beta": "th=s"
+ },
+ {
+  "form": "τῇ",
+  "nfc": "τῇ",
+  "stripLength": "τῇ",
+  "stripAccents": "τῃ",
+  "stripAll": "τη",
+  "key": "τῇ",
+  "finalSigma": "τῇ",
+  "beta": "th=|"
+ },
+ {
+  "form": "τῑμή",
+  "nfc": "τῑμή",
+  "stripLength": "τιμή",
+  "stripAccents": "τιμη",
+  "stripAll": "τιμη",
+  "key": "τιμή",
+  "finalSigma": "τῑμή",
+  "beta": "timh/"
+ },
+ {
+  "form": "τῑμήν",
+  "nfc": "τῑμήν",
+  "stripLength": "τιμήν",
+  "stripAccents": "τιμην",
+  "stripAll": "τιμην",
+  "key": "τιμήν",
+  "finalSigma": "τῑμήν",
+  "beta": "timh/n"
+ },
+ {
+  "form": "τῑμαί",
+  "nfc": "τῑμαί",
+  "stripLength": "τιμαί",
+  "stripAccents": "τιμαι",
+  "stripAll": "τιμαι",
+  "key": "τιμαί",
+  "finalSigma": "τῑμαί",
+  "beta": "timai/"
+ },
+ {
+  "form": "τῑμαῖν",
+  "nfc": "τῑμαῖν",
+  "stripLength": "τιμαῖν",
+  "stripAccents": "τιμαιν",
+  "stripAll": "τιμαιν",
+  "key": "τιμαῖν",
+  "finalSigma": "τῑμαῖν",
+  "beta": "timai=n"
+ },
+ {
+  "form": "τῑμαῖς",
+  "nfc": "τῑμαῖς",
+  "stripLength": "τιμαῖς",
+  "stripAccents": "τιμαις",
+  "stripAll": "τιμαις",
+  "key": "τιμαῖς",
+  "finalSigma": "τῑμαῖς",
+  "beta": "timai=s"
+ },
+ {
+  "form": "τῑμᾱ́",
+  "nfc": "τῑμᾱ́",
+  "stripLength": "τιμά",
+  "stripAccents": "τιμα",
+  "stripAll": "τιμα",
+  "key": "τιμά",
+  "finalSigma": "τῑμᾱ́",
+  "beta": "tima/"
+ },
+ {
+  "form": "τῑμᾱ́ς",
+  "nfc": "τῑμᾱ́ς",
+  "stripLength": "τιμάς",
+  "stripAccents": "τιμας",
+  "stripAll": "τιμας",
+  "key": "τιμάς",
+  "finalSigma": "τῑμᾱ́ς",
+  "beta": "tima/s"
+ },
+ {
+  "form": "τῑμῆς",
+  "nfc": "τῑμῆς",
+  "stripLength": "τιμῆς",
+  "stripAccents": "τιμης",
+  "stripAll": "τιμης",
+  "key": "τιμῆς",
+  "finalSigma": "τῑμῆς",
+  "beta": "timh=s"
+ },
+ {
+  "form": "τῑμῇ",
+  "nfc": "τῑμῇ",
+  "stripLength": "τιμῇ",
+  "stripAccents": "τιμῃ",
+  "stripAll": "τιμη",
+  "key": "τιμῇ",
+  "finalSigma": "τῑμῇ",
+  "beta": "timh=|"
+ },
+ {
+  "form": "τῑμῶν",
+  "nfc": "τῑμῶν",
+  "stripLength": "τιμῶν",
+  "stripAccents": "τιμων",
+  "stripAll": "τιμων",
+  "key": "τιμῶν",
+  "finalSigma": "τῑμῶν",
+  "beta": "timw=n"
+ },
+ {
+  "form": "τῶν",
+  "nfc": "τῶν",
+  "stripLength": "τῶν",
+  "stripAccents": "των",
+  "stripAll": "των",
+  "key": "τῶν",
+  "finalSigma": "τῶν",
+  "beta": "tw=n"
+ },
+ {
+  "form": "τῷ",
+  "nfc": "τῷ",
+  "stripLength": "τῷ",
+  "stripAccents": "τῳ",
+  "stripAll": "τω",
+  "key": "τῷ",
+  "finalSigma": "τῷ",
+  "beta": "tw=|"
+ },
+ {
+  "form": "φλέβε",
+  "nfc": "φλέβε",
+  "stripLength": "φλέβε",
+  "stripAccents": "φλεβε",
+  "stripAll": "φλεβε",
+  "key": "φλέβε",
+  "finalSigma": "φλέβε",
+  "beta": "fle/be"
+ },
+ {
+  "form": "φλέβες",
+  "nfc": "φλέβες",
+  "stripLength": "φλέβες",
+  "stripAccents": "φλεβες",
+  "stripAll": "φλεβες",
+  "key": "φλέβες",
+  "finalSigma": "φλέβες",
+  "beta": "fle/bes"
+ },
+ {
+  "form": "φλέβᾰ",
+  "nfc": "φλέβᾰ",
+  "stripLength": "φλέβα",
+  "stripAccents": "φλεβα",
+  "stripAll": "φλεβα",
+  "key": "φλέβα",
+  "finalSigma": "φλέβᾰ",
+  "beta": "fle/ba"
+ },
+ {
+  "form": "φλέβᾰς",
+  "nfc": "φλέβᾰς",
+  "stripLength": "φλέβας",
+  "stripAccents": "φλεβας",
+  "stripAll": "φλεβας",
+  "key": "φλέβας",
+  "finalSigma": "φλέβᾰς",
+  "beta": "fle/bas"
+ },
+ {
+  "form": "φλέψ",
+  "nfc": "φλέψ",
+  "stripLength": "φλέψ",
+  "stripAccents": "φλεψ",
+  "stripAll": "φλεψ",
+  "key": "φλέψ",
+  "finalSigma": "φλέψ",
+  "beta": "fle/y"
+ },
+ {
+  "form": "φλεβοῖν",
+  "nfc": "φλεβοῖν",
+  "stripLength": "φλεβοῖν",
+  "stripAccents": "φλεβοιν",
+  "stripAll": "φλεβοιν",
+  "key": "φλεβοῖν",
+  "finalSigma": "φλεβοῖν",
+  "beta": "fleboi=n"
+ },
+ {
+  "form": "φλεβός",
+  "nfc": "φλεβός",
+  "stripLength": "φλεβός",
+  "stripAccents": "φλεβος",
+  "stripAll": "φλεβος",
+  "key": "φλεβός",
+  "finalSigma": "φλεβός",
+  "beta": "flebo/s"
+ },
+ {
+  "form": "φλεβῐ́",
+  "nfc": "φλεβῐ́",
+  "stripLength": "φλεβί",
+  "stripAccents": "φλεβι",
+  "stripAll": "φλεβι",
+  "key": "φλεβί",
+  "finalSigma": "φλεβῐ́",
+  "beta": "flebi/"
+ },
+ {
+  "form": "φλεβῶν",
+  "nfc": "φλεβῶν",
+  "stripLength": "φλεβῶν",
+  "stripAccents": "φλεβων",
+  "stripAll": "φλεβων",
+  "key": "φλεβῶν",
+  "finalSigma": "φλεβῶν",
+  "beta": "flebw=n"
+ },
+ {
+  "form": "φλεψῐ́",
+  "nfc": "φλεψῐ́",
+  "stripLength": "φλεψί",
+  "stripAccents": "φλεψι",
+  "stripAll": "φλεψι",
+  "key": "φλεψί",
+  "finalSigma": "φλεψῐ́",
+  "beta": "fleyi/"
+ },
+ {
+  "form": "φλεψῐ́ν",
+  "nfc": "φλεψῐ́ν",
+  "stripLength": "φλεψίν",
+  "stripAccents": "φλεψιν",
+  "stripAll": "φλεψιν",
+  "key": "φλεψίν",
+  "finalSigma": "φλεψῐ́ν",
+  "beta": "fleyi/n"
+ },
+ {
+  "form": "φῠ́λᾰκε",
+  "nfc": "φῠ́λᾰκε",
+  "stripLength": "φύλακε",
+  "stripAccents": "φυλακε",
+  "stripAll": "φυλακε",
+  "key": "φύλακε",
+  "finalSigma": "φῠ́λᾰκε",
+  "beta": "fu/lake"
+ },
+ {
+  "form": "φῠ́λᾰκες",
+  "nfc": "φῠ́λᾰκες",
+  "stripLength": "φύλακες",
+  "stripAccents": "φυλακες",
+  "stripAll": "φυλακες",
+  "key": "φύλακες",
+  "finalSigma": "φῠ́λᾰκες",
+  "beta": "fu/lakes"
+ },
+ {
+  "form": "φῠ́λᾰκος",
+  "nfc": "φῠ́λᾰκος",
+  "stripLength": "φύλακος",
+  "stripAccents": "φυλακος",
+  "stripAll": "φυλακος",
+  "key": "φύλακος",
+  "finalSigma": "φῠ́λᾰκος",
+  "beta": "fu/lakos"
+ },
+ {
+  "form": "φῠ́λᾰκᾰ",
+  "nfc": "φῠ́λᾰκᾰ",
+  "stripLength": "φύλακα",
+  "stripAccents": "φυλακα",
+  "stripAll": "φυλακα",
+  "key": "φύλακα",
+  "finalSigma": "φῠ́λᾰκᾰ",
+  "beta": "fu/laka"
+ },
+ {
+  "form": "φῠ́λᾰκᾰς",
+  "nfc": "φῠ́λᾰκᾰς",
+  "stripLength": "φύλακας",
+  "stripAccents": "φυλακας",
+  "stripAll": "φυλακας",
+  "key": "φύλακας",
+  "finalSigma": "φῠ́λᾰκᾰς",
+  "beta": "fu/lakas"
+ },
+ {
+  "form": "φῠ́λᾰκῐ",
+  "nfc": "φῠ́λᾰκῐ",
+  "stripLength": "φύλακι",
+  "stripAccents": "φυλακι",
+  "stripAll": "φυλακι",
+  "key": "φύλακι",
+  "finalSigma": "φῠ́λᾰκῐ",
+  "beta": "fu/laki"
+ },
+ {
+  "form": "φῠ́λᾰξ",
+  "nfc": "φῠ́λᾰξ",
+  "stripLength": "φύλαξ",
+  "stripAccents": "φυλαξ",
+  "stripAll": "φυλαξ",
+  "key": "φύλαξ",
+  "finalSigma": "φῠ́λᾰξ",
+  "beta": "fu/lac"
+ },
+ {
+  "form": "φῠ́λᾰξῐ",
+  "nfc": "φῠ́λᾰξῐ",
+  "stripLength": "φύλαξι",
+  "stripAccents": "φυλαξι",
+  "stripAll": "φυλαξι",
+  "key": "φύλαξι",
+  "finalSigma": "φῠ́λᾰξῐ",
+  "beta": "fu/laci"
+ },
+ {
+  "form": "φῠ́λᾰξῐν",
+  "nfc": "φῠ́λᾰξῐν",
+  "stripLength": "φύλαξιν",
+  "stripAccents": "φυλαξιν",
+  "stripAll": "φυλαξιν",
+  "key": "φύλαξιν",
+  "finalSigma": "φῠ́λᾰξῐν",
+  "beta": "fu/lacin"
+ },
+ {
+  "form": "φῠλᾰ́κοιν",
+  "nfc": "φῠλᾰ́κοιν",
+  "stripLength": "φυλάκοιν",
+  "stripAccents": "φυλακοιν",
+  "stripAll": "φυλακοιν",
+  "key": "φυλάκοιν",
+  "finalSigma": "φῠλᾰ́κοιν",
+  "beta": "fula/koin"
+ },
+ {
+  "form": "φῠλᾰ́κων",
+  "nfc": "φῠλᾰ́κων",
+  "stripLength": "φυλάκων",
+  "stripAccents": "φυλακων",
+  "stripAll": "φυλακων",
+  "key": "φυλάκων",
+  "finalSigma": "φῠλᾰ́κων",
+  "beta": "fula/kwn"
+ },
+ {
+  "form": "χωρῶν",
+  "nfc": "χωρῶν",
+  "stripLength": "χωρῶν",
+  "stripAccents": "χωρων",
+  "stripAll": "χωρων",
+  "key": "χωρῶν",
+  "finalSigma": "χωρῶν",
+  "beta": "xwrw=n"
+ },
+ {
+  "form": "χώραιν",
+  "nfc": "χώραιν",
+  "stripLength": "χώραιν",
+  "stripAccents": "χωραιν",
+  "stripAll": "χωραιν",
+  "key": "χώραιν",
+  "finalSigma": "χώραιν",
+  "beta": "xw/rain"
+ },
+ {
+  "form": "χώραις",
+  "nfc": "χώραις",
+  "stripLength": "χώραις",
+  "stripAccents": "χωραις",
+  "stripAll": "χωραις",
+  "key": "χώραις",
+  "finalSigma": "χώραις",
+  "beta": "xw/rais"
+ },
+ {
+  "form": "χώρᾱ",
+  "nfc": "χώρᾱ",
+  "stripLength": "χώρα",
+  "stripAccents": "χωρα",
+  "stripAll": "χωρα",
+  "key": "χώρα",
+  "finalSigma": "χώρᾱ",
+  "beta": "xw/ra"
+ },
+ {
+  "form": "χώρᾱν",
+  "nfc": "χώρᾱν",
+  "stripLength": "χώραν",
+  "stripAccents": "χωραν",
+  "stripAll": "χωραν",
+  "key": "χώραν",
+  "finalSigma": "χώρᾱν",
+  "beta": "xw/ran"
+ },
+ {
+  "form": "χώρᾱς",
+  "nfc": "χώρᾱς",
+  "stripLength": "χώρας",
+  "stripAccents": "χωρας",
+  "stripAll": "χωρας",
+  "key": "χώρας",
+  "finalSigma": "χώρᾱς",
+  "beta": "xw/ras"
+ },
+ {
+  "form": "χώρᾳ",
+  "nfc": "χώρᾳ",
+  "stripLength": "χώρᾳ",
+  "stripAccents": "χωρᾳ",
+  "stripAll": "χωρα",
+  "key": "χώρᾳ",
+  "finalSigma": "χώρᾳ",
+  "beta": "xw/ra|"
+ },
+ {
+  "form": "χῶραι",
+  "nfc": "χῶραι",
+  "stripLength": "χῶραι",
+  "stripAccents": "χωραι",
+  "stripAll": "χωραι",
+  "key": "χῶραι",
+  "finalSigma": "χῶραι",
+  "beta": "xw=rai"
+ },
+ {
+  "form": "ἐλείπεσθε",
+  "nfc": "ἐλείπεσθε",
+  "stripLength": "ἐλείπεσθε",
+  "stripAccents": "ἐλειπεσθε",
+  "stripAll": "ελειπεσθε",
+  "key": "ἐλείπεσθε",
+  "finalSigma": "ἐλείπεσθε",
+  "beta": "e)lei/pesqe"
+ },
+ {
+  "form": "ἐλείπεσθον",
+  "nfc": "ἐλείπεσθον",
+  "stripLength": "ἐλείπεσθον",
+  "stripAccents": "ἐλειπεσθον",
+  "stripAll": "ελειπεσθον",
+  "key": "ἐλείπεσθον",
+  "finalSigma": "ἐλείπεσθον",
+  "beta": "e)lei/pesqon"
+ },
+ {
+  "form": "ἐλείπετε",
+  "nfc": "ἐλείπετε",
+  "stripLength": "ἐλείπετε",
+  "stripAccents": "ἐλειπετε",
+  "stripAll": "ελειπετε",
+  "key": "ἐλείπετε",
+  "finalSigma": "ἐλείπετε",
+  "beta": "e)lei/pete"
+ },
+ {
+  "form": "ἐλείπετο",
+  "nfc": "ἐλείπετο",
+  "stripLength": "ἐλείπετο",
+  "stripAccents": "ἐλειπετο",
+  "stripAll": "ελειπετο",
+  "key": "ἐλείπετο",
+  "finalSigma": "ἐλείπετο",
+  "beta": "e)lei/peto"
+ },
+ {
+  "form": "ἐλείπετον",
+  "nfc": "ἐλείπετον",
+  "stripLength": "ἐλείπετον",
+  "stripAccents": "ἐλειπετον",
+  "stripAll": "ελειπετον",
+  "key": "ἐλείπετον",
+  "finalSigma": "ἐλείπετον",
+  "beta": "e)lei/peton"
+ },
+ {
+  "form": "ἐλείπομεν",
+  "nfc": "ἐλείπομεν",
+  "stripLength": "ἐλείπομεν",
+  "stripAccents": "ἐλειπομεν",
+  "stripAll": "ελειπομεν",
+  "key": "ἐλείπομεν",
+  "finalSigma": "ἐλείπομεν",
+  "beta": "e)lei/pomen"
+ },
+ {
+  "form": "ἐλείποντο",
+  "nfc": "ἐλείποντο",
+  "stripLength": "ἐλείποντο",
+  "stripAccents": "ἐλειποντο",
+  "stripAll": "ελειποντο",
+  "key": "ἐλείποντο",
+  "finalSigma": "ἐλείποντο",
+  "beta": "e)lei/ponto"
+ },
+ {
+  "form": "ἐλείπου",
+  "nfc": "ἐλείπου",
+  "stripLength": "ἐλείπου",
+  "stripAccents": "ἐλειπου",
+  "stripAll": "ελειπου",
+  "key": "ἐλείπου",
+  "finalSigma": "ἐλείπου",
+  "beta": "e)lei/pou"
+ },
+ {
+  "form": "ἐλείφθη",
+  "nfc": "ἐλείφθη",
+  "stripLength": "ἐλείφθη",
+  "stripAccents": "ἐλειφθη",
+  "stripAll": "ελειφθη",
+  "key": "ἐλείφθη",
+  "finalSigma": "ἐλείφθη",
+  "beta": "e)lei/fqh"
+ },
+ {
+  "form": "ἐλείφθημεν",
+  "nfc": "ἐλείφθημεν",
+  "stripLength": "ἐλείφθημεν",
+  "stripAccents": "ἐλειφθημεν",
+  "stripAll": "ελειφθημεν",
+  "key": "ἐλείφθημεν",
+  "finalSigma": "ἐλείφθημεν",
+  "beta": "e)lei/fqhmen"
+ },
+ {
+  "form": "ἐλείφθην",
+  "nfc": "ἐλείφθην",
+  "stripLength": "ἐλείφθην",
+  "stripAccents": "ἐλειφθην",
+  "stripAll": "ελειφθην",
+  "key": "ἐλείφθην",
+  "finalSigma": "ἐλείφθην",
+  "beta": "e)lei/fqhn"
+ },
+ {
+  "form": "ἐλείφθης",
+  "nfc": "ἐλείφθης",
+  "stripLength": "ἐλείφθης",
+  "stripAccents": "ἐλειφθης",
+  "stripAll": "ελειφθης",
+  "key": "ἐλείφθης",
+  "finalSigma": "ἐλείφθης",
+  "beta": "e)lei/fqhs"
+ },
+ {
+  "form": "ἐλείφθησᾰν",
+  "nfc": "ἐλείφθησᾰν",
+  "stripLength": "ἐλείφθησαν",
+  "stripAccents": "ἐλειφθησαν",
+  "stripAll": "ελειφθησαν",
+  "key": "ἐλείφθησαν",
+  "finalSigma": "ἐλείφθησᾰν",
+  "beta": "e)lei/fqhsan"
+ },
+ {
+  "form": "ἐλείφθητε",
+  "nfc": "ἐλείφθητε",
+  "stripLength": "ἐλείφθητε",
+  "stripAccents": "ἐλειφθητε",
+  "stripAll": "ελειφθητε",
+  "key": "ἐλείφθητε",
+  "finalSigma": "ἐλείφθητε",
+  "beta": "e)lei/fqhte"
+ },
+ {
+  "form": "ἐλείφθητον",
+  "nfc": "ἐλείφθητον",
+  "stripLength": "ἐλείφθητον",
+  "stripAccents": "ἐλειφθητον",
+  "stripAll": "ελειφθητον",
+  "key": "ἐλείφθητον",
+  "finalSigma": "ἐλείφθητον",
+  "beta": "e)lei/fqhton"
+ },
+ {
+  "form": "ἐλειπέσθην",
+  "nfc": "ἐλειπέσθην",
+  "stripLength": "ἐλειπέσθην",
+  "stripAccents": "ἐλειπεσθην",
+  "stripAll": "ελειπεσθην",
+  "key": "ἐλειπέσθην",
+  "finalSigma": "ἐλειπέσθην",
+  "beta": "e)leipe/sqhn"
+ },
+ {
+  "form": "ἐλειπέτην",
+  "nfc": "ἐλειπέτην",
+  "stripLength": "ἐλειπέτην",
+  "stripAccents": "ἐλειπετην",
+  "stripAll": "ελειπετην",
+  "key": "ἐλειπέτην",
+  "finalSigma": "ἐλειπέτην",
+  "beta": "e)leipe/thn"
+ },
+ {
+  "form": "ἐλειπόμεθᾰ",
+  "nfc": "ἐλειπόμεθᾰ",
+  "stripLength": "ἐλειπόμεθα",
+  "stripAccents": "ἐλειπομεθα",
+  "stripAll": "ελειπομεθα",
+  "key": "ἐλειπόμεθα",
+  "finalSigma": "ἐλειπόμεθᾰ",
+  "beta": "e)leipo/meqa"
+ },
+ {
+  "form": "ἐλειπόμην",
+  "nfc": "ἐλειπόμην",
+  "stripLength": "ἐλειπόμην",
+  "stripAccents": "ἐλειπομην",
+  "stripAll": "ελειπομην",
+  "key": "ἐλειπόμην",
+  "finalSigma": "ἐλειπόμην",
+  "beta": "e)leipo/mhn"
+ },
+ {
+  "form": "ἐλειφθήτην",
+  "nfc": "ἐλειφθήτην",
+  "stripLength": "ἐλειφθήτην",
+  "stripAccents": "ἐλειφθητην",
+  "stripAll": "ελειφθητην",
+  "key": "ἐλειφθήτην",
+  "finalSigma": "ἐλειφθήτην",
+  "beta": "e)leifqh/thn"
+ },
+ {
+  "form": "ἐλῐ́πεσθε",
+  "nfc": "ἐλῐ́πεσθε",
+  "stripLength": "ἐλίπεσθε",
+  "stripAccents": "ἐλιπεσθε",
+  "stripAll": "ελιπεσθε",
+  "key": "ἐλίπεσθε",
+  "finalSigma": "ἐλῐ́πεσθε",
+  "beta": "e)li/pesqe"
+ },
+ {
+  "form": "ἐλῐ́πεσθον",
+  "nfc": "ἐλῐ́πεσθον",
+  "stripLength": "ἐλίπεσθον",
+  "stripAccents": "ἐλιπεσθον",
+  "stripAll": "ελιπεσθον",
+  "key": "ἐλίπεσθον",
+  "finalSigma": "ἐλῐ́πεσθον",
+  "beta": "e)li/pesqon"
+ },
+ {
+  "form": "ἐλῐ́πετε",
+  "nfc": "ἐλῐ́πετε",
+  "stripLength": "ἐλίπετε",
+  "stripAccents": "ἐλιπετε",
+  "stripAll": "ελιπετε",
+  "key": "ἐλίπετε",
+  "finalSigma": "ἐλῐ́πετε",
+  "beta": "e)li/pete"
+ },
+ {
+  "form": "ἐλῐ́πετο",
+  "nfc": "ἐλῐ́πετο",
+  "stripLength": "ἐλίπετο",
+  "stripAccents": "ἐλιπετο",
+  "stripAll": "ελιπετο",
+  "key": "ἐλίπετο",
+  "finalSigma": "ἐλῐ́πετο",
+  "beta": "e)li/peto"
+ },
+ {
+  "form": "ἐλῐ́πετον",
+  "nfc": "ἐλῐ́πετον",
+  "stripLength": "ἐλίπετον",
+  "stripAccents": "ἐλιπετον",
+  "stripAll": "ελιπετον",
+  "key": "ἐλίπετον",
+  "finalSigma": "ἐλῐ́πετον",
+  "beta": "e)li/peton"
+ },
+ {
+  "form": "ἐλῐ́πομεν",
+  "nfc": "ἐλῐ́πομεν",
+  "stripLength": "ἐλίπομεν",
+  "stripAccents": "ἐλιπομεν",
+  "stripAll": "ελιπομεν",
+  "key": "ἐλίπομεν",
+  "finalSigma": "ἐλῐ́πομεν",
+  "beta": "e)li/pomen"
+ },
+ {
+  "form": "ἐλῐ́ποντο",
+  "nfc": "ἐλῐ́ποντο",
+  "stripLength": "ἐλίποντο",
+  "stripAccents": "ἐλιποντο",
+  "stripAll": "ελιποντο",
+  "key": "ἐλίποντο",
+  "finalSigma": "ἐλῐ́ποντο",
+  "beta": "e)li/ponto"
+ },
+ {
+  "form": "ἐλῐ́που",
+  "nfc": "ἐλῐ́που",
+  "stripLength": "ἐλίπου",
+  "stripAccents": "ἐλιπου",
+  "stripAll": "ελιπου",
+  "key": "ἐλίπου",
+  "finalSigma": "ἐλῐ́που",
+  "beta": "e)li/pou"
+ },
+ {
+  "form": "ἐλῐπέσθην",
+  "nfc": "ἐλῐπέσθην",
+  "stripLength": "ἐλιπέσθην",
+  "stripAccents": "ἐλιπεσθην",
+  "stripAll": "ελιπεσθην",
+  "key": "ἐλιπέσθην",
+  "finalSigma": "ἐλῐπέσθην",
+  "beta": "e)lipe/sqhn"
+ },
+ {
+  "form": "ἐλῐπέτην",
+  "nfc": "ἐλῐπέτην",
+  "stripLength": "ἐλιπέτην",
+  "stripAccents": "ἐλιπετην",
+  "stripAll": "ελιπετην",
+  "key": "ἐλιπέτην",
+  "finalSigma": "ἐλῐπέτην",
+  "beta": "e)lipe/thn"
+ },
+ {
+  "form": "ἐλῐπόμεθᾰ",
+  "nfc": "ἐλῐπόμεθᾰ",
+  "stripLength": "ἐλιπόμεθα",
+  "stripAccents": "ἐλιπομεθα",
+  "stripAll": "ελιπομεθα",
+  "key": "ἐλιπόμεθα",
+  "finalSigma": "ἐλῐπόμεθᾰ",
+  "beta": "e)lipo/meqa"
+ },
+ {
+  "form": "ἐλῐπόμην",
+  "nfc": "ἐλῐπόμην",
+  "stripLength": "ἐλιπόμην",
+  "stripAccents": "ἐλιπομην",
+  "stripAll": "ελιπομην",
+  "key": "ἐλιπόμην",
+  "finalSigma": "ἐλῐπόμην",
+  "beta": "e)lipo/mhn"
+ },
+ {
+  "form": "ἐλῠ́θη",
+  "nfc": "ἐλῠ́θη",
+  "stripLength": "ἐλύθη",
+  "stripAccents": "ἐλυθη",
+  "stripAll": "ελυθη",
+  "key": "ἐλύθη",
+  "finalSigma": "ἐλῠ́θη",
+  "beta": "e)lu/qh"
+ },
+ {
+  "form": "ἐλῠ́θημεν",
+  "nfc": "ἐλῠ́θημεν",
+  "stripLength": "ἐλύθημεν",
+  "stripAccents": "ἐλυθημεν",
+  "stripAll": "ελυθημεν",
+  "key": "ἐλύθημεν",
+  "finalSigma": "ἐλῠ́θημεν",
+  "beta": "e)lu/qhmen"
+ },
+ {
+  "form": "ἐλῠ́θην",
+  "nfc": "ἐλῠ́θην",
+  "stripLength": "ἐλύθην",
+  "stripAccents": "ἐλυθην",
+  "stripAll": "ελυθην",
+  "key": "ἐλύθην",
+  "finalSigma": "ἐλῠ́θην",
+  "beta": "e)lu/qhn"
+ },
+ {
+  "form": "ἐλῠ́θης",
+  "nfc": "ἐλῠ́θης",
+  "stripLength": "ἐλύθης",
+  "stripAccents": "ἐλυθης",
+  "stripAll": "ελυθης",
+  "key": "ἐλύθης",
+  "finalSigma": "ἐλῠ́θης",
+  "beta": "e)lu/qhs"
+ },
+ {
+  "form": "ἐλῠ́θησᾰν",
+  "nfc": "ἐλῠ́θησᾰν",
+  "stripLength": "ἐλύθησαν",
+  "stripAccents": "ἐλυθησαν",
+  "stripAll": "ελυθησαν",
+  "key": "ἐλύθησαν",
+  "finalSigma": "ἐλῠ́θησᾰν",
+  "beta": "e)lu/qhsan"
+ },
+ {
+  "form": "ἐλῠ́θητε",
+  "nfc": "ἐλῠ́θητε",
+  "stripLength": "ἐλύθητε",
+  "stripAccents": "ἐλυθητε",
+  "stripAll": "ελυθητε",
+  "key": "ἐλύθητε",
+  "finalSigma": "ἐλῠ́θητε",
+  "beta": "e)lu/qhte"
+ },
+ {
+  "form": "ἐλῠ́θητον",
+  "nfc": "ἐλῠ́θητον",
+  "stripLength": "ἐλύθητον",
+  "stripAccents": "ἐλυθητον",
+  "stripAll": "ελυθητον",
+  "key": "ἐλύθητον",
+  "finalSigma": "ἐλῠ́θητον",
+  "beta": "e)lu/qhton"
+ },
+ {
+  "form": "ἐλῠθήτην",
+  "nfc": "ἐλῠθήτην",
+  "stripLength": "ἐλυθήτην",
+  "stripAccents": "ἐλυθητην",
+  "stripAll": "ελυθητην",
+  "key": "ἐλυθήτην",
+  "finalSigma": "ἐλῠθήτην",
+  "beta": "e)luqh/thn"
+ },
+ {
+  "form": "ἐλῡ́εσθε",
+  "nfc": "ἐλῡ́εσθε",
+  "stripLength": "ἐλύεσθε",
+  "stripAccents": "ἐλυεσθε",
+  "stripAll": "ελυεσθε",
+  "key": "ἐλύεσθε",
+  "finalSigma": "ἐλῡ́εσθε",
+  "beta": "e)lu/esqe"
+ },
+ {
+  "form": "ἐλῡ́εσθον",
+  "nfc": "ἐλῡ́εσθον",
+  "stripLength": "ἐλύεσθον",
+  "stripAccents": "ἐλυεσθον",
+  "stripAll": "ελυεσθον",
+  "key": "ἐλύεσθον",
+  "finalSigma": "ἐλῡ́εσθον",
+  "beta": "e)lu/esqon"
+ },
+ {
+  "form": "ἐλῡ́ετε",
+  "nfc": "ἐλῡ́ετε",
+  "stripLength": "ἐλύετε",
+  "stripAccents": "ἐλυετε",
+  "stripAll": "ελυετε",
+  "key": "ἐλύετε",
+  "finalSigma": "ἐλῡ́ετε",
+  "beta": "e)lu/ete"
+ },
+ {
+  "form": "ἐλῡ́ετο",
+  "nfc": "ἐλῡ́ετο",
+  "stripLength": "ἐλύετο",
+  "stripAccents": "ἐλυετο",
+  "stripAll": "ελυετο",
+  "key": "ἐλύετο",
+  "finalSigma": "ἐλῡ́ετο",
+  "beta": "e)lu/eto"
+ },
+ {
+  "form": "ἐλῡ́ετον",
+  "nfc": "ἐλῡ́ετον",
+  "stripLength": "ἐλύετον",
+  "stripAccents": "ἐλυετον",
+  "stripAll": "ελυετον",
+  "key": "ἐλύετον",
+  "finalSigma": "ἐλῡ́ετον",
+  "beta": "e)lu/eton"
+ },
+ {
+  "form": "ἐλῡ́ομεν",
+  "nfc": "ἐλῡ́ομεν",
+  "stripLength": "ἐλύομεν",
+  "stripAccents": "ἐλυομεν",
+  "stripAll": "ελυομεν",
+  "key": "ἐλύομεν",
+  "finalSigma": "ἐλῡ́ομεν",
+  "beta": "e)lu/omen"
+ },
+ {
+  "form": "ἐλῡ́οντο",
+  "nfc": "ἐλῡ́οντο",
+  "stripLength": "ἐλύοντο",
+  "stripAccents": "ἐλυοντο",
+  "stripAll": "ελυοντο",
+  "key": "ἐλύοντο",
+  "finalSigma": "ἐλῡ́οντο",
+  "beta": "e)lu/onto"
+ },
+ {
+  "form": "ἐλῡ́ου",
+  "nfc": "ἐλῡ́ου",
+  "stripLength": "ἐλύου",
+  "stripAccents": "ἐλυου",
+  "stripAll": "ελυου",
+  "key": "ἐλύου",
+  "finalSigma": "ἐλῡ́ου",
+  "beta": "e)lu/ou"
+ },
+ {
+  "form": "ἐλῡ́σω",
+  "nfc": "ἐλῡ́σω",
+  "stripLength": "ἐλύσω",
+  "stripAccents": "ἐλυσω",
+  "stripAll": "ελυσω",
+  "key": "ἐλύσω",
+  "finalSigma": "ἐλῡ́σω",
+  "beta": "e)lu/sw"
+ },
+ {
+  "form": "ἐλῡ́σᾰμεν",
+  "nfc": "ἐλῡ́σᾰμεν",
+  "stripLength": "ἐλύσαμεν",
+  "stripAccents": "ἐλυσαμεν",
+  "stripAll": "ελυσαμεν",
+  "key": "ἐλύσαμεν",
+  "finalSigma": "ἐλῡ́σᾰμεν",
+  "beta": "e)lu/samen"
+ },
+ {
+  "form": "ἐλῡ́σᾰντο",
+  "nfc": "ἐλῡ́σᾰντο",
+  "stripLength": "ἐλύσαντο",
+  "stripAccents": "ἐλυσαντο",
+  "stripAll": "ελυσαντο",
+  "key": "ἐλύσαντο",
+  "finalSigma": "ἐλῡ́σᾰντο",
+  "beta": "e)lu/santo"
+ },
+ {
+  "form": "ἐλῡ́σᾰσθε",
+  "nfc": "ἐλῡ́σᾰσθε",
+  "stripLength": "ἐλύσασθε",
+  "stripAccents": "ἐλυσασθε",
+  "stripAll": "ελυσασθε",
+  "key": "ἐλύσασθε",
+  "finalSigma": "ἐλῡ́σᾰσθε",
+  "beta": "e)lu/sasqe"
+ },
+ {
+  "form": "ἐλῡ́σᾰσθον",
+  "nfc": "ἐλῡ́σᾰσθον",
+  "stripLength": "ἐλύσασθον",
+  "stripAccents": "ἐλυσασθον",
+  "stripAll": "ελυσασθον",
+  "key": "ἐλύσασθον",
+  "finalSigma": "ἐλῡ́σᾰσθον",
+  "beta": "e)lu/sasqon"
+ },
+ {
+  "form": "ἐλῡ́σᾰτε",
+  "nfc": "ἐλῡ́σᾰτε",
+  "stripLength": "ἐλύσατε",
+  "stripAccents": "ἐλυσατε",
+  "stripAll": "ελυσατε",
+  "key": "ἐλύσατε",
+  "finalSigma": "ἐλῡ́σᾰτε",
+  "beta": "e)lu/sate"
+ },
+ {
+  "form": "ἐλῡ́σᾰτο",
+  "nfc": "ἐλῡ́σᾰτο",
+  "stripLength": "ἐλύσατο",
+  "stripAccents": "ἐλυσατο",
+  "stripAll": "ελυσατο",
+  "key": "ἐλύσατο",
+  "finalSigma": "ἐλῡ́σᾰτο",
+  "beta": "e)lu/sato"
+ },
+ {
+  "form": "ἐλῡ́σᾰτον",
+  "nfc": "ἐλῡ́σᾰτον",
+  "stripLength": "ἐλύσατον",
+  "stripAccents": "ἐλυσατον",
+  "stripAll": "ελυσατον",
+  "key": "ἐλύσατον",
+  "finalSigma": "ἐλῡ́σᾰτον",
+  "beta": "e)lu/saton"
+ },
+ {
+  "form": "ἐλῡέσθην",
+  "nfc": "ἐλῡέσθην",
+  "stripLength": "ἐλυέσθην",
+  "stripAccents": "ἐλυεσθην",
+  "stripAll": "ελυεσθην",
+  "key": "ἐλυέσθην",
+  "finalSigma": "ἐλῡέσθην",
+  "beta": "e)lue/sqhn"
+ },
+ {
+  "form": "ἐλῡέτην",
+  "nfc": "ἐλῡέτην",
+  "stripLength": "ἐλυέτην",
+  "stripAccents": "ἐλυετην",
+  "stripAll": "ελυετην",
+  "key": "ἐλυέτην",
+  "finalSigma": "ἐλῡέτην",
+  "beta": "e)lue/thn"
+ },
+ {
+  "form": "ἐλῡσᾰ́μεθᾰ",
+  "nfc": "ἐλῡσᾰ́μεθᾰ",
+  "stripLength": "ἐλυσάμεθα",
+  "stripAccents": "ἐλυσαμεθα",
+  "stripAll": "ελυσαμεθα",
+  "key": "ἐλυσάμεθα",
+  "finalSigma": "ἐλῡσᾰ́μεθᾰ",
+  "beta": "e)lusa/meqa"
+ },
+ {
+  "form": "ἐλῡσᾰ́μην",
+  "nfc": "ἐλῡσᾰ́μην",
+  "stripLength": "ἐλυσάμην",
+  "stripAccents": "ἐλυσαμην",
+  "stripAll": "ελυσαμην",
+  "key": "ἐλυσάμην",
+  "finalSigma": "ἐλῡσᾰ́μην",
+  "beta": "e)lusa/mhn"
+ },
+ {
+  "form": "ἐλῡσᾰ́σθην",
+  "nfc": "ἐλῡσᾰ́σθην",
+  "stripLength": "ἐλυσάσθην",
+  "stripAccents": "ἐλυσασθην",
+  "stripAll": "ελυσασθην",
+  "key": "ἐλυσάσθην",
+  "finalSigma": "ἐλῡσᾰ́σθην",
+  "beta": "e)lusa/sqhn"
+ },
+ {
+  "form": "ἐλῡσᾰ́την",
+  "nfc": "ἐλῡσᾰ́την",
+  "stripLength": "ἐλυσάτην",
+  "stripAccents": "ἐλυσατην",
+  "stripAll": "ελυσατην",
+  "key": "ἐλυσάτην",
+  "finalSigma": "ἐλῡσᾰ́την",
+  "beta": "e)lusa/thn"
+ },
+ {
+  "form": "ἐλῡόμεθᾰ",
+  "nfc": "ἐλῡόμεθᾰ",
+  "stripLength": "ἐλυόμεθα",
+  "stripAccents": "ἐλυομεθα",
+  "stripAll": "ελυομεθα",
+  "key": "ἐλυόμεθα",
+  "finalSigma": "ἐλῡόμεθᾰ",
+  "beta": "e)luo/meqa"
+ },
+ {
+  "form": "ἐλῡόμην",
+  "nfc": "ἐλῡόμην",
+  "stripLength": "ἐλυόμην",
+  "stripAccents": "ἐλυομην",
+  "stripAll": "ελυομην",
+  "key": "ἐλυόμην",
+  "finalSigma": "ἐλῡόμην",
+  "beta": "e)luo/mhn"
+ },
+ {
+  "form": "ἔλειπε",
+  "nfc": "ἔλειπε",
+  "stripLength": "ἔλειπε",
+  "stripAccents": "ἐλειπε",
+  "stripAll": "ελειπε",
+  "key": "ἔλειπε",
+  "finalSigma": "ἔλειπε",
+  "beta": "e)/leipe"
+ },
+ {
+  "form": "ἔλειπεν",
+  "nfc": "ἔλειπεν",
+  "stripLength": "ἔλειπεν",
+  "stripAccents": "ἐλειπεν",
+  "stripAll": "ελειπεν",
+  "key": "ἔλειπεν",
+  "finalSigma": "ἔλειπεν",
+  "beta": "e)/leipen"
+ },
+ {
+  "form": "ἔλειπες",
+  "nfc": "ἔλειπες",
+  "stripLength": "ἔλειπες",
+  "stripAccents": "ἐλειπες",
+  "stripAll": "ελειπες",
+  "key": "ἔλειπες",
+  "finalSigma": "ἔλειπες",
+  "beta": "e)/leipes"
+ },
+ {
+  "form": "ἔλειπον",
+  "nfc": "ἔλειπον",
+  "stripLength": "ἔλειπον",
+  "stripAccents": "ἐλειπον",
+  "stripAll": "ελειπον",
+  "key": "ἔλειπον",
+  "finalSigma": "ἔλειπον",
+  "beta": "e)/leipon"
+ },
+ {
+  "form": "ἔλῐπε",
+  "nfc": "ἔλῐπε",
+  "stripLength": "ἔλιπε",
+  "stripAccents": "ἐλιπε",
+  "stripAll": "ελιπε",
+  "key": "ἔλιπε",
+  "finalSigma": "ἔλῐπε",
+  "beta": "e)/lipe"
+ },
+ {
+  "form": "ἔλῐπεν",
+  "nfc": "ἔλῐπεν",
+  "stripLength": "ἔλιπεν",
+  "stripAccents": "ἐλιπεν",
+  "stripAll": "ελιπεν",
+  "key": "ἔλιπεν",
+  "finalSigma": "ἔλῐπεν",
+  "beta": "e)/lipen"
+ },
+ {
+  "form": "ἔλῐπες",
+  "nfc": "ἔλῐπες",
+  "stripLength": "ἔλιπες",
+  "stripAccents": "ἐλιπες",
+  "stripAll": "ελιπες",
+  "key": "ἔλιπες",
+  "finalSigma": "ἔλῐπες",
+  "beta": "e)/lipes"
+ },
+ {
+  "form": "ἔλῐπον",
+  "nfc": "ἔλῐπον",
+  "stripLength": "ἔλιπον",
+  "stripAccents": "ἐλιπον",
+  "stripAll": "ελιπον",
+  "key": "ἔλιπον",
+  "finalSigma": "ἔλῐπον",
+  "beta": "e)/lipon"
+ },
+ {
+  "form": "ἔλῡε",
+  "nfc": "ἔλῡε",
+  "stripLength": "ἔλυε",
+  "stripAccents": "ἐλυε",
+  "stripAll": "ελυε",
+  "key": "ἔλυε",
+  "finalSigma": "ἔλῡε",
+  "beta": "e)/lue"
+ },
+ {
+  "form": "ἔλῡεν",
+  "nfc": "ἔλῡεν",
+  "stripLength": "ἔλυεν",
+  "stripAccents": "ἐλυεν",
+  "stripAll": "ελυεν",
+  "key": "ἔλυεν",
+  "finalSigma": "ἔλῡεν",
+  "beta": "e)/luen"
+ },
+ {
+  "form": "ἔλῡες",
+  "nfc": "ἔλῡες",
+  "stripLength": "ἔλυες",
+  "stripAccents": "ἐλυες",
+  "stripAll": "ελυες",
+  "key": "ἔλυες",
+  "finalSigma": "ἔλῡες",
+  "beta": "e)/lues"
+ },
+ {
+  "form": "ἔλῡον",
+  "nfc": "ἔλῡον",
+  "stripLength": "ἔλυον",
+  "stripAccents": "ἐλυον",
+  "stripAll": "ελυον",
+  "key": "ἔλυον",
+  "finalSigma": "ἔλῡον",
+  "beta": "e)/luon"
+ },
+ {
+  "form": "ἔλῡσε",
+  "nfc": "ἔλῡσε",
+  "stripLength": "ἔλυσε",
+  "stripAccents": "ἐλυσε",
+  "stripAll": "ελυσε",
+  "key": "ἔλυσε",
+  "finalSigma": "ἔλῡσε",
+  "beta": "e)/luse"
+ },
+ {
+  "form": "ἔλῡσεν",
+  "nfc": "ἔλῡσεν",
+  "stripLength": "ἔλυσεν",
+  "stripAccents": "ἐλυσεν",
+  "stripAll": "ελυσεν",
+  "key": "ἔλυσεν",
+  "finalSigma": "ἔλῡσεν",
+  "beta": "e)/lusen"
+ },
+ {
+  "form": "ἔλῡσᾰ",
+  "nfc": "ἔλῡσᾰ",
+  "stripLength": "ἔλυσα",
+  "stripAccents": "ἐλυσα",
+  "stripAll": "ελυσα",
+  "key": "ἔλυσα",
+  "finalSigma": "ἔλῡσᾰ",
+  "beta": "e)/lusa"
+ },
+ {
+  "form": "ἔλῡσᾰν",
+  "nfc": "ἔλῡσᾰν",
+  "stripLength": "ἔλυσαν",
+  "stripAccents": "ἐλυσαν",
+  "stripAll": "ελυσαν",
+  "key": "ἔλυσαν",
+  "finalSigma": "ἔλῡσᾰν",
+  "beta": "e)/lusan"
+ },
+ {
+  "form": "ἔλῡσᾰς",
+  "nfc": "ἔλῡσᾰς",
+  "stripLength": "ἔλυσας",
+  "stripAccents": "ἐλυσας",
+  "stripAll": "ελυσας",
+  "key": "ἔλυσας",
+  "finalSigma": "ἔλῡσᾰς",
+  "beta": "e)/lusas"
+ },
+ {
+  "form": "ἡ",
+  "nfc": "ἡ",
+  "stripLength": "ἡ",
+  "stripAccents": "ἡ",
+  "stripAll": "η",
+  "key": "ἡ",
+  "finalSigma": "ἡ",
+  "beta": "h("
+ },
+ {
+  "form": "ἡγεμόνε",
+  "nfc": "ἡγεμόνε",
+  "stripLength": "ἡγεμόνε",
+  "stripAccents": "ἡγεμονε",
+  "stripAll": "ηγεμονε",
+  "key": "ἡγεμόνε",
+  "finalSigma": "ἡγεμόνε",
+  "beta": "h(gemo/ne"
+ },
+ {
+  "form": "ἡγεμόνες",
+  "nfc": "ἡγεμόνες",
+  "stripLength": "ἡγεμόνες",
+  "stripAccents": "ἡγεμονες",
+  "stripAll": "ηγεμονες",
+  "key": "ἡγεμόνες",
+  "finalSigma": "ἡγεμόνες",
+  "beta": "h(gemo/nes"
+ },
+ {
+  "form": "ἡγεμόνοιν",
+  "nfc": "ἡγεμόνοιν",
+  "stripLength": "ἡγεμόνοιν",
+  "stripAccents": "ἡγεμονοιν",
+  "stripAll": "ηγεμονοιν",
+  "key": "ἡγεμόνοιν",
+  "finalSigma": "ἡγεμόνοιν",
+  "beta": "h(gemo/noin"
+ },
+ {
+  "form": "ἡγεμόνος",
+  "nfc": "ἡγεμόνος",
+  "stripLength": "ἡγεμόνος",
+  "stripAccents": "ἡγεμονος",
+  "stripAll": "ηγεμονος",
+  "key": "ἡγεμόνος",
+  "finalSigma": "ἡγεμόνος",
+  "beta": "h(gemo/nos"
+ },
+ {
+  "form": "ἡγεμόνων",
+  "nfc": "ἡγεμόνων",
+  "stripLength": "ἡγεμόνων",
+  "stripAccents": "ἡγεμονων",
+  "stripAll": "ηγεμονων",
+  "key": "ἡγεμόνων",
+  "finalSigma": "ἡγεμόνων",
+  "beta": "h(gemo/nwn"
+ },
+ {
+  "form": "ἡγεμόνᾰ",
+  "nfc": "ἡγεμόνᾰ",
+  "stripLength": "ἡγεμόνα",
+  "stripAccents": "ἡγεμονα",
+  "stripAll": "ηγεμονα",
+  "key": "ἡγεμόνα",
+  "finalSigma": "ἡγεμόνᾰ",
+  "beta": "h(gemo/na"
+ },
+ {
+  "form": "ἡγεμόνᾰς",
+  "nfc": "ἡγεμόνᾰς",
+  "stripLength": "ἡγεμόνας",
+  "stripAccents": "ἡγεμονας",
+  "stripAll": "ηγεμονας",
+  "key": "ἡγεμόνας",
+  "finalSigma": "ἡγεμόνᾰς",
+  "beta": "h(gemo/nas"
+ },
+ {
+  "form": "ἡγεμόνῐ",
+  "nfc": "ἡγεμόνῐ",
+  "stripLength": "ἡγεμόνι",
+  "stripAccents": "ἡγεμονι",
+  "stripAll": "ηγεμονι",
+  "key": "ἡγεμόνι",
+  "finalSigma": "ἡγεμόνῐ",
+  "beta": "h(gemo/ni"
+ },
+ {
+  "form": "ἡγεμόσῐ",
+  "nfc": "ἡγεμόσῐ",
+  "stripLength": "ἡγεμόσι",
+  "stripAccents": "ἡγεμοσι",
+  "stripAll": "ηγεμοσι",
+  "key": "ἡγεμόσι",
+  "finalSigma": "ἡγεμόσῐ",
+  "beta": "h(gemo/si"
+ },
+ {
+  "form": "ἡγεμόσῐν",
+  "nfc": "ἡγεμόσῐν",
+  "stripLength": "ἡγεμόσιν",
+  "stripAccents": "ἡγεμοσιν",
+  "stripAll": "ηγεμοσιν",
+  "key": "ἡγεμόσιν",
+  "finalSigma": "ἡγεμόσῐν",
+  "beta": "h(gemo/sin"
+ },
+ {
+  "form": "ἡγεμών",
+  "nfc": "ἡγεμών",
+  "stripLength": "ἡγεμών",
+  "stripAccents": "ἡγεμων",
+  "stripAll": "ηγεμων",
+  "key": "ἡγεμών",
+  "finalSigma": "ἡγεμών",
+  "beta": "h(gemw/n"
+ },
+ {
+  "form": "ὁ",
+  "nfc": "ὁ",
+  "stripLength": "ὁ",
+  "stripAccents": "ὁ",
+  "stripAll": "ο",
+  "key": "ὁ",
+  "finalSigma": "ὁ",
+  "beta": "o("
+ },
+ {
+  "form": "ᾰ̓́δῐκε",
+  "nfc": "ᾰ̓́δῐκε",
+  "stripLength": "ἄδικε",
+  "stripAccents": "ἀδικε",
+  "stripAll": "αδικε",
+  "key": "ἄδικε",
+  "finalSigma": "ᾰ̓́δῐκε",
+  "beta": "a)/dike"
+ },
+ {
+  "form": "ᾰ̓́δῐκοι",
+  "nfc": "ᾰ̓́δῐκοι",
+  "stripLength": "ἄδικοι",
+  "stripAccents": "ἀδικοι",
+  "stripAll": "αδικοι",
+  "key": "ἄδικοι",
+  "finalSigma": "ᾰ̓́δῐκοι",
+  "beta": "a)/dikoi"
+ },
+ {
+  "form": "ᾰ̓́δῐκον",
+  "nfc": "ᾰ̓́δῐκον",
+  "stripLength": "ἄδικον",
+  "stripAccents": "ἀδικον",
+  "stripAll": "αδικον",
+  "key": "ἄδικον",
+  "finalSigma": "ᾰ̓́δῐκον",
+  "beta": "a)/dikon"
+ },
+ {
+  "form": "ᾰ̓́δῐκος",
+  "nfc": "ᾰ̓́δῐκος",
+  "stripLength": "ἄδικος",
+  "stripAccents": "ἀδικος",
+  "stripAll": "αδικος",
+  "key": "ἄδικος",
+  "finalSigma": "ᾰ̓́δῐκος",
+  "beta": "a)/dikos"
+ },
+ {
+  "form": "ᾰ̓́δῐκᾰ",
+  "nfc": "ᾰ̓́δῐκᾰ",
+  "stripLength": "ἄδικα",
+  "stripAccents": "ἀδικα",
+  "stripAll": "αδικα",
+  "key": "ἄδικα",
+  "finalSigma": "ᾰ̓́δῐκᾰ",
+  "beta": "a)/dika"
+ },
+ {
+  "form": "ᾰ̓́ξῐαι",
+  "nfc": "ᾰ̓́ξῐαι",
+  "stripLength": "ἄξιαι",
+  "stripAccents": "ἀξιαι",
+  "stripAll": "αξιαι",
+  "key": "ἄξιαι",
+  "finalSigma": "ᾰ̓́ξῐαι",
+  "beta": "a)/ciai"
+ },
+ {
+  "form": "ᾰ̓́ξῐε",
+  "nfc": "ᾰ̓́ξῐε",
+  "stripLength": "ἄξιε",
+  "stripAccents": "ἀξιε",
+  "stripAll": "αξιε",
+  "key": "ἄξιε",
+  "finalSigma": "ᾰ̓́ξῐε",
+  "beta": "a)/cie"
+ },
+ {
+  "form": "ᾰ̓́ξῐοι",
+  "nfc": "ᾰ̓́ξῐοι",
+  "stripLength": "ἄξιοι",
+  "stripAccents": "ἀξιοι",
+  "stripAll": "αξιοι",
+  "key": "ἄξιοι",
+  "finalSigma": "ᾰ̓́ξῐοι",
+  "beta": "a)/cioi"
+ },
+ {
+  "form": "ᾰ̓́ξῐον",
+  "nfc": "ᾰ̓́ξῐον",
+  "stripLength": "ἄξιον",
+  "stripAccents": "ἀξιον",
+  "stripAll": "αξιον",
+  "key": "ἄξιον",
+  "finalSigma": "ᾰ̓́ξῐον",
+  "beta": "a)/cion"
+ },
+ {
+  "form": "ᾰ̓́ξῐος",
+  "nfc": "ᾰ̓́ξῐος",
+  "stripLength": "ἄξιος",
+  "stripAccents": "ἀξιος",
+  "stripAll": "αξιος",
+  "key": "ἄξιος",
+  "finalSigma": "ᾰ̓́ξῐος",
+  "beta": "a)/cios"
+ },
+ {
+  "form": "ᾰ̓́ξῐᾰ",
+  "nfc": "ᾰ̓́ξῐᾰ",
+  "stripLength": "ἄξια",
+  "stripAccents": "ἀξια",
+  "stripAll": "αξια",
+  "key": "ἄξια",
+  "finalSigma": "ᾰ̓́ξῐᾰ",
+  "beta": "a)/cia"
+ },
+ {
+  "form": "ᾰ̓́στει",
+  "nfc": "ᾰ̓́στει",
+  "stripLength": "ἄστει",
+  "stripAccents": "ἀστει",
+  "stripAll": "αστει",
+  "key": "ἄστει",
+  "finalSigma": "ᾰ̓́στει",
+  "beta": "a)/stei"
+ },
+ {
+  "form": "ᾰ̓́στεσῐ",
+  "nfc": "ᾰ̓́στεσῐ",
+  "stripLength": "ἄστεσι",
+  "stripAccents": "ἀστεσι",
+  "stripAll": "αστεσι",
+  "key": "ἄστεσι",
+  "finalSigma": "ᾰ̓́στεσῐ",
+  "beta": "a)/stesi"
+ },
+ {
+  "form": "ᾰ̓́στεσῐν",
+  "nfc": "ᾰ̓́στεσῐν",
+  "stripLength": "ἄστεσιν",
+  "stripAccents": "ἀστεσιν",
+  "stripAll": "αστεσιν",
+  "key": "ἄστεσιν",
+  "finalSigma": "ᾰ̓́στεσῐν",
+  "beta": "a)/stesin"
+ },
+ {
+  "form": "ᾰ̓́στεων",
+  "nfc": "ᾰ̓́στεων",
+  "stripLength": "ἄστεων",
+  "stripAccents": "ἀστεων",
+  "stripAll": "αστεων",
+  "key": "ἄστεων",
+  "finalSigma": "ᾰ̓́στεων",
+  "beta": "a)/stewn"
+ },
+ {
+  "form": "ᾰ̓́στεως",
+  "nfc": "ᾰ̓́στεως",
+  "stripLength": "ἄστεως",
+  "stripAccents": "ἀστεως",
+  "stripAll": "αστεως",
+  "key": "ἄστεως",
+  "finalSigma": "ᾰ̓́στεως",
+  "beta": "a)/stews"
+ },
+ {
+  "form": "ᾰ̓́στη",
+  "nfc": "ᾰ̓́στη",
+  "stripLength": "ἄστη",
+  "stripAccents": "ἀστη",
+  "stripAll": "αστη",
+  "key": "ἄστη",
+  "finalSigma": "ᾰ̓́στη",
+  "beta": "a)/sth"
+ },
+ {
+  "form": "ᾰ̓́στῠ",
+  "nfc": "ᾰ̓́στῠ",
+  "stripLength": "ἄστυ",
+  "stripAccents": "ἀστυ",
+  "stripAll": "αστυ",
+  "key": "ἄστυ",
+  "finalSigma": "ᾰ̓́στῠ",
+  "beta": "a)/stu"
+ },
+ {
+  "form": "ᾰ̓γᾰθέ",
+  "nfc": "ᾰ̓γᾰθέ",
+  "stripLength": "ἀγαθέ",
+  "stripAccents": "ἀγαθε",
+  "stripAll": "αγαθε",
+  "key": "ἀγαθέ",
+  "finalSigma": "ᾰ̓γᾰθέ",
+  "beta": "a)gaqe/"
+ },
+ {
+  "form": "ᾰ̓γᾰθή",
+  "nfc": "ᾰ̓γᾰθή",
+  "stripLength": "ἀγαθή",
+  "stripAccents": "ἀγαθη",
+  "stripAll": "αγαθη",
+  "key": "ἀγαθή",
+  "finalSigma": "ᾰ̓γᾰθή",
+  "beta": "a)gaqh/"
+ },
+ {
+  "form": "ᾰ̓γᾰθήν",
+  "nfc": "ᾰ̓γᾰθήν",
+  "stripLength": "ἀγαθήν",
+  "stripAccents": "ἀγαθην",
+  "stripAll": "αγαθην",
+  "key": "ἀγαθήν",
+  "finalSigma": "ᾰ̓γᾰθήν",
+  "beta": "a)gaqh/n"
+ },
+ {
+  "form": "ᾰ̓γᾰθαί",
+  "nfc": "ᾰ̓γᾰθαί",
+  "stripLength": "ἀγαθαί",
+  "stripAccents": "ἀγαθαι",
+  "stripAll": "αγαθαι",
+  "key": "ἀγαθαί",
+  "finalSigma": "ᾰ̓γᾰθαί",
+  "beta": "a)gaqai/"
+ },
+ {
+  "form": "ᾰ̓γᾰθαῖν",
+  "nfc": "ᾰ̓γᾰθαῖν",
+  "stripLength": "ἀγαθαῖν",
+  "stripAccents": "ἀγαθαιν",
+  "stripAll": "αγαθαιν",
+  "key": "ἀγαθαῖν",
+  "finalSigma": "ᾰ̓γᾰθαῖν",
+  "beta": "a)gaqai=n"
+ },
+ {
+  "form": "ᾰ̓γᾰθαῖς",
+  "nfc": "ᾰ̓γᾰθαῖς",
+  "stripLength": "ἀγαθαῖς",
+  "stripAccents": "ἀγαθαις",
+  "stripAll": "αγαθαις",
+  "key": "ἀγαθαῖς",
+  "finalSigma": "ᾰ̓γᾰθαῖς",
+  "beta": "a)gaqai=s"
+ },
+ {
+  "form": "ᾰ̓γᾰθοί",
+  "nfc": "ᾰ̓γᾰθοί",
+  "stripLength": "ἀγαθοί",
+  "stripAccents": "ἀγαθοι",
+  "stripAll": "αγαθοι",
+  "key": "ἀγαθοί",
+  "finalSigma": "ᾰ̓γᾰθοί",
+  "beta": "a)gaqoi/"
+ },
+ {
+  "form": "ᾰ̓γᾰθούς",
+  "nfc": "ᾰ̓γᾰθούς",
+  "stripLength": "ἀγαθούς",
+  "stripAccents": "ἀγαθους",
+  "stripAll": "αγαθους",
+  "key": "ἀγαθούς",
+  "finalSigma": "ᾰ̓γᾰθούς",
+  "beta": "a)gaqou/s"
+ },
+ {
+  "form": "ᾰ̓γᾰθοῖν",
+  "nfc": "ᾰ̓γᾰθοῖν",
+  "stripLength": "ἀγαθοῖν",
+  "stripAccents": "ἀγαθοιν",
+  "stripAll": "αγαθοιν",
+  "key": "ἀγαθοῖν",
+  "finalSigma": "ᾰ̓γᾰθοῖν",
+  "beta": "a)gaqoi=n"
+ },
+ {
+  "form": "ᾰ̓γᾰθοῖς",
+  "nfc": "ᾰ̓γᾰθοῖς",
+  "stripLength": "ἀγαθοῖς",
+  "stripAccents": "ἀγαθοις",
+  "stripAll": "αγαθοις",
+  "key": "ἀγαθοῖς",
+  "finalSigma": "ᾰ̓γᾰθοῖς",
+  "beta": "a)gaqoi=s"
+ },
+ {
+  "form": "ᾰ̓γᾰθοῦ",
+  "nfc": "ᾰ̓γᾰθοῦ",
+  "stripLength": "ἀγαθοῦ",
+  "stripAccents": "ἀγαθου",
+  "stripAll": "αγαθου",
+  "key": "ἀγαθοῦ",
+  "finalSigma": "ᾰ̓γᾰθοῦ",
+  "beta": "a)gaqou="
+ },
+ {
+  "form": "ᾰ̓γᾰθόν",
+  "nfc": "ᾰ̓γᾰθόν",
+  "stripLength": "ἀγαθόν",
+  "stripAccents": "ἀγαθον",
+  "stripAll": "αγαθον",
+  "key": "ἀγαθόν",
+  "finalSigma": "ᾰ̓γᾰθόν",
+  "beta": "a)gaqo/n"
+ },
+ {
+  "form": "ᾰ̓γᾰθός",
+  "nfc": "ᾰ̓γᾰθός",
+  "stripLength": "ἀγαθός",
+  "stripAccents": "ἀγαθος",
+  "stripAll": "αγαθος",
+  "key": "ἀγαθός",
+  "finalSigma": "ᾰ̓γᾰθός",
+  "beta": "a)gaqo/s"
+ },
+ {
+  "form": "ᾰ̓γᾰθώ",
+  "nfc": "ᾰ̓γᾰθώ",
+  "stripLength": "ἀγαθώ",
+  "stripAccents": "ἀγαθω",
+  "stripAll": "αγαθω",
+  "key": "ἀγαθώ",
+  "finalSigma": "ᾰ̓γᾰθώ",
+  "beta": "a)gaqw/"
+ },
+ {
+  "form": "ᾰ̓γᾰθᾰ́",
+  "nfc": "ᾰ̓γᾰθᾰ́",
+  "stripLength": "ἀγαθά",
+  "stripAccents": "ἀγαθα",
+  "stripAll": "αγαθα",
+  "key": "ἀγαθά",
+  "finalSigma": "ᾰ̓γᾰθᾰ́",
+  "beta": "a)gaqa/"
+ },
+ {
+  "form": "ᾰ̓γᾰθᾱ́",
+  "nfc": "ᾰ̓γᾰθᾱ́",
+  "stripLength": "ἀγαθά",
+  "stripAccents": "ἀγαθα",
+  "stripAll": "αγαθα",
+  "key": "ἀγαθά",
+  "finalSigma": "ᾰ̓γᾰθᾱ́",
+  "beta": "a)gaqa/"
+ },
+ {
+  "form": "ᾰ̓γᾰθᾱ́ς",
+  "nfc": "ᾰ̓γᾰθᾱ́ς",
+  "stripLength": "ἀγαθάς",
+  "stripAccents": "ἀγαθας",
+  "stripAll": "αγαθας",
+  "key": "ἀγαθάς",
+  "finalSigma": "ᾰ̓γᾰθᾱ́ς",
+  "beta": "a)gaqa/s"
+ },
+ {
+  "form": "ᾰ̓γᾰθῆς",
+  "nfc": "ᾰ̓γᾰθῆς",
+  "stripLength": "ἀγαθῆς",
+  "stripAccents": "ἀγαθης",
+  "stripAll": "αγαθης",
+  "key": "ἀγαθῆς",
+  "finalSigma": "ᾰ̓γᾰθῆς",
+  "beta": "a)gaqh=s"
+ },
+ {
+  "form": "ᾰ̓γᾰθῇ",
+  "nfc": "ᾰ̓γᾰθῇ",
+  "stripLength": "ἀγαθῇ",
+  "stripAccents": "ἀγαθῃ",
+  "stripAll": "αγαθη",
+  "key": "ἀγαθῇ",
+  "finalSigma": "ᾰ̓γᾰθῇ",
+  "beta": "a)gaqh=|"
+ },
+ {
+  "form": "ᾰ̓γᾰθῶν",
+  "nfc": "ᾰ̓γᾰθῶν",
+  "stripLength": "ἀγαθῶν",
+  "stripAccents": "ἀγαθων",
+  "stripAll": "αγαθων",
+  "key": "ἀγαθῶν",
+  "finalSigma": "ᾰ̓γᾰθῶν",
+  "beta": "a)gaqw=n"
+ },
+ {
+  "form": "ᾰ̓γᾰθῷ",
+  "nfc": "ᾰ̓γᾰθῷ",
+  "stripLength": "ἀγαθῷ",
+  "stripAccents": "ἀγαθῳ",
+  "stripAll": "αγαθω",
+  "key": "ἀγαθῷ",
+  "finalSigma": "ᾰ̓γᾰθῷ",
+  "beta": "a)gaqw=|"
+ },
+ {
+  "form": "ᾰ̓δῐ́κοιν",
+  "nfc": "ᾰ̓δῐ́κοιν",
+  "stripLength": "ἀδίκοιν",
+  "stripAccents": "ἀδικοιν",
+  "stripAll": "αδικοιν",
+  "key": "ἀδίκοιν",
+  "finalSigma": "ᾰ̓δῐ́κοιν",
+  "beta": "a)di/koin"
+ },
+ {
+  "form": "ᾰ̓δῐ́κοις",
+  "nfc": "ᾰ̓δῐ́κοις",
+  "stripLength": "ἀδίκοις",
+  "stripAccents": "ἀδικοις",
+  "stripAll": "αδικοις",
+  "key": "ἀδίκοις",
+  "finalSigma": "ᾰ̓δῐ́κοις",
+  "beta": "a)di/kois"
+ },
+ {
+  "form": "ᾰ̓δῐ́κου",
+  "nfc": "ᾰ̓δῐ́κου",
+  "stripLength": "ἀδίκου",
+  "stripAccents": "ἀδικου",
+  "stripAll": "αδικου",
+  "key": "ἀδίκου",
+  "finalSigma": "ᾰ̓δῐ́κου",
+  "beta": "a)di/kou"
+ },
+ {
+  "form": "ᾰ̓δῐ́κους",
+  "nfc": "ᾰ̓δῐ́κους",
+  "stripLength": "ἀδίκους",
+  "stripAccents": "ἀδικους",
+  "stripAll": "αδικους",
+  "key": "ἀδίκους",
+  "finalSigma": "ᾰ̓δῐ́κους",
+  "beta": "a)di/kous"
+ },
+ {
+  "form": "ᾰ̓δῐ́κω",
+  "nfc": "ᾰ̓δῐ́κω",
+  "stripLength": "ἀδίκω",
+  "stripAccents": "ἀδικω",
+  "stripAll": "αδικω",
+  "key": "ἀδίκω",
+  "finalSigma": "ᾰ̓δῐ́κω",
+  "beta": "a)di/kw"
+ },
+ {
+  "form": "ᾰ̓δῐ́κων",
+  "nfc": "ᾰ̓δῐ́κων",
+  "stripLength": "ἀδίκων",
+  "stripAccents": "ἀδικων",
+  "stripAll": "αδικων",
+  "key": "ἀδίκων",
+  "finalSigma": "ᾰ̓δῐ́κων",
+  "beta": "a)di/kwn"
+ },
+ {
+  "form": "ᾰ̓δῐ́κῳ",
+  "nfc": "ᾰ̓δῐ́κῳ",
+  "stripLength": "ἀδίκῳ",
+  "stripAccents": "ἀδικῳ",
+  "stripAll": "αδικω",
+  "key": "ἀδίκῳ",
+  "finalSigma": "ᾰ̓δῐ́κῳ",
+  "beta": "a)di/kw|"
+ },
+ {
+  "form": "ᾰ̓ληθές",
+  "nfc": "ᾰ̓ληθές",
+  "stripLength": "ἀληθές",
+  "stripAccents": "ἀληθες",
+  "stripAll": "αληθες",
+  "key": "ἀληθές",
+  "finalSigma": "ᾰ̓ληθές",
+  "beta": "a)lhqe/s"
+ },
+ {
+  "form": "ᾰ̓ληθέσῐ",
+  "nfc": "ᾰ̓ληθέσῐ",
+  "stripLength": "ἀληθέσι",
+  "stripAccents": "ἀληθεσι",
+  "stripAll": "αληθεσι",
+  "key": "ἀληθέσι",
+  "finalSigma": "ᾰ̓ληθέσῐ",
+  "beta": "a)lhqe/si"
+ },
+ {
+  "form": "ᾰ̓ληθέσῐν",
+  "nfc": "ᾰ̓ληθέσῐν",
+  "stripLength": "ἀληθέσιν",
+  "stripAccents": "ἀληθεσιν",
+  "stripAll": "αληθεσιν",
+  "key": "ἀληθέσιν",
+  "finalSigma": "ᾰ̓ληθέσῐν",
+  "beta": "a)lhqe/sin"
+ },
+ {
+  "form": "ᾰ̓ληθής",
+  "nfc": "ᾰ̓ληθής",
+  "stripLength": "ἀληθής",
+  "stripAccents": "ἀληθης",
+  "stripAll": "αληθης",
+  "key": "ἀληθής",
+  "finalSigma": "ᾰ̓ληθής",
+  "beta": "a)lhqh/s"
+ },
+ {
+  "form": "ᾰ̓ληθεῖ",
+  "nfc": "ᾰ̓ληθεῖ",
+  "stripLength": "ἀληθεῖ",
+  "stripAccents": "ἀληθει",
+  "stripAll": "αληθει",
+  "key": "ἀληθεῖ",
+  "finalSigma": "ᾰ̓ληθεῖ",
+  "beta": "a)lhqei="
+ },
+ {
+  "form": "ᾰ̓ληθεῖς",
+  "nfc": "ᾰ̓ληθεῖς",
+  "stripLength": "ἀληθεῖς",
+  "stripAccents": "ἀληθεις",
+  "stripAll": "αληθεις",
+  "key": "ἀληθεῖς",
+  "finalSigma": "ᾰ̓ληθεῖς",
+  "beta": "a)lhqei=s"
+ },
+ {
+  "form": "ᾰ̓ληθοῖν",
+  "nfc": "ᾰ̓ληθοῖν",
+  "stripLength": "ἀληθοῖν",
+  "stripAccents": "ἀληθοιν",
+  "stripAll": "αληθοιν",
+  "key": "ἀληθοῖν",
+  "finalSigma": "ᾰ̓ληθοῖν",
+  "beta": "a)lhqoi=n"
+ },
+ {
+  "form": "ᾰ̓ληθοῦς",
+  "nfc": "ᾰ̓ληθοῦς",
+  "stripLength": "ἀληθοῦς",
+  "stripAccents": "ἀληθους",
+  "stripAll": "αληθους",
+  "key": "ἀληθοῦς",
+  "finalSigma": "ᾰ̓ληθοῦς",
+  "beta": "a)lhqou=s"
+ },
+ {
+  "form": "ᾰ̓ληθῆ",
+  "nfc": "ᾰ̓ληθῆ",
+  "stripLength": "ἀληθῆ",
+  "stripAccents": "ἀληθη",
+  "stripAll": "αληθη",
+  "key": "ἀληθῆ",
+  "finalSigma": "ᾰ̓ληθῆ",
+  "beta": "a)lhqh="
+ },
+ {
+  "form": "ᾰ̓ληθῶν",
+  "nfc": "ᾰ̓ληθῶν",
+  "stripLength": "ἀληθῶν",
+  "stripAccents": "ἀληθων",
+  "stripAll": "αληθων",
+  "key": "ἀληθῶν",
+  "finalSigma": "ᾰ̓ληθῶν",
+  "beta": "a)lhqw=n"
+ },
+ {
+  "form": "ᾰ̓ξῐ́αιν",
+  "nfc": "ᾰ̓ξῐ́αιν",
+  "stripLength": "ἀξίαιν",
+  "stripAccents": "ἀξιαιν",
+  "stripAll": "αξιαιν",
+  "key": "ἀξίαιν",
+  "finalSigma": "ᾰ̓ξῐ́αιν",
+  "beta": "a)ci/ain"
+ },
+ {
+  "form": "ᾰ̓ξῐ́αις",
+  "nfc": "ᾰ̓ξῐ́αις",
+  "stripLength": "ἀξίαις",
+  "stripAccents": "ἀξιαις",
+  "stripAll": "αξιαις",
+  "key": "ἀξίαις",
+  "finalSigma": "ᾰ̓ξῐ́αις",
+  "beta": "a)ci/ais"
+ },
+ {
+  "form": "ᾰ̓ξῐ́οιν",
+  "nfc": "ᾰ̓ξῐ́οιν",
+  "stripLength": "ἀξίοιν",
+  "stripAccents": "ἀξιοιν",
+  "stripAll": "αξιοιν",
+  "key": "ἀξίοιν",
+  "finalSigma": "ᾰ̓ξῐ́οιν",
+  "beta": "a)ci/oin"
+ },
+ {
+  "form": "ᾰ̓ξῐ́οις",
+  "nfc": "ᾰ̓ξῐ́οις",
+  "stripLength": "ἀξίοις",
+  "stripAccents": "ἀξιοις",
+  "stripAll": "αξιοις",
+  "key": "ἀξίοις",
+  "finalSigma": "ᾰ̓ξῐ́οις",
+  "beta": "a)ci/ois"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ου",
+  "nfc": "ᾰ̓ξῐ́ου",
+  "stripLength": "ἀξίου",
+  "stripAccents": "ἀξιου",
+  "stripAll": "αξιου",
+  "key": "ἀξίου",
+  "finalSigma": "ᾰ̓ξῐ́ου",
+  "beta": "a)ci/ou"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ους",
+  "nfc": "ᾰ̓ξῐ́ους",
+  "stripLength": "ἀξίους",
+  "stripAccents": "ἀξιους",
+  "stripAll": "αξιους",
+  "key": "ἀξίους",
+  "finalSigma": "ᾰ̓ξῐ́ους",
+  "beta": "a)ci/ous"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ω",
+  "nfc": "ᾰ̓ξῐ́ω",
+  "stripLength": "ἀξίω",
+  "stripAccents": "ἀξιω",
+  "stripAll": "αξιω",
+  "key": "ἀξίω",
+  "finalSigma": "ᾰ̓ξῐ́ω",
+  "beta": "a)ci/w"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ων",
+  "nfc": "ᾰ̓ξῐ́ων",
+  "stripLength": "ἀξίων",
+  "stripAccents": "ἀξιων",
+  "stripAll": "αξιων",
+  "key": "ἀξίων",
+  "finalSigma": "ᾰ̓ξῐ́ων",
+  "beta": "a)ci/wn"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ᾱ",
+  "nfc": "ᾰ̓ξῐ́ᾱ",
+  "stripLength": "ἀξία",
+  "stripAccents": "ἀξια",
+  "stripAll": "αξια",
+  "key": "ἀξία",
+  "finalSigma": "ᾰ̓ξῐ́ᾱ",
+  "beta": "a)ci/a"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ᾱν",
+  "nfc": "ᾰ̓ξῐ́ᾱν",
+  "stripLength": "ἀξίαν",
+  "stripAccents": "ἀξιαν",
+  "stripAll": "αξιαν",
+  "key": "ἀξίαν",
+  "finalSigma": "ᾰ̓ξῐ́ᾱν",
+  "beta": "a)ci/an"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ᾱς",
+  "nfc": "ᾰ̓ξῐ́ᾱς",
+  "stripLength": "ἀξίας",
+  "stripAccents": "ἀξιας",
+  "stripAll": "αξιας",
+  "key": "ἀξίας",
+  "finalSigma": "ᾰ̓ξῐ́ᾱς",
+  "beta": "a)ci/as"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ᾳ",
+  "nfc": "ᾰ̓ξῐ́ᾳ",
+  "stripLength": "ἀξίᾳ",
+  "stripAccents": "ἀξιᾳ",
+  "stripAll": "αξια",
+  "key": "ἀξίᾳ",
+  "finalSigma": "ᾰ̓ξῐ́ᾳ",
+  "beta": "a)ci/a|"
+ },
+ {
+  "form": "ᾰ̓ξῐ́ῳ",
+  "nfc": "ᾰ̓ξῐ́ῳ",
+  "stripLength": "ἀξίῳ",
+  "stripAccents": "ἀξιῳ",
+  "stripAll": "αξιω",
+  "key": "ἀξίῳ",
+  "finalSigma": "ᾰ̓ξῐ́ῳ",
+  "beta": "a)ci/w|"
+ },
+ {
+  "form": "ᾰ̓στέοιν",
+  "nfc": "ᾰ̓στέοιν",
+  "stripLength": "ἀστέοιν",
+  "stripAccents": "ἀστεοιν",
+  "stripAll": "αστεοιν",
+  "key": "ἀστέοιν",
+  "finalSigma": "ᾰ̓στέοιν",
+  "beta": "a)ste/oin"
+ }
+]

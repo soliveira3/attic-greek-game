@@ -23,4 +23,12 @@ describe('settings', () => {
     expect(s.scope.dual).toBe(false)
     expect(s.lengthMarks).toBe(false)
   })
+  it('keeps a daily new-card limit between 0 and 200', () => {
+    const store = createStore(null)
+    expect(DEFAULT_SETTINGS.newPerDay).toBe(20)
+    for (const [stored, expected] of [[5, 5], [0, 0], [201, 20], [-1, 20], [2.5, 20], ['7', 20]] as const) {
+      store.write('settings', { newPerDay: stored })
+      expect(loadSettings(store).newPerDay).toBe(expected)
+    }
+  })
 })

@@ -14,7 +14,7 @@ import {
   classLabel,
 } from '../lib/features'
 import { lemmasInScope } from '../lib/prompts'
-import type { Settings } from '../lib/settings'
+import { MAX_NEW_PER_DAY, type Settings } from '../lib/settings'
 
 const STRICTNESS_LABELS: Record<Strictness, [string, string]> = {
   strict: ['Strict', 'letters, breathings, iota subscript and accents must all be right'],
@@ -136,6 +136,23 @@ export function SettingsPage() {
         <label className="choice">
           <input type="checkbox" checked={scope.dual} onChange={(e) => setScope({ dual: e.target.checked })} />
           Include the dual
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Review</legend>
+        <label className="choice">
+          New words a day
+          <input
+            type="number"
+            min={0}
+            max={MAX_NEW_PER_DAY}
+            value={settings.newPerDay}
+            onChange={(e) => {
+              const n = Math.round(Number(e.target.value))
+              if (Number.isFinite(n)) setSettings({ ...settings, newPerDay: Math.min(MAX_NEW_PER_DAY, Math.max(0, n)) })
+            }}
+          />
         </label>
       </fieldset>
 

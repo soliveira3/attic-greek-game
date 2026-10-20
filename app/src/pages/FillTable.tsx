@@ -11,7 +11,7 @@ import { GreekKeyboard } from '../components/GreekKeyboard'
 import { LemmaLine } from '../components/LemmaLine'
 import { Tally } from '../components/Tally'
 import { TypingHint } from '../components/TypingHint'
-import { itemKey, recordAttempt } from '../lib/attempts'
+import { itemKey } from '../lib/attempts'
 import { type CheckResult, checkAnswer } from '../lib/check'
 import { lemmaRef } from '../lib/data'
 import { blockLabel, cellLabel, classLabel, featureKey } from '../lib/features'
@@ -19,6 +19,8 @@ import { listWords } from '../lib/feedback'
 import { displayForm } from '../lib/normalize'
 import { classTopic, topicFor } from '../lib/notes'
 import { DIFFICULTIES, type Difficulty, type Rng, type TablePrompt, tablePrompt } from '../lib/prompts'
+import { answer } from '../lib/progress'
+import { gradeFor } from '../lib/srs'
 import { tableLayout } from '../lib/tables'
 
 const DIFFICULTY_LABELS: Record<Difficulty, string> = { few: 'A few blanks', half: 'Half', all: 'All blank' }
@@ -55,14 +57,18 @@ export function FillTable({ rng = Math.random }: { rng?: Rng }) {
       const cell = table.cells.find((c) => c.key === key)!
       const r = checkAnswer(answers[key] ?? '', cell.forms, settings.strictness, table.contexts[key])
       out[key] = r
-      recordAttempt(store, {
-        itemKey: itemKey(lemmaRef(table.lemma), key),
-        featureKey: featureKey(table.lemma.class, key),
-        correct: r.correct,
-        errorKind: r.errorKind,
-        ts: Date.now(),
-        mode: 'fill',
-      })
+      answer(
+        store,
+        {
+          itemKey: itemKey(lemmaRef(table.lemma), key),
+          featureKey: featureKey(table.lemma.class, key),
+          correct: r.correct,
+          errorKind: r.errorKind,
+          ts: Date.now(),
+          mode: 'fill',
+        },
+        gradeFor(r.correct, !r.exact),
+      )
     }
     const right = Object.values(out).filter((r) => r.correct).length
     setScore((s) => ({ right: s.right + right, total: s.total + Object.keys(out).length }))

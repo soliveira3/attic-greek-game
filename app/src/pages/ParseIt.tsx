@@ -7,14 +7,15 @@ import { EmptyScope } from '../components/EmptyScope'
 import { NoteLink } from '../components/Feedback'
 import { LemmaLine } from '../components/LemmaLine'
 import { Tally } from '../components/Tally'
-import { recordAttempt } from '../lib/attempts'
 import { type ParseSelection, checkParse } from '../lib/check'
 import { lemmaRef } from '../lib/data'
 import { cellLabel } from '../lib/features'
 import { displayForm } from '../lib/normalize'
 import { topicFor } from '../lib/notes'
 import { type Group, type Picks, nearestParse, parseGroups, selectionOf, selectionWords, skipped } from '../lib/parsing'
+import { answer as recordAnswer } from '../lib/progress'
 import { type ParsePrompt, type Rng, parsePrompt } from '../lib/prompts'
+import { gradeFor } from '../lib/srs'
 
 interface Answer {
   correct: boolean
@@ -61,14 +62,18 @@ export function ParseIt({ rng = Math.random }: { rng?: Rng }) {
     const selection = selectionOf(prompt.lemma, picks)
     const result = checkParse(selection, prompt.parses)
     const cell = result.correct ? nearestParse(selection, prompt.parses).parse.key : prompt.cell.key
-    recordAttempt(store, {
-      itemKey: `${lemmaRef(prompt.lemma)}|${cell}`,
-      featureKey: `${prompt.lemma.class}:${cell}`,
-      correct: result.correct,
-      errorKind: result.errorKind,
-      ts: Date.now(),
-      mode: 'parse',
-    })
+    recordAnswer(
+      store,
+      {
+        itemKey: `${lemmaRef(prompt.lemma)}|${cell}`,
+        featureKey: `${prompt.lemma.class}:${cell}`,
+        correct: result.correct,
+        errorKind: result.errorKind,
+        ts: Date.now(),
+        mode: 'parse',
+      },
+      gradeFor(result.correct, false),
+    )
     setScore((s) => ({ right: s.right + (result.correct ? 1 : 0), total: s.total + 1 }))
     setAnswer({ correct: result.correct, selection })
   }

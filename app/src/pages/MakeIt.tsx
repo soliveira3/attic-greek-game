@@ -5,8 +5,9 @@ import { useApp } from '../app/AppContext'
 import { EmptyScope } from '../components/EmptyScope'
 import { MakeCard } from '../components/MakeCard'
 import { Tally } from '../components/Tally'
-import { recordAttempt } from '../lib/attempts'
+import { answer } from '../lib/progress'
 import { type Rng, makePrompt } from '../lib/prompts'
+import { gradeFor } from '../lib/srs'
 
 export function MakeIt({ rng = Math.random }: { rng?: Rng }) {
   const { data, settings, store } = useApp()
@@ -20,14 +21,18 @@ export function MakeIt({ rng = Math.random }: { rng?: Rng }) {
         <MakeCard
           prompt={prompt}
           onAnswer={(r) => {
-            recordAttempt(store, {
-              itemKey: prompt.itemKey,
-              featureKey: prompt.featureKey,
-              correct: r.correct,
-              errorKind: r.errorKind,
-              ts: Date.now(),
-              mode: 'make',
-            })
+            answer(
+              store,
+              {
+                itemKey: prompt.itemKey,
+                featureKey: prompt.featureKey,
+                correct: r.correct,
+                errorKind: r.errorKind,
+                ts: Date.now(),
+                mode: 'make',
+              },
+              gradeFor(r.correct, !r.exact),
+            )
             setScore((s) => ({ right: s.right + (r.correct ? 1 : 0), total: s.total + 1 }))
           }}
           onNext={() => setPrompt(makePrompt(data, settings, rng, prompt.itemKey))}

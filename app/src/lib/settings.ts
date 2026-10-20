@@ -27,13 +27,18 @@ export interface Settings {
   }
   /** Show vowel-length marks (macron, breve) in displayed forms. */
   lengthMarks: boolean
+  /** New cards Review introduces per day (SPEC §8). */
+  newPerDay: number
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   strictness: 'ignore-accents',
   scope: { pos: [...POS], classes: [], tenses: [...TENSES], voices: [...VOICE_GROUPS], dual: false },
   lengthMarks: true,
+  newPerDay: 20,
 }
+
+export const MAX_NEW_PER_DAY = 200
 
 const KEY = 'settings'
 const ALL_CLASSES: readonly string[] = ['article', ...NOUN_CLASSES, ...ADJ_CLASSES, ...VERB_CLASSES]
@@ -56,6 +61,10 @@ export function loadSettings(store: Store): Settings {
       dual: typeof scope.dual === 'boolean' ? scope.dual : d.scope.dual,
     },
     lengthMarks: typeof raw.lengthMarks === 'boolean' ? raw.lengthMarks : d.lengthMarks,
+    newPerDay:
+      Number.isInteger(raw.newPerDay) && (raw.newPerDay as number) >= 0 && (raw.newPerDay as number) <= MAX_NEW_PER_DAY
+        ? (raw.newPerDay as number)
+        : d.newPerDay,
   }
 }
 

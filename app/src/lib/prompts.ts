@@ -81,12 +81,16 @@ export interface MakePrompt extends Item {
 
 export function makePrompt(data: Paradigms, settings: Settings, rng: Rng, avoid?: string): MakePrompt | null {
   const it = pickCell(data, settings, rng, avoid)
-  if (!it) return null
+  return it ? makePromptFor(data, settings, it.lemma, it.cell) : null
+}
+
+/** A Make it prompt for a given lemma and cell (Review). */
+export function makePromptFor(data: Paradigms, settings: Settings, lemma: Lemma, cell: Cell): MakePrompt {
   return {
-    ...it,
-    forms: data.forms(it.lemma, it.cell.key),
-    context: data.checkContext(it.lemma, it.cell.key, { dual: settings.scope.dual }),
-    label: cellLabel(it.cell.key),
+    ...item(lemma, cell),
+    forms: data.forms(lemma, cell.key),
+    context: data.checkContext(lemma, cell.key, { dual: settings.scope.dual }),
+    label: cellLabel(cell.key),
   }
 }
 

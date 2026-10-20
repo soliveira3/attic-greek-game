@@ -7,12 +7,13 @@
 | 2 — Data pipeline 🧑 | done (golden set verified by the user 2026-10-19) |
 | 3 — Core library | done (2026-10-20) |
 | 4 — Game modes | in progress |
-| 5 — Spaced repetition & progress | not started |
+| 5 — Spaced repetition & progress | in progress |
 | 6 — Grammar notes 🧑 | not started |
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md): task 10, greek-checker on the endings and the modes.
+Phase 4 task 10 (greek-checker on the endings and the modes) is running; meanwhile Phase 5
+(docs/plans/phase-5.md), task 3: the Review page.
 
 ## Waiting on the user
 (nothing)
@@ -81,6 +82,10 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 5 tasks 1–2: FSRS cards (ts-fsrs 5.4.2) for feature cells and lemma × cell
+  items, tested with a fake clock; daily Review queue (due first, then new items: weak feature
+  cells pull in words of their class, then the most frequent words); every mode now updates the
+  cards (right → Good, right only by the setting → Hard, wrong → Again); "new words a day" setting.
 - 2026-10-20 — Phase 4 task 9: Playwright smoke test (app/e2e/smoke.spec.ts, desktop and phone)
   plays a round of each mode with the keyboard on the built site; part of scripts/check.sh
   (SKIP_E2E=1 skips it; needs `npx playwright install chromium` once).

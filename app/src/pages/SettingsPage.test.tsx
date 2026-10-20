@@ -54,6 +54,16 @@ describe('SettingsPage', () => {
     await userEvent.click(screen.getByRole('button', { name: /all classes/i }))
     expect(loadSettings(store).scope.classes).toEqual([])
   })
+  it('saves the daily new-card limit, kept between 0 and 200', async () => {
+    const { store } = renderWithApp(<SettingsPage />)
+    const box = screen.getByRole('spinbutton', { name: /new words a day/i })
+    expect(box).toHaveValue(20)
+    await userEvent.clear(box)
+    await userEvent.type(box, '35')
+    expect(loadSettings(store).newPerDay).toBe(35)
+    await userEvent.type(box, '0')
+    expect(loadSettings(store).newPerDay).toBe(200)
+  })
   it('warns when the scope leaves nothing to practise', async () => {
     renderWithApp(<SettingsPage />, { settings: { scope: { pos: [], classes: [], tenses: [], voices: [], dual: false } } })
     expect(screen.getByRole('status')).toHaveTextContent(/nothing to practise/i)

@@ -8,10 +8,12 @@ import { EmptyScope } from '../components/EmptyScope'
 import { GreekInput } from '../components/GreekInput'
 import { GreekKeyboard } from '../components/GreekKeyboard'
 import { TypingHint } from '../components/TypingHint'
-import { itemKey, recordAttempt } from '../lib/attempts'
+import { itemKey } from '../lib/attempts'
 import { type SprintItem, type SprintSet, checkEnding, goldenModels, setPos, setsInScope, sprintItems, sprintSets } from '../lib/endings'
 import { cellLabel, featureKey } from '../lib/features'
+import { answer as recordAnswer } from '../lib/progress'
 import type { Rng } from '../lib/prompts'
+import { gradeFor } from '../lib/srs'
 
 const SECONDS = 60
 const GROUPS = [
@@ -85,14 +87,18 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
     if (phase.kind !== 'play') return
     const item = queue[0]
     const correct = checkEnding(value, item)
-    recordAttempt(store, {
-      itemKey: itemKey(`${setPos(phase.set)}:${phase.set.lemma}`, item.cell),
-      featureKey: featureKey(phase.set.cls, item.cell),
-      correct,
-      errorKind: correct ? null : value.trim() ? 'ending' : 'blank',
-      ts: Date.now(),
-      mode: 'sprint',
-    })
+    recordAnswer(
+      store,
+      {
+        itemKey: itemKey(`${setPos(phase.set)}:${phase.set.lemma}`, item.cell),
+        featureKey: featureKey(phase.set.cls, item.cell),
+        correct,
+        errorKind: correct ? null : value.trim() ? 'ending' : 'blank',
+        ts: Date.now(),
+        mode: 'sprint',
+      },
+      gradeFor(correct, false),
+    )
     if (correct) setScore((s) => s + 1)
     setLast({ item, typed: value, correct })
     setValue('')

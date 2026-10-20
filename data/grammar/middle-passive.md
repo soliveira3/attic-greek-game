@@ -18,6 +18,6 @@ These two tenses keep middle and passive apart.
 {{table verb:λύω aor.pass}}
 
 ## Deponents
-A deponent verb is active in meaning but has mostly middle or passive forms (Smyth §356): {{word verb:βούλομαι}}, {{word verb:γίγνομαι}}. Some of them still have an active aorist or perfect: {{form verb:γίγνομαι perf.act.ind.1.sg}}, {{form verb:ἔρχομαι aor.act.ind.1.sg}}. Others have an aorist that looks passive but means something active; Parse it calls such a form passive, after its shape: {{form verb:βούλομαι aor.pass.ind.1.sg}}.
+Some verbs are translated as actives although most of their forms look middle or passive; they are called deponents (Smyth §356): {{word verb:βούλομαι}}, {{word verb:γίγνομαι}}. Some of them still have an active aorist or perfect: {{form verb:γίγνομαι perf.act.ind.1.sg}}, {{form verb:ἔρχομαι aor.act.ind.1.sg}}. Others have an aorist that looks passive but means something active; Parse it calls such a form passive, after its shape: {{form verb:βούλομαι aor.pass.ind.1.sg}}.
 
 The principal parts show which voices a verb has: see [tense stems and principal parts](principal-parts).

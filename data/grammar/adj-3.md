@@ -1,6 +1,6 @@
 # Adjectives of the 3rd declension
 
-An adjective declined only in the 3rd declension has one set of forms for the masculine and feminine together and another for the neuter (Smyth §291). Two stem types cover nearly all of them: stems in ες, with nominatives in -ης and -ες, and stems in ον, with nominatives in -ων and -ον.
+An adjective declined only in the 3rd declension has one set of forms for the masculine and feminine together and another for the neuter (Smyth §291). Nearly all of them belong to one of two types. In the first the stem ends in ες, and the nominatives end in -ης and -ες; in the second it ends in ον, with nominatives in -ων and -ον.
 
 ## Stems in ες
 {{word adj:ἀληθής}} follows the σ-stem nouns: its σ was lost between vowels and the vowels merged (Smyth §292, §263). See [σ-stems](decl3-s).

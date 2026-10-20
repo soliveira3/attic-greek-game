@@ -1,6 +1,6 @@
 # The augment
 
-The augment is the sign of past time, and only past tenses of the indicative carry it: the imperfect, the aorist and the pluperfect (Smyth §428). Other moods, and the [infinitives](infinitives), never have it.
+When an indicative verb refers to the past, it carries an extra element at its front: the augment. You will find it on the imperfect, the aorist and the pluperfect, and nowhere else (Smyth §428): other moods and the [infinitives](infinitives) never have it.
 
 ## The syllabic augment
 A verb whose first sound is a consonant adds an extra syllable, ε, in front (Smyth §429): {{form verb:λύω pres.act.ind.1.sg impf.act.ind.1.sg aor.act.ind.1.sg}}.

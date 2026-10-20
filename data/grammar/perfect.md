@@ -4,10 +4,10 @@ The perfect presents an action as finished, with its effect still there at the t
 
 ## Reduplication
 - A verb that begins with one consonant, or with a stop followed by λ, μ, ν or ρ, repeats its first consonant with ε (Smyth §440): {{form verb:λύω perf.act.ind.1.sg}}, {{form verb:γράφω perf.act.ind.1.sg}}, {{form verb:κρίνω perf.act.ind.1.sg}}. An aspirated consonant is repeated as the matching plain one (Smyth §441): {{form verb:θύω perf.act.ind.1.sg}}.
-- A verb that begins with two other consonants, a double consonant or γν takes ε alone (Smyth §440, §442): {{form verb:ἔχω perf.act.ind.1.sg}}, {{form verb:γιγνώσκω perf.act.ind.1.sg}}.
+- A verb that begins with two other consonants, a double consonant or γν takes ε alone (Smyth §440, §442): {{form verb:ἔχω perf.act.ind.1.sg}} (built, like the aorist {{form verb:ἔχω aor.act.ind.1.sg}}, on a shorter stem), {{form verb:γιγνώσκω perf.act.ind.1.sg}}.
 - A verb that begins with a vowel lengthens it, as in the temporal augment (Smyth §442): {{form verb:ἄγω perf.act.ind.1.sg}}.
 - A few verbs take ει in front instead (Smyth §445): {{form verb:λαμβάνω perf.act.ind.1.sg}}, {{form verb:λέγω perf.act.ind.1.sg}}.
-- Some verbs repeat their first vowel and the consonant after it, the so-called Attic reduplication (Smyth §446): {{form verb:ἀκούω perf.act.ind.1.sg}}, {{form verb:ἔρχομαι perf.act.ind.1.sg}}, {{form verb:φέρω perf.act.ind.1.sg}}.
+- Some verbs repeat their first vowel and the consonant after it, and lengthen the vowel that follows; this is called Attic reduplication (Smyth §446): {{form verb:ἀκούω perf.act.ind.1.sg}}, {{form verb:ἔρχομαι perf.act.ind.1.sg}}, {{form verb:φέρω perf.act.ind.1.sg}}.
 - In a compound the reduplication follows the preposition (Smyth §449): {{form verb:καταλαμβάνω perf.act.ind.1.sg}}, {{form verb:ἀποκτείνω perf.act.ind.1.sg}}.
 
 ## Perfect active
@@ -18,7 +18,7 @@ Many verbs add -κα to the reduplicated stem; this is the 1st perfect (Smyth §
 Others add just -α, the 2nd perfect (Smyth §561), and the vowel of the stem may change: {{form verb:γράφω perf.act.ind.1.sg}}, {{form verb:λείπω perf.act.ind.1.sg}}.
 
 ## Perfect middle and passive
-The personal endings are attached to the reduplicated stem with no thematic vowel between (Smyth §574), and the same forms serve the middle and the passive.
+Here there is no thematic vowel: the ending follows the reduplicated stem directly (Smyth §574). One set of forms serves for both middle and passive.
 
 {{table verb:λύω perf.mp}}
 

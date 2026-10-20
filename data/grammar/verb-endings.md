@@ -14,11 +14,13 @@ The tenses fall into two groups with different endings (Smyth §360, §462–464
 - Forms ending in -σι, and 3rd singulars ending in -ε, can add a movable ν (Smyth §134): {{form verb:λύω pres.act.ind.3.pl impf.act.ind.3.sg}}. The game accepts both spellings.
 
 ## The future
-Most verbs make the future by adding σ to the verb stem and then the endings of the present: {{form verb:λύω fut.act.ind.1.sg fut.act.ind.3.pl}}. The σ combines with a final consonant as in the aorist: {{form verb:πείθω fut.act.ind.1.sg}}.
+Most verbs make the future by adding σ to the verb stem and then the endings of the present: {{form verb:λύω fut.act.ind.1.sg fut.act.ind.3.pl}}. A consonant at the end of the stem merges with the σ just as it does in the aorist (Smyth §537): {{form verb:πείθω fut.act.ind.1.sg}}.
 
-Verbs whose stem ends in λ, μ, ν or ρ form the future differently: they add ε and σ, the σ drops, and the ε merges with the ending (Smyth §535). The result has no σ and is accented like a contracted verb: {{form verb:μένω fut.act.ind.1.sg fut.act.ind.2.sg fut.act.ind.3.pl}}. Many verbs like {{word verb:νομίζω}} have a future of the same kind, called the Attic future (Smyth §539): {{form verb:νομίζω fut.act.ind.1.sg}}.
+Verbs whose stem ends in λ, μ, ν or ρ are different. Their future was once built with ε before the σ; with the σ gone, that ε contracted with the ending (Smyth §535). What you see has no σ at all, and is accented like a contracted verb: {{form verb:μένω fut.act.ind.1.sg fut.act.ind.2.sg fut.act.ind.3.pl}}. Many verbs like {{word verb:νομίζω}} have a future of the same kind, called the Attic future (Smyth §539): {{form verb:νομίζω fut.act.ind.1.sg}}.
 
-Such a future can differ from the present only in its accent: {{form verb:μένω pres.act.ind.1.sg fut.act.ind.1.sg}}. Because the present is another form of the same verb, the game marks it wrong for the future even when accents are otherwise ignored.
+Such a future can differ from the present only in its accent: {{form verb:μένω pres.act.ind.1.sg fut.act.ind.1.sg}}. Because the present is another form of the same verb, the game marks it wrong for the future in strict and ignore-accents mode; lenient mode accepts it and mentions the other form.
+
+A few futures follow neither pattern and are best learned as they come: {{form verb:πίπτω fut.mid.ind.1.sg}} (Smyth §540), {{form verb:πίνω fut.mid.ind.1.sg}}, which has no future suffix at all (Smyth §541).
 
 ## Middle and passive
 {{table verb:λύω pres.mp}}

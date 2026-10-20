@@ -15,10 +15,11 @@ The usual endings of masculines and feminines are, in the singular, genitive -ο
 - A stem ending in ν or ρ takes no ς; instead a short vowel before it becomes long (Smyth §242): {{word noun:ἡγεμών}}.
 - A masculine stem ending in ντ after ο loses the τ, and the ο becomes ω (Smyth §243): {{word noun:γέρων}}.
 - A neuter has no ending in the nominative, and a τ at the end of the stem falls away (Smyth §244): {{word noun:σῶμα}}. Its accusative and vocative are the same as the nominative.
+- A few common nouns do not fit these patterns and have to be learned together with their genitive (Smyth §253, §285): {{form noun:μάρτυς nom.sg gen.sg}}, {{form noun:ὕδωρ nom.sg gen.sg}}, {{form noun:φῶς nom.sg gen.sg}}; and in the dative plural {{form noun:χείρ dat.pl}}.
 
 ## The dative plural
 The dative plural ends in -σι (Smyth §250):
-- a stop combines with the σ as in the nominative: {{form noun:φύλαξ dat.pl}}, {{form noun:σῶμα dat.pl}};
+- a stop combines with the σ as in the masculine and feminine nominative: {{form noun:φύλαξ dat.pl}}, {{form noun:σῶμα dat.pl}};
 - ντ disappears, and ο before it lengthens to ου: {{form noun:γέρων dat.pl}};
 - ν simply disappears, without lengthening: {{form noun:ἡγεμών dat.pl}}, {{form noun:δαίμων dat.pl}}.
 
@@ -30,4 +31,4 @@ The dative plural ends in -σι (Smyth §250):
 In the endings sprint, the nominative and vocative singular and the dative plural of this class are left out, because there stem and ending have merged.
 
 ## Accent
-When the stem has one syllable, the genitive and dative of every number are accented on the ending (Smyth §252): {{form noun:φλέψ nom.sg gen.sg gen.pl}}. A few nouns, such as the word for "child", break this rule in the genitive dual and plural (Smyth §252): {{form noun:παῖς gen.pl dat.pl}}.
+When the stem has one syllable, the genitive and dative of every number are accented on the ending (Smyth §252): {{form noun:φλέψ nom.sg gen.sg gen.pl}}. A few nouns, such as the word for "child", break this rule in the genitive dual and plural, {{form noun:παῖς gen.pl}}, though not in the dative, {{form noun:παῖς dat.pl}} (Smyth §252).

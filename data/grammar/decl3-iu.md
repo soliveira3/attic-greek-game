@@ -1,6 +1,6 @@
 # 3rd declension: ι- and υ-stems
 
-{{word noun:πόλις}} keeps the ι of its stem only in the three cases whose ending is -ς, -ν or nothing at all: the nominative, accusative and vocative singular. Everywhere else ε stands in its place, and the genitive singular takes -ως, not -ος (Smyth §268–270). Many υ-stems behave the same way; {{word noun:ἄστυ}} is a neuter example.
+{{word noun:πόλις}} keeps the ι of its stem only in the three cases whose ending is -ς, -ν or nothing at all: the nominative, accusative and vocative singular. In all the other cases you find an ε, and the genitive singular, unlike that of other 3rd declension nouns, ends in a long -ως (Smyth §268–270). Some υ-stems work the same way; {{word noun:ἄστυ}} is a neuter example.
 
 {{table noun:πόλις}}
 

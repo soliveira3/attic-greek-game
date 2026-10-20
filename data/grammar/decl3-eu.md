@@ -6,6 +6,6 @@
 
 ## What to notice
 - The genitive singular ends in -ως, the accusative singular in a long α (Smyth §275): {{form noun:βασιλεύς gen.sg acc.sg}}.
-- Only the vocative singular shows the stem on its own (Smyth §278): {{form noun:βασιλεύς voc.sg}}.
+- The vocative singular is the one form with nothing added to the stem (Smyth §278): {{form noun:βασιλεύς voc.sg}}.
 - Before an ending that starts with a consonant the υ survives: {{form noun:βασιλεύς nom.sg dat.pl}}.
 - The nominative plural has a circumflex: {{form noun:βασιλεύς nom.pl}}. Older Attic, including Plato and the authors of the 5th century, wrote it with η instead (Smyth §277); the game accepts the later spelling.

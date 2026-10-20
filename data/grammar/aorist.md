@@ -19,7 +19,7 @@ The 2nd aorist has no -σα. The thematic vowel is added directly to the verb st
 
 - Imperfect {{form verb:λείπω impf.act.ind.1.sg}}, aorist {{form verb:λείπω aor.act.ind.1.sg}}; likewise {{form verb:φεύγω impf.act.ind.1.sg aor.act.ind.1.sg}}.
 - The middle works the same way: {{form verb:λείπω impf.mp.ind.1.sg aor.mid.ind.1.sg}}.
-- The 2nd aorist active infinitive is accented on its ending, the middle infinitive on the syllable before it (Smyth §425, §469): {{form verb:λείπω aor.act.inf aor.mid.inf}}. See [infinitives](infinitives).
+- The 2nd aorist active infinitive is accented on its ending, the middle infinitive on the syllable before it (Smyth §424, §425, §469): {{form verb:λείπω aor.act.inf aor.mid.inf}}. See [infinitives](infinitives).
 
 Most verbs have only one kind of aorist. {{word verb:φέρω}} has both, made on another root: a form used as a 1st aorist, though it has κ where the σ would be (Smyth §544), and a 2nd aorist: {{form verb:φέρω aor.act.ind.1.sg}}.
 

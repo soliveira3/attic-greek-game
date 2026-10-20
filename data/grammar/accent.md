@@ -16,7 +16,7 @@ In nouns and adjectives the accent tries to stay on the syllable it has in the n
 ## Verbs: recessive accent
 A finite verb puts its accent as far from the end as the last syllable lets it (Smyth §423): {{form verb:πείθω pres.act.ind.1.sg pres.act.ind.1.pl}}, {{form verb:λείπω impf.mp.ind.1.sg}}. Two things limit this:
 - in a compound, the accent cannot go back past the augment (Smyth §426): {{form verb:παρέχω impf.act.ind.1.sg}}, {{form verb:ὑπάρχω impf.act.ind.1.sg}};
-- a contracted future keeps the accent of the vowels that merged (Smyth §424): {{form verb:μένω fut.act.ind.1.sg}}.
+- a contracted future is accented as its uncontracted form was, and the merged vowel takes a circumflex (Smyth §424, §171): {{form verb:μένω fut.act.ind.1.sg}}.
 
 Infinitives follow their own rules: see [infinitives](infinitives).
 

@@ -1,6 +1,6 @@
 # 3rd declension: σ-stems
 
-The stems of these nouns ended in σ. Wherever that σ came to stand between two vowels it was lost, and the two vowels then merged (Smyth §263). Nearly all such nouns in the game are neuters, with {{word noun:γένος}} as the model.
+The stems of these nouns ended in σ. Wherever that σ came to stand between two vowels it was lost, and the two vowels then merged (Smyth §263). All such nouns in the game are neuters, with {{word noun:γένος}} as the model.
 
 {{table noun:γένος}}
 

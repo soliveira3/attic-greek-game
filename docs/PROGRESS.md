@@ -65,6 +65,10 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 - No present middle/passive infinitive for γιγνώσκω, ἔρχομαι, οἴομαι (source rows lack a voice).
 - ἱερός carries stacked length marks (either-length); the app should hide length marks when a
   vowel has both macron and breve (display only).
+- Class decl1-a-short mixes two types: θάλαττα (genitive and dative singular in η; the sprint
+  model) and ἀλήθεια (α kept in the genitive and dative). The forms of each word are right and
+  the decl1 note explains both; only the class grouping (stats, scope filter) lumps them together.
+  Backlog: split the class in the pipeline.
 - Contract verbs, εἰμί, μι-verbs, irregular nouns, comparatives, pronominal adjectives and 3-1-3
   adjectives are out of scope for now.
 
@@ -79,9 +83,13 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## v2 backlog additions
 - Periphrastic perfect middle/passive 3rd plural for consonant stems.
+- Split decl1-a-short into the θάλαττα and ἀλήθεια types.
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 6: second greek-checker round on the notes addressed (irregular consonant
+  stems, lenient mode and the other-form rule, irregular futures, Attic reduplication, accent of
+  contracted forms, remaining Smyth-like wording).
 - 2026-10-20 — Phase 6 task 4: greek-checker review of the notes addressed (contracted and Attic
   futures; dative plural and vocatives of consonant stems; ἀλήθεια type; reduplication types;
   εἶχον-type augments; deponents with active forms; the game's other-form rule in the accent note;

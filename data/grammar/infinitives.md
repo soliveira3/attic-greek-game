@@ -12,4 +12,4 @@ Each infinitive is built on its tense stem (Smyth §469):
 ## Accent
 The accent of a finite verb follows a rule of its own (see [accents and breathings](accent)); the infinitive does not regularly obey it (Smyth §425). Many infinitives happen to be accented as far back as the finite rule would put them, but several types have a fixed place for the accent instead:
 - on the syllable before the last, in infinitives ending in -αι after ν, in the 1st aorist active, the 2nd aorist middle and the perfect middle: {{form verb:λύω aor.pass.inf perf.act.inf aor.act.inf perf.mp.inf}}, {{form verb:λείπω aor.mid.inf}};
-- on the last syllable, with a circumflex, in the 2nd aorist active and in contracted futures, where the ending has merged with the vowel before it (Smyth §469): {{form verb:λείπω aor.act.inf}}, {{form verb:μένω fut.act.inf}}.
+- on the last syllable, with a circumflex, in the 2nd aorist active and in contracted futures: there the accent was on the vowel that then merged with the ending (Smyth §424, §469): {{form verb:λείπω aor.act.inf}}, {{form verb:μένω fut.act.inf}}.

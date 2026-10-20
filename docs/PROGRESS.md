@@ -4,7 +4,7 @@
 |---|---|
 | 0 — Scaffold | done |
 | 1 — Spec 🧑 | done (approved 2026-10-19) |
-| 2 — Data pipeline 🧑 | pipeline done; greek-checker review in progress; **waiting on golden verification** |
+| 2 — Data pipeline 🧑 | pipeline done; 2 greek-checker audits addressed; **waiting on golden verification** |
 | 3 — Core library | not started |
 | 4 — Game modes | not started |
 | 5 — Spaced repetition & progress | not started |

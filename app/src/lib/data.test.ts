@@ -114,3 +114,25 @@ describe('checkContext edge cases', () => {
     expect(data.checkContext(noPast, 'pres.act.ind.1.sg').augmentAt).toBe(0)
   })
 })
+
+describe('augment position', () => {
+  it.each([
+    ['λύω', 0],
+    ['ἔχω', 0],
+    ['ἥκω', 0],
+    ['διώκω', 0],
+    ['ἀποκτείνω', 2],
+    ['παρέχω', 3],
+    ['συμβαίνω', 3],
+    ['προσήκω', 4],
+  ])('%s', (lemma, at) => {
+    expect(data.checkContext(data.lemma(`verb:${lemma}`)!, 'impf.act.ind.1.sg').augmentAt).toBe(at)
+  })
+})
+
+describe('checkContext scope', () => {
+  it('leaves out-of-scope cells (the dual by default) out of the other forms', () => {
+    expect(data.checkContext(doron, 'gen.sg').otherForms.some((o) => o.cell.endsWith('.du'))).toBe(false)
+    expect(data.checkContext(doron, 'gen.sg', { dual: true }).otherForms.some((o) => o.cell.endsWith('.du'))).toBe(true)
+  })
+})

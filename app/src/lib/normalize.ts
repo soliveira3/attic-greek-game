@@ -55,18 +55,48 @@ export const MARK_ORDER = [MACRON, BREVE, DIAERESIS, SMOOTH, ROUGH, ACUTE, GRAVE
 const KNOWN_MARKS = new Set(MARK_ORDER)
 // Other code points keyboards produce for the same marks.
 const MARK_ALIASES: Record<string, string> = { [cp(0x303)]: CIRCUMFLEX, [cp(0x311)]: CIRCUMFLEX }
-// Spacing breathings and apostrophe-like characters typed for a breathing before its letter.
-const BREATHING_SIGNS: Record<string, string> = {
-  [cp(0x1fbf)]: SMOOTH, // GREEK PSILI
-  [cp(0x1fbd)]: SMOOTH, // GREEK KORONIS
-  [cp(0x2bc)]: SMOOTH, // MODIFIER LETTER APOSTROPHE
-  [cp(0x2019)]: SMOOTH, // RIGHT SINGLE QUOTATION MARK
+// Characters typed for marks, replaced by the combining marks they stand for: spacing accents and
+// breathings (NFKC would turn them into a space plus a mark), apostrophes and quotation marks
+// used for a breathing (smart punctuation turns a word-initial ' into U+2018), and the symbols of
+// beta code left in an answer box. The TLG capital marker `*` is dropped.
+const FOLD: Record<string, string> = {
+  [cp(0x1fbf)]: SMOOTH, // psili
+  [cp(0x1fbd)]: SMOOTH, // koronis
+  [cp(0x2bc)]: SMOOTH, // modifier letter apostrophe
+  [cp(0x2019)]: SMOOTH, // right single quotation mark
+  [cp(0x2018)]: SMOOTH, // left single quotation mark (smart punctuation for ')
   "'": SMOOTH,
-  [cp(0x1ffe)]: ROUGH, // GREEK DASIA
-  [cp(0x2bd)]: ROUGH, // MODIFIER LETTER REVERSED COMMA
-  [cp(0x2018)]: ROUGH, // LEFT SINGLE QUOTATION MARK
+  [cp(0x1ffe)]: ROUGH, // dasia
+  [cp(0x2bd)]: ROUGH, // modifier letter reversed comma
+  [cp(0x384)]: ACUTE, // tonos
+  [cp(0xb4)]: ACUTE, // acute accent
+  [cp(0x1ffd)]: ACUTE, // oxia
+  [cp(0x1fef)]: GRAVE, // varia
+  '`': GRAVE,
+  [cp(0x1fc0)]: CIRCUMFLEX, // perispomeni
+  [cp(0xa8)]: DIAERESIS, // diaeresis
+  [cp(0x37a)]: IOTA_SUBSCRIPT, // ypogegrammeni
+  [cp(0x1fcd)]: SMOOTH + GRAVE,
+  [cp(0x1fce)]: SMOOTH + ACUTE,
+  [cp(0x1fcf)]: SMOOTH + CIRCUMFLEX,
+  [cp(0x1fdd)]: ROUGH + GRAVE,
+  [cp(0x1fde)]: ROUGH + ACUTE,
+  [cp(0x1fdf)]: ROUGH + CIRCUMFLEX,
+  [cp(0x1fed)]: DIAERESIS + GRAVE,
+  [cp(0x1fee)]: DIAERESIS + ACUTE,
+  [cp(0x1fc1)]: DIAERESIS + CIRCUMFLEX,
+  ')': SMOOTH,
+  '(': ROUGH,
+  '/': ACUTE,
+  '\\': GRAVE,
+  '=': CIRCUMFLEX,
+  '|': IOTA_SUBSCRIPT,
+  '+': DIAERESIS,
+  _: MACRON,
+  '^': BREVE,
+  '*': '',
 }
-const INVISIBLE = new RegExp(`[${cp(0x200b)}-${cp(0x200d)}${cp(0xfeff)}${cp(0xad)}]`, 'gu')
+const INVISIBLE = new RegExp(`[${cp(0x200b)}-${cp(0x200f)}${cp(0x2060)}${cp(0xfeff)}${cp(0xad)}]`, 'gu')
 const VOWELS = 'αεηιουω'
 
 /** Whether `mark`, typed after `letter`, belongs to it (marks go on vowels; a breathing also on ρ). */
@@ -81,7 +111,7 @@ export function takesMark(letter: string, mark: string): boolean {
  * its vowel moves onto it; unknown marks are dropped), final sigma, no length marks.
  */
 export function canon(s: string): string {
-  const folded = [...s.replace(INVISIBLE, '')].map((ch) => BREATHING_SIGNS[ch] ?? ch).join('')
+  const folded = [...s.replace(INVISIBLE, '')].map((ch) => FOLD[ch] ?? ch).join('')
   const clusters: { base: string; marks: string[] }[] = []
   let pending: string[] = []
   for (const ch of folded.normalize('NFKC').toLowerCase().normalize('NFD')) {
@@ -93,12 +123,9 @@ export function canon(s: string): string {
       else pending.push(mark)
       continue
     }
-    const cluster = { base: ch, marks: [] as string[] }
-    if (pending.length && takesMark(ch, pending[0])) {
-      cluster.marks = pending
-      pending = []
-    }
-    clusters.push(cluster)
+    // marks typed before this letter go on it if it can take them, the rest wait for the next one
+    clusters.push({ base: ch, marks: pending.filter((m) => takesMark(ch, m)) })
+    pending = pending.filter((m) => !takesMark(ch, m))
   }
   const text = clusters
     .map((c) => c.base + [...new Set(c.marks)].sort((a, b) => MARK_ORDER.indexOf(a) - MARK_ORDER.indexOf(b)).join(''))

@@ -24,9 +24,10 @@ drafted in docs/plans/phase-4.md.
   the older spellings βασιλῆς, ἱππῆς and the dual πόλη were excluded (see the "User decisions"
   block in data/exclude.txt; delete those lines to undo), and golden verification goes through
   an automated comparison with Smyth (option 2) instead of a manual check.
-- 2026-10-19: SPEC §6 refined after the check.ts review (Claude's call, reversible): an answer that
-  is exactly another form of the same word is wrong in every mode; iota adscript is accepted with a
-  note except in strict mode; typing aids for marks typed before letters or in another order.
+- 2026-10-19/20: SPEC §6 refined after the check.ts reviews (Claude's call, reversible): an answer
+  that is exactly another drilled form of the same word is wrong in strict and ignore-accents mode
+  (lenient accepts and mentions it); iota adscript is accepted with a note except in strict mode;
+  typing aids for marks typed before letters or in another order; errors vs notes per mode.
 - 2026-10-19: the user marked all 24 golden files verified on the evidence of
   data/golden/SMYTH_COMPARISON.md.
 
@@ -71,6 +72,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 3: second check.ts review addressed (other forms limited to the drill scope and
+  not enforced in lenient; augment position from preverbs verified by the data; preverb slips are
+  stem errors; infinitive stems; errors vs notes; two-level diff; more keyboard folding).
 - 2026-10-19 — Phase 3: greek-checker review of check.ts addressed (crash on leading marks, missing
   error kinds, other-form acceptance, per-mood stems, augment detection incl. compounds, iota
   adscript, diff at the strictness level, Python/TS parity edges).

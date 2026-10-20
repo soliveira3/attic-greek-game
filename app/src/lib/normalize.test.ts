@@ -63,7 +63,7 @@ describe('canon folds what keyboards produce', () => {
   const bare = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '')
   const accentOnly = (s: string) => [...s.normalize('NFD')].filter((c) => c !== cp(0x313)).join('')
   it('spacing or apostrophe-like breathing marks typed before the letter', () => {
-    for (const mark of [0x1fbf, 0x2019, 0x2bc, 0x27]) {
+    for (const mark of [0x1fbf, 0x2019, 0x2bc, 0x27, 0x2018]) {
       expect(canon(cp(mark) + accentOnly(agathos))).toBe(agathos)
     }
   })
@@ -78,5 +78,26 @@ describe('canon folds what keyboards produce', () => {
   })
   it('final sigma before a non-letter, as in the pipeline', () => {
     expect(finalSigma('σ1')).toBe('ς1')
+  })
+})
+
+describe('canon: more keyboard output', () => {
+  const logos = parity.find((r) => r.stripAll === 'λογος')!.key // golden λόγος
+  const plain = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '')
+  it('spacing accents typed before a vowel', () => {
+    for (const mark of [0x384, 0xb4, 0x1ffd]) expect(canon('λ' + cp(mark) + plain(logos).slice(1))).toBe(logos)
+  })
+  it('varia and backtick are graves', () => {
+    for (const mark of [0x1fef, 0x60]) expect(canon('λο' + cp(mark) + 'γος')).toBe(nfc('λο' + cp(0x300) + 'γος'))
+  })
+  it('more invisible characters', () => {
+    for (const ch of [0x200e, 0x200f, 0x2060]) expect(canon('α' + cp(ch) + 'β')).toBe('αβ')
+  })
+  it('a breathing and an accent typed before ρ: the breathing on ρ, the accent on the vowel', () => {
+    expect(canon(cp(0x314) + cp(0x301) + 'ρα')).toBe(nfc('ρ' + cp(0x314) + 'α' + cp(0x301)))
+  })
+  it('beta-code leftovers: the capital marker is dropped, mark symbols are marks', () => {
+    expect(canon(logos + '*')).toBe(logos)
+    expect(canon('λο/γος')).toBe(logos)
   })
 })

@@ -131,16 +131,24 @@ off ("Correct — note the accent: λόγου").
 `stem`, `parse` (Parse it only), `blank`. Ending vs. stem is decided by where the first difference
 falls relative to the lemma's stem for that block.
 
-Refinements after the code review of 2026-10-19 (implemented in `app/src/lib/check.ts`):
-- An answer that is exactly **another form of the same word** is wrong in every mode, and the
+Refinements after the code reviews of 2026-10-19/20 (implemented in `app/src/lib/check.ts`):
+- An answer that is exactly **another form of the same word**, among the forms being drilled (the
+  dual counts only when it is drilled), is wrong in strict and ignore-accents mode, and the
   feedback names that form. (Otherwise ignore-accents would accept, say, the present for a liquid
-  future that differs from it only in its accent.)
+  future that differs from it only in its accent.) Lenient mode, which compares letters only,
+  accepts it and mentions the other form.
 - **Iota written on the line** (ωι for ῳ) is accepted with a note in ignore-accents and lenient;
   strict requires the subscript.
 - **Typing aids**: a breathing or accent typed before its vowel moves onto it; marks may be typed
-  in any order; other code points for the same marks, compatibility letters and invisible
-  characters are folded; unknown marks are ignored.
-- Every wrong answer reports all its errors (`errors`), the main one first.
+  in any order; spacing accents and breathings, apostrophes used for a breathing, other code points
+  for the same marks, compatibility letters, invisible characters and left-over beta-code symbols
+  are folded; unknown marks are ignored.
+- Every wrong answer lists its **errors**: a letter error (augment, stem or ending) if the letters
+  differ, then any breathing, subscript or accent error the mode counts. Differences the mode
+  forgives are listed as notes.
+- **Augment errors** cover a missing, wrong or misplaced augment, including in compounds (an
+  unaugmented compound, or the augment put before the preverb), and the imperfect typed for the
+  present. Slips inside a preverb or in the ending are stem or ending errors.
 
 ## 7. Typing Greek
 

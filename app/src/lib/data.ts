@@ -29,7 +29,7 @@ export interface Scope {
 
 /** Everything checkAnswer needs to explain a wrong answer to one cell of one lemma. */
 export type CheckContext = Required<Pick<CheckOptions, 'stemLength' | 'pastTense' | 'otherForms'>> &
-  Pick<CheckOptions, 'augmentAt'>
+  Pick<CheckOptions, 'augmentAt' | 'augmentedTwins' | 'lemma'>
 
 export interface Paradigms {
   lemmas: Lemma[]
@@ -39,7 +39,8 @@ export interface Paradigms {
   parsesOf(lemma: Lemma, form: string): Cell[]
   blocks(lemma: Lemma): string[]
   cellsInScope(lemma: Lemma, scope: Scope): Cell[]
-  checkContext(lemma: Lemma, cellKey: string): CheckContext
+  /** `scope.dual`: whether dual forms are being drilled (they count as "other forms" only then). */
+  checkContext(lemma: Lemma, cellKey: string, scope?: Pick<Scope, 'dual'>): CheckContext
 }
 
 export function lemmaRef(lemma: Lemma): LemmaRef {
@@ -63,28 +64,26 @@ function numberOf(cell: Cell): GNumber | undefined {
   return cell.number
 }
 
-// Infinitives that share a stem, so the stem of one infinitive can be measured against another.
-const INFINITIVE_STEMS = [
-  ['pres.act', 'pres.mp', 'pres.mid'],
-  ['fut.act', 'fut.mid'],
-  ['aor.act', 'aor.mid'],
-  ['fut.pass', 'aor.pass'],
-  ['perf.act', 'perf.mp'],
-]
-
 function commonPrefixLength(a: string, b: string): number {
   let n = 0
   while (n < a.length && n < b.length && a[n] === b[n]) n++
   return n
 }
 
+/** The accent-free letters every form shares at the start. */
+function sharedStart(forms: string[]): string {
+  const words = forms.map(stripAll)
+  return words.length ? words[0].slice(0, stemLength(forms)) : ''
+}
+
 /**
  * Stem letters for deciding "wrong ending" vs "wrong stem". Nominals: the oblique cases without
  * the dative plural (3rd-declension nominative singular and dative plural fuse stem and ending).
  * Finite verbs: the indicative cells of the same tense and voice (an aorist stem must not be
- * measured against the unaugmented infinitive). Infinitives: the infinitives sharing their stem.
+ * measured against the unaugmented infinitive). Infinitives: that indicative stem without its
+ * augment.
  */
-function stemFor(lemma: Lemma, cellKey: string): number {
+function stemFor(lemma: Lemma, cellKey: string, augmentAt: number): number {
   const cells = lemma.cells as Cell[]
   if (lemma.pos !== 'verb') {
     const oblique = cells.filter(
@@ -93,28 +92,67 @@ function stemFor(lemma: Lemma, cellKey: string): number {
     return stemLength(oblique.flatMap((c) => c.forms))
   }
   const [tense, group, mood] = cellKey.split('.')
+  const indicative = cells.filter((c) => c.key.startsWith(`${tense}.${group}.ind.`)).flatMap((c) => c.forms)
+  const past = tense === 'impf' || tense === 'aor'
   if (mood === 'ind') {
-    const forms = cells.filter((c) => c.key.startsWith(`${tense}.${group}.ind.`)).flatMap((c) => c.forms)
-    const n = stemLength(forms)
+    const n = stemLength(indicative)
     // Alternate augments (εὗρον / ηὗρον) disagree in the first letter: measure the stem after it.
-    if (n < 2 && (tense === 'impf' || tense === 'aor')) return 1 + stemLength(forms.map((f) => stripAll(f).slice(1)))
+    if (n < 2 && past) return 1 + stemLength(indicative.map((f) => stripAll(f).slice(1)))
     return n
   }
-  const partners = INFINITIVE_STEMS.find((g) => g.includes(`${tense}.${group}`)) ?? [`${tense}.${group}`]
-  const forms = cells.filter((c) => partners.some((b) => c.key === `${b}.inf`)).flatMap((c) => c.forms)
-  if (forms.length > 1) return stemLength(forms)
-  return Math.max(0, stripAll(forms[0] ?? '').length - 4) // a lone infinitive: its ending is about 4 letters
+  const infinitive = stripAll(cells.find((c) => c.key === cellKey)?.forms[0] ?? '')
+  const stem = sharedStart(indicative)
+  const candidates = [stem]
+  if (past) {
+    candidates.push(stem.slice(1)) // syllabic augment dropped
+    candidates.push(infinitive[0] + stem.slice(1)) // temporal augment: the first vowel differs
+    candidates.push(stem.slice(0, augmentAt) + stem.slice(augmentAt + 1)) // augment after a preverb
+  }
+  const fits = candidates.filter((c) => c.length > 1 && infinitive.startsWith(c)).map((c) => c.length)
+  const fromLemma = commonPrefixLength(infinitive, stripAll(lemma.lemma))
+  const best = Math.max(0, ...fits, fits.length ? 0 : fromLemma)
+  return best || Math.max(0, infinitive.length - 4) // nothing to measure against: endings run about 4 letters
 }
 
-/** Where a verb's augment goes: 0, or after a compound's preverb (from the verb's own past forms). */
+// Preverbs as written in the present and before the augment (accent-free), for compound verbs:
+// ἀπο-κτείνω / ἀπ-έ-κτεινον, συμ-βαίνω / συν-έ-βαινον. Longer forms first.
+const PREVERBS: [string[], string[]][] = [
+  [['αμφι', 'αμφ'], ['αμφ']],
+  [['αντι', 'αντ', 'ανθ'], ['αντ', 'ανθ']],
+  [['ανα', 'αν'], ['αν']],
+  [['απο', 'απ', 'αφ'], ['απ', 'αφ']],
+  [['δια', 'δι'], ['δι']],
+  [['εισ'], ['εισ']],
+  [['εκ', 'εξ'], ['εξ']],
+  [['επι', 'επ', 'εφ'], ['επ', 'εφ']],
+  [['εν', 'εμ', 'εγ'], ['εν']],
+  [['κατα', 'κατ', 'καθ'], ['κατ', 'καθ']],
+  [['μετα', 'μετ', 'μεθ'], ['μετ', 'μεθ']],
+  [['παρα', 'παρ'], ['παρ']],
+  [['περι'], ['περι']],
+  [['προσ'], ['προσ']],
+  [['προ'], ['προ', 'πρου']],
+  [['συν', 'συμ', 'συγ', 'συλ', 'συσ', 'συ'], ['συν']],
+  [['υπερ'], ['υπερ']],
+  [['υπο', 'υπ', 'υφ'], ['υπ', 'υφ']],
+]
+
+/**
+ * Where a verb's augment goes: after the preverb of a compound, else at the start. A preverb only
+ * counts if every past form of the verb keeps it in front (so διώκω, ἐδίωκον is not δι-ώκω).
+ */
 function augmentPosition(lemma: Lemma): number {
   const past = (lemma.cells as Cell[])
     .filter((c) => /^(impf|aor)\.[a-z]+\.ind\.1\.sg$/.test(c.key))
-    .flatMap((c) => c.forms)
+    .flatMap((c) => c.forms.map(stripAll))
   if (!past.length) return 0
-  const lemmaLetters = stripAll(lemma.lemma)
-  const shared = Math.min(...past.map((f) => commonPrefixLength(stripAll(f), lemmaLetters)))
-  return shared >= 2 ? shared : 0
+  const letters = stripAll(lemma.lemma)
+  for (const [inPresent, beforeAugment] of PREVERBS) {
+    if (!inPresent.some((p) => letters.startsWith(p) && letters.length > p.length + 1)) continue
+    const kept = beforeAugment.find((b) => past.every((f) => f.startsWith(b)))
+    if (kept) return kept.length
+  }
+  return 0
 }
 
 export function makeParadigms(files: ParadigmFile[]): Paradigms {
@@ -134,13 +172,20 @@ export function makeParadigms(files: ParadigmFile[]): Paradigms {
     blocks: (lemma) => [
       ...new Set((lemma.cells as Cell[]).map(blockOf).filter((b): b is string => b !== null)),
     ],
-    checkContext: (lemma, cellKey) => {
-      const [tense, , mood] = cellKey.split('.')
+    checkContext: (lemma, cellKey, scope = {}) => {
+      const [tense, group, mood, ...rest] = cellKey.split('.')
+      const verb = lemma.pos === 'verb'
+      const augmentAt = verb ? augmentPosition(lemma) : 0
+      const twin = tense === 'pres' && mood === 'ind' ? [`impf.${group}.ind`, ...rest].join('.') : null
       return {
-        stemLength: stemFor(lemma, cellKey),
-        pastTense: lemma.pos === 'verb' && (tense === 'impf' || tense === 'aor') && mood === 'ind',
-        augmentAt: lemma.pos === 'verb' ? augmentPosition(lemma) : undefined,
-        otherForms: (lemma.cells as Cell[]).filter((c) => c.key !== cellKey).map((c) => ({ cell: c.key, forms: c.forms })),
+        stemLength: stemFor(lemma, cellKey, augmentAt),
+        pastTense: verb && (tense === 'impf' || tense === 'aor') && mood === 'ind',
+        augmentAt: verb ? augmentAt : undefined,
+        augmentedTwins: twin ? (cellsByKey.get(lemma)?.get(twin)?.forms ?? []) : [],
+        lemma: lemma.lemma,
+        otherForms: (lemma.cells as Cell[])
+          .filter((c) => c.key !== cellKey && (scope.dual || numberOf(c) !== 'du'))
+          .map((c) => ({ cell: c.key, forms: c.forms })),
       }
     },
     cellsInScope: (lemma, scope) =>

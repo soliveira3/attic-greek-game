@@ -233,7 +233,7 @@ describe('M1/M2: answers with marks in unusual places or order', () => {
         }
       }
     }
-  })
+  }, 60_000) // every golden form × 6 corruptions × 3 modes: slow under coverage
 })
 
 describe('M3: another form of the same word', () => {

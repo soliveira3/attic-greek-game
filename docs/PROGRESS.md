@@ -12,7 +12,9 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 3 — core library (see docs/plans/phase-3.md).
+Phase 3 — core library: normalize, betacode, features, data, check done (lib coverage 100% lines,
+96% branches); waiting on the greek-checker review of check.ts. Phase 4 plan drafted in
+docs/plans/phase-4.md.
 
 ## Waiting on the user
 (nothing)
@@ -66,6 +68,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-19 — Phase 3: lib/ normalize (parity with the pipeline on every golden form), betacode
+  (live typing), features (keys, labels), data (load/query), check (modes, error kinds, diff,
+  Parse it); every golden form passes in all modes.
 - 2026-10-19 — Phase 2 done: all 24 golden files verified (user decision); golden tests active.
 - 2026-10-19 — Phase 2: user decisions applied; golden models δίκαιος/σώφρων replaced by Smyth's
   ἄξιος/εὐδαίμων; golden set compared with Smyth via Perseus (pipeline/smyth.py,

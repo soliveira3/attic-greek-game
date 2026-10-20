@@ -4,6 +4,7 @@ import { type Page, href, useRoute } from './app/router'
 import { TypingProvider } from './components/typing'
 import type { Paradigms } from './lib/data'
 import type { Store } from './lib/storage'
+import { FillTable } from './pages/FillTable'
 import { Home, MODES } from './pages/Home'
 import { NotFound } from './pages/NotFound'
 import { NotesPage } from './pages/NotesPage'
@@ -32,6 +33,9 @@ function Screen() {
       break
     case 'parse':
       page = <ParseIt />
+      break
+    case 'fill':
+      page = <FillTable />
       break
     case 'settings':
       page = <SettingsPage />

@@ -395,3 +395,99 @@ mark {
 .tally {
   margin-top: 1rem;
 }
+
+.choice.inline {
+  display: inline-flex;
+  margin-right: 1rem;
+}
+
+.difficulty {
+  padding: 0.4rem 0.75rem;
+}
+
+.stage h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.paradigm {
+  border-collapse: collapse;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.paradigm caption {
+  text-align: left;
+  font-weight: 700;
+  padding: 0.25rem 0;
+}
+
+.paradigm th,
+.paradigm td {
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.4rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.paradigm thead th,
+.paradigm tbody th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.paradigm td.given {
+  font-family: var(--greek-font);
+  font-size: 1.25rem;
+}
+
+.paradigm .greek-input {
+  font-size: 1.2rem;
+  max-width: none;
+}
+
+.paradigm td.right .greek-input {
+  border-color: var(--ok);
+}
+
+.paradigm td.wrong .greek-input {
+  border-color: var(--bad);
+}
+
+.cell-result {
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.cell-result .form {
+  font-size: 1.15rem;
+}
+
+.ok-text {
+  color: var(--ok);
+}
+
+.bad-text {
+  color: var(--bad);
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0.75rem 0.5rem;
+  }
+  .stage {
+    padding: 0.5rem;
+  }
+  .paradigm th,
+  .paradigm td {
+    padding: 0.2rem;
+  }
+  .paradigm .greek-input {
+    font-size: 1.05rem;
+    padding: 0.2rem 0.3rem;
+  }
+}

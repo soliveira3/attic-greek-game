@@ -12,7 +12,7 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md): task 6, Fill the table.
+Phase 4 — game modes (see docs/plans/phase-4.md): task 7, Make it.
 
 ## Waiting on the user
 (nothing)
@@ -79,6 +79,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 task 6: Fill the table (grid per word or tense-voice block, a few / half /
+  all blanks, Tab between blanks, Enter checks and Enter again moves on, each cell marked with
+  its error and the right form highlighted, attempts recorded per cell).
 - 2026-10-20 — Phase 4 task 5: Parse it (button groups with number keys, Enter to check and go on,
   any valid parse accepted, wrong features highlighted, every valid parse listed, attempts
   recorded). @playwright/test added for screenshots and the smoke test.

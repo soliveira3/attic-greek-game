@@ -199,5 +199,18 @@
 ἔχω       perf.mp
 παρέχω    perf.mp
 
+## User decisions (2026-10-19: the user said "continue" after being offered these recommendations)
+# γίγνομαι: DCC lists ἐγενήθην but Smyth treats it as non-Attic; dropped with the future passive built on it
+γίγνομαι  aor.pass
+γίγνομαι  fut.pass
+# older Attic spellings shown before the standard forms; dropped so learners see the textbook forms
+βασιλεύς  nom.pl  βᾰσῐλῆς
+βασιλεύς  voc.pl  βᾰσῐλῆς
+ἱππεύς  nom.pl  ῐ̔ππῆς
+ἱππεύς  voc.pl  ῐ̔ππῆς
+πόλις  nom.du  πόλη
+πόλις  acc.du  πόλη
+πόλις  voc.du  πόλη
+
 # Morpheus disagreements that were reviewed and kept are listed, with reasons, in
 # data/morpheus_reviewed.txt (checked by a test).

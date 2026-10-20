@@ -71,11 +71,11 @@
         {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["πόλει"]},
         {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["πόλῐν"]},
         {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["πόλῐ"]},
-        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["πόλη", "πόλει"]},
+        {"key": "nom.du", "case": "nom", "number": "du", "forms": ["πόλει"]},
         {"key": "gen.du", "case": "gen", "number": "du", "forms": ["πολέοιν"]},
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["πολέοιν"]},
-        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["πόλη", "πόλει"]},
-        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["πόλη", "πόλει"]},
+        {"key": "acc.du", "case": "acc", "number": "du", "forms": ["πόλει"]},
+        {"key": "voc.du", "case": "voc", "number": "du", "forms": ["πόλει"]},
         {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["πόλεις"]},
         {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["πόλεων"]},
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["πόλεσῐ", "πόλεσῐν"]},
@@ -346,11 +346,11 @@
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["βᾰσῐλέοιν"]},
         {"key": "acc.du", "case": "acc", "number": "du", "forms": ["βᾰσῐλῆ"]},
         {"key": "voc.du", "case": "voc", "number": "du", "forms": ["βᾰσῐλῆ"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["βᾰσῐλῆς", "βᾰσῐλεῖς"]},
+        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["βᾰσῐλεῖς"]},
         {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["βᾰσῐλέων"]},
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["βᾰσῐλεῦσῐ", "βᾰσῐλεῦσῐν"]},
         {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["βᾰσῐλέᾱς"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["βᾰσῐλῆς", "βᾰσῐλεῖς"]}
+        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["βᾰσῐλεῖς"]}
       ]
     },
     {
@@ -2695,11 +2695,11 @@
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["ῐ̔ππέοιν"]},
         {"key": "acc.du", "case": "acc", "number": "du", "forms": ["ῐ̔ππῆ"]},
         {"key": "voc.du", "case": "voc", "number": "du", "forms": ["ῐ̔ππῆ"]},
-        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["ῐ̔ππῆς", "ῐ̔ππεῖς"]},
+        {"key": "nom.pl", "case": "nom", "number": "pl", "forms": ["ῐ̔ππεῖς"]},
         {"key": "gen.pl", "case": "gen", "number": "pl", "forms": ["ῐ̔ππέων"]},
         {"key": "dat.pl", "case": "dat", "number": "pl", "forms": ["ῐ̔ππεῦσῐ", "ῐ̔ππεῦσῐν"]},
         {"key": "acc.pl", "case": "acc", "number": "pl", "forms": ["ῐ̔ππέᾱς"]},
-        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["ῐ̔ππῆς", "ῐ̔ππεῖς"]}
+        {"key": "voc.pl", "case": "voc", "number": "pl", "forms": ["ῐ̔ππεῖς"]}
       ]
     },
     {

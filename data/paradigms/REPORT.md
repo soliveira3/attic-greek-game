@@ -178,7 +178,6 @@ Included lemmas by class: `adj-212-alpha` 26, `adj-212-eta` 33, `adj-22` 4, `adj
 - λέγω `fut.pass.ind.2.sg`: λεχθήσῃ / λεχθήσει
 - γίγνομαι `pres.mp.ind.2.sg`: γῐ́γνῃ / γῐ́γνει
 - γίγνομαι `fut.mid.ind.2.sg`: γενήσῃ / γενήσει
-- γίγνομαι `fut.pass.ind.2.sg`: γενηθήσῃ / γενηθήσει
 - ἔχω `pres.mp.ind.2.sg`: ἔχῃ / ἔχει
 - ἔχω `fut.act.ind.1.sg`: ἕξω / σχήσω
 - ἔχω `fut.act.ind.2.sg`: ἕξεις / σχήσεις
@@ -190,16 +189,11 @@ Included lemmas by class: `adj-212-alpha` 26, `adj-212-eta` 33, `adj-22` 4, `adj
 - ἔχω `fut.act.ind.3.pl`: ἕξουσῐ / ἕξουσῐν / σχήσουσῐ / σχήσουσῐν
 - ἔχω `fut.act.inf`: ἕξειν / σχήσειν
 - ἔχω `fut.mid.ind.2.sg`: ἕξῃ / ἕξει
-- πόλις `nom.du`: πόλη / πόλει
-- πόλις `acc.du`: πόλη / πόλει
-- πόλις `voc.du`: πόλη / πόλει
 - λαμβάνω `pres.mp.ind.2.sg`: λᾰμβᾰ́νῃ / λᾰμβᾰ́νει
 - λαμβάνω `fut.mid.ind.2.sg`: λήψῃ / λήψει
 - λαμβάνω `fut.pass.ind.2.sg`: ληφθήσῃ / ληφθήσει
 - φύω `pres.mp.ind.2.sg`: φῠ́ῃ / φῠ́ει
 - φύω `fut.mid.ind.2.sg`: φῡ́σῃ / φῡ́σει
-- βασιλεύς `nom.pl`: βᾰσῐλῆς / βᾰσῐλεῖς
-- βασιλεύς `voc.pl`: βᾰσῐλῆς / βᾰσῐλεῖς
 - βούλομαι `impf.mp.ind.1.sg`: ἐβουλόμην / ἠβουλόμην
 - βούλομαι `impf.mp.ind.2.sg`: ἐβούλου / ἠβούλου
 - βούλομαι `impf.mp.ind.3.sg`: ἐβούλετο / ἠβούλετο
@@ -403,8 +397,6 @@ Included lemmas by class: `adj-212-alpha` 26, `adj-212-eta` 33, `adj-22` 4, `adj
 - τρέπω `pres.mp.ind.2.sg`: τρέπῃ / τρέπει
 - τρέπω `fut.mid.ind.2.sg`: τρέψῃ / τρέψει
 - τρέπω `fut.pass.ind.2.sg`: τραπήσῃ / τραπήσει
-- ἱππεύς `nom.pl`: ῐ̔ππῆς / ῐ̔ππεῖς
-- ἱππεύς `voc.pl`: ῐ̔ππῆς / ῐ̔ππεῖς
 - λείπω `pres.mp.ind.2.sg`: λείπῃ / λείπει
 - λείπω `fut.mid.ind.2.sg`: λείψῃ / λείψει
 - λείπω `fut.pass.ind.2.sg`: λειφθήσῃ / λειφθήσει
@@ -1309,11 +1301,20 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - line 197 `αἰσθάνομαι  fut.pass`: removed 9 cells
 - line 199 `ἔχω       perf.mp`: removed 9 cells
 - line 200 `παρέχω    perf.mp`: removed 9 cells
+- line 204 `γίγνομαι  aor.pass`: removed 9 cells
+- line 205 `γίγνομαι  fut.pass`: removed 9 cells
+- line 207 `βασιλεύς  nom.pl  βᾰσῐλῆς`: removed 1 form
+- line 208 `βασιλεύς  voc.pl  βᾰσῐλῆς`: removed 1 form
+- line 209 `ἱππεύς  nom.pl  ῐ̔ππῆς`: removed 1 form
+- line 210 `ἱππεύς  voc.pl  ῐ̔ππῆς`: removed 1 form
+- line 211 `πόλις  nom.du  πόλη`: removed 1 form
+- line 212 `πόλις  acc.du  πόλη`: removed 1 form
+- line 213 `πόλις  voc.du  πόλη`: removed 1 form
 
 <!-- morpheus:start -->
 ## Morpheus cross-check
 
-Checked 12343 forms of 282 lemmas with libmorpheus v0.3.2 (Linux x86-64 glibc release archive), perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e): 12182 agree, 68 feature mismatches, 80 parsed as another lemma, 13 not recognised.
+Checked 12317 forms of 282 lemmas with libmorpheus v0.3.2 (Linux x86-64 glibc release archive), perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e): 12156 agree, 68 feature mismatches, 80 parsed as another lemma, 13 not recognised.
 
 Morpheus does not know every lemma or alternate, so *not recognised* is weak evidence. A *feature mismatch* (Morpheus knows the lemma but parses the form differently) is the strongest signal.
 

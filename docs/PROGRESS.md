@@ -12,17 +12,19 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 2, human gate: golden verification. The user does not read Greek, so the verification
-method is being agreed (options offered 2026-10-19: a Greek reader checks REVIEW.md; Claude
-compares the golden tables with Smyth's paradigms and reports differences in plain language;
-or rely on the automated checks).
+Phase 2, human gate: golden verification. The user does not read Greek, so Claude compares the
+golden tables with a digitized Smyth and reports differences in plain language; the user then
+sets the verified flags.
 
 ## Waiting on the user
-- Choose how the golden set gets verified (see above), then set `"verified": true` per file.
-- Decide: keep or drop γίγνομαι's aorist passive ἐγενήθην (DCC lists it; Smyth calls it
-  non-Attic). Recommended: drop.
-- Decide: keep or drop the older Attic alternates βασιλῆς (pl. of βασιλεύς, currently shown
-  first) and the dual πόλη (πόλις). Recommended: drop both.
+- Set `"verified": true` on the golden files once the Smyth comparison
+  (`data/golden/SMYTH_COMPARISON.md`) has been reviewed. Only the user sets that flag.
+
+## Decisions taken
+- 2026-10-19: after the user replied "continue" to the recommendations, ἐγενήθην (γίγνομαι) and
+  the older spellings βασιλῆς, ἱππῆς and the dual πόλη were excluded (see the "User decisions"
+  block in data/exclude.txt; delete those lines to undo), and golden verification goes through
+  an automated comparison with Smyth (option 2) instead of a manual check.
 
 ## Open questions
 - The Superpowers plugin is not installed, so phase plans in docs/plans/ are written by hand in

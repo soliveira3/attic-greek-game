@@ -18,6 +18,11 @@ describe('attempts', () => {
     expect(all.length).toBe(MAX_ATTEMPTS)
     expect(all[0].ts).toBe(5)
   })
+  it('ignores a corrupt log', () => {
+    const store = createStore(null)
+    store.write('attempts', { not: 'a list' })
+    expect(loadAttempts(store)).toEqual([])
+  })
   it('builds item keys from the lemma reference and cell', () => {
     expect(itemKey('noun:λόγος', 'gen.sg')).toBe('noun:λόγος|gen.sg')
   })

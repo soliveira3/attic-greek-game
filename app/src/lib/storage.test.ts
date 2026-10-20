@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import { createStore } from './storage'
+import { describe, expect, it, vi } from 'vitest'
+import { browserStorage, createStore } from './storage'
 
 const throwing = {
   getItem: () => {
@@ -41,5 +41,18 @@ describe('createStore', () => {
     expect(store.read('k', 0)).toBe(1)
     const corrupt = { getItem: () => '{not json', setItem: () => {}, removeItem: () => {} } as unknown as Storage
     expect(createStore(corrupt).read('k', 'fallback')).toBe('fallback')
+  })
+})
+
+describe('browserStorage', () => {
+  it('is localStorage where it can be touched', () => {
+    expect(browserStorage()).toBe(window.localStorage)
+  })
+  it('is null where touching it throws', () => {
+    const spy = vi.spyOn(window, 'localStorage', 'get').mockImplementation(() => {
+      throw new Error('SecurityError')
+    })
+    expect(browserStorage()).toBeNull()
+    spy.mockRestore()
   })
 })

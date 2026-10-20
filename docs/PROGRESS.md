@@ -12,7 +12,7 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md): task 4, the Feedback component (and lib/notes.ts).
+Phase 4 — game modes (see docs/plans/phase-4.md): task 5, Parse it.
 
 ## Waiting on the user
 (nothing)
@@ -79,6 +79,8 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 task 4: Feedback (verdict in plain words, highlighted diff, other valid
+  forms, grammar-note link, Next); lib/notes.ts maps class, cell and error kind to a note topic.
 - 2026-10-20 — Phase 4 task 3: app shell (hash router, AppProvider with loading/error states,
   Home, Settings, Notes placeholder, GreekInput converting beta code at the caret, on-screen
   keyboard, light/dark styles, Gentium Plus bundled from @fontsource, OFL).

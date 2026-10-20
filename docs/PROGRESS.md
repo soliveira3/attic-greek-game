@@ -12,11 +12,16 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 6 — grammar notes (docs/plans/phase-6.md): writing the notes; then greek-checker review,
-then the 🧑 approval gate.
+🧑 HUMAN GATES (Phase 6 approval, Phase 7 publishing). Everything else in PLAN.md is done; after
+the gates: push, watch CI go green, check the live site, mark v1 complete.
 
 ## Waiting on the user
-(nothing)
+1. Phase 6 gate: approve the 18 grammar notes in data/grammar/ (shown at #/notes). They passed three
+   greek-checker rounds; the last one reported no remaining issues.
+2. Phase 7 gate: create the GitHub repository, push this repo to it, and enable GitHub Pages with
+   "GitHub Actions" as the source (Settings → Pages). Claude must not create accounts or change
+   repository settings.
+3. Choose a license for the code (data stays CC BY-SA 4.0, as Wiktionary requires).
 
 ## Decisions taken
 - 2026-10-19: after the user replied "continue" to the recommendations, ἐγενήθην (γίγνομαι) and
@@ -87,6 +92,8 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 6: third greek-checker round: one wording point, fixed; no remaining issues.
+  Waiting on the user for the notes approval and the publishing gate.
 - 2026-10-20 — Phase 6: second greek-checker round on the notes addressed (irregular consonant
   stems, lenient mode and the other-form rule, irregular futures, Attic reduplication, accent of
   contracted forms, remaining Smyth-like wording).

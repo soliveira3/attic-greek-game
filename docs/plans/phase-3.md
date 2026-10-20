@@ -30,7 +30,7 @@ single letters and marks used to exercise the converters.
    features, and scope filtering (dual off by default).
 
 ## Acceptance
-- [ ] ≥95% coverage on `lib/`
-- [ ] Every golden form passes `check()` under all three strictness modes
-- [ ] Ambiguous forms (e.g. same nominative and accusative) accept every valid parse
-- [ ] greek-checker run on `check.ts` (CLAUDE.md), findings addressed
+- [x] ≥95% coverage on `lib/` (100% lines, ~98% branches; enforced by scripts/check.sh)
+- [x] Every golden form passes `check()` under all three strictness modes (every stored form, in fact)
+- [x] Ambiguous forms (e.g. same nominative and accusative) accept every valid parse
+- [x] greek-checker run on `check.ts` (three rounds), findings addressed or listed in PROGRESS

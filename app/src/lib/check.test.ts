@@ -481,3 +481,34 @@ describe('a slip in the ending of a very short form is not an augment error', ()
     expect(checkAnswer(answer, forms, 'lenient', ctx('verb:οἴομαι', 'impf.mp.ind.2.sg')).errorKind).toBe('ending')
   })
 })
+
+// ---------------------------------------------------------------- third review
+
+describe('the present typed for the imperfect is an augment error', () => {
+  const lego = data.lemma('verb:λέγω')!
+  it.each(['impf.act.ind.1.sg', 'impf.act.ind.3.sg', 'impf.mp.ind.3.pl'])('%s', (cell) => {
+    const presCell = cell.replace('impf', 'pres')
+    const r = checkAnswer(data.forms(lego, presCell)[0], data.forms(lego, cell), 'ignore-accents', ctx('verb:λέγω', cell))
+    expect([r.correct, r.errorKind]).toEqual([false, 'augment'])
+  })
+  it('not where the augment is invisible (ἥκω): there the ending is what is wrong', () => {
+    const heko = data.lemma('verb:ἥκω')!
+    const r = checkAnswer(data.forms(heko, 'impf.act.ind.1.sg')[0], data.forms(heko, 'pres.act.ind.1.sg'), 'ignore-accents', ctx('verb:ἥκω', 'pres.act.ind.1.sg'))
+    expect(r.errorKind).toBe('ending')
+  })
+})
+
+describe('a rejected other form lists only what the mode counts', () => {
+  it('ignore-accents: another case of the same noun', () => {
+    const theos = data.lemma('noun:θεός')!
+    const r = checkAnswer(data.forms(theos, 'dat.pl')[0], data.forms(theos, 'nom.sg'), 'ignore-accents', ctx('noun:θεός', 'nom.sg'))
+    expect([r.correct, r.errors]).toEqual([false, ['ending']])
+  })
+})
+
+describe('trailing punctuation is ignored', () => {
+  it.each(['.', '. ', ',', ';', String.fromCodePoint(0x387), String.fromCodePoint(0x37e)])('%j', (p) => {
+    const form = data.forms(logos, 'nom.sg')[0]
+    expect(checkAnswer(form + p, [form], 'strict').exact).toBe(true)
+  })
+})

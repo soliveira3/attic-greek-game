@@ -176,7 +176,13 @@ export function makeParadigms(files: ParadigmFile[]): Paradigms {
       const [tense, group, mood, ...rest] = cellKey.split('.')
       const verb = lemma.pos === 'verb'
       const augmentAt = verb ? augmentPosition(lemma) : 0
-      const twin = tense === 'pres' && mood === 'ind' ? [`impf.${group}.ind`, ...rest].join('.') : null
+      // The same person in the other of present / imperfect: typing it is an augment error, unless
+      // the augment is invisible (ἥκω, ἧκον: the imperfect keeps the present stem).
+      const presentStem = stripAll(lemma.lemma).replace(/(ω|ομαι)$/, '')
+      const impfFirst = stripAll(cellsByKey.get(lemma)?.get(`impf.${group}.ind.1.sg`)?.forms[0] ?? '')
+      const visible = verb && presentStem.length > 0 && !impfFirst.startsWith(presentStem)
+      const other = tense === 'pres' ? 'impf' : tense === 'impf' ? 'pres' : null
+      const twin = visible && other && mood === 'ind' ? [`${other}.${group}.ind`, ...rest].join('.') : null
       return {
         stemLength: stemFor(lemma, cellKey, augmentAt),
         pastTense: verb && (tense === 'impf' || tense === 'aor') && mood === 'ind',

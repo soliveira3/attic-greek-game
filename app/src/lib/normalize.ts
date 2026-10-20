@@ -130,7 +130,8 @@ export function canon(s: string): string {
   const text = clusters
     .map((c) => c.base + [...new Set(c.marks)].sort((a, b) => MARK_ORDER.indexOf(a) - MARK_ORDER.indexOf(b)).join(''))
     .join('')
-  return key(finalSigma(nfc(text))).trim()
+  // trailing punctuation (a full stop inserted by a phone keyboard, a comma, ano teleia, ;)
+  return key(finalSigma(nfc(text.replace(/[\p{P}\s]+$/u, '')))).trim()
 }
 
 /**

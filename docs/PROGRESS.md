@@ -5,16 +5,14 @@
 | 0 — Scaffold | done |
 | 1 — Spec 🧑 | done (approved 2026-10-19) |
 | 2 — Data pipeline 🧑 | done (golden set verified by the user 2026-10-19) |
-| 3 — Core library | in progress |
-| 4 — Game modes | not started |
+| 3 — Core library | done (2026-10-20) |
+| 4 — Game modes | in progress |
 | 5 — Spaced repetition & progress | not started |
 | 6 — Grammar notes 🧑 | not started |
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 3 — core library: done apart from the greek-checker verification of the fixes to its
-review (6 majors, 10 minors addressed; SPEC §6 refined, see "Decisions taken"). Phase 4 plan
-drafted in docs/plans/phase-4.md.
+Phase 4 — game modes (see docs/plans/phase-4.md), starting with task 1 (storage, settings, attempts).
 
 ## Waiting on the user
 (nothing)
@@ -67,11 +65,23 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 - Contract verbs, εἰμί, μι-verbs, irregular nouns, comparatives, pronominal adjectives and 3-1-3
   adjectives are out of scope for now.
 
+## Known answer-checking label edge cases (from the third check.ts review; labels only, verdicts right)
+- An augment carried into a non-past compound form (ἀπεκτεῖναι for ἀποκτεῖναι) is labelled stem or
+  ending, not augment.
+- A few compound aorist infinitive stems are measured short (διενεγκεῖν, παρασχεῖν, ἀποθανεῖν), so
+  some stem slips there are labelled ending.
+- A breathing typed before a consonant moves to the next vowel; any vowel added in front of a
+  non-past form is labelled augment.
+- When ignore-accents rejects another drilled form, the diff also highlights its accent.
+
 ## v2 backlog additions
 - Periphrastic perfect middle/passive 3rd plural for consonant stems.
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 3 done: third check.ts review addressed (present typed for the imperfect is an
+  augment error, not where the augment is invisible; rejected other forms list counted errors;
+  trailing punctuation ignored). Remaining label edge cases listed under "Known ...".
 - 2026-10-20 — Phase 3: second check.ts review addressed (other forms limited to the drill scope and
   not enforced in lenient; augment position from preverbs verified by the data; preverb slips are
   stem errors; infinitive stems; errors vs notes; two-level diff; more keyboard folding).

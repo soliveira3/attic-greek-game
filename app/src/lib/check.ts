@@ -67,7 +67,7 @@ export interface CheckOptions {
   augmentAt?: number
   /** The lemma (present form): tells an unaugmented compound from an error in its preverb. */
   lemma?: string
-  /** Present prompts: the matching imperfect, so typing it counts as an augment error. */
+  /** Present or imperfect prompts: the same person in the other tense; typing it is an augment error. */
   augmentedTwins?: string[]
   /** Forms of the lemma's other cells being drilled (see `confusedWith`). */
   otherForms?: { cell: string; forms: string[] }[]
@@ -289,8 +289,12 @@ export function checkAnswer(
   let errors: ErrorKind[] = []
   let notes: ErrorKind[] = []
   if (accepted) notes = exact ? [] : kinds
-  else if (rejectedAsOther) errors = kinds
-  else {
+  else if (rejectedAsOther) {
+    // another drilled form: its counted differences, or (if the mode forgives them all) all of them
+    const counted = kinds.filter((k) => COUNTED[strictness].has(k))
+    errors = counted.length ? counted : kinds
+    notes = counted.length ? kinds.filter((k) => !COUNTED[strictness].has(k)) : []
+  } else {
     errors = kinds.filter((k) => COUNTED[strictness].has(k))
     notes = kinds.filter((k) => !COUNTED[strictness].has(k))
   }

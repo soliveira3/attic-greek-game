@@ -27,7 +27,7 @@ if [ -d "$ROOT/pipeline/tests" ]; then
 fi
 
 if [ -f "$ROOT/app/package.json" ] && [ -d "$ROOT/app/node_modules" ]; then
-  if ! (cd "$ROOT/app" && npm test --silent -- --run) >>"$LOG" 2>&1; then
+  if ! (cd "$ROOT/app" && npm run coverage --silent) >>"$LOG" 2>&1; then
     FAILED+=("app (vitest)")
   fi
   if ! (cd "$ROOT/app" && npx --no-install tsc -b) >>"$LOG" 2>&1; then

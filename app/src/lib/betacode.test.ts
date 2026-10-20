@@ -37,3 +37,9 @@ describe('betaToGreek', () => {
     expect(betaToGreek('1 )a')).toBe('1 )α')
   })
 })
+
+describe('greekToBeta', () => {
+  it('leaves non-Greek characters alone', () => {
+    expect(greekToBeta('1 2')).toBe('1 2')
+  })
+})

@@ -104,3 +104,14 @@ describe('feature keys (the unit of review)', () => {
     expect(parseFeatureKey(k)).toEqual({ cls: 'decl1-eta', cell: 'gen.pl' })
   })
 })
+
+describe('cell keys, edge cases', () => {
+  it('rejects extra or unknown parts', () => {
+    expect(() => parseCellKey('pres.act.inf.1')).toThrow()
+    expect(() => parseCellKey('gen.sg.x')).toThrow()
+    expect(() => blockLabel('pres.xx')).toThrow()
+  })
+  it('compares a key with itself as equal', () => {
+    expect(compareCellKeys('gen.pl.f', 'gen.pl.f')).toBe(0)
+  })
+})

@@ -33,6 +33,12 @@ if [ -f "$ROOT/app/package.json" ] && [ -d "$ROOT/app/node_modules" ]; then
   if ! (cd "$ROOT/app" && npx --no-install tsc -b) >>"$LOG" 2>&1; then
     FAILED+=("app (typecheck)")
   fi
+  # Browser smoke test on the built site (needs `npx playwright install chromium`; SKIP_E2E=1 skips).
+  if [ "${SKIP_E2E:-}" != 1 ] && [ -d "$ROOT/app/node_modules/@playwright/test" ]; then
+    if ! (cd "$ROOT/app" && npx --no-install playwright test --reporter=line) >>"$LOG" 2>&1; then
+      FAILED+=("app (playwright)")
+    fi
+  fi
 fi
 
 if [ ${#FAILED[@]} -eq 0 ]; then

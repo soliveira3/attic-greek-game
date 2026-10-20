@@ -12,7 +12,7 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md): task 9, Playwright smoke test.
+Phase 4 — game modes (see docs/plans/phase-4.md): task 10, greek-checker on the endings and the modes.
 
 ## Waiting on the user
 (nothing)
@@ -39,6 +39,8 @@ Phase 4 — game modes (see docs/plans/phase-4.md): task 9, Playwright smoke tes
 - Python 3.14 venv in pipeline/.venv; requirements: pytest, jsonschema, libmorpheus.
 - `scripts/check.sh` type-checks with `tsc -b` (the template's root tsconfig has `files: []`,
   so `tsc --noEmit -p .` checked nothing).
+- Playwright: `cd app && npx playwright install chromium` once; `npm run e2e` builds and serves
+  the site on port 4173 and runs the smoke test.
 - Raw inputs live in git-ignored `pipeline/raw/`: kaikki dump (404 MB), DCC page, Morpheus
   (`pipeline/fetch_morpheus.sh`). Tests that need them skip when absent. See docs/DATA_SOURCES.md.
 
@@ -79,6 +81,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 task 9: Playwright smoke test (app/e2e/smoke.spec.ts, desktop and phone)
+  plays a round of each mode with the keyboard on the built site; part of scripts/check.sh
+  (SKIP_E2E=1 skips it; needs `npx playwright install chromium` once).
 - 2026-10-20 — Phase 4 task 8: Endings sprint (sets in scope grouped by part of speech, stem
   shown, 60-second clock, last answer shown with its endings, best score per set saved, Enter to
   play again).

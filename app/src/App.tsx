@@ -6,6 +6,7 @@ import type { Paradigms } from './lib/data'
 import type { Store } from './lib/storage'
 import { FillTable } from './pages/FillTable'
 import { Home, MODES } from './pages/Home'
+import { MakeIt } from './pages/MakeIt'
 import { NotFound } from './pages/NotFound'
 import { NotesPage } from './pages/NotesPage'
 import { ParseIt } from './pages/ParseIt'
@@ -16,14 +17,14 @@ const NAV: { page: Page; name: string }[] = [...MODES, { page: 'notes', name: 'N
 function Screen() {
   const route = useRoute()
   const main = useRef<HTMLElement>(null)
-  const first = useRef(true)
-  // Move focus to the new page's heading so screen readers and keyboard users start there.
+  const shown = useRef(`${route.page}/${route.topic ?? ''}`)
+  // On a new page, focus its heading so screen readers and keyboard users start there, unless the
+  // page has already focused what it is about (a mode focuses its answer box).
   useEffect(() => {
-    if (first.current) {
-      first.current = false
-      return
-    }
-    main.current?.querySelector<HTMLElement>('h1')?.focus()
+    const now = `${route.page}/${route.topic ?? ''}`
+    if (shown.current === now) return
+    shown.current = now
+    if (!main.current?.contains(document.activeElement)) main.current?.querySelector<HTMLElement>('h1')?.focus()
   }, [route.page, route.topic])
 
   let page
@@ -36,6 +37,9 @@ function Screen() {
       break
     case 'fill':
       page = <FillTable />
+      break
+    case 'make':
+      page = <MakeIt />
       break
     case 'settings':
       page = <SettingsPage />

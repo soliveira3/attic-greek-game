@@ -491,3 +491,20 @@ mark {
     padding: 0.2rem 0.3rem;
   }
 }
+
+.target {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+button.check {
+  margin-left: 0.5rem;
+  vertical-align: top;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 480px) {
+  button.check {
+    margin: 0.5rem 0 0;
+  }
+}

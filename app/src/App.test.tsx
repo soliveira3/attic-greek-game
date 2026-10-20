@@ -35,6 +35,8 @@ describe('App', () => {
       'aria-current',
       'page',
     )
+    go('#/make')
+    expect(screen.getByRole('textbox', { name: /your answer/i })).toHaveFocus()
     go('#/notes/augment')
     expect(screen.getByRole('heading', { level: 1, name: /grammar notes/i })).toBeInTheDocument()
     go('#/nowhere')

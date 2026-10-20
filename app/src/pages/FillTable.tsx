@@ -96,7 +96,7 @@ export function FillTable({ rng = Math.random }: { rng?: Rng }) {
   const firstWrong = results ? Object.entries(results).find(([, r]) => !r.correct) : undefined
   const topic = firstWrong ? topicFor(table.lemma.class, firstWrong[0], firstWrong[1].errorKind) : classTopic(table.lemma.class)
   const right = results ? Object.values(results).filter((r) => r.correct).length : 0
-  let firstBlank = true
+  const firstBlank = layout.sections.flatMap((s) => s.rows.flatMap((r) => r.keys)).find((k) => k && table.blanks.has(k))
 
   return (
     <div className="page fill-table">
@@ -151,12 +151,10 @@ export function FillTable({ rng = Math.random }: { rng?: Rng }) {
                       )
                     }
                     const r = results?.[key]
-                    const isFirst = firstBlank
-                    firstBlank = false
                     return (
                       <td key={key} className={r ? (r.correct ? 'right' : 'wrong') : 'blank'}>
                         <GreekInput
-                          ref={isFirst ? first : undefined}
+                          ref={key === firstBlank ? first : undefined}
                           aria-label={cellLabel(key)}
                           aria-describedby={r ? `result-${key}` : undefined}
                           data-cell={key}

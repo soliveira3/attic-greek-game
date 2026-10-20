@@ -44,10 +44,10 @@ function InlineView({ items, data }: { items: Inline[]; data: Paradigms }) {
   )
 }
 
-function ParadigmTable({ ref, block, data, hint }: { ref: string; block: string | null; data: Paradigms; hint: boolean }) {
+function ParadigmTable({ word, block, data, hint }: { word: string; block: string | null; data: Paradigms; hint: boolean }) {
   const { settings } = useApp()
   const show = useShow()
-  const lemma = data.lemma(ref)!
+  const lemma = data.lemma(word)!
   const sets = useMemo(
     () => sprintSets(goldenModels(), Object.fromEntries(data.lemmasWhere({ pos: ['verb'] }).map((l) => [l.lemma, 'aoristType' in l ? l.aoristType : []]))),
     [data],
@@ -104,7 +104,7 @@ function ParadigmTable({ ref, block, data, hint }: { ref: string; block: string 
   )
 }
 
-function PartsTable({ refs, data }: { refs: string[]; data: Paradigms }) {
+function PartsTable({ words, data }: { words: string[]; data: Paradigms }) {
   const show = useShow()
   return (
     <div className="note-table" tabIndex={0} role="region" aria-label="Table: principal parts">
@@ -120,10 +120,10 @@ function PartsTable({ refs, data }: { refs: string[]; data: Paradigms }) {
           </tr>
         </thead>
         <tbody>
-          {refs.map((ref) => {
-            const lemma = data.lemma(ref)!
+          {words.map((word) => {
+            const lemma = data.lemma(word)!
             return (
-              <tr key={ref}>
+              <tr key={word}>
                 {PRINCIPAL_PARTS.map((keys, i) => {
                   const key = keys.find((k) => data.forms(lemma, k).length)
                   return (
@@ -162,9 +162,9 @@ function BlockView({ block, data, first }: { block: Block; data: Paradigms; firs
         </ul>
       )
     case 'table':
-      return <ParadigmTable ref={block.ref} block={block.block} data={data} hint={first} />
+      return <ParadigmTable word={block.ref} block={block.block} data={data} hint={first} />
     case 'parts':
-      return <PartsTable refs={block.refs} data={data} />
+      return <PartsTable words={block.refs} data={data} />
   }
 }
 

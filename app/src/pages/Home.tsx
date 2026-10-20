@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import { MODES } from '../app/modes'
 import { TypingHint } from '../components/TypingHint'
 import { lemmasInScope } from '../lib/prompts'
 import { reviewQueue } from '../lib/review'
@@ -7,17 +9,12 @@ import { loadSrs } from '../lib/srs'
 
 const STRICTNESS_NAMES = { strict: 'strict', 'ignore-accents': 'ignore accents', lenient: 'lenient' } as const
 
-export const MODES = [
-  { page: 'parse', name: 'Parse it', text: 'Identify a form: its case, number and gender, or its tense, voice, mood, person and number.' },
-  { page: 'fill', name: 'Fill the table', text: 'Complete a paradigm, or one tense and voice of a verb, with some cells left blank.' },
-  { page: 'make', name: 'Make it', text: 'Type the form of a word that the features ask for.' },
-  { page: 'sprint', name: 'Endings sprint', text: 'Sixty seconds of endings for one declension class or one tense and voice.' },
-] as const
 
 export function Home() {
   const { data, settings, store } = useApp()
   const words = lemmasInScope(data, settings).length
-  const queue = reviewQueue(data, settings, loadSrs(store), new Date(), Math.random)
+  const [now] = useState(() => new Date())
+  const queue = reviewQueue(data, settings, loadSrs(store), now, Math.random)
   const due = queue.filter((e) => !e.isNew).length
   return (
     <div className="page home">

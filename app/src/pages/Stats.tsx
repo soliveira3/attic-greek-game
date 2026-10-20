@@ -21,9 +21,9 @@ export function Stats() {
   const [, setVersion] = useState(0)
   const [pending, setPending] = useState<{ name: string; text: string } | null>(null)
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null)
+  const [now] = useState(() => new Date())
 
   const attempts = loadAttempts(store)
-  const now = new Date()
   const accuracy = accuracyByFeature(attempts)
   const right = attempts.filter((a) => a.correct).length
   const played = Object.values(CLASS_FAMILIES)

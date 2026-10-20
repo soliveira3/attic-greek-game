@@ -70,19 +70,28 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
     if (phase.kind === 'play') input.current?.focus()
   }, [phase])
 
+  // the clock: ticks the display, and ends the round with the score so far
+  const scoreNow = useRef(0)
+  useEffect(() => {
+    scoreNow.current = score
+  }, [score])
   useEffect(() => {
     if (phase.kind !== 'play') return
-    const timer = setInterval(() => setNow(Date.now()), 250)
+    const timer = setInterval(() => {
+      const t = Date.now()
+      if (t < phase.endsAt) {
+        setNow(t)
+        return
+      }
+      clearInterval(timer) // once only, even if ticks are queued before the next render
+      const final = scoreNow.current
+      const record = store.read<Record<string, number>>(BEST_KEY, {})
+      const previous = record[phase.set.id] ?? 0
+      if (final > previous) store.write(BEST_KEY, { ...record, [phase.set.id]: final })
+      setPhase({ kind: 'done', set: phase.set, score: final, best: Math.max(final, previous), newBest: final > previous })
+    }, 250)
     return () => clearInterval(timer)
-  }, [phase])
-
-  useEffect(() => {
-    if (phase.kind !== 'play' || now < phase.endsAt) return
-    const record = best()
-    const previous = record[phase.set.id] ?? 0
-    if (score > previous) store.write(BEST_KEY, { ...record, [phase.set.id]: score })
-    setPhase({ kind: 'done', set: phase.set, score, best: Math.max(score, previous), newBest: score > previous })
-  })
+  }, [phase, store])
 
   function answer() {
     if (phase.kind !== 'play') return

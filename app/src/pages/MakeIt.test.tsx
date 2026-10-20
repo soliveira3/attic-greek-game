@@ -39,8 +39,9 @@ describe('MakeIt', () => {
     expect(loadAttempts(store)[0]).toMatchObject({ correct: false, mode: 'make' })
     await userEvent.keyboard('{Enter}')
     expect(screen.queryByText('Not quite')).not.toBeInTheDocument()
-    expect(input).toHaveValue('')
-    expect(input).toHaveFocus()
+    const next = screen.getByRole('textbox', { name: /your answer/i })
+    expect(next).toHaveValue('')
+    expect(next).toHaveFocus()
     expect(`${asked().lemma.id}|${asked().cell}`).not.toBe(`${first.lemma.id}|${first.cell}`)
   })
   it('says when there is nothing to practise', () => {

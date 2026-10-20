@@ -46,8 +46,19 @@ export function localDay(d: Date): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
 }
 
-function toCard({ last_grade: _, ...s }: StoredCard): Card {
-  return { ...s, state: s.state as State, due: new Date(s.due), last_review: s.last_review ? new Date(s.last_review) : undefined }
+function toCard(s: StoredCard): Card {
+  return {
+    due: new Date(s.due),
+    stability: s.stability,
+    difficulty: s.difficulty,
+    elapsed_days: s.elapsed_days,
+    scheduled_days: s.scheduled_days,
+    learning_steps: s.learning_steps,
+    reps: s.reps,
+    lapses: s.lapses,
+    state: s.state as State,
+    last_review: s.last_review ? new Date(s.last_review) : undefined,
+  }
 }
 
 function fromCard(c: Card): StoredCard {

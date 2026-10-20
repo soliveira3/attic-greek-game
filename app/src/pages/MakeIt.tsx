@@ -13,12 +13,14 @@ export function MakeIt({ rng = Math.random }: { rng?: Rng }) {
   const { data, settings, store } = useApp()
   const [prompt, setPrompt] = useState(() => makePrompt(data, settings, rng))
   const [score, setScore] = useState({ right: 0, total: 0 })
+  const [turn, setTurn] = useState(0)
 
   return (
     <div className="page make-it">
       <h1 tabIndex={-1}>Make it</h1>
       {prompt ? (
         <MakeCard
+          key={turn}
           prompt={prompt}
           onAnswer={(r) => {
             answer(
@@ -35,7 +37,10 @@ export function MakeIt({ rng = Math.random }: { rng?: Rng }) {
             )
             setScore((s) => ({ right: s.right + (r.correct ? 1 : 0), total: s.total + 1 }))
           }}
-          onNext={() => setPrompt(makePrompt(data, settings, rng, prompt.itemKey))}
+          onNext={() => {
+            setPrompt(makePrompt(data, settings, rng, prompt.itemKey))
+            setTurn((t) => t + 1)
+          }}
         />
       ) : (
         <EmptyScope />

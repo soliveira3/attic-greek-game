@@ -25,11 +25,10 @@ export function MakeCard({ prompt, onAnswer, onNext }: Props) {
   const [result, setResult] = useState<CheckResult | null>(null)
   const input = useRef<HTMLInputElement>(null)
 
+  // a new prompt mounts a new card (callers give it a key), so only the focus needs setting
   useEffect(() => {
-    setValue('')
-    setResult(null)
     input.current?.focus()
-  }, [prompt])
+  }, [])
 
   function submit() {
     if (result) {

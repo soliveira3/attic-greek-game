@@ -64,6 +64,8 @@
 λέγω  perf.mp.ind.3.pl  λελέγᾰται
 τάττω  perf.mp.ind.3.pl  τετᾰ́γᾰται
 φυλάττω  perf.mp.ind.3.pl  πεφῠλᾰ́κᾰται
+πράττω  perf.mp.ind.3.pl  πεπρᾱ́γᾰται
+πράττω  perf.mp.ind.3.pl  πεπρᾱ́χᾰται
 
 ## Single non-Attic, poetic or crasis alternates
 # syncopated poetic perfects (Attic: -θαμεν, -θατε); Morpheus does not recognise them
@@ -190,13 +192,12 @@
 # later Greek accent; Attic is the recessive vocative, which stays
 ἀδελφός   voc.sg  ᾰ̓δελφέ
 
-## Reviewed and kept although Morpheus disagrees (see REPORT.md, Morpheus section)
-# - perfect active 3rd dual in -ατον: Morpheus lists only the 2nd dual; the forms are identical.
-# - vocative = nominative (θεός, χείρ, πούς) and contracted plural vocatives: Morpheus omits voc.
-# - φῶτα etc.: Morpheus confuses φῶς with φώς 'man'; φάος, νεανίης, πλείων are Morpheus headwords.
-# - λέγω's ἐρῶ / εἴρηκα: suppletive, filed by Morpheus under ἐρῶ.
-# - συμβαίνω: Morpheus fails to map the compound to its lemma.
-# - ἀγγέλλω ἤγγελθε, φέρω ἠνέγκομεν etc.: attested, unknown to Morpheus; ἤνεγκον / διήνεγκον are
-#   both 1st sg. and 3rd pl. (Morpheus lists only the 1st sg.).
-# - ordinals (δεύτερος …) keep their vocatives: regular 2-1-2 adjectives, formally correct.
-# - γίγνομαι ἐγενήθην / γενηθήσομαι: listed by DCC; left for the user's decision (see PROGRESS).
+## Third greek-checker audit (2026-10-19)
+# the future passive is built on an aorist passive that is excluded above
+αἰσθάνομαι  fut.pass
+# simplex perfect middle/passive attested only in compounds; Morpheus parses it as other verbs
+ἔχω       perf.mp
+παρέχω    perf.mp
+
+# Morpheus disagreements that were reviewed and kept are listed, with reasons, in
+# data/morpheus_reviewed.txt (checked by a test).

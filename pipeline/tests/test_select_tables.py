@@ -62,3 +62,13 @@ def test_future_passive_not_built_on_the_aorist_passive_is_dropped():
     sel = select("τέμνω", [aor, fut], {strip_accents(w) for w in ["τέμνω", "τεμῶ", "ἐτμήθην"]})
     assert "aor.pass.ind.1.sg" in sel.cells
     assert "fut.pass.ind.1.sg" not in sel.cells
+
+
+def test_compound_future_passive_matches_its_aorist_despite_the_internal_augment():
+    # Forms copied from διαφθείρω's raw "aorist" and "future" tables in the kaikki dump.
+    from select_tables import select
+
+    aor = _verb_table("aorist", "aor", {"aor.pass.ind.1.sg": ["δῐεφθᾰ́ρην"]})
+    fut = _verb_table("future", "fut", {"fut.pass.ind.1.sg": ["δῐᾰφθᾰρήσομαι"]})
+    sel = select("διαφθείρω", [aor, fut], {strip_accents("δῐεφθᾰ́ρην")})
+    assert sel.cells["fut.pass.ind.1.sg"] == ["δῐᾰφθᾰρήσομαι"]

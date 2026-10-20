@@ -1,0 +1,16 @@
+# Morpheus disagreements reviewed and kept (format: lemma or *, cell-key glob, optional form, # reason).
+# Every entry of data/paradigms/morpheus.json must match a line here unless the form was excluded
+# in data/exclude.txt; pipeline/tests/test_paradigms.py enforces this. Reviewed 2026-10-19.
+
+*         perf.act.ind.3.du        # Morpheus parses the perfect -ατον dual only as 2nd person; 2nd and 3rd dual are identical
+θεός      voc.*                    # vocative identical to the nominative; Morpheus lists only the nominative
+πούς      voc.*                    # vocative identical to the nominative; Morpheus lists only the nominative
+χείρ      voc.*                    # vocative identical to the nominative; Morpheus lists only the nominative
+φῶς       *                        # Morpheus files φῶς under φάος and confuses φῶτα with φώς 'man'; its dual is unknown to it
+νεανίας   *                        # Morpheus uses the Ionic headword νεανίης for this lemma
+λέγω      fut.act.*                # suppletive future ἐρῶ, which Morpheus files under ἐρῶ
+λέγω      perf.act.*               # suppletive perfect εἴρηκα, which Morpheus files under ἐρῶ / εἴρω
+συμβαίνω  *                        # Morpheus fails to map this compound to its lemma
+φέρω      aor.act.*                # 2nd aorist ἤνεγκον (a DCC principal part): unknown to Morpheus, and its 3rd pl. = 1st sg.
+διαφέρω   aor.act.*                # as φέρω: 2nd aorist διήνεγκον
+ἀγγέλλω   perf.mp.*                # regular Attic perfect middle/passive forms unknown to Morpheus

@@ -376,11 +376,14 @@ def test_future_principal_part_does_not_select_a_present_table(index, articles):
     assert c["pres.mp.ind.1.sg"] != c["fut.mid.ind.1.sg"]
 
 
-def test_perfect_missing_from_dcc_is_not_treated_as_nonexistent(index, articles):
-    # DCC gives τρέφω no perfect active and writes ἐλαύνω's as "-ελήλακα" (compound only);
-    # neither means the simplex has no perfect active.
+def test_perfect_active_needs_its_own_principal_part_when_dcc_gives_the_middle(index, articles):
+    # DCC gives τρέφω only τέθραμμαι and ἐλαύνω's perfect active only as "-ελήλακα" (compound
+    # only): the perfect active found next to the middle part is not trusted (third audit).
     for word in ("τρέφω", "ἐλαύνω"):
-        assert "perf.act.ind.1.sg" in cells(build(index, articles, word, "verb")), word
+        c = cells(build(index, articles, word, "verb"))
+        assert not [k for k in c if k.startswith("perf.act")], word
+        assert "perf.mp.ind.1.sg" in c, word
+    assert "perf.act.ind.1.sg" in cells(build(index, articles, "λύω", "verb"))
 
 
 def test_no_future_passive_without_an_aorist_passive(index, articles):

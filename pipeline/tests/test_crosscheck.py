@@ -108,3 +108,33 @@ def test_morpheus_parse_without_gender_does_not_fail_gender_check():
     cell = {"key": "gen.sg.f", "case": "gen", "number": "sg", "gender": "f", "forms": ["ᾰ̓γᾰθῆς"]}
     genderless = [parse(lemma="a)gaqo/s", pos="adjective", genders=())]
     assert check_form("ᾰ̓γᾰθῆς", cell, lemma, lambda b: genderless)[0] == "ok"
+
+
+def test_disagreements_lists_only_non_ok_results_in_stable_order():
+    from crosscheck_morpheus import disagreements
+
+    results = [
+        ("λόγος", "gen.sg", "λόγου", "ok", ""),
+        ("λόγος", "voc.sg", "λόγε", "features", "noun nom sg m"),
+        ("λόγος", "dat.sg", "λόγῳ", "unknown", ""),
+    ]
+    assert disagreements(results) == [
+        {"lemma": "λόγος", "key": "dat.sg", "form": "λόγῳ", "kind": "unknown", "detail": ""},
+        {"lemma": "λόγος", "key": "voc.sg", "form": "λόγε", "kind": "features", "detail": "noun nom sg m"},
+    ]
+
+
+def test_reviewed_patterns():
+    from crosscheck_morpheus import parse_reviewed, reviewed_reason
+
+    patterns = parse_reviewed("""
+# comment
+*        perf.act.ind.3.du      # Morpheus lists only the 2nd dual
+λέγω     fut.*                  # suppletive future, filed under ἐρῶ
+φῶς      *.pl   φῶτᾰ            # Morpheus confuses φῶς with φώς
+""")
+    item = {"lemma": "λύω", "key": "perf.act.ind.3.du", "form": "x", "kind": "features", "detail": ""}
+    assert reviewed_reason(item, patterns) == "Morpheus lists only the 2nd dual"
+    assert reviewed_reason({**item, "lemma": "λέγω", "key": "fut.act.ind.1.sg"}, patterns).startswith("suppletive")
+    assert reviewed_reason({**item, "lemma": "φῶς", "key": "nom.pl", "form": "φῶτᾰ"}, patterns)
+    assert reviewed_reason({**item, "lemma": "φῶς", "key": "nom.pl", "form": "φώς"}, patterns) is None

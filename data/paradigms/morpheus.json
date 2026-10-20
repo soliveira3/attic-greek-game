@@ -1,0 +1,1129 @@
+[
+ {
+  "lemma": "αἴρω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἤρκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "βάλλω",
+  "key": "perf.act.ind.3.du",
+  "form": "βεβλήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "βαίνω",
+  "key": "perf.act.ind.3.du",
+  "form": "βεβήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "βουλεύω",
+  "key": "perf.act.ind.3.du",
+  "form": "βεβουλεύκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "γίγνομαι",
+  "key": "perf.act.ind.3.du",
+  "form": "γεγόνᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "γιγνώσκω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἐγνώκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "γράφω",
+  "key": "perf.act.ind.3.du",
+  "form": "γεγρᾰ́φᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "διαφέρω",
+  "key": "aor.act.ind.1.pl",
+  "form": "δῐηνέγκομεν",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "διαφέρω",
+  "key": "aor.act.ind.2.du",
+  "form": "δῐηνέγκετον",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "διαφέρω",
+  "key": "aor.act.ind.2.pl",
+  "form": "δῐηνέγκετε",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "διαφέρω",
+  "key": "aor.act.ind.3.du",
+  "form": "δῐηνεγκέτην",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "διαφέρω",
+  "key": "aor.act.ind.3.pl",
+  "form": "δῐήνεγκον",
+  "kind": "features",
+  "detail": "verb aor ind act 1 sg"
+ },
+ {
+  "lemma": "διαφθείρω",
+  "key": "perf.act.ind.3.du",
+  "form": "δῐεφθᾰ́ρκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "διδάσκω",
+  "key": "perf.act.ind.3.du",
+  "form": "δεδῐδᾰ́χᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "διώκω",
+  "key": "perf.act.ind.3.du",
+  "form": "δεδῐώχᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "εὑρίσκω",
+  "key": "perf.act.ind.3.du",
+  "form": "εὑρήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "θαυμάζω",
+  "key": "perf.act.ind.3.du",
+  "form": "τεθαυμᾰ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "θεός",
+  "key": "voc.sg",
+  "form": "θεός",
+  "kind": "features",
+  "detail": "noun nom sg m"
+ },
+ {
+  "lemma": "θνῄσκω",
+  "key": "perf.act.ind.3.du",
+  "form": "τεθνήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "θύω",
+  "key": "perf.act.ind.3.du",
+  "form": "τεθῠ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "καταλαμβάνω",
+  "key": "perf.act.ind.3.du",
+  "form": "κᾰτειλήφᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "κατασκευάζω",
+  "key": "perf.act.ind.3.du",
+  "form": "κᾰτεσκευᾰ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "κελεύω",
+  "key": "perf.act.ind.3.du",
+  "form": "κεκελεύκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "κομίζω",
+  "key": "perf.act.ind.3.du",
+  "form": "κεκομῐ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "κρίνω",
+  "key": "perf.act.ind.3.du",
+  "form": "κεκρῐ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "κωλύω",
+  "key": "perf.act.ind.3.du",
+  "form": "κεκωλῡ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.1.pl",
+  "form": "ἐροῦμεν",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.1.sg",
+  "form": "ἐρῶ",
+  "kind": "other lemma",
+  "detail": "e)ra/omai, e)ra/w1, e)ra/w2, e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.2.du",
+  "form": "ἐρεῖτον",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw=, r(e/w"
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.2.pl",
+  "form": "ἐρεῖτε",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw=, r(e/w"
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.2.sg",
+  "form": "ἐρεῖς",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.3.du",
+  "form": "ἐρεῖτον",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw=, r(e/w"
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.3.pl",
+  "form": "ἐροῦσῐ",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.3.pl",
+  "form": "ἐροῦσῐν",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.ind.3.sg",
+  "form": "ἐρεῖ",
+  "kind": "other lemma",
+  "detail": "e)ra/omai, e)re/omai, e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "fut.act.inf",
+  "form": "ἐρεῖν",
+  "kind": "other lemma",
+  "detail": "e)re/w, e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.1.pl",
+  "form": "εἰρήκᾰμεν",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.1.sg",
+  "form": "εἴρηκᾰ",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.2.du",
+  "form": "εἰρήκᾰτον",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.2.pl",
+  "form": "εἰρήκᾰτε",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.2.sg",
+  "form": "εἴρηκᾰς",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.3.du",
+  "form": "εἰρήκᾰτον",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.3.pl",
+  "form": "εἰρήκᾱσῐ",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.3.pl",
+  "form": "εἰρήκᾱσῐν",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.3.sg",
+  "form": "εἴρηκε",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.ind.3.sg",
+  "form": "εἴρηκεν",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λέγω",
+  "key": "perf.act.inf",
+  "form": "εἰρηκέναι",
+  "kind": "other lemma",
+  "detail": "e)rw="
+ },
+ {
+  "lemma": "λαμβάνω",
+  "key": "perf.act.ind.3.du",
+  "form": "εἰλήφᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "λείπω",
+  "key": "perf.act.ind.3.du",
+  "form": "λελοίπᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "λύω",
+  "key": "perf.act.ind.3.du",
+  "form": "λελῠ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "μένω",
+  "key": "perf.act.ind.3.du",
+  "form": "μεμενήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "μανθάνω",
+  "key": "perf.act.ind.3.du",
+  "form": "μεμᾰθήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "acc.du",
+  "form": "νεᾱνῐ́ᾱ",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "acc.pl",
+  "form": "νεᾱνῐ́ᾱς",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "acc.sg",
+  "form": "νεᾱνῐ́ᾱν",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "dat.du",
+  "form": "νεᾱνῐ́αιν",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "dat.pl",
+  "form": "νεᾱνῐ́αις",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "dat.sg",
+  "form": "νεᾱνῐ́ᾳ",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "gen.du",
+  "form": "νεᾱνῐ́αιν",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "gen.pl",
+  "form": "νεᾱνῐῶν",
+  "kind": "other lemma",
+  "detail": "neani/hs, neani/zw"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "gen.sg",
+  "form": "νεᾱνῐ́ου",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "nom.du",
+  "form": "νεᾱνῐ́ᾱ",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "nom.pl",
+  "form": "νεᾱνῐ́αι",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "nom.sg",
+  "form": "νεᾱνῐ́ᾱς",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "voc.du",
+  "form": "νεᾱνῐ́ᾱ",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "voc.pl",
+  "form": "νεᾱνῐ́αι",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νεανίας",
+  "key": "voc.sg",
+  "form": "νεᾱνῐ́ᾱ",
+  "kind": "other lemma",
+  "detail": "neani/hs"
+ },
+ {
+  "lemma": "νομίζω",
+  "key": "perf.act.ind.3.du",
+  "form": "νενομῐ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πάσχω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπόνθᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πέμπω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπόμφᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πίνω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπώκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πίπτω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπτώκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "παρέχω",
+  "key": "perf.act.ind.3.du",
+  "form": "πᾰρεσχήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "παύω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπαύκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πείθω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεποίθᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πιστεύω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπῐστεύκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "πούς",
+  "key": "voc.sg",
+  "form": "πούς",
+  "kind": "features",
+  "detail": "noun nom sg m"
+ },
+ {
+  "lemma": "πράττω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεπρᾱ́χᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.1.pl",
+  "form": "σῠμβησόμεθᾰ",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.1.sg",
+  "form": "σῠμβήσομαι",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.2.du",
+  "form": "σῠμβήσεσθον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.2.pl",
+  "form": "σῠμβήσεσθε",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.2.sg",
+  "form": "σῠμβήσει",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.2.sg",
+  "form": "σῠμβήσῃ",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.3.du",
+  "form": "σῠμβήσεσθον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.3.pl",
+  "form": "σῠμβήσονται",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.ind.3.sg",
+  "form": "σῠμβήσεται",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "fut.mid.inf",
+  "form": "σῠμβήσεσθαι",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.1.pl",
+  "form": "σῠνεβαίνομεν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.1.sg",
+  "form": "σῠνέβαινον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.2.du",
+  "form": "σῠνεβαίνετον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.2.pl",
+  "form": "σῠνεβαίνετε",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.2.sg",
+  "form": "σῠνέβαινες",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.3.du",
+  "form": "σῠνεβαινέτην",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.3.pl",
+  "form": "σῠνέβαινον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.3.sg",
+  "form": "σῠνέβαινε",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "impf.act.ind.3.sg",
+  "form": "σῠνέβαινεν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.1.pl",
+  "form": "σῠμβεβήκᾰμεν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.1.sg",
+  "form": "σῠμβέβηκᾰ",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.2.du",
+  "form": "σῠμβεβήκᾰτον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.2.pl",
+  "form": "σῠμβεβήκᾰτε",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.2.sg",
+  "form": "σῠμβέβηκᾰς",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.3.du",
+  "form": "σῠμβεβήκᾰτον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.3.pl",
+  "form": "σῠμβεβήκᾱσῐ",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.3.pl",
+  "form": "σῠμβεβήκᾱσῐν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.3.sg",
+  "form": "σῠμβέβηκε",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.ind.3.sg",
+  "form": "σῠμβέβηκεν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "perf.act.inf",
+  "form": "σῠμβεβηκέναι",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.1.pl",
+  "form": "σῠμβαίνομεν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.1.sg",
+  "form": "σῠμβαίνω",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.2.du",
+  "form": "σῠμβαίνετον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.2.pl",
+  "form": "σῠμβαίνετε",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.2.sg",
+  "form": "σῠμβαίνεις",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.3.du",
+  "form": "σῠμβαίνετον",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.3.pl",
+  "form": "σῠμβαίνουσῐ",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.3.pl",
+  "form": "σῠμβαίνουσῐν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.ind.3.sg",
+  "form": "σῠμβαίνει",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμβαίνω",
+  "key": "pres.act.inf",
+  "form": "σῠμβαίνειν",
+  "kind": "other lemma",
+  "detail": "sumbasei/w"
+ },
+ {
+  "lemma": "συμφέρω",
+  "key": "perf.act.ind.3.du",
+  "form": "συνενηνόχᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "σῴζω",
+  "key": "perf.act.ind.3.du",
+  "form": "σεσώκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "τάττω",
+  "key": "perf.act.ind.3.du",
+  "form": "τετᾰ́χᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "τίκτω",
+  "key": "perf.act.ind.3.du",
+  "form": "τετόκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "τρέπω",
+  "key": "perf.act.ind.3.du",
+  "form": "τετρόφᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "τυγχάνω",
+  "key": "perf.act.ind.3.du",
+  "form": "τετῠχήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "φέρω",
+  "key": "aor.act.ind.1.pl",
+  "form": "ἠνέγκομεν",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "φέρω",
+  "key": "aor.act.ind.2.du",
+  "form": "ἠνέγκετον",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "φέρω",
+  "key": "aor.act.ind.2.pl",
+  "form": "ἠνέγκετε",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "φέρω",
+  "key": "aor.act.ind.3.du",
+  "form": "ἠνεγκέτην",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "φέρω",
+  "key": "aor.act.ind.3.pl",
+  "form": "ἤνεγκον",
+  "kind": "features",
+  "detail": "verb aor ind act 1 sg"
+ },
+ {
+  "lemma": "φέρω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἐνηνόχᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "φαίνω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεφήνᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "φεύγω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεφεύγᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "φράζω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεφρᾰ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "φύω",
+  "key": "perf.act.ind.3.du",
+  "form": "πεφῡ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "acc.pl",
+  "form": "φῶτᾰ",
+  "kind": "features",
+  "detail": "noun acc sg m"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "acc.sg",
+  "form": "φῶς",
+  "kind": "other lemma",
+  "detail": "fa/os"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "dat.du",
+  "form": "φώτοιν",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "φῶς",
+  "key": "gen.du",
+  "form": "φώτοιν",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "φῶς",
+  "key": "gen.pl",
+  "form": "φώτων",
+  "kind": "other lemma",
+  "detail": "fa/os"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "nom.pl",
+  "form": "φῶτᾰ",
+  "kind": "features",
+  "detail": "noun acc sg m"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "nom.sg",
+  "form": "φῶς",
+  "kind": "other lemma",
+  "detail": "fa/os"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "voc.pl",
+  "form": "φῶτᾰ",
+  "kind": "features",
+  "detail": "noun acc sg m"
+ },
+ {
+  "lemma": "φῶς",
+  "key": "voc.sg",
+  "form": "φῶς",
+  "kind": "other lemma",
+  "detail": "fa/os"
+ },
+ {
+  "lemma": "χαίρω",
+  "key": "perf.act.ind.3.du",
+  "form": "κεχᾰρήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "χείρ",
+  "key": "voc.pl",
+  "form": "χεῖρες",
+  "kind": "features",
+  "detail": "noun nom pl f"
+ },
+ {
+  "lemma": "χείρ",
+  "key": "voc.sg",
+  "form": "χείρ",
+  "kind": "features",
+  "detail": "noun nom sg f"
+ },
+ {
+  "lemma": "ἀγγέλλω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἠγγέλκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἀγγέλλω",
+  "key": "perf.mp.ind.2.du",
+  "form": "ἤγγελθον",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "ἀγγέλλω",
+  "key": "perf.mp.ind.2.pl",
+  "form": "ἤγγελθε",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "ἀγγέλλω",
+  "key": "perf.mp.ind.3.du",
+  "form": "ἤγγελθον",
+  "kind": "unknown",
+  "detail": ""
+ },
+ {
+  "lemma": "ἀκούω",
+  "key": "perf.act.ind.3.du",
+  "form": "ᾰ̓κηκόᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἀποθνῄσκω",
+  "key": "perf.act.ind.3.du",
+  "form": "ᾰ̓ποτεθνήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἀποκτείνω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἀπεκτόνᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἁλίσκομαι",
+  "key": "perf.act.ind.3.du",
+  "form": "ἑᾰλώκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἁμαρτάνω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἡμᾰρτήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἄγω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἤχᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἐθέλω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἠθελήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἔρχομαι",
+  "key": "perf.act.ind.3.du",
+  "form": "ἐληλῠ́θᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ἔχω",
+  "key": "perf.act.ind.3.du",
+  "form": "ἐσχήκᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ὀνομάζω",
+  "key": "perf.act.ind.3.du",
+  "form": "ὠνομᾰ́κᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ },
+ {
+  "lemma": "ὑπολαμβάνω",
+  "key": "perf.act.ind.3.du",
+  "form": "ῠ̔πειλήφᾰτον",
+  "kind": "features",
+  "detail": "verb perf ind act 2 du"
+ }
+]

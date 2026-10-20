@@ -3,9 +3,11 @@
 Usage: python crosscheck_morpheus.py
 
 Needs the native library and stemlib in pipeline/raw/morpheus (see fetch_morpheus.sh). Nothing is
-fixed automatically: disagreements are listed for review, and doubtful data is removed only
-through data/exclude.txt.
+fixed automatically: disagreements are listed in REPORT.md and in data/paradigms/morpheus.json.
+Each one must then be either removed through data/exclude.txt or explained in
+data/morpheus_reviewed.txt; a data test enforces this.
 """
+import fnmatch
 import json
 import re
 import sys
@@ -15,6 +17,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from betacode import to_beta
+from normalize import key
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "pipeline" / "raw" / "morpheus"
@@ -22,6 +25,7 @@ LIBRARY = RAW / "libmorpheus-0.3.2-Linux-x86_64-glibc" / "lib" / "libmorpheus.so
 STEMLIB = RAW / "stemlib"
 PARADIGMS = ROOT / "data" / "paradigms"
 REPORT = PARADIGMS / "REPORT.md"
+DISAGREEMENTS = PARADIGMS / "morpheus.json"
 START, END = "<!-- morpheus:start -->", "<!-- morpheus:end -->"
 
 _CASE = {"nominative": "nom", "genitive": "gen", "dative": "dat", "accusative": "acc", "vocative": "voc"}
@@ -187,6 +191,51 @@ def run(analyze: Analyze) -> list[Result]:
     return results
 
 
+def disagreements(results: list[Result]) -> list[dict]:
+    """Every non-agreeing result, sorted, in the shape stored in data/paradigms/morpheus.json."""
+    rows = [
+        {"lemma": lem, "key": k, "form": f, "kind": kind, "detail": detail}
+        for lem, k, f, kind, detail in results
+        if kind != "ok"
+    ]
+    return sorted(rows, key=lambda r: (r["lemma"], r["key"], r["form"]))
+
+
+@dataclass(frozen=True)
+class Reviewed:
+    """A line of data/morpheus_reviewed.txt: `<lemma|*> <cell-key glob> [<form>]  # reason`."""
+
+    lemma: str
+    key_glob: str
+    form: str | None
+    reason: str
+
+
+def parse_reviewed(text: str) -> list[Reviewed]:
+    out = []
+    for n, line in enumerate(text.splitlines(), start=1):
+        body, _, comment = line.partition("#")
+        parts = body.split()
+        if not parts:
+            continue
+        if len(parts) not in (2, 3) or not comment.strip():
+            raise ValueError(f"morpheus_reviewed.txt line {n}: need lemma, key glob, optional form and a # reason")
+        out.append(Reviewed(parts[0], parts[1], parts[2] if len(parts) == 3 else None, comment.strip()))
+    return out
+
+
+def reviewed_reason(item: dict, patterns: list[Reviewed]) -> str | None:
+    for p in patterns:
+        if p.lemma != "*" and key(p.lemma) != key(item["lemma"]):
+            continue
+        if not fnmatch.fnmatchcase(item["key"], p.key_glob):
+            continue
+        if p.form is not None and key(p.form) != key(item["form"]):
+            continue
+        return p.reason
+    return None
+
+
 def write_section(section: str) -> None:
     report = REPORT.read_text(encoding="utf-8")
     if START in report and END in report:
@@ -204,6 +253,7 @@ def main() -> int:
     with Morpheus.default() as m:
         results = run(m.analyze)
     write_section(render_section(results, f"{sources['native']}, {sources['stemlib']}"))
+    DISAGREEMENTS.write_text(json.dumps(disagreements(results), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     kinds = Counter(r[3] for r in results)
     print(f"{len(results)} forms: " + ", ".join(f"{k} {v}" for k, v in kinds.most_common()))
     return 0

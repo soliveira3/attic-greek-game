@@ -4,7 +4,7 @@
 |---|---|
 | 0 — Scaffold | done |
 | 1 — Spec 🧑 | done (approved 2026-10-19) |
-| 2 — Data pipeline 🧑 | pipeline done; 2 greek-checker audits addressed; **waiting on golden verification** |
+| 2 — Data pipeline 🧑 | pipeline done; 3 greek-checker audits addressed; **waiting on golden verification** |
 | 3 — Core library | not started |
 | 4 — Game modes | not started |
 | 5 — Spaced repetition & progress | not started |
@@ -38,13 +38,14 @@ or rely on the automated checks).
   (`pipeline/fetch_morpheus.sh`). Tests that need them skip when absent. See docs/DATA_SOURCES.md.
 
 ## Data pipeline summary (Phase 2)
-- 283 lemmas built: 129 nouns, 67 adjectives + the article, 85 thematic verbs; every v1 class
+- 282 lemmas built: 129 nouns, 67 adjectives + the article, 85 thematic verbs; every v1 class
   has at least one lemma. Extra model lemmas not on the DCC list: `data/extra_lemmas.csv`.
-- Morpheus agrees on 12,193 of 12,398 forms; every remaining disagreement is either excluded or
-  listed as deliberately kept at the end of `data/exclude.txt`.
+- Morpheus agrees on 12,182 of 12,343 forms. Every remaining disagreement (in
+  `data/paradigms/morpheus.json`) is explained in `data/morpheus_reviewed.txt`; a test enforces it.
 - Verb tables are chosen per tense and voice from the DCC principal parts
   (`pipeline/select_tables.py` docstring has the rules); nominals use the first Attic table.
-- Two greek-checker audits run (2026-10-19); all blockers and majors addressed.
+- Three greek-checker audits run (2026-10-19); all blockers and majors addressed. A perfect active
+  is kept only with its own DCC principal part when DCC gives the perfect middle.
 
 ## Known data issues
 See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notable:
@@ -64,7 +65,7 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
-- 2026-10-19 — Phase 2: two greek-checker audits; verb tables now chosen by DCC principal parts;
+- 2026-10-19 — Phase 2: three greek-checker audits; verb tables now chosen by DCC principal parts;
   exclusions extended; golden set regenerated (still unverified).
 - 2026-10-19 — Phase 2: DCC list + kaikki dump fetched; pipeline (normalize, betacode, core
   list, table selection, tag mapping, classification, exclusions, Morpheus cross-check, golden

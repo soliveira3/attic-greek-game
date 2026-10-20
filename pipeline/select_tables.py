@@ -9,10 +9,11 @@ the other parts (πίνω's future πίομαι also appears in a stray "present
 and voice group (act, mid, pass, mp):
 
 1. Use every table whose forms in that voice include a principal part (alternates merged).
-2. In the present and future, if the tense has a principal part in the middle but none in the
-   active, the active is dropped: DCC gives ἀκούω's future as ἀκούσομαι, so ἀκούσω is not
-   Attic. (Elsewhere a missing part means DCC left it out, and a passive part says nothing about
-   the active: λέγω's aorist active εἶπον lives in another entry.)
+2. In the present, future and perfect, if the tense has a principal part in the middle but none
+   in the active, the active is dropped: DCC gives ἀκούω's future as ἀκούσομαι, so ἀκούσω is not
+   Attic; a perfect active found next to a middle part is often a stray (τρέφω's τέτραφα) or
+   compound-only (DCC "-ελήλακα"). In the aorist a missing part means DCC left it out, and a
+   passive part says nothing about the active (λέγω's εἶπον lives in another entry).
 3. A future passive without a principal part is taken only from tables built on the chosen
    aorist passive (παυθήσομαι goes with ἐπαύθην, not παυσθήσομαι); otherwise it is dropped.
 4. Otherwise, if some table of the tense has a principal part, the voice comes from the first
@@ -77,19 +78,27 @@ def is_iterative(t: MappedTable, lemma: str) -> bool:
     return any("σκ" in strip_all(f) for fs in t.cells.values() for f in fs)
 
 
+def _common_suffix(a: str, b: str) -> int:
+    n = 0
+    while n < min(len(a), len(b)) and a[-1 - n] == b[-1 - n]:
+        n += 1
+    return n
+
+
 def _future_passives_on(aorist_tables: list[MappedTable], providers: list[MappedTable]) -> list[MappedTable]:
     """Future-passive tables whose stem is the stem of a chosen aorist passive.
 
-    Stems are compared without their first letter, which the augment may change (ἠνέχθην /
-    ἐνεχθήσομαι).
+    Stems (the forms minus -ην / -ησομαι) must share their last three letters, or the whole
+    future stem: the augment changes the front (ἐπαύθην / παυθήσομαι, ἠνέχθην / ἐνεχθήσομαι,
+    διεφθάρην / διαφθαρήσομαι), while a different stem differs at the end (παυσθήσομαι).
     """
     aorists = [strip_all(f)[:-2] for t in aorist_tables for f in t.cells.get("aor.pass.ind.1.sg", [])]
 
     def built_on_aorist(t: MappedTable) -> bool:
         for f in t.cells.get("fut.pass.ind.1.sg", []):
             bare = strip_all(f)
-            core = bare[1 : -len("ησομαι")] if bare.endswith("ησομαι") else ""
-            if len(core) >= 2 and any(a.endswith(core) for a in aorists):
+            stem = bare[: -len("ησομαι")] if bare.endswith("ησομαι") else ""
+            if stem and any(_common_suffix(a, stem) >= min(3, len(stem)) for a in aorists):
                 return True
         return False
 
@@ -118,7 +127,7 @@ def select(lemma: str, tables: list[MappedTable], parts: set[str]) -> Selection:
             providers = [t for t in ts if g in t.groups()]
             if hits[g]:
                 pick, why = hits[g], "has a DCC principal part"
-            elif g == "act" and tense in ("pres", "fut") and any(hits[o] for o in groups if o in ("mid", "mp")):
+            elif g == "act" and tense in ("pres", "fut", "perf") and any(hits[o] for o in groups if o in ("mid", "mp")):
                 pick, why = [], "dropped: DCC gives this tense only in the middle"
             elif g == "act" and tense == "impf" and ("pres", "act") in chosen and not chosen[("pres", "act")]:
                 pick, why = [], "dropped: the present is deponent"

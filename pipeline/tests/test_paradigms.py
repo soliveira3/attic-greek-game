@@ -86,3 +86,33 @@ def test_verified_golden_matches_generated_data_exactly(path):
     lem = generated[(doc["lemma"], doc["pos"])]
     assert lem["class"] == doc["class"]
     assert {c["key"]: c["forms"] for c in lem["cells"]} == doc["cells"]
+
+
+def test_no_perfect_middle_third_plural_in_atai():
+    """Attic uses a periphrasis there; the Ionic/old-Attic -αται forms are excluded (exclude.txt)."""
+    from normalize import strip_all
+
+    for lem in load("verbs.json")["lemmas"]:
+        for c in lem["cells"]:
+            if c["key"] == "perf.mp.ind.3.pl":
+                assert not [f for f in c["forms"] if strip_all(f).endswith("αται")], lem["id"]
+
+
+def test_every_morpheus_disagreement_is_reviewed():
+    """data/paradigms/morpheus.json (written by crosscheck_morpheus.py) lists every form Morpheus
+    disagrees with; each must be excluded (so absent) or explained in data/morpheus_reviewed.txt."""
+    from crosscheck_morpheus import parse_reviewed, reviewed_reason
+
+    items = json.loads((PARADIGMS / "morpheus.json").read_text(encoding="utf-8"))
+    patterns = parse_reviewed((ROOT / "data" / "morpheus_reviewed.txt").read_text(encoding="utf-8"))
+    unexplained = [i for i in items if reviewed_reason(i, patterns) is None]
+    assert not unexplained, unexplained[:10]
+    used = {reviewed_reason(i, patterns) for i in items}
+    assert {p.reason for p in patterns} <= used, "stale lines in morpheus_reviewed.txt"
+
+
+def test_morpheus_disagreements_refer_to_current_data():
+    items = json.loads((PARADIGMS / "morpheus.json").read_text(encoding="utf-8"))
+    have = {(lem["lemma"], c["key"], f) for lem in all_lemmas() for c in lem["cells"] for f in c["forms"]}
+    stale = [i for i in items if (i["lemma"], i["key"], i["form"]) not in have]
+    assert not stale, "rerun crosscheck_morpheus.py: " + str(stale[:5])

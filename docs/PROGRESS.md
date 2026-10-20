@@ -12,8 +12,7 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md): task 3, the app shell (router, DataProvider,
-Home, Settings, GreekInput, GreekKeyboard).
+Phase 4 — game modes (see docs/plans/phase-4.md): task 4, the Feedback component (and lib/notes.ts).
 
 ## Waiting on the user
 (nothing)
@@ -80,6 +79,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 task 3: app shell (hash router, AppProvider with loading/error states,
+  Home, Settings, Notes placeholder, GreekInput converting beta code at the caret, on-screen
+  keyboard, light/dark styles, Gentium Plus bundled from @fontsource, OFL).
 - 2026-10-20 — Phase 4 tasks 1–2: storage (try/catch, memory fallback), settings, attempt log;
   seedable prompt generators (Parse it, Make it, Fill the table) honouring the scope settings;
   endings sprint sets derived from the verified golden models (λύω gives every block, λείπω adds

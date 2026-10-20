@@ -50,9 +50,60 @@ export function key(s: string): string {
   return stripLength(nfc(s))
 }
 
-/** A typed answer, ready to compare: trimmed, composed, lowercase, final sigma, no length marks. */
+/** Order of marks after a letter, as in NFD of the stored forms (ἄ = α + breathing + accent). */
+export const MARK_ORDER = [MACRON, BREVE, DIAERESIS, SMOOTH, ROUGH, ACUTE, GRAVE, CIRCUMFLEX, IOTA_SUBSCRIPT]
+const KNOWN_MARKS = new Set(MARK_ORDER)
+// Other code points keyboards produce for the same marks.
+const MARK_ALIASES: Record<string, string> = { [cp(0x303)]: CIRCUMFLEX, [cp(0x311)]: CIRCUMFLEX }
+// Spacing breathings and apostrophe-like characters typed for a breathing before its letter.
+const BREATHING_SIGNS: Record<string, string> = {
+  [cp(0x1fbf)]: SMOOTH, // GREEK PSILI
+  [cp(0x1fbd)]: SMOOTH, // GREEK KORONIS
+  [cp(0x2bc)]: SMOOTH, // MODIFIER LETTER APOSTROPHE
+  [cp(0x2019)]: SMOOTH, // RIGHT SINGLE QUOTATION MARK
+  "'": SMOOTH,
+  [cp(0x1ffe)]: ROUGH, // GREEK DASIA
+  [cp(0x2bd)]: ROUGH, // MODIFIER LETTER REVERSED COMMA
+  [cp(0x2018)]: ROUGH, // LEFT SINGLE QUOTATION MARK
+}
+const INVISIBLE = new RegExp(`[${cp(0x200b)}-${cp(0x200d)}${cp(0xfeff)}${cp(0xad)}]`, 'gu')
+const VOWELS = 'αεηιουω'
+
+/** Whether `mark`, typed after `letter`, belongs to it (marks go on vowels; a breathing also on ρ). */
+export function takesMark(letter: string, mark: string): boolean {
+  const base = letter.toLowerCase()
+  return VOWELS.includes(base) || (base === 'ρ' && (mark === SMOOTH || mark === ROUGH))
+}
+
+/**
+ * A typed answer, ready to compare: trimmed, compatibility characters folded, invisible
+ * characters removed, lowercase, every mark on its letter in canonical order (a mark typed before
+ * its vowel moves onto it; unknown marks are dropped), final sigma, no length marks.
+ */
 export function canon(s: string): string {
-  return key(finalSigma(nfc(s.trim()).toLowerCase()))
+  const folded = [...s.replace(INVISIBLE, '')].map((ch) => BREATHING_SIGNS[ch] ?? ch).join('')
+  const clusters: { base: string; marks: string[] }[] = []
+  let pending: string[] = []
+  for (const ch of folded.normalize('NFKC').toLowerCase().normalize('NFD')) {
+    const mark = MARK_ALIASES[ch] ?? (COMBINING.test(ch) ? ch : null)
+    if (mark !== null) {
+      if (!KNOWN_MARKS.has(mark)) continue
+      const last = clusters[clusters.length - 1]
+      if (last && !pending.length && takesMark(last.base, mark)) last.marks.push(mark)
+      else pending.push(mark)
+      continue
+    }
+    const cluster = { base: ch, marks: [] as string[] }
+    if (pending.length && takesMark(ch, pending[0])) {
+      cluster.marks = pending
+      pending = []
+    }
+    clusters.push(cluster)
+  }
+  const text = clusters
+    .map((c) => c.base + [...new Set(c.marks)].sort((a, b) => MARK_ORDER.indexOf(a) - MARK_ORDER.indexOf(b)).join(''))
+    .join('')
+  return key(finalSigma(nfc(text))).trim()
 }
 
 /**

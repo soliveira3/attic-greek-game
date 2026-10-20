@@ -3,7 +3,7 @@ import adjectives from '../../../data/paradigms/adjectives.json'
 import nouns from '../../../data/paradigms/nouns.json'
 import verbs from '../../../data/paradigms/verbs.json'
 import { type Paradigms, loadParadigms, makeParadigms, stemLength } from './data'
-import type { ParadigmFile } from './features'
+import type { ParadigmFile, VerbLemma } from './features'
 import { key } from './normalize'
 
 const files = [nouns, adjectives, verbs] as unknown as ParadigmFile[]
@@ -68,5 +68,49 @@ describe('loadParadigms', () => {
   it('loads the three files', async () => {
     const loaded = await loadParadigms()
     expect(loaded.lemmas.length).toBe(data.lemmas.length)
+  })
+})
+
+describe('checkContext', () => {
+  it('lists the forms of every other cell of the lemma', () => {
+    const c = data.checkContext(lyo, 'fut.act.ind.1.sg')
+    expect(c.otherForms.map((o) => o.cell)).not.toContain('fut.act.ind.1.sg')
+    expect(c.otherForms.map((o) => o.cell)).toContain('pres.act.ind.1.sg')
+  })
+  it('knows which prompts are augmented tenses', () => {
+    expect(data.checkContext(lyo, 'impf.act.ind.1.sg').pastTense).toBe(true)
+    expect(data.checkContext(lyo, 'aor.pass.ind.3.pl').pastTense).toBe(true)
+    expect(data.checkContext(lyo, 'aor.act.inf').pastTense).toBe(false)
+    expect(data.checkContext(lyo, 'pres.act.ind.1.sg').pastTense).toBe(false)
+    expect(data.checkContext(doron, 'gen.sg').pastTense).toBe(false)
+  })
+  it('finds the augment after the preverb of a compound', () => {
+    expect(data.checkContext(lyo, 'impf.act.ind.1.sg').augmentAt).toBe(0)
+    expect(data.checkContext(data.lemma('verb:ἔχω')!, 'impf.act.ind.1.sg').augmentAt).toBe(0)
+    expect(data.checkContext(data.lemma('verb:ἀποκτείνω')!, 'impf.act.ind.1.sg').augmentAt).toBeGreaterThan(1)
+    expect(data.checkContext(doron, 'gen.sg').augmentAt).toBeUndefined()
+  })
+  it('measures stems per mood: an aorist stem ignores the unaugmented infinitive', () => {
+    for (const verb of data.lemmasWhere({ pos: ['verb'] })) {
+      if (!data.forms(verb, 'aor.act.ind.1.sg').length) continue
+      expect(data.checkContext(verb, 'aor.act.ind.1.sg').stemLength, verb.lemma).toBeGreaterThanOrEqual(2)
+    }
+  })
+  it('measures 3rd-declension stems without the nominative singular and dative plural', () => {
+    const phylax = data.lemma('noun:φύλαξ')!
+    const all = stemLength(phylax.cells.flatMap((c) => c.forms))
+    expect(data.checkContext(phylax, 'gen.sg').stemLength).toBeGreaterThan(all)
+  })
+  it('gives infinitives a stem too', () => {
+    expect(data.checkContext(lyo, 'aor.pass.inf').stemLength).toBeGreaterThan(0)
+    expect(data.checkContext(lyo, 'pres.act.inf').stemLength).toBeGreaterThan(0)
+  })
+})
+
+describe('checkContext edge cases', () => {
+  it('a verb with no past forms has its augment at the start', () => {
+    const verb = lyo as VerbLemma
+    const noPast: VerbLemma = { ...verb, cells: verb.cells.filter((c) => !/^(impf|aor)/.test(c.key)) }
+    expect(data.checkContext(noPast, 'pres.act.ind.1.sg').augmentAt).toBe(0)
   })
 })

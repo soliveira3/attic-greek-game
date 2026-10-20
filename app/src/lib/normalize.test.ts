@@ -57,3 +57,26 @@ describe('displayForm', () => {
     for (const r of parity) expect(displayForm(r.form, { lengthMarks: false })).toBe(r.stripLength)
   })
 })
+
+describe('canon folds what keyboards produce', () => {
+  const agathos = parity.find((r) => r.stripAll === 'αγαθος')!.key // golden ἀγαθός
+  const bare = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '')
+  const accentOnly = (s: string) => [...s.normalize('NFD')].filter((c) => c !== cp(0x313)).join('')
+  it('spacing or apostrophe-like breathing marks typed before the letter', () => {
+    for (const mark of [0x1fbf, 0x2019, 0x2bc, 0x27]) {
+      expect(canon(cp(mark) + accentOnly(agathos))).toBe(agathos)
+    }
+  })
+  it('a mark typed before a vowel in mid-word goes on that vowel', () => {
+    const logos = parity.find((r) => r.stripAll === 'λογος')!.key // golden λόγος
+    expect(canon('λ' + cp(0x301) + bare(logos).slice(1))).toBe(logos)
+  })
+  it('compatibility letters and invisible characters', () => {
+    expect(canon('µ')).toBe('μ')
+    expect(canon(cp(0x3d1))).toBe('θ')
+    expect(canon('α' + cp(0x200b) + 'β')).toBe('αβ')
+  })
+  it('final sigma before a non-letter, as in the pipeline', () => {
+    expect(finalSigma('σ1')).toBe('ς1')
+  })
+})

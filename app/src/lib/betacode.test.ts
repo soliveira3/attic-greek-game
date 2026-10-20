@@ -33,13 +33,36 @@ describe('betaToGreek', () => {
   it('ignores capitals markers and case', () => {
     expect(betaToGreek('*LU/W')).toBe(betaToGreek('lu/w'))
   })
-  it('leaves other characters alone, including a mark with no letter before it', () => {
-    expect(betaToGreek('1 )a')).toBe('1 )α')
+  it('leaves other characters alone; a mark with no letter yet stays visible', () => {
+    expect(betaToGreek('1 )a')).toBe('1 ' + betaToGreek('a)'))
+    expect(betaToGreek('1 )')).toBe('1 )')
   })
 })
 
 describe('greekToBeta', () => {
   it('leaves non-Greek characters alone', () => {
     expect(greekToBeta('1 2')).toBe('1 2')
+  })
+})
+
+describe('marks typed before the letter', () => {
+  it('at the start of a word, or after the capital marker', () => {
+    expect(betaToGreek(')a')).toBe(betaToGreek('a)'))
+    expect(betaToGreek('*)a')).toBe(betaToGreek('a)'))
+    let typed = ''
+    for (const ch of '*)a/') typed = betaToGreek(typed + ch)
+    expect(typed).toBe(betaToGreek('a)/'))
+  })
+  it('after a consonant, on the next vowel', () => {
+    expect(betaToGreek('l/o')).toBe(betaToGreek('lo/'))
+  })
+  it('a breathing still goes on rho', () => {
+    expect(betaToGreek('r(')).toBe(nfc('ρ' + String.fromCodePoint(0x314)))
+  })
+})
+
+describe('a mark typed before a consonant', () => {
+  it('stays visible until a vowel can take it', () => {
+    expect(betaToGreek(')l')).toBe(')λ')
   })
 })

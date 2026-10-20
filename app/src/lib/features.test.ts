@@ -115,3 +115,10 @@ describe('cell keys, edge cases', () => {
     expect(compareCellKeys('gen.pl.f', 'gen.pl.f')).toBe(0)
   })
 })
+
+describe('ordering mixed keys', () => {
+  it('orders a noun key and a verb key consistently', () => {
+    expect(Math.sign(compareCellKeys('gen.sg', 'pres.act.inf'))).toBe(-Math.sign(compareCellKeys('pres.act.inf', 'gen.sg')))
+    expect(compareCellKeys('gen.sg', 'pres.act.inf')).not.toBe(0)
+  })
+})

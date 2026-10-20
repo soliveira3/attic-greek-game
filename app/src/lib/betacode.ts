@@ -10,11 +10,13 @@ import {
   GRAVE,
   IOTA_SUBSCRIPT,
   MACRON,
+  MARK_ORDER,
   ROUGH,
   SMOOTH,
   finalSigma,
   nfc,
   stripLength,
+  takesMark,
 } from './normalize'
 
 const LETTERS: Record<string, string> = {
@@ -28,8 +30,6 @@ const MARKS: Record<string, string> = {
 }
 // Marks that exclude one another on a single letter.
 const EXCLUSIVE = [new Set([ACUTE, GRAVE, CIRCUMFLEX]), new Set([SMOOTH, ROUGH]), new Set([MACRON, BREVE])]
-// Order in which marks follow their letter (keeps NFC composition working: ἄ = α + ̓ + ́).
-const MARK_ORDER = [MACRON, BREVE, DIAERESIS, SMOOTH, ROUGH, ACUTE, GRAVE, CIRCUMFLEX, IOTA_SUBSCRIPT]
 
 const isGreekLetter = (ch: string) => /[α-ω]/u.test(ch)
 const isMark = (ch: string) => /\p{M}/u.test(ch)
@@ -37,6 +37,8 @@ const isMark = (ch: string) => /\p{M}/u.test(ch)
 interface Cluster {
   base: string
   marks: string[]
+  /** A capital marker or a mark still waiting for its letter; shown as typed until then. */
+  pending?: string
 }
 
 function addMark(cluster: Cluster, mark: string): void {
@@ -45,17 +47,34 @@ function addMark(cluster: Cluster, mark: string): void {
   cluster.marks.push(mark)
 }
 
+/**
+ * Marks normally follow their letter. A mark typed with no vowel before it (at the start, after
+ * a consonant, or after the TLG capital marker `*`) waits, still visible, for the next vowel.
+ */
 export function betaToGreek(input: string): string {
   const clusters: Cluster[] = []
   for (const ch of input.normalize('NFD')) {
     const last = clusters[clusters.length - 1]
     const lower = ch.toLowerCase()
-    if (ch === '*') continue // TLG capital marker: answers are lowercase
-    if (LETTERS[lower]) clusters.push({ base: LETTERS[lower], marks: [] })
-    else if (isGreekLetter(lower)) clusters.push({ base: lower, marks: [] })
-    else if (last && isGreekLetter(last.base) && isMark(ch)) addMark(last, ch)
-    else if (last && isGreekLetter(last.base) && MARKS[ch]) addMark(last, MARKS[ch])
-    else clusters.push({ base: ch, marks: [] })
+    const letter = LETTERS[lower] ?? (isGreekLetter(lower) ? lower : null)
+    const mark = MARKS[ch] ?? (isMark(ch) ? ch : null)
+    if (ch === '*') {
+      clusters.push({ base: ch, marks: [], pending: '' })
+    } else if (letter) {
+      const cluster: Cluster = { base: letter, marks: [] }
+      const waiting: Cluster[] = []
+      while (clusters.length && clusters[clusters.length - 1].pending !== undefined) waiting.unshift(clusters.pop()!)
+      const marks = waiting.map((c) => c.pending!).filter(Boolean)
+      if (marks.length && !marks.every((m) => takesMark(letter, m))) clusters.push(...waiting)
+      else marks.forEach((m) => addMark(cluster, m))
+      clusters.push(cluster)
+    } else if (mark && last && last.pending === undefined && takesMark(last.base, mark)) {
+      addMark(last, mark)
+    } else if (mark) {
+      clusters.push({ base: ch, marks: [], pending: mark })
+    } else {
+      clusters.push({ base: ch, marks: [] })
+    }
   }
   const text = clusters
     .map((c) => c.base + [...c.marks].sort((a, b) => MARK_ORDER.indexOf(a) - MARK_ORDER.indexOf(b)).join(''))

@@ -2,7 +2,6 @@
 
 Every comparison of Greek text in the pipeline goes through this module.
 """
-import re
 import unicodedata
 
 MACRON = chr(0x0304)
@@ -38,19 +37,28 @@ def strip_accents(s: str) -> str:
     return _drop(s, LENGTH_MARKS | ACCENTS | {DIAERESIS})
 
 
+def _is_mark(ch: str) -> bool:
+    return unicodedata.category(ch).startswith("M")
+
+
 def strip_all(s: str) -> str:
     """Remove every combining mark, leaving bare letters."""
     decomposed = unicodedata.normalize("NFD", s)
-    return nfc("".join(ch for ch in decomposed if not unicodedata.combining(ch)))
+    return nfc("".join(ch for ch in decomposed if not _is_mark(ch)))
 
 
-_MEDIAL_FINAL = re.compile(r"ς(?=\w)")
-_FINAL_MEDIAL = re.compile(r"σ(?!\w)")
+def _is_word_char(ch: str) -> bool:
+    return unicodedata.category(ch)[0] in "LM"
 
 
 def final_sigma(s: str) -> str:
-    """Use ς at the end of a word and σ elsewhere."""
-    return _FINAL_MEDIAL.sub("ς", _MEDIAL_FINAL.sub("σ", s))
+    """Use ς at the end of a word and σ elsewhere (a word is a run of letters and marks)."""
+    out = []
+    for i, ch in enumerate(s):
+        if ch in "σς":
+            ch = "σ" if i + 1 < len(s) and _is_word_char(s[i + 1]) else "ς"
+        out.append(ch)
+    return "".join(out)
 
 
 def key(s: str) -> str:

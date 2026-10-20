@@ -12,9 +12,9 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 3 — core library: normalize, betacode, features, data, check done (lib coverage 100% lines,
-96% branches); waiting on the greek-checker review of check.ts. Phase 4 plan drafted in
-docs/plans/phase-4.md.
+Phase 3 — core library: done apart from the greek-checker verification of the fixes to its
+review (6 majors, 10 minors addressed; SPEC §6 refined, see "Decisions taken"). Phase 4 plan
+drafted in docs/plans/phase-4.md.
 
 ## Waiting on the user
 (nothing)
@@ -24,6 +24,9 @@ docs/plans/phase-4.md.
   the older spellings βασιλῆς, ἱππῆς and the dual πόλη were excluded (see the "User decisions"
   block in data/exclude.txt; delete those lines to undo), and golden verification goes through
   an automated comparison with Smyth (option 2) instead of a manual check.
+- 2026-10-19: SPEC §6 refined after the check.ts review (Claude's call, reversible): an answer that
+  is exactly another form of the same word is wrong in every mode; iota adscript is accepted with a
+  note except in strict mode; typing aids for marks typed before letters or in another order.
 - 2026-10-19: the user marked all 24 golden files verified on the evidence of
   data/golden/SMYTH_COMPARISON.md.
 
@@ -68,6 +71,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-19 — Phase 3: greek-checker review of check.ts addressed (crash on leading marks, missing
+  error kinds, other-form acceptance, per-mood stems, augment detection incl. compounds, iota
+  adscript, diff at the strictness level, Python/TS parity edges).
 - 2026-10-19 — Phase 3: lib/ normalize (parity with the pipeline on every golden form), betacode
   (live typing), features (keys, labels), data (load/query), check (modes, error kinds, diff,
   Parse it); every golden form passes in all modes.

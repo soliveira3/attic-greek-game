@@ -12,6 +12,7 @@ import {
   ROUGH,
   SMOOTH,
   canon,
+  nfc,
   stripAccents,
   stripAll,
 } from './normalize'
@@ -19,8 +20,11 @@ import {
 export const STRICTNESS = ['strict', 'ignore-accents', 'lenient'] as const
 export type Strictness = (typeof STRICTNESS)[number]
 
-/** Most specific first; `blank` for an empty answer. */
-export type ErrorKind = 'accent' | 'breathing' | 'subscript' | 'augment' | 'ending' | 'stem' | 'blank'
+/**
+ * What can be wrong with an answer. `parse` is for Parse it; `blank` for an empty answer.
+ * A diaeresis difference counts as `accent`, as in SPEC §6.
+ */
+export type ErrorKind = 'accent' | 'breathing' | 'subscript' | 'augment' | 'ending' | 'stem' | 'parse' | 'blank'
 
 export interface Segment {
   text: string
@@ -35,19 +39,30 @@ export interface CheckResult {
   matched: string | null
   /** The valid form closest to the answer (equal to `matched` when correct). */
   closest: string
-  /** Why the answer is wrong; null when it is correct. */
+  /** The main reason the answer is wrong; null when it is correct. */
   errorKind: ErrorKind | null
+  /** Every reason the answer is wrong, main one first; empty when it is correct. */
+  errors: ErrorKind[]
   /** Differences the strictness setting forgave (e.g. the accent in ignore-accents mode). */
   notes: ErrorKind[]
-  /** The answer and the closest valid form, split into matching and differing parts. */
+  /** When the answer is exactly another cell's form of the same lemma: that cell's key. */
+  confusedWith: string | null
+  /**
+   * The answer (as normalised) and the closest valid form (as stored, with any length marks),
+   * split into parts the mode counts as right and wrong.
+   */
   diff: { answer: Segment[]; expected: Segment[] }
 }
 
 export interface CheckOptions {
-  /** Letters of the stem shared by the block's forms (data.stemLength): decides ending vs stem. */
+  /** Letters of the stem (data.checkContext): decides "wrong ending" vs "wrong stem". */
   stemLength?: number
-  /** The prompt is an augmented tense (imperfect, aorist), so an initial difference is the augment. */
+  /** The prompt is an augmented tense (imperfect or aorist indicative). */
   pastTense?: boolean
+  /** Verbs only: the letter where the augment goes (after a compound's preverb). */
+  augmentAt?: number
+  /** Forms of the lemma's other cells: an answer that is exactly one of them is wrong in every mode. */
+  otherForms?: { cell: string; forms: string[] }[]
 }
 
 const LEVEL: Record<Strictness, (s: string) => string> = {
@@ -58,6 +73,7 @@ const LEVEL: Record<Strictness, (s: string) => string> = {
 
 const BREATHINGS = new Set([SMOOTH, ROUGH])
 const ACCENT_MARKS = new Set([ACUTE, GRAVE, CIRCUMFLEX, DIAERESIS])
+const SUBSCRIPTS = new Set([IOTA_SUBSCRIPT])
 const VOWELS = 'αεηιουω'
 
 /** Letter + its combining marks. */
@@ -68,6 +84,11 @@ function clusters(s: string): string[] {
     else out.push(ch)
   }
   return out
+}
+
+/** The same form with each iota subscript written on the line (ῳ -> ωι). */
+function adscript(s: string): string {
+  return nfc(clusters(s).map((c) => (c.includes(IOTA_SUBSCRIPT) ? c.replace(IOTA_SUBSCRIPT, '') + 'ι' : c)).join(''))
 }
 
 function marks(cluster: string, kinds: Set<string>): string {
@@ -94,47 +115,84 @@ function commonPrefix(a: string, b: string): number {
   return n
 }
 
+function commonSuffix(a: string, b: string): number {
+  let n = 0
+  while (n < a.length && n < b.length && a[a.length - 1 - n] === b[b.length - 1 - n]) n++
+  return n
+}
+
+const onlyVowels = (s: string) => [...s].every((ch) => VOWELS.includes(ch))
+
+/**
+ * An augment error: the letters differ only around where the augment goes (the first two letters,
+ * or just after a compound's preverb). In a past tense that covers a missing, wrong or misplaced
+ * augment (εἶχον / ἔχον, ᾖρον / αἶρον, ἀπέκτεινον / ἀποκτείνον); outside the past tenses, an
+ * augment added at the start.
+ */
+function isAugmentError(a: string, t: string, at: number, past: boolean): boolean {
+  const p = commonPrefix(a, t)
+  const s = commonSuffix(a.slice(p), t.slice(p))
+  const ra = a.slice(p, a.length - s)
+  const rt = t.slice(p, t.length - s)
+  if (!ra && !rt) return false
+  if (p + Math.max(ra.length, rt.length) > at + 2) return false
+  if (past) return p <= at || (onlyVowels(ra) && onlyVowels(rt))
+  const lengthened = ra.length === 1 && rt.length === 1 && 'ηω'.includes(ra) && 'αεο'.includes(rt)
+  return p === at && onlyVowels(ra) && onlyVowels(rt) && (ra.length > rt.length || lengthened)
+}
+
 function letterError(answer: string, target: string, opts: CheckOptions): ErrorKind {
   const a = stripAll(answer)
   const t = stripAll(target)
-  if (opts.pastTense) {
-    const vowelSwap = a.slice(1) === t.slice(1) && VOWELS.includes(a[0]) && VOWELS.includes(t[0])
-    if (a === t.slice(1) || t === a.slice(1) || vowelSwap) return 'augment'
-  }
+  if (opts.augmentAt !== undefined && isAugmentError(a, t, opts.augmentAt, Boolean(opts.pastTense))) return 'augment'
   return commonPrefix(a, t) >= (opts.stemLength ?? 0) ? 'ending' : 'stem'
 }
 
-/** Diacritic differences between two forms with the same letters, most important first. */
+/** Diacritic differences between two forms with the same letters: breathing, subscript, accent. */
 function markDifferences(answer: string, target: string): ErrorKind[] {
   const a = clusters(answer)
   const t = clusters(target)
-  const out: ErrorKind[] = []
+  /* v8 ignore next -- defensive: canon() gives equal letters equal clusters */
+  if (a.length !== t.length) return ['accent']
   const differs = (kinds: Set<string>) => a.some((c, i) => marks(c, kinds) !== marks(t[i], kinds))
+  const out: ErrorKind[] = []
   if (differs(BREATHINGS)) out.push('breathing')
-  if (differs(new Set([IOTA_SUBSCRIPT]))) out.push('subscript')
+  if (differs(SUBSCRIPTS)) out.push('subscript')
   if (differs(ACCENT_MARKS)) out.push('accent')
   return out
 }
 
+/** Letter errors come first (augment, stem, ending), then breathing, subscript, accent. */
 function differences(answer: string, target: string, opts: CheckOptions): ErrorKind[] {
   if (stripAll(answer) !== stripAll(target)) return [letterError(answer, target, opts)]
   return markDifferences(answer, target)
 }
 
-/** Longest-common-subsequence diff over letter clusters. */
-function diffSegments(answer: string, target: string): { answer: Segment[]; expected: Segment[] } {
+/**
+ * Longest-common-subsequence diff over letter clusters, comparing at the given level so that
+ * differences the mode forgives are not highlighted. Expected parts are shown as stored.
+ */
+function diffSegments(
+  answer: string,
+  target: string,
+  stored: string,
+  same: (x: string, y: string) => boolean,
+): { answer: Segment[]; expected: Segment[] } {
   const a = clusters(answer)
   const t = clusters(target)
+  const shown = clusters(nfc(stored))
+  /* v8 ignore next -- defensive: canon() only removes length marks, so clusters align */
+  const display = shown.length === t.length ? shown : t
   const lcs = Array.from({ length: a.length + 1 }, () => new Array<number>(t.length + 1).fill(0))
   for (let i = a.length - 1; i >= 0; i--) {
     for (let j = t.length - 1; j >= 0; j--) {
-      lcs[i][j] = a[i] === t[j] ? lcs[i + 1][j + 1] + 1 : Math.max(lcs[i + 1][j], lcs[i][j + 1])
+      lcs[i][j] = same(a[i], t[j]) ? lcs[i + 1][j + 1] + 1 : Math.max(lcs[i + 1][j], lcs[i][j + 1])
     }
   }
   const aOk = new Array<boolean>(a.length).fill(false)
   const tOk = new Array<boolean>(t.length).fill(false)
   for (let i = 0, j = 0; i < a.length && j < t.length; ) {
-    if (a[i] === t[j]) {
+    if (same(a[i], t[j])) {
       aOk[i++] = true
       tOk[j++] = true
     } else if (lcs[i + 1][j] >= lcs[i][j + 1]) i++
@@ -149,7 +207,7 @@ function diffSegments(answer: string, target: string): { answer: Segment[]; expe
     })
     return out.map((s) => ({ ...s, text: s.text.normalize('NFC') }))
   }
-  return { answer: segments(a, aOk), expected: segments(t, tOk) }
+  return { answer: segments(a, aOk), expected: segments(display, tOk) }
 }
 
 export function checkAnswer(
@@ -158,31 +216,45 @@ export function checkAnswer(
   strictness: Strictness,
   opts: CheckOptions = {},
 ): CheckResult {
+  if (!validForms.length) throw new Error('checkAnswer needs at least one valid form')
   const typed = canon(answer)
   const level = LEVEL[strictness]
   const candidates = validForms.map((form) => ({ form, c: canon(form) }))
   const exact = candidates.find((v) => v.c === typed)
-  const accepted = exact ?? candidates.find((v) => level(v.c) === level(typed))
-  const closest =
+  const confused = exact || !typed ? undefined : opts.otherForms?.find((o) => o.forms.some((f) => canon(f) === typed))
+  const open = !exact && !confused
+  const byMode = open ? candidates.find((v) => level(v.c) === level(typed)) : undefined
+  const byAdscript = open && !byMode ? candidates.find((v) => level(adscript(v.c)) === level(typed)) : undefined
+  const accepted = exact ?? byMode ?? (strictness === 'strict' ? undefined : byAdscript)
+  const nearest =
     accepted ??
+    byAdscript ??
     [...candidates].sort(
       (x, y) =>
         editDistance(stripAll(typed), stripAll(x.c)) - editDistance(stripAll(typed), stripAll(y.c)) ||
         editDistance(typed, x.c) - editDistance(typed, y.c),
     )[0]
-  const diff = diffSegments(typed, closest.c)
-  if (!typed) {
-    return { correct: false, exact: false, matched: null, closest: closest.form, errorKind: 'blank', notes: [], diff }
-  }
-  const found = differences(typed, closest.c, opts)
+
+  let kinds: ErrorKind[]
+  if (!typed) kinds = ['blank']
+  else if (byAdscript && nearest === byAdscript) {
+    kinds = ['subscript', ...differences(typed, adscript(nearest.c), opts).filter((k) => k !== 'subscript')]
+  } else kinds = differences(typed, nearest.c, opts)
+  /* v8 ignore next -- defensive: after canon() a wrong answer always has a difference */
+  if (!accepted && !kinds.length) kinds = ['accent']
+
+  const same = confused ? LEVEL.strict : level
+  const sameCluster = (x: string, y: string) => same(x) === same(y)
   return {
     correct: Boolean(accepted),
     exact: Boolean(exact),
     matched: accepted?.form ?? null,
-    closest: closest.form,
-    errorKind: accepted ? null : found[0],
-    notes: accepted && !exact ? found : [],
-    diff,
+    closest: nearest.form,
+    errorKind: accepted ? null : kinds[0],
+    errors: accepted ? [] : kinds,
+    notes: accepted && !exact ? kinds : [],
+    confusedWith: confused?.cell ?? null,
+    diff: diffSegments(typed, nearest.c, nearest.form, sameCluster),
   }
 }
 
@@ -195,6 +267,8 @@ export type ParseSelection =
 
 export interface ParseResult {
   correct: boolean
+  /** `parse` when the selection matches no valid parse, for the attempt record. */
+  errorKind: 'parse' | null
   /** The valid parses the selection matched. */
   matching: CellFeatures[]
 }
@@ -218,5 +292,5 @@ function matches(selection: ParseSelection, parse: CellFeatures): boolean {
 /** Parse it is correct if the selection matches *any* valid parse of the form (SPEC §5). */
 export function checkParse(selection: ParseSelection, parses: CellFeatures[]): ParseResult {
   const matching = parses.filter((p) => matches(selection, p))
-  return { correct: matching.length > 0, matching }
+  return { correct: matching.length > 0, errorKind: matching.length ? null : 'parse', matching }
 }

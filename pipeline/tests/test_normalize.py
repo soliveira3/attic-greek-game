@@ -41,3 +41,14 @@ def test_final_sigma():
 def test_key_is_nfc_without_length_marks():
     assert key("θᾰ́λᾰσσᾰ") == nfc("θάλασσα")
     assert key(unicodedata.normalize("NFD", "λόγος")) == "λόγος"
+
+
+def test_final_sigma_treats_only_letters_and_marks_as_word_characters():
+    # same rule as app/src/lib/normalize.ts: a digit or underscore ends the word
+    assert final_sigma("σ1") == "ς1"
+    assert final_sigma("σ_") == "ς_"
+
+
+def test_strip_all_removes_every_mark_category():
+    enclosing_circle = chr(0x20DD)  # an enclosing mark (category Me), which has combining class 0
+    assert strip_all("α" + enclosing_circle) == "α"

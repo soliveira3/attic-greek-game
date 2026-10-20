@@ -22,7 +22,7 @@ describe('App', () => {
   it('links every mode from the navigation and the home page', () => {
     render(<App store={createStore(null)} data={testData} />)
     const nav = screen.getByRole('navigation', { name: 'Main' })
-    for (const name of ['Parse it', 'Fill the table', 'Make it', 'Endings sprint', 'Notes', 'Settings']) {
+    for (const name of ['Review', 'Parse it', 'Fill the table', 'Make it', 'Endings sprint', 'Notes', 'Settings']) {
       expect(within(nav).getByRole('link', { name })).toBeInTheDocument()
     }
     expect(within(screen.getByRole('main')).getAllByRole('link').length).toBeGreaterThanOrEqual(4)
@@ -41,6 +41,10 @@ describe('App', () => {
     expect(screen.getByRole('heading', { level: 1, name: /grammar notes/i })).toBeInTheDocument()
     go('#/nowhere')
     expect(screen.getByRole('heading', { level: 1, name: /not found/i })).toBeInTheDocument()
+  })
+  it('shows what Review has today on the home page', () => {
+    render(<App store={createStore(null)} data={testData} />)
+    expect(screen.getByText(/0 due, 20 new today/)).toBeInTheDocument()
   })
   it('gives a typing example taken from the data', () => {
     render(<App store={createStore(null)} data={testData} />)

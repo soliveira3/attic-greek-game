@@ -2,6 +2,8 @@ import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
 import { TypingHint } from '../components/TypingHint'
 import { lemmasInScope } from '../lib/prompts'
+import { reviewQueue } from '../lib/review'
+import { loadSrs } from '../lib/srs'
 
 const STRICTNESS_NAMES = { strict: 'strict', 'ignore-accents': 'ignore accents', lenient: 'lenient' } as const
 
@@ -13,14 +15,20 @@ export const MODES = [
 ] as const
 
 export function Home() {
-  const { data, settings } = useApp()
+  const { data, settings, store } = useApp()
   const words = lemmasInScope(data, settings).length
+  const queue = reviewQueue(data, settings, loadSrs(store), new Date(), Math.random)
+  const due = queue.filter((e) => !e.isNew).length
   return (
     <div className="page home">
       <h1 tabIndex={-1}>Attic Greek Morphology</h1>
       <p className="lead">
         Drill the forms of Attic Greek nouns, adjectives and verbs until they are automatic. Every form comes from checked
         source data.
+      </p>
+      <p className="review-call">
+        <a href={href('review')}>Review</a>{' '}
+        {queue.length ? `— ${due} due, ${queue.length - due} new today` : '— nothing due right now'}
       </p>
       <ul className="modes">
         {MODES.map((m) => (

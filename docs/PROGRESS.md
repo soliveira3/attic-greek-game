@@ -13,7 +13,7 @@
 
 ## Current task
 Phase 4 task 10 (greek-checker on the endings and the modes) is running; meanwhile Phase 5
-(docs/plans/phase-5.md), task 3: the Review page.
+(docs/plans/phase-5.md), task 4: statistics and the Stats page.
 
 ## Waiting on the user
 (nothing)
@@ -82,6 +82,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 5 task 3: Review page (#/review; Make it format, counts left, a missed item
+  comes back once at the end, "done for now" with the next review time); Home shows today's
+  reviews.
 - 2026-10-20 — Phase 5 tasks 1–2: FSRS cards (ts-fsrs 5.4.2) for feature cells and lemma × cell
   items, tested with a fake clock; daily Review queue (due first, then new items: weak feature
   cells pull in words of their class, then the most frequent words); every mode now updates the

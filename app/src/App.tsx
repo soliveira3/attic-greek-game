@@ -11,9 +11,15 @@ import { MakeIt } from './pages/MakeIt'
 import { NotFound } from './pages/NotFound'
 import { NotesPage } from './pages/NotesPage'
 import { ParseIt } from './pages/ParseIt'
+import { Review } from './pages/Review'
 import { SettingsPage } from './pages/SettingsPage'
 
-const NAV: { page: Page; name: string }[] = [...MODES, { page: 'notes', name: 'Notes' }, { page: 'settings', name: 'Settings' }]
+const NAV: { page: Page; name: string }[] = [
+  { page: 'review', name: 'Review' },
+  ...MODES,
+  { page: 'notes', name: 'Notes' },
+  { page: 'settings', name: 'Settings' },
+]
 
 function Screen() {
   const route = useRoute()
@@ -32,6 +38,9 @@ function Screen() {
   switch (route.page) {
     case 'home':
       page = <Home />
+      break
+    case 'review':
+      page = <Review />
       break
     case 'parse':
       page = <ParseIt />

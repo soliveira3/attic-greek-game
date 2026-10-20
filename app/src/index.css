@@ -579,3 +579,15 @@ button.check {
   font-size: 1.1rem;
   margin: 1rem 0 0.25rem;
 }
+
+.review-call {
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.review-call a {
+  font-weight: 700;
+}

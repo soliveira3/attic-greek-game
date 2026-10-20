@@ -2,9 +2,9 @@
   "lemma": "ἄδικος",
   "pos": "adj",
   "class": "adj-22",
-  "verified": false,
-  "verifiedBy": "",
-  "verifiedOn": "",
+  "verified": true,
+  "verifiedBy": "user (via Claude), on the evidence of data/golden/SMYTH_COMPARISON.md",
+  "verifiedOn": "2026-10-19",
   "note": "Check every cell against Smyth's Greek Grammar or your textbook. Do not edit forms: if a cell is wrong, report it so it can be excluded upstream. When every cell is right, set verified to true.",
   "cells": {
     "nom.sg.m": ["ᾰ̓́δῐκος"],

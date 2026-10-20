@@ -4,29 +4,26 @@
 |---|---|
 | 0 — Scaffold | done |
 | 1 — Spec 🧑 | done (approved 2026-10-19) |
-| 2 — Data pipeline 🧑 | pipeline done; 3 greek-checker audits addressed; **waiting on golden verification** |
-| 3 — Core library | not started |
+| 2 — Data pipeline 🧑 | done (golden set verified by the user 2026-10-19) |
+| 3 — Core library | in progress |
 | 4 — Game modes | not started |
 | 5 — Spaced repetition & progress | not started |
 | 6 — Grammar notes 🧑 | not started |
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 2, human gate: golden verification. The user does not read Greek, so Claude compares the
-golden tables with a digitized Smyth and reports differences in plain language; the user then
-sets the verified flags.
+Phase 3 — core library (see docs/plans/phase-3.md).
 
 ## Waiting on the user
-- Set `"verified": true` on the golden files once the Smyth comparison
-  (`data/golden/SMYTH_COMPARISON.md`) has been reviewed. Only the user sets that flag.
-  Result of the comparison (2026-10-19): 20 of 24 tables match Smyth in every cell; the other 4
-  match wherever Perseus's Smyth could be read (27 cells unreadable or not printed); 0 differences.
+(nothing)
 
 ## Decisions taken
 - 2026-10-19: after the user replied "continue" to the recommendations, ἐγενήθην (γίγνομαι) and
   the older spellings βασιλῆς, ἱππῆς and the dual πόλη were excluded (see the "User decisions"
   block in data/exclude.txt; delete those lines to undo), and golden verification goes through
   an automated comparison with Smyth (option 2) instead of a manual check.
+- 2026-10-19: the user marked all 24 golden files verified on the evidence of
+  data/golden/SMYTH_COMPARISON.md.
 
 ## Open questions
 - The Superpowers plugin is not installed, so phase plans in docs/plans/ are written by hand in
@@ -69,6 +66,7 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-19 — Phase 2 done: all 24 golden files verified (user decision); golden tests active.
 - 2026-10-19 — Phase 2: user decisions applied; golden models δίκαιος/σώφρων replaced by Smyth's
   ἄξιος/εὐδαίμων; golden set compared with Smyth via Perseus (pipeline/smyth.py,
   compare_smyth.py): no differences.

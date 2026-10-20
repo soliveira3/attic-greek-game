@@ -112,7 +112,13 @@ rule removed.
 11. 🧑 **HUMAN GATE** — user verifies the golden set.
 
 ## Acceptance
-- [ ] pytest: schema validation on all paradigm files; golden files match generated data exactly
-- [ ] REPORT.md reviewed; doubtful lemmas excluded via `data/exclude.txt`
-- [ ] greek-checker subagent run, findings addressed
-- [ ] User has verified the golden set
+- [x] pytest: schema validation on all paradigm files; golden files match generated data exactly
+- [x] REPORT.md reviewed; doubtful lemmas excluded via `data/exclude.txt`
+- [x] greek-checker subagent run, findings addressed (three audits)
+- [x] User has verified the golden set (2026-10-19, on the evidence of the Smyth comparison)
+
+## Outcome notes
+- Verb tables ended up chosen by DCC principal parts (`pipeline/select_tables.py`), not by
+  table order; see its docstring.
+- The user does not read Greek, so verification used `pipeline/compare_smyth.py` (Smyth via
+  Perseus): 20/24 tables match in every cell, 4 match wherever Smyth could be read, 0 differences.

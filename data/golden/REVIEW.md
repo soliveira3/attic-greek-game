@@ -6,7 +6,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ὁ
 
-`article` · not verified yet · file `data/golden/ὁ.json`
+`article` · verified · file `data/golden/ὁ.json`
 
 **singular**
 
@@ -38,7 +38,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## χώρα
 
-`decl1-a-long` · not verified yet · file `data/golden/χώρα.json`
+`decl1-a-long` · verified · file `data/golden/χώρα.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## θάλαττα
 
-`decl1-a-short` · not verified yet · file `data/golden/θάλαττα.json`
+`decl1-a-short` · verified · file `data/golden/θάλαττα.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -62,7 +62,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## τιμή
 
-`decl1-eta` · not verified yet · file `data/golden/τιμή.json`
+`decl1-eta` · verified · file `data/golden/τιμή.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -74,7 +74,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## πολίτης
 
-`decl1-masc-es` · not verified yet · file `data/golden/πολίτης.json`
+`decl1-masc-es` · verified · file `data/golden/πολίτης.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -86,7 +86,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## νεανίας
 
-`decl1-masc-as` · not verified yet · file `data/golden/νεανίας.json`
+`decl1-masc-as` · verified · file `data/golden/νεανίας.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -98,7 +98,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## λόγος
 
-`decl2-mf` · not verified yet · file `data/golden/λόγος.json`
+`decl2-mf` · verified · file `data/golden/λόγος.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -110,7 +110,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## δῶρον
 
-`decl2-n` · not verified yet · file `data/golden/δῶρον.json`
+`decl2-n` · verified · file `data/golden/δῶρον.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -122,7 +122,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## φλέψ
 
-`decl3-labial` · not verified yet · file `data/golden/φλέψ.json`
+`decl3-labial` · verified · file `data/golden/φλέψ.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -134,7 +134,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## φύλαξ
 
-`decl3-velar` · not verified yet · file `data/golden/φύλαξ.json`
+`decl3-velar` · verified · file `data/golden/φύλαξ.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -146,7 +146,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## σῶμα
 
-`decl3-dental` · not verified yet · file `data/golden/σῶμα.json`
+`decl3-dental` · verified · file `data/golden/σῶμα.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -158,7 +158,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## γέρων
 
-`decl3-nt` · not verified yet · file `data/golden/γέρων.json`
+`decl3-nt` · verified · file `data/golden/γέρων.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -170,7 +170,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ἡγεμών
 
-`decl3-liquid` · not verified yet · file `data/golden/ἡγεμών.json`
+`decl3-liquid` · verified · file `data/golden/ἡγεμών.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -182,7 +182,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## γένος
 
-`decl3-s` · not verified yet · file `data/golden/γένος.json`
+`decl3-s` · verified · file `data/golden/γένος.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -194,7 +194,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## πόλις
 
-`decl3-i` · not verified yet · file `data/golden/πόλις.json`
+`decl3-i` · verified · file `data/golden/πόλις.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -206,7 +206,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ἄστυ
 
-`decl3-u` · not verified yet · file `data/golden/ἄστυ.json`
+`decl3-u` · verified · file `data/golden/ἄστυ.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -218,7 +218,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## βασιλεύς
 
-`decl3-eu` · not verified yet · file `data/golden/βασιλεύς.json`
+`decl3-eu` · verified · file `data/golden/βασιλεύς.json`
 
 | case | singular | plural | dual |
 |---|---|---|---|
@@ -230,7 +230,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ἀγαθός
 
-`adj-212-eta` · not verified yet · file `data/golden/ἀγαθός.json`
+`adj-212-eta` · verified · file `data/golden/ἀγαθός.json`
 
 **singular**
 
@@ -265,7 +265,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ἄξιος
 
-`adj-212-alpha` · not verified yet · file `data/golden/ἄξιος.json`
+`adj-212-alpha` · verified · file `data/golden/ἄξιος.json`
 
 **singular**
 
@@ -300,7 +300,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ἄδικος
 
-`adj-22` · not verified yet · file `data/golden/ἄδικος.json`
+`adj-22` · verified · file `data/golden/ἄδικος.json`
 
 **singular**
 
@@ -335,7 +335,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## ἀληθής
 
-`adj-3-es` · not verified yet · file `data/golden/ἀληθής.json`
+`adj-3-es` · verified · file `data/golden/ἀληθής.json`
 
 **singular**
 
@@ -370,7 +370,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## εὐδαίμων
 
-`adj-3-on` · not verified yet · file `data/golden/εὐδαίμων.json`
+`adj-3-on` · verified · file `data/golden/εὐδαίμων.json`
 
 **singular**
 
@@ -405,7 +405,7 @@ Alternates are separated by ` / `; vowel-length marks come from Wiktionary and a
 
 ## λύω
 
-`verb-thematic` · not verified yet · file `data/golden/λύω.json`
+`verb-thematic` · verified · file `data/golden/λύω.json`
 
 **present active**
 
@@ -526,7 +526,7 @@ infinitive: λελῠ́σθαι
 
 ## λείπω
 
-`verb-thematic` · not verified yet · file `data/golden/λείπω.json`
+`verb-thematic` · verified · file `data/golden/λείπω.json`
 
 **present active**
 

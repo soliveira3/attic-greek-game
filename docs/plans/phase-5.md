@@ -43,5 +43,5 @@ fake clock.
 6. Smoke test extended to Review and Stats; reload keeps progress; storage that throws still works
 
 ## Acceptance
-- [ ] FSRS scheduling unit-tested with a fake clock
-- [ ] Progress survives reload; the app still works if localStorage throws
+- [x] FSRS scheduling unit-tested with a fake clock (app/src/lib/srs.test.ts, review.test.ts)
+- [x] Progress survives reload; the app still works if localStorage throws (app/e2e/smoke.spec.ts)

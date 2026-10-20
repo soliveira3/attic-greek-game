@@ -113,3 +113,43 @@ test('Settings persist across a reload', async ({ page }) => {
   await page.reload()
   await expect(page.getByRole('radio', { name: /strict/i })).toBeChecked()
 })
+
+test('Review: a round, then progress survives a reload', async ({ page }) => {
+  const errors = watch(page)
+  await page.goto('/#/review')
+  const input = page.getByRole('textbox', { name: 'Your answer' })
+  await expect(input).toBeFocused()
+  await expect(page.getByText(/0 to review · 20 new/)).toBeVisible()
+  await page.keyboard.type('xyz')
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('region', { name: 'Feedback' })).toBeVisible()
+  await page.keyboard.press('Enter')
+  await expect(page.getByText(/1 to review · 19 new/)).toBeVisible() // the missed one comes back
+
+  await page.goto('/#/stats')
+  await expect(page.getByText('Answers').locator('..')).toContainText('1')
+  await page.reload()
+  await expect(page.getByText('Answers').locator('..')).toContainText('1')
+  await expect(page.getByText('Day streak').locator('..')).toContainText('1')
+  await expect(page.locator('table.heat-map').first()).toBeVisible()
+  expect(errors).toEqual([])
+})
+
+test('the app still works when localStorage throws', async ({ page }) => {
+  await page.addInitScript(() => {
+    const fail = () => {
+      throw new DOMException('denied', 'SecurityError')
+    }
+    Object.defineProperty(window, 'localStorage', { get: fail, configurable: true })
+  })
+  const errors = watch(page)
+  await page.goto('/#/make')
+  await page.getByRole('textbox', { name: 'Your answer' }).focus()
+  await page.keyboard.type('xyz')
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('region', { name: 'Feedback' })).toBeVisible()
+  await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Progress' }).click()
+  await expect(page.getByText(/not saving your progress/i)).toBeVisible()
+  await expect(page.getByText('Answers').locator('..')).toContainText('1')
+  expect(errors).toEqual([])
+})

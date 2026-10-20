@@ -12,7 +12,8 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 4 — game modes (see docs/plans/phase-4.md), starting with task 1 (storage, settings, attempts).
+Phase 4 — game modes (see docs/plans/phase-4.md): task 3, the app shell (router, DataProvider,
+Home, Settings, GreekInput, GreekKeyboard).
 
 ## Waiting on the user
 (nothing)
@@ -79,6 +80,10 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 4 tasks 1–2: storage (try/catch, memory fallback), settings, attempt log;
+  seedable prompt generators (Parse it, Make it, Fill the table) honouring the scope settings;
+  endings sprint sets derived from the verified golden models (λύω gives every block, λείπω adds
+  its 2nd aorist; fused 3rd-declension cells, including a neuter's accusative, left out).
 - 2026-10-20 — Phase 3 done: third check.ts review addressed (present typed for the imperfect is an
   augment error, not where the augment is invisible; rejected other forms list counted errors;
   trailing punctuation ignored). Remaining label edge cases listed under "Known ...".

@@ -52,3 +52,14 @@ def test_review_notes_the_periphrastic_perfect_third_plural():
         "cells": {f"perf.mp.ind.{p}.{n}": ["x"] for p in "123" for n in ("sg", "pl") if (p, n) != ("3", "pl")},
     }
     assert "periphrasis" in render_review([lemma])
+
+
+def test_stale_unverified_golden_files_are_removed_but_verified_ones_kept(tmp_path):
+    from make_golden import remove_stale
+
+    (tmp_path / "old.json").write_text(json.dumps({"verified": False}), encoding="utf-8")
+    (tmp_path / "kept.json").write_text(json.dumps({"verified": True}), encoding="utf-8")
+    (tmp_path / "λόγος.json").write_text(json.dumps({"verified": False}), encoding="utf-8")
+    removed, kept = remove_stale(tmp_path, {"λόγος"})
+    assert removed == ["old"] and kept == ["kept"]
+    assert sorted(p.stem for p in tmp_path.glob("*.json")) == ["kept", "λόγος"]

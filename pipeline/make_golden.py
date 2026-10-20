@@ -64,6 +64,20 @@ def write_golden(directory: Path, lemmas: list[dict]) -> tuple[list[str], list[s
     return written, kept
 
 
+def remove_stale(directory: Path, wanted: set[str]) -> tuple[list[str], list[str]]:
+    """Delete unverified golden files whose lemma is no longer listed; keep verified ones."""
+    removed, kept = [], []
+    for path in sorted(directory.glob("*.json")):
+        if path.stem in wanted:
+            continue
+        if json.loads(path.read_text(encoding="utf-8")).get("verified") is True:
+            kept.append(path.stem)
+        else:
+            path.unlink()
+            removed.append(path.stem)
+    return removed, kept
+
+
 def _cell(cells: dict, key: str) -> str:
     return " / ".join(cells.get(key, []))
 
@@ -134,6 +148,11 @@ def main() -> int:
     for p in problems:
         print("problem:", p, file=sys.stderr)
     written, kept = write_golden(GOLDEN, lemmas)
+    removed, unlisted = remove_stale(GOLDEN, {lem for lem, _, _ in wanted})
+    for name in unlisted:
+        print(f"note: {name}.json is verified but no longer listed in LEMMAS.csv; left in place", file=sys.stderr)
+    if removed:
+        print("removed unlisted unverified golden files: " + ", ".join(removed))
     docs = [json.loads((GOLDEN / f"{lem['lemma']}.json").read_text(encoding="utf-8")) for lem in lemmas]
     (GOLDEN / "REVIEW.md").write_text(render_review(docs), encoding="utf-8")
     print(f"golden: wrote {len(written)}, kept {len(kept)} verified; review sheet data/golden/REVIEW.md")

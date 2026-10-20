@@ -19,6 +19,8 @@ sets the verified flags.
 ## Waiting on the user
 - Set `"verified": true` on the golden files once the Smyth comparison
   (`data/golden/SMYTH_COMPARISON.md`) has been reviewed. Only the user sets that flag.
+  Result of the comparison (2026-10-19): 20 of 24 tables match Smyth in every cell; the other 4
+  match wherever Perseus's Smyth could be read (27 cells unreadable or not printed); 0 differences.
 
 ## Decisions taken
 - 2026-10-19: after the user replied "continue" to the recommendations, ἐγενήθην (γίγνομαι) and
@@ -67,6 +69,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-19 — Phase 2: user decisions applied; golden models δίκαιος/σώφρων replaced by Smyth's
+  ἄξιος/εὐδαίμων; golden set compared with Smyth via Perseus (pipeline/smyth.py,
+  compare_smyth.py): no differences.
 - 2026-10-19 — Phase 2: three greek-checker audits; verb tables now chosen by DCC principal parts;
   exclusions extended; golden set regenerated (still unverified).
 - 2026-10-19 — Phase 2: DCC list + kaikki dump fetched; pipeline (normalize, betacode, core

@@ -608,7 +608,6 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - νεανίας: Doric declension-1
 - ἄστυ: Epic declension-3
 - γέρων: Epic declension-3, Ionic declension-3
-- σώφρων: Ionic declension-3
 
 ## Attic tables superseded by a better-ranked table of the same tense
 

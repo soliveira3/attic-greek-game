@@ -30,4 +30,5 @@ python build_paradigms.py     # data/paradigms/*.json + REPORT.md
 bash fetch_morpheus.sh        # optional: native Morpheus for the cross-check
 python crosscheck_morpheus.py # adds the Morpheus section to REPORT.md
 python make_golden.py         # data/golden/*.json (never overwrites a verified file) + REVIEW.md
+python compare_smyth.py       # data/golden/SMYTH_COMPARISON.md (downloads Smyth sections if needed)
 ```

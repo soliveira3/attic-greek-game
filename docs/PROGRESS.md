@@ -82,6 +82,11 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 6 task 4: greek-checker review of the notes addressed (contracted and Attic
+  futures; dative plural and vocatives of consonant stems; ἀλήθεια type; reduplication types;
+  εἶχον-type augments; deponents with active forms; the game's other-form rule in the accent note;
+  passages too close to Smyth rewritten; citations added); a form shared by several cells is
+  shown once in a note, with the cell names on hover.
 - 2026-10-20 — Phase 7 preparation (no publishing): axe accessibility checks on every page and on
   the feedback states, both themes, desktop and phone (all pass); scrollable tables focusable;
   relative asset paths (works under /<repo>/, checked); data-source credits in the footer;

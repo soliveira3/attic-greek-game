@@ -7,7 +7,8 @@
 //   {{table noun:λόγος}}                 a nominal paradigm (singular and plural)
 //   {{table verb:λύω aor.mid}}           one tense-voice block of a verb
 //   {{parts verb:λύω verb:λείπω}}        principal parts, one verb per row
-//   {{form verb:λύω impf.act.ind.1.sg}}  inline: the form(s) of one or more cells
+//   {{form verb:λύω impf.act.ind.1.sg}}  inline: the form(s) of one or more cells (a form shared by
+//                                        several of the cells is shown once)
 //   {{word noun:λόγος}}                  inline: the headword
 //   **bold**, *italic*, [text](topic)    a link to another note
 

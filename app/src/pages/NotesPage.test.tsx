@@ -20,6 +20,12 @@ describe('NotesPage', () => {
     expect(screen.getByRole('link', { name: /accents and breathings/i })).toHaveAttribute('href', '#/notes/accent')
     expect(screen.getAllByText(/Smyth §/).length).toBeGreaterThan(0)
   })
+  it('shows a form shared by several cells once, naming the cells on hover', () => {
+    const { container } = renderWithApp(<NotesPage topic="decl3-iu" />)
+    const polis = testData.lemma('noun:πόλις')!
+    const shared = [...container.querySelectorAll('p span[title], li span[title]')].find((el) => el.getAttribute('title')!.includes(';'))!
+    expect(shared.textContent).toBe(testData.forms(polis, 'nom.pl')[0])
+  })
   it('sets the ending off in tables of the verified models', () => {
     const { container } = renderWithApp(<NotesPage topic="decl2" />)
     expect(container.querySelectorAll('table .ending').length).toBeGreaterThan(0)

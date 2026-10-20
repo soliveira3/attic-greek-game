@@ -34,9 +34,22 @@ function InlineView({ items, data }: { items: Inline[]; data: Paradigms }) {
         if (i.kind === 'link') return <a key={n} href={href('notes', i.topic)}>{i.text}</a>
         const lemma = data.lemma(i.ref)!
         if (i.kind === 'word') return <span key={n} lang="grc" className="greek">{show(lemma.lemma)}</span>
+        // cells with the same form are shown once; the cell names are in the tooltip
+        const parts: { text: string; cells: string[] }[] = []
+        for (const c of i.cells) {
+          const text = data.forms(lemma, c).map(show).join(' or ')
+          const same = parts.find((p) => p.text === text)
+          if (same) same.cells.push(c)
+          else parts.push({ text, cells: [c] })
+        }
         return (
           <span key={n} lang="grc" className="greek">
-            {i.cells.map((c) => data.forms(lemma, c).map(show).join(' or ')).join(', ')}
+            {parts.map((p, j) => (
+              <Fragment key={j}>
+                {j > 0 && ', '}
+                <span title={p.cells.map((c) => cellLabel(c)).join('; ')}>{p.text}</span>
+              </Fragment>
+            ))}
           </span>
         )
       })}

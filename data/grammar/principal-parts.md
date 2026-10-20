@@ -1,19 +1,19 @@
 # Tense stems and principal parts
 
-A Greek verb does not build all its tenses on one stem. Its tenses fall into systems, and each system has its own tense stem (Smyth §368). The principal parts are the 1st person singular indicative of each system; there are usually six (Smyth §369):
+Learning one stem per verb is not enough. Greek groups its tenses into families, the tense systems, and every family is built on a stem of its own (Smyth §368). Dictionaries therefore list a verb under several forms, its principal parts: the 1st person singular indicative from each system, six in a typical verb (Smyth §369):
 
-- the present, which gives the present and the imperfect;
-- the future, which gives the future active and middle (a verb with no future active gives its future middle);
-- the aorist, which gives the aorist active and middle;
+- the present, the base of the present and the imperfect;
+- the future, the base of the future active and middle (a verb with no future active lists its future middle);
+- the aorist, the base of the aorist active and middle;
 - the perfect active;
 - the perfect middle, which also serves as the perfect passive;
-- the aorist passive, which also gives the future passive (Smyth §589).
+- the aorist passive, which is also the base of the future passive (Smyth §589).
 
 {{parts verb:λύω verb:λείπω verb:γράφω verb:πέμπω verb:ἄγω verb:φέρω verb:ἔχω}}
 
-Knowing the principal parts lets you build every form drilled in this game: take the stem from the right part and add the endings of that tense. A dash means the source data has no form of that part for the verb; where it gives two forms, both are shown.
+From the principal parts you can build almost every form drilled here: take the stem from the right part, add the endings of that tense, and add the [augment](augment) in a past indicative. The future part also shows whether a verb has a future with σ or a contracted one without: see [thematic verb endings](verb-endings). A dash means the source data has no form of that part for the verb; where it gives two forms, both are shown.
 
 ## In the game
-A stem error means the ending may be right, but the stem belongs to another tense, or is wrong: check the principal part.
+A stem error means the ending may well be right, but the stem belongs to another tense, or is wrong: check the principal part.
 
-See also [the augment](augment), [the 1st and 2nd aorist](aorist), [the perfect](perfect) and [middle and passive](middle-passive).
+See also [the 1st and 2nd aorist](aorist), [the perfect](perfect) and [middle and passive](middle-passive).

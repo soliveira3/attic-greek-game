@@ -1,8 +1,8 @@
 # 3rd declension: consonant stems
 
-In the 3rd declension the endings are added straight to the stem. To find the stem, drop -ος from the genitive singular (Smyth §240): {{form noun:φύλαξ gen.sg}}, {{form noun:σῶμα gen.sg}}.
+In the 3rd declension the endings go straight onto the stem, and the stem is often hidden in the nominative. Take the genitive singular and remove -ος, and what is left is the stem (Smyth §240): {{form noun:φύλαξ gen.sg}}, {{form noun:σῶμα gen.sg}}.
 
-Masculines and feminines take these endings: genitive -ος, dative -ι, accusative -α in the singular; nominative -ες, genitive -ων, dative -σι, accusative -ας in the plural (Smyth §246, §250).
+The usual endings of masculines and feminines are, in the singular, genitive -ος, dative -ι, accusative -α; in the plural, nominative -ες, genitive -ων, dative -σι, accusative -ας (Smyth §210). A few nouns differ in the accusative singular: those whose stem ends in ιτ, ιδ or ιθ and whose accent is not on the last syllable drop the dental and add ν (Smyth §247): {{form noun:χάρις acc.sg}}, but {{form noun:ἐλπίς acc.sg}}.
 
 {{table noun:φύλαξ}}
 
@@ -11,16 +11,23 @@ Masculines and feminines take these endings: genitive -ος, dative -ι, accusat
 {{table noun:γέρων}}
 
 ## The nominative singular
-- Masculine and feminine stems ending in a stop add ς. A labial and ς make ψ, a velar and ς make ξ, and a dental drops out before ς (Smyth §241): {{word noun:φλέψ}}, {{word noun:φύλαξ}}.
-- Stems in ν or ρ add nothing but lengthen a short vowel before them (Smyth §242): {{word noun:ἡγεμών}}.
-- Masculine stems in ντ drop the τ and lengthen ο to ω (Smyth §243): {{word noun:γέρων}}.
-- Neuters show the bare stem, which loses a final τ (Smyth §244): {{word noun:σῶμα}}. As in every neuter, the nominative, accusative and vocative are alike.
+- A masculine or feminine stem ending in a stop takes ς, and the two combine: labial and ς are written ψ, velar and ς ξ, and a dental disappears before the ς (Smyth §241): {{word noun:φλέψ}}, {{word noun:φύλαξ}}.
+- A stem ending in ν or ρ takes no ς; instead a short vowel before it becomes long (Smyth §242): {{word noun:ἡγεμών}}.
+- A masculine stem ending in ντ after ο loses the τ, and the ο becomes ω (Smyth §243): {{word noun:γέρων}}.
+- A neuter has no ending in the nominative, and a τ at the end of the stem falls away (Smyth §244): {{word noun:σῶμα}}. Its accusative and vocative are the same as the nominative.
 
-## The dative plural and the vocative
-- The dative plural adds -σι, and the stem changes before it just as before the ς of the nominative (Smyth §250): {{form noun:φύλαξ dat.pl}}, {{form noun:σῶμα dat.pl}}, {{form noun:γέρων dat.pl}}.
-- Stop stems use the nominative as their vocative: {{form noun:φύλαξ voc.sg}} (Smyth §249). Stems in ντ use the bare stem without its τ: {{form noun:γέρων voc.sg}} (Smyth §248).
+## The dative plural
+The dative plural ends in -σι (Smyth §250):
+- a stop combines with the σ as in the nominative: {{form noun:φύλαξ dat.pl}}, {{form noun:σῶμα dat.pl}};
+- ντ disappears, and ο before it lengthens to ου: {{form noun:γέρων dat.pl}};
+- ν simply disappears, without lengthening: {{form noun:ἡγεμών dat.pl}}, {{form noun:δαίμων dat.pl}}.
 
-Because stem and ending fuse in the nominative and vocative singular and the dative plural, the endings sprint leaves those cells out for this class.
+## The vocative singular
+- Stems ending in a stop use the nominative (Smyth §249): {{form noun:φύλαξ voc.sg}}. Stems in ιτ, ιδ or ιθ are the exception: they use the stem without its dental (Smyth §248): {{form noun:χάρις voc.sg}}, {{form noun:ἐλπίς voc.sg}}, {{form noun:παῖς voc.sg}}.
+- Masculines in ντ use the stem without the τ (Smyth §248): {{form noun:γέρων voc.sg}}.
+- Stems in ν or ρ use the nominative when it is accented on the last syllable, and the bare stem when it is not (Smyth §249): {{form noun:ἡγεμών voc.sg}}, {{form noun:δαίμων voc.sg}}.
+
+In the endings sprint, the nominative and vocative singular and the dative plural of this class are left out, because there stem and ending have merged.
 
 ## Accent
-A stem of one syllable puts the accent on the ending in the genitive and dative of every number (Smyth §252): {{form noun:φλέψ nom.sg gen.sg gen.pl}}.
+When the stem has one syllable, the genitive and dative of every number are accented on the ending (Smyth §252): {{form noun:φλέψ nom.sg gen.sg gen.pl}}. A few nouns, such as the word for "child", break this rule in the genitive dual and plural (Smyth §252): {{form noun:παῖς gen.pl dat.pl}}.

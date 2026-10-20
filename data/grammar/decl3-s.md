@@ -1,13 +1,13 @@
 # 3rd declension: σ-stems
 
-These nouns have stems ending in σ. Between two vowels the σ was lost, and the vowels that met were contracted (Smyth §263). Most of them are neuters like {{word noun:γένος}}.
+The stems of these nouns ended in σ. Wherever that σ came to stand between two vowels it was lost, and the two vowels then merged (Smyth §263). Nearly all such nouns in the game are neuters, with {{word noun:γένος}} as the model.
 
 {{table noun:γένος}}
 
 ## What to notice
-- The nominative singular ends in -ος, like a 2nd declension noun, but the word is neuter and its genitive is {{form noun:γένος gen.sg}}. Always learn the genitive with the nominative.
+- The nominative ends in -ος and looks like a 2nd declension noun, but the noun is neuter, and its genitive is {{form noun:γένος gen.sg}}. Learn the genitive together with the nominative.
 - The dative singular ends in -ει: {{form noun:γένος dat.sg}}.
-- As in every neuter, the nominative, accusative and vocative are alike, and in the plural they end in -η, contracted from the plural ending -α: {{form noun:γένος nom.pl}}.
-- The genitive plural is contracted too, and takes a circumflex: {{form noun:γένος gen.pl}}.
+- The nominative, accusative and vocative are alike, as in every neuter. In the plural they end in -η, which comes from the stem vowel ε merging with the ending -α (Smyth §264): {{form noun:γένος nom.pl}}.
+- The genitive plural has merged too, and has a circumflex: {{form noun:γένος gen.pl}}.
 
-Adjectives in -ης -ες such as {{word adj:ἀληθής}} are σ-stems as well: see [adjectives of the 3rd declension](adj-3).
+Adjectives such as {{word adj:ἀληθής}} are σ-stems as well: see [adjectives of the 3rd declension](adj-3).

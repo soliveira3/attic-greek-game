@@ -82,6 +82,10 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 7 preparation (no publishing): axe accessibility checks on every page and on
+  the feedback states, both themes, desktop and phone (all pass); scrollable tables focusable;
+  relative asset paths (works under /<repo>/, checked); data-source credits in the footer;
+  GitHub Actions workflow (checks, then Pages deploy from main); README.
 - 2026-10-20 — Phase 6 tasks 1–3: 18 grammar notes in data/grammar/ (original prose, Smyth
   sections checked against the Perseus text; every Greek form pulled from the data by
   placeholders, validated by lib/grammar.ts tests); Notes page with an index, paradigm tables

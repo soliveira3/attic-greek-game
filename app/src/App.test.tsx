@@ -46,6 +46,12 @@ describe('App', () => {
     render(<App store={createStore(null)} data={testData} />)
     expect(screen.getByText(/0 due, 20 new today/)).toBeInTheDocument()
   })
+  it('credits the data sources', () => {
+    render(<App store={createStore(null)} data={testData} />)
+    const footer = screen.getByRole('contentinfo')
+    expect(within(footer).getByRole('link', { name: 'Wiktionary' })).toBeInTheDocument()
+    expect(footer).toHaveTextContent(/CC BY-SA/)
+  })
   it('gives a typing example taken from the data', () => {
     render(<App store={createStore(null)} data={testData} />)
     const verb = testData.lemmas.find((l) => l.pos === 'verb')!

@@ -67,7 +67,8 @@ function ParadigmTable({ ref, block, data, hint }: { ref: string; block: string 
       )
     })
   return (
-    <div className="note-table">
+    // focusable, so the table can be scrolled with the keyboard on a narrow screen
+    <div className="note-table" tabIndex={0} role="region" aria-label={`Table: ${lemma.lemma}${block ? `, ${blockLabel(block)}` : ''}`}>
       {layout.sections.map((section, si) => (
         <table key={si} className="paradigm">
           <caption>
@@ -106,7 +107,7 @@ function ParadigmTable({ ref, block, data, hint }: { ref: string; block: string 
 function PartsTable({ refs, data }: { refs: string[]; data: Paradigms }) {
   const show = useShow()
   return (
-    <div className="note-table">
+    <div className="note-table" tabIndex={0} role="region" aria-label="Table: principal parts">
       <table className="paradigm parts">
         <caption>Principal parts</caption>
         <thead>

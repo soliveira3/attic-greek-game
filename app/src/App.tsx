@@ -84,6 +84,14 @@ function Screen() {
         </nav>
       </header>
       <main ref={main}>{page}</main>
+      <footer className="site">
+        <p>
+          Forms from <a href="https://en.wiktionary.org/">Wiktionary</a> (CC BY-SA 4.0), extracted by{' '}
+          <a href="https://kaikki.org/">kaikki.org</a>; word list and glosses from the{' '}
+          <a href="https://dcc.dickinson.edu/greek-core-list">DCC Greek Core Vocabulary</a> (CC BY-SA). Grammar
+          references: Smyth, <cite>Greek Grammar</cite> (1920). Progress stays in this browser.
+        </p>
+      </footer>
     </>
   )
 }

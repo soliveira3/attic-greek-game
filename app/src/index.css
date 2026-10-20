@@ -707,3 +707,17 @@ label.file {
   margin: 0.25rem 0 0;
   font-size: 0.9rem;
 }
+
+footer.site {
+  max-width: 52rem;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.note-table:focus-visible,
+.heat:focus-visible {
+  outline-offset: 4px;
+}

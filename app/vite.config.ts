@@ -3,7 +3,11 @@ import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // relative asset paths: the site works under any path (GitHub Pages serves it from /<repo>/)
+  base: './',
   plugins: [react()],
+  // the paradigm data is one lazily loaded chunk per part of speech; verbs is the largest
+  build: { chunkSizeWarningLimit: 1000 },
   // the app reads ../data (paradigms, golden models, grammar notes); ?raw imports need it allowed
   server: { fs: { allow: ['.', '../data'] } },
   test: {

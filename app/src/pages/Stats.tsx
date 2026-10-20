@@ -87,7 +87,7 @@ export function Stats() {
         </p>
       )}
       {played.map((cls) => (
-        <section key={cls} className="heat">
+        <section key={cls} className="heat" tabIndex={0} aria-label={`Accuracy: ${classLabel(cls)}`}>
           {heatLayout(cls, data, settings.scope.dual).sections.map((section, si) => (
             <table key={si} className="paradigm heat-map">
               <caption>

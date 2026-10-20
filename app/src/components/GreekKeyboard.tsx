@@ -28,6 +28,7 @@ export function GreekKeyboard() {
       type="button"
       className="key"
       aria-label={label}
+      title={label}
       lang="grc"
       onMouseDown={(e) => e.preventDefault()}
       onClick={() => typing?.insert(text)}

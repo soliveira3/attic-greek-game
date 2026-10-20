@@ -44,3 +44,11 @@ def test_review_has_a_grid_per_lemma():
     text = render_review([golden_doc(LEMMA)])
     assert "## λόγος" in text
     assert "| nom | λόγος |" in text.replace("  ", " ")
+
+
+def test_review_notes_the_periphrastic_perfect_third_plural():
+    lemma = {
+        "lemma": "λύω", "pos": "verb", "class": "verb-thematic", "verified": False,
+        "cells": {f"perf.mp.ind.{p}.{n}": ["x"] for p in "123" for n in ("sg", "pl") if (p, n) != ("3", "pl")},
+    }
+    assert "periphrasis" in render_review([lemma])

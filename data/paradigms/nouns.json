@@ -1312,7 +1312,7 @@
         {"key": "gen.sg", "case": "gen", "number": "sg", "forms": ["ᾰ̓δελφοῦ"]},
         {"key": "dat.sg", "case": "dat", "number": "sg", "forms": ["ᾰ̓δελφῷ"]},
         {"key": "acc.sg", "case": "acc", "number": "sg", "forms": ["ᾰ̓δελφόν"]},
-        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["ᾰ̓δελφέ", "ᾰ̓́δελφε"]},
+        {"key": "voc.sg", "case": "voc", "number": "sg", "forms": ["ᾰ̓́δελφε"]},
         {"key": "nom.du", "case": "nom", "number": "du", "forms": ["ᾰ̓δελφώ"]},
         {"key": "gen.du", "case": "gen", "number": "du", "forms": ["ᾰ̓δελφοῖν"]},
         {"key": "dat.du", "case": "dat", "number": "du", "forms": ["ᾰ̓δελφοῖν"]},

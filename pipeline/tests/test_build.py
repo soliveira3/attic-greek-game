@@ -364,3 +364,56 @@ def test_report_credits_rules_that_exclude_an_attic_substitute(index, articles):
     sources = {"kaikki": {"extracted": "x", "wiktionary_dump": "y"}, "dcc": {"retrieved": "z"}}
     report = render_report([c], {c: result}, sources, rules)
     assert "line 1 `θάλαττα`: removed lemma" in report
+
+
+# --- second audit -------------------------------------------------------------------------
+
+
+def test_future_principal_part_does_not_select_a_present_table(index, articles):
+    # πίνω's DCC future πίομαι also appears in a second "present" table; the present must
+    # still come from the table with the lemma.
+    c = cells(build(index, articles, "πίνω", "verb"))
+    assert c["pres.mp.ind.1.sg"] != c["fut.mid.ind.1.sg"]
+
+
+def test_perfect_missing_from_dcc_is_not_treated_as_nonexistent(index, articles):
+    # DCC gives τρέφω no perfect active and writes ἐλαύνω's as "-ελήλακα" (compound only);
+    # neither means the simplex has no perfect active.
+    for word in ("τρέφω", "ἐλαύνω"):
+        assert "perf.act.ind.1.sg" in cells(build(index, articles, word, "verb")), word
+
+
+def test_no_future_passive_without_an_aorist_passive(index, articles):
+    c = cells(build(index, articles, "ἔχω", "verb"))
+    assert not [k for k in c if k.startswith("aor.pass")]
+    assert not [k for k in c if k.startswith("fut.pass")]
+
+
+def test_sigma_sigma_supplement_can_supply_a_voice_of_a_covered_tense(index, articles):
+    c = cells(build(index, articles, "πράσσω", "verb"))
+    assert "perf.mp.ind.1.sg" in c and "perf.act.ind.1.sg" in c
+
+
+def test_every_fallback_choice_is_reported(index, articles):
+    b = build(index, articles, "λύω", "verb")
+    assert any(n.startswith("impf.act:") for n in b.choices)
+
+
+def test_dcc_accent_slip_is_resolved_by_gloss(index, articles):
+    # DCC writes the ordinal "fifth" as πεμπτός; Wiktionary's πεμπτός means "sent".
+    c = cand("πεμπτός", "adj")
+    entries, dcc_lemma, _ = select_entry(c, index)
+    assert [e["senses"][0]["glosses"][0] for e in entries] == ["fifth"]
+    assert dcc_lemma == "πεμπτός"
+
+
+def test_scan_dump_keeps_entries_that_differ_only_in_accent(tmp_path, all_sample_entries):
+    import json
+
+    from build_paradigms import scan_dump
+
+    path = tmp_path / "dump.jsonl"
+    path.write_text("\n".join(json.dumps(e, ensure_ascii=False) for e in all_sample_entries), encoding="utf-8")
+    index = scan_dump(path, [cand("πεμπτός", "adj")])
+    entries, _, _ = select_entry(cand("πεμπτός", "adj"), index)
+    assert [e["senses"][0]["glosses"][0] for e in entries] == ["fifth"]

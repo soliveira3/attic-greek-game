@@ -642,4 +642,6 @@ infinitive: λελοιπέναι
 | 2 | λέλειψαι | λέλειφθε | λέλειφθον |
 | 3 | λέλειπται |  | λέλειφθον |
 
+3rd plural left blank on purpose: Attic uses a periphrasis (perfect participle + the verb 'to be'), which v1 does not model.
+
 infinitive: λελεῖφθαι

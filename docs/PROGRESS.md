@@ -12,12 +12,17 @@
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
-Phase 2, task 7/11: address greek-checker findings, then the human gate (golden verification).
+Phase 2, human gate: golden verification. The user does not read Greek, so the verification
+method is being agreed (options offered 2026-10-19: a Greek reader checks REVIEW.md; Claude
+compares the golden tables with Smyth's paradigms and reports differences in plain language;
+or rely on the automated checks).
 
 ## Waiting on the user
-- Verify the 24 golden paradigms in `data/golden/` (grids in `data/golden/REVIEW.md`) against
-  Smyth or a textbook, and set `"verified": true` in each file that is right. Report wrong cells
-  instead of editing them.
+- Choose how the golden set gets verified (see above), then set `"verified": true` per file.
+- Decide: keep or drop γίγνομαι's aorist passive ἐγενήθην (DCC lists it; Smyth calls it
+  non-Attic). Recommended: drop.
+- Decide: keep or drop the older Attic alternates βασιλῆς (pl. of βασιλεύς, currently shown
+  first) and the dual πόλη (πόλις). Recommended: drop both.
 
 ## Open questions
 - The Superpowers plugin is not installed, so phase plans in docs/plans/ are written by hand in
@@ -33,27 +38,34 @@ Phase 2, task 7/11: address greek-checker findings, then the human gate (golden 
   (`pipeline/fetch_morpheus.sh`). Tests that need them skip when absent. See docs/DATA_SOURCES.md.
 
 ## Data pipeline summary (Phase 2)
-- 300 lemmas built: 130 nouns, 84 adjectives + the article, 85 thematic verbs; every v1 class
+- 283 lemmas built: 129 nouns, 67 adjectives + the article, 85 thematic verbs; every v1 class
   has at least one lemma. Extra model lemmas not on the DCC list: `data/extra_lemmas.csv`.
-- Morpheus agrees on 12,983 of 13,326 forms; the rest are listed in REPORT.md (mostly Morpheus
-  gaps: lemma spellings, vocative = nominative, perfect 3rd dual, comparatives).
-- Rules worth knowing (details in docs/plans/phase-2.md and the module docstrings):
-  first Attic table per tense used whole, later tables only fill missing voice groups;
-  a "contracted X" table supersedes its uncontracted partner; "middle"-only present-system
-  tags become middle/passive; homograph entries chosen by gloss overlap with the DCC gloss.
+- Morpheus agrees on 12,193 of 12,398 forms; every remaining disagreement is either excluded or
+  listed as deliberately kept at the end of `data/exclude.txt`.
+- Verb tables are chosen per tense and voice from the DCC principal parts
+  (`pipeline/select_tables.py` docstring has the rules); nominals use the first Attic table.
+- Two greek-checker audits run (2026-10-19); all blockers and majors addressed.
 
 ## Known data issues
 See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notable:
-- Perfect middle/passive 3rd plural in -αται removed (Attic uses a periphrasis, not in v1), so
-  38 verbs have no perfect middle/passive indicative block.
-- Kept although Morpheus does not know them: τρέφω aor. pass. ἐθρέφθην, ἔχω fut./aor. passive.
-- Contract verbs, εἰμί, μι-verbs, irregular nouns and 3-1-3 adjectives are out of scope for now.
+- Perfect middle/passive 3rd plural in -αται removed (Attic uses a periphrasis, not in v1); those
+  perfect middle/passive blocks are kept with the 3rd plural blank.
+- Some valid Attic alternates are lost where DCC lists only one principal part (e.g. λέγω
+  εἴρημαι, πείθω πέπεικα, ἔχω σχήσομαι): precision is preferred over recall. A learner typing
+  one of these is marked wrong; revisit if players report it.
+- No present middle/passive infinitive for γιγνώσκω, ἔρχομαι, οἴομαι (source rows lack a voice).
+- ἱερός carries stacked length marks (either-length); the app should hide length marks when a
+  vowel has both macron and breve (display only).
+- Contract verbs, εἰμί, μι-verbs, irregular nouns, comparatives, pronominal adjectives and 3-1-3
+  adjectives are out of scope for now.
 
 ## v2 backlog additions
 - Periphrastic perfect middle/passive 3rd plural for consonant stems.
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-19 — Phase 2: two greek-checker audits; verb tables now chosen by DCC principal parts;
+  exclusions extended; golden set regenerated (still unverified).
 - 2026-10-19 — Phase 2: DCC list + kaikki dump fetched; pipeline (normalize, betacode, core
   list, table selection, tag mapping, classification, exclusions, Morpheus cross-check, golden
   generation) built test-first; REPORT reviewed and data/exclude.txt written; 24 golden files

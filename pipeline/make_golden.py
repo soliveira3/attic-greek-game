@@ -104,6 +104,9 @@ def render_review(docs: list[dict]) -> str:
                     rows = [[p] + [_cell(cells, f"{block}.ind.{p}.{n}") for n, _ in NUMBERS] for p in ("1", "2", "3")]
                     if any(any(r[1:]) for r in rows):
                         out += _table(["person", "singular", "plural", "dual"], rows)
+                        if block == "perf.mp" and f"{block}.ind.3.pl" not in cells:
+                            out += ["", "3rd plural left blank on purpose: Attic uses a periphrasis "
+                                    "(perfect participle + the verb 'to be'), which v1 does not model."]
                     if cells.get(f"{block}.inf"):
                         out += ["", f"infinitive: {_cell(cells, f'{block}.inf')}"]
                     out.append("")

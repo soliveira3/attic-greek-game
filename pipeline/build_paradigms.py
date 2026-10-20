@@ -82,11 +82,13 @@ class Rejected:
 
 
 class Index(dict):
-    """(key(word), pos) -> entries, plus `attic_alts`: (key(target), pos) -> "Attic form of" entries."""
+    """(key(word), pos) -> entries, plus `attic_alts`: (key(target), pos) -> "Attic form of" entries
+    and `by_letters`: (accent-free word, pos) -> entries."""
 
     def __init__(self) -> None:
         super().__init__()
         self.attic_alts: dict[tuple[str, str], list[dict]] = {}
+        self.by_letters: dict[tuple[str, str], list[dict]] = {}
 
 
 def attic_alt_targets(entry: dict) -> list[str]:
@@ -103,6 +105,7 @@ def index_entries(entries: Iterable[dict]) -> Index:
     index = Index()
     for e in entries:
         index.setdefault((key(e["word"]), e["pos"]), []).append(e)
+        index.by_letters.setdefault((strip_accents(e["word"]), e["pos"]), []).append(e)
         for target in attic_alt_targets(e):
             index.attic_alts.setdefault((target, e["pos"]), []).append(e)
     return index
@@ -123,7 +126,16 @@ def select_entry(c: Candidate, index: Index) -> tuple[list[dict], str | None, li
             if attic:
                 return attic, dcc_lemma, index.get((k, pos), [])
         if index.get((k, pos)):
-            return index[(k, pos)], dcc_lemma, []
+            entries = index[(k, pos)]
+            if c.gloss and not any(gloss_overlap(c.gloss, e) for e in entries):
+                # DCC accent slip (πεμπτός "fifth" is Wiktionary's πέμπτος; πεμπτός means "sent")
+                same_letters = [
+                    e for e in index.by_letters.get((strip_accents(k), pos), [])
+                    if key(e["word"]) != k and gloss_overlap(c.gloss, e)
+                ]
+                if same_letters:
+                    return same_letters, dcc_lemma, []
+            return entries, dcc_lemma, []
     return [], dcc_lemma, []
 
 
@@ -270,12 +282,11 @@ def _build_one(
     names = {key(word)} | ({key(dcc_lemma)} if dcc_lemma else set())
     choices: list[str] = []
     if c.pos == "verb":
-        covered = {t.tense for t in picked.kept}
         for sup in supplements:
             for t in pick_tables(tables(sup), "verb").kept:
-                if t.tense not in covered and not any("σσ" in key(f) for f, _ in t.forms):
+                if not any("σσ" in key(f) for f, _ in t.forms):
                     picked.kept.append(t)
-                    choices.append(f"`{t.label}` taken from the {nfc(sup['word'])} entry (it has no -σσ- forms)")
+                    choices.append(f"`{t.label}` of the {nfc(sup['word'])} entry is a candidate (it has no -σσ- forms)")
 
     excl: list[tuple[Rule, str]] = []
     kept: list[Table] = []
@@ -378,17 +389,17 @@ def _gloss_words(text: str) -> set[str]:
     return set(re.findall(r"[a-z]+", text.lower())) - _STOPWORDS
 
 
+def gloss_overlap(gloss: str, entry: dict) -> int:
+    """Words shared by a DCC gloss and the entry's Wiktionary glosses."""
+    have = set().union(*(_gloss_words(g) for s in entry.get("senses", []) for g in s.get("glosses", [])))
+    return len(_gloss_words(gloss) & have)
+
+
 def order_by_gloss(gloss: str | None, entries: list[dict]) -> list[dict]:
     """Homograph entries, best match for the DCC gloss first (stable for ties)."""
     if not gloss or len(entries) < 2:
         return entries
-    want = _gloss_words(gloss)
-
-    def overlap(e: dict) -> int:
-        have = set().union(*(_gloss_words(g) for s in e.get("senses", []) for g in s.get("glosses", [])))
-        return len(want & have)
-
-    return sorted(entries, key=overlap, reverse=True)
+    return sorted(entries, key=lambda e: gloss_overlap(gloss, e), reverse=True)
 
 
 def build_lemma(
@@ -465,7 +476,7 @@ def render_report(candidates: list[Candidate], results: dict[Candidate, Built | 
     by_class = Counter(b.lemma["class"] for b in built.values())
     lines += ["", "Included lemmas by class: " + ", ".join(f"`{c}` {n}" for c, n in sorted(by_class.items())), ""]
 
-    lines += ["## Attic substitutions (DCC headword → Attic entry)", ""]
+    lines += ["## DCC headword → Wiktionary entry used (Attic -ττ- spelling or a DCC accent slip)", ""]
     lines += _md_list([f"{b.lemma['dccLemma']} → {b.lemma['lemma']}" for b in built.values() if b.lemma["dccLemma"] and key(b.lemma["dccLemma"]) != key(b.lemma["lemma"])])
 
     for reason, title in [
@@ -535,11 +546,16 @@ def load_candidates() -> list[Candidate]:
 
 def scan_dump(path: Path, candidates: list[Candidate]) -> Index:
     wanted = {(key(c.lemma), pos) for c in candidates for pos in dump_pos(c.pos)}
+    # entries spelt with the same letters but other accents, for DCC accent slips
+    wanted_letters = {(strip_accents(k), pos) for k, pos in wanted}
     keep = []
     for e in iter_entries(path):
-        if (key(e["word"]), e.get("pos")) not in wanted and not attic_alt_targets(e):
-            continue
-        if (key(e["word"]), e["pos"]) in wanted or any((t, e["pos"]) in wanted for t in attic_alt_targets(e)):
+        pos = e.get("pos")
+        if (
+            (key(e["word"]), pos) in wanted
+            or (strip_accents(e["word"]), pos) in wanted_letters
+            or any((t, pos) in wanted for t in attic_alt_targets(e))
+        ):
             keep.append(e)
     return index_entries(keep)
 

@@ -3,19 +3,24 @@
 Wiktionary often prints several tables for one tense: the main paradigm, rarer or poetic
 alternatives, Ionic iteratives, or forms of a homonymous verb. The DCC headword lists the verb's
 principal parts ("παύω, παύσω, ἔπαυσα, πέπαυκα, πέπαυμαι, ἐπαύθην"), which tell us which of those
-tables is the standard Attic paradigm. Rules, per tense and voice group (act, mid, pass, mp):
+tables is the standard Attic paradigm. Principal parts are matched against the 1st singular
+indicative and infinitive cells only; the present matches only the lemma, the other tenses only
+the other parts (πίνω's future πίομαι also appears in a stray "present" table). Rules, per tense
+and voice group (act, mid, pass, mp):
 
 1. Use every table whose forms in that voice include a principal part (alternates merged).
-2. If the tense has a principal part in the middle but none in the active, the active is
-   dropped: DCC gives ἀκούω's future as ἀκούσομαι, so ἀκούσω is not Attic. (A passive principal
-   part says nothing about the active: λέγω's aorist active εἶπον lives in another entry.)
-3. A future passive with no principal part is taken from the table built on the chosen aorist
-   passive (παυθήσομαι goes with ἐπαύθην, not παυσθήσομαι).
+2. In the present and future, if the tense has a principal part in the middle but none in the
+   active, the active is dropped: DCC gives ἀκούω's future as ἀκούσομαι, so ἀκούσω is not
+   Attic. (Elsewhere a missing part means DCC left it out, and a passive part says nothing about
+   the active: λέγω's aorist active εἶπον lives in another entry.)
+3. A future passive without a principal part is taken only from tables built on the chosen
+   aorist passive (παυθήσομαι goes with ἐπαύθην, not παυσθήσομαι); otherwise it is dropped.
 4. Otherwise, if some table of the tense has a principal part, the voice comes from the first
-   such table, or is dropped if that table lacks it (ἐτεύχθην under τυγχάνω is from τεύχω).
+   such table that has it, or is dropped if none has it (ἐτεύχθην under τυγχάνω is from τεύχω).
 5. If no table of the tense has a principal part (usually the imperfect), all tables are merged.
 
-Tables of Ionic iteratives (-σκ- where the lemma has none) are dropped first.
+Tables of Ionic iteratives (-σκ- where the lemma has none) are dropped first. Every choice made
+by rules 2-5, and every choice among several tables, is noted for the build report.
 """
 import re
 from dataclasses import dataclass, field
@@ -41,11 +46,12 @@ class MappedTable:
     def groups(self) -> list[str]:
         return list(dict.fromkeys(_group(k) for k in self.cells))
 
-    def forms(self, group: str | None = None) -> set[str]:
+    def principal_forms(self, group: str | None = None) -> set[str]:
+        """Accent-free 1st singular indicative and infinitive forms: the slots principal parts name."""
         return {
             strip_accents(f)
             for k, fs in self.cells.items()
-            if group is None or _group(k) == group
+            if (group is None or _group(k) == group) and k.endswith((".ind.1.sg", ".inf"))
             for f in fs
         }
 
@@ -100,33 +106,32 @@ def select(lemma: str, tables: list[MappedTable], parts: set[str]) -> Selection:
             by_tense.setdefault(t.tense, []).append(t)
 
     chosen: dict[tuple[str, str], list[MappedTable]] = {}
+    lemma_part = {strip_accents(lemma)}
+    other_parts = parts - lemma_part
     for tense in TENSE_ORDER:
         ts = by_tense.get(tense, [])
+        tense_parts = lemma_part if tense == "pres" else other_parts
         groups = list(dict.fromkeys(g for t in ts for g in t.groups()))
-        hits = {g: [t for t in ts if g in t.groups() and t.forms(g) & parts] for g in groups}
-        attested = [t for t in ts if t.forms() & parts]
+        hits = {g: [t for t in ts if g in t.groups() and t.principal_forms(g) & tense_parts] for g in groups}
+        attested = [t for t in ts if t.principal_forms() & tense_parts]
         for g in groups:
             providers = [t for t in ts if g in t.groups()]
-            future_passive = (
-                _future_passives_on(chosen.get(("aor", "pass"), []), providers)
-                if (tense, g) == ("fut", "pass")
-                else []
-            )
             if hits[g]:
                 pick, why = hits[g], "has a DCC principal part"
-            elif g == "act" and any(hits[o] for o in groups if o in ("mid", "mp")):
+            elif g == "act" and tense in ("pres", "fut") and any(hits[o] for o in groups if o in ("mid", "mp")):
                 pick, why = [], "dropped: DCC gives this tense only in the middle"
             elif g == "act" and tense == "impf" and ("pres", "act") in chosen and not chosen[("pres", "act")]:
                 pick, why = [], "dropped: the present is deponent"
-            elif future_passive:
-                pick, why = future_passive, "built on the chosen aorist passive"
+            elif (tense, g) == ("fut", "pass"):
+                pick = _future_passives_on(chosen.get(("aor", "pass"), []), providers)
+                why = "built on the chosen aorist passive" if pick else "dropped: not built on a chosen aorist passive"
             elif attested:
                 pick = [t for t in attested if g in t.groups()][:1]
-                why = "from the table with the DCC principal part" if pick else "dropped: no table with a DCC principal part has it"
+                why = "from the first table with a DCC principal part" if pick else "dropped: no table with a DCC principal part has it"
             else:
                 pick, why = providers, "no DCC principal part for this tense; all tables merged"
             chosen[(tense, g)] = pick
-            if len(providers) > 1 or not pick:
+            if len(providers) > 1 or not hits[g]:
                 labels = ", ".join(f"`{t.label}`" for t in pick) or "none"
                 sel.notes.append(f"{tense}.{g}: {why} (used {labels} of {len(providers)})")
 

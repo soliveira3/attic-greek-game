@@ -8,19 +8,20 @@ Do not edit by hand; rerun the pipeline. Decisions about this report go in `data
 | POS | candidates | included | not in dump | no Attic table | out of scope | incomplete | excluded |
 |---|---|---|---|---|---|---|---|
 | noun | 147 | 129 | 3 | 5 | 5 | 1 | 4 |
-| adj | 110 | 71 | 1 | 10 | 10 | 5 | 13 |
+| adj | 110 | 67 | 1 | 10 | 10 | 5 | 17 |
 | article | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
 | verb | 151 | 85 | 0 | 2 | 62 | 0 | 2 |
 
-Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj-3-es` 3, `adj-3-on` 1, `article` 1, `decl1-a-long` 10, `decl1-a-short` 4, `decl1-eta` 19, `decl1-masc-as` 1, `decl1-masc-es` 4, `decl2-mf` 35, `decl2-n` 10, `decl3-dental` 17, `decl3-eu` 2, `decl3-i` 6, `decl3-labial` 1, `decl3-liquid` 5, `decl3-nt` 1, `decl3-s` 12, `decl3-u` 1, `decl3-velar` 1, `verb-thematic` 85
+Included lemmas by class: `adj-212-alpha` 26, `adj-212-eta` 33, `adj-22` 4, `adj-3-es` 3, `adj-3-on` 1, `article` 1, `decl1-a-long` 10, `decl1-a-short` 4, `decl1-eta` 19, `decl1-masc-as` 1, `decl1-masc-es` 4, `decl2-mf` 35, `decl2-n` 10, `decl3-dental` 17, `decl3-eu` 2, `decl3-i` 6, `decl3-labial` 1, `decl3-liquid` 5, `decl3-nt` 1, `decl3-s` 12, `decl3-u` 1, `decl3-velar` 1, `verb-thematic` 85
 
-## Attic substitutions (DCC headword → Attic entry)
+## DCC headword → Wiktionary entry used (Attic -ττ- spelling or a DCC accent slip)
 
 - πράσσω → πράττω
 - θάλασσα → θάλαττα
 - φυλάσσω → φυλάττω
 - τάσσω → τάττω
 - γλῶσσα → γλῶττα
+- πεμπτός → πέμπτος
 
 ## Not found in the dump
 
@@ -141,11 +142,14 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 ## Excluded by data/exclude.txt
 
 - οἷος (adj): οἷος
+- ἕτερος (adj): ἕτερος
 - ὅσος (adj): ὅσος
 - γῆ (noun): γῆ
 - ἐμός (adj): ἐμός
 - σός (adj): σός
+- ὑμέτερος (adj): ὑμέτερος
 - ἐλάσσων (adj): ἐλάττων
+- ἀμφότερος (adj): ἀμφότερος
 - ἔρομαι (verb): ἔρομαι
 - ἥσσων (adj): ἥττων
 - κρείσσων (adj): κρείττων
@@ -155,6 +159,7 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - πότερος (adj): πότερος
 - ποῖος (adj): ποῖος
 - βελτίων (adj): βελτίων
+- ἡμέτερος (adj): ἡμέτερος
 - ἀμείνων (adj): ἀμείνων
 - χείρων (adj): χείρων
 - ἀπαλλάσσω (verb): ἀπαλλάσσω
@@ -170,7 +175,6 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 ## Competing forms (all kept as alternates; movable-ν pairs not listed)
 
 - λέγω `pres.mp.ind.2.sg`: λέγῃ / λέγει
-- λέγω `fut.mid.ind.2.sg`: ἐρεῖ / ἐρῇ
 - λέγω `fut.pass.ind.2.sg`: λεχθήσῃ / λεχθήσει
 - γίγνομαι `pres.mp.ind.2.sg`: γῐ́γνῃ / γῐ́γνει
 - γίγνομαι `fut.mid.ind.2.sg`: γενήσῃ / γενήσει
@@ -186,7 +190,6 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - ἔχω `fut.act.ind.3.pl`: ἕξουσῐ / ἕξουσῐν / σχήσουσῐ / σχήσουσῐν
 - ἔχω `fut.act.inf`: ἕξειν / σχήσειν
 - ἔχω `fut.mid.ind.2.sg`: ἕξῃ / ἕξει
-- ἔχω `fut.pass.ind.2.sg`: σχεθήσῃ / σχεθήσει
 - πόλις `nom.du`: πόλη / πόλει
 - πόλις `acc.du`: πόλη / πόλει
 - πόλις `voc.du`: πόλη / πόλει
@@ -234,6 +237,7 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - πράττω `pres.mp.ind.2.sg`: πρᾱ́ττῃ / πρᾱ́ττει
 - πράττω `fut.mid.ind.2.sg`: πρᾱ́ξῃ / πρᾱ́ξει
 - πράττω `fut.pass.ind.2.sg`: πρᾱχθήσῃ / πρᾱχθήσει
+- πράττω `perf.mp.ind.3.pl`: πεπρᾱ́γᾰται / πεπρᾱ́χᾰται
 - εὑρίσκω `pres.mp.ind.2.sg`: εὑρῐ́σκῃ / εὑρῐ́σκει
 - εὑρίσκω `aor.act.ind.1.sg`: εὗρον / ηὗρον
 - εὑρίσκω `aor.act.ind.2.sg`: εὗρες / ηὗρες
@@ -302,15 +306,14 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - διαφέρω `fut.mid.ind.2.sg`: δῐοίσῃ / δῐοίσει
 - φυλάττω `pres.mp.ind.2.sg`: φῠλᾰ́ττῃ / φῠλᾰ́ττει
 - φυλάττω `fut.mid.ind.2.sg`: φῠλᾰ́ξῃ / φῠλᾰ́ξει
+- φυλάττω `fut.pass.ind.2.sg`: φῠλᾰχθήσῃ / φῠλᾰχθήσει
 - παρέχω `pres.mp.ind.2.sg`: πᾰρέχῃ / πᾰρέχει
 - παρέχω `fut.mid.ind.2.sg`: πᾰρέξῃ / πᾰρέξει
 - κελεύω `pres.mp.ind.2.sg`: κελεύῃ / κελεύει
 - κελεύω `fut.mid.ind.2.sg`: κελεύσῃ / κελεύσει
 - κελεύω `fut.pass.ind.2.sg`: κελευσθήσῃ / κελευσθήσει
-- ἀδελφός `voc.sg`: ᾰ̓δελφέ / ᾰ̓́δελφε
-- πίνω `pres.mp.ind.2.sg`: πῑ́ῃ / πῑ́ει
+- πίνω `pres.mp.ind.2.sg`: πῑ́νῃ / πῑ́νει
 - πίνω `fut.mid.ind.2.sg`: πῑ́ῃ / πῑ́ει
-- πίνω `fut.pass.ind.2.sg`: ποθήσῃ / ποθήσει
 - μανθάνω `pres.mp.ind.2.sg`: μᾰνθᾰ́νῃ / μᾰνθᾰ́νει
 - μανθάνω `fut.mid.ind.2.sg`: μᾰθήσῃ / μᾰθήσει
 - φεύγω `pres.mp.ind.2.sg`: φεύγῃ / φεύγει
@@ -354,11 +357,9 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - αἰσθάνομαι `fut.mid.ind.2.sg`: αἰσθήσῃ / αἰσθήσει
 - καταλαμβάνω `pres.mp.ind.2.sg`: κᾰτᾰλᾰμβᾰ́νῃ / κᾰτᾰλᾰμβᾰ́νει
 - καταλαμβάνω `fut.mid.ind.2.sg`: κᾰτᾰλήψῃ / κᾰτᾰλήψει
-- καταλαμβάνω `fut.pass.ind.2.sg`: κᾰτᾰληφθήσῃ / κᾰτᾰληφθήσει
 - μάχομαι `pres.mp.ind.2.sg`: μᾰ́χῃ / μᾰ́χει
 - μάχομαι `fut.mid.ind.2.sg`: μᾰχεῖ / μᾰχῇ
 - μιμνήσκω `pres.mp.ind.2.sg`: μῐμνήσκῃ / μῐμνήσκει
-- μιμνήσκω `fut.mid.ind.2.sg`: μνήσῃ / μνήσει
 - μιμνήσκω `fut.pass.ind.2.sg`: μνησθήσῃ / μνησθήσει
 - θνῄσκω `fut.mid.ind.2.sg`: θᾰνεῖ / θᾰνῇ
 - λύω `pres.mp.ind.2.sg`: λῡ́ῃ / λῡ́ει
@@ -376,20 +377,10 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - κωλύω `fut.mid.ind.2.sg`: κωλῡ́σῃ / κωλῡ́σει
 - κωλύω `fut.pass.ind.2.sg`: κωλῡθήσῃ / κωλῡθήσει
 - ἁμαρτάνω `pres.mp.ind.2.sg`: ᾰ̔μᾰρτᾰ́νῃ / ᾰ̔μᾰρτᾰ́νει
-- ἁμαρτάνω `aor.act.ind.1.sg`: ἥμᾰρτον / ἡμᾰ́ρτησᾰ
-- ἁμαρτάνω `aor.act.ind.2.sg`: ἥμᾰρτες / ἡμᾰ́ρτησᾰς
-- ἁμαρτάνω `aor.act.ind.3.sg`: ἥμᾰρτε / ἥμᾰρτεν / ἡμᾰ́ρτησε / ἡμᾰ́ρτησεν
-- ἁμαρτάνω `aor.act.ind.2.du`: ἡμᾰ́ρτετον / ἡμᾰρτήσᾰτον
-- ἁμαρτάνω `aor.act.ind.3.du`: ἡμᾰρτέτην / ἡμᾰρτησᾰ́την
-- ἁμαρτάνω `aor.act.ind.1.pl`: ἡμᾰ́ρτομεν / ἡμᾰρτήσᾰμεν
-- ἁμαρτάνω `aor.act.ind.2.pl`: ἡμᾰ́ρτετε / ἡμᾰρτήσᾰτε
-- ἁμαρτάνω `aor.act.ind.3.pl`: ἥμᾰρτον / ἡμᾰ́ρτησᾰν
-- ἁμαρτάνω `aor.act.inf`: ᾰ̔μᾰρτεῖν / ᾰ̔μᾰρτῆσαι
 - ἁμαρτάνω `fut.mid.ind.2.sg`: ᾰ̔μᾰρτήσῃ / ᾰ̔μᾰρτήσει
 - ἁμαρτάνω `fut.pass.ind.2.sg`: ᾰ̔μᾰρτηθήσῃ / ᾰ̔μᾰρτηθήσει
 - διαφθείρω `pres.mp.ind.2.sg`: δῐᾰφθείρῃ / δῐᾰφθείρει
 - διαφθείρω `fut.mid.ind.2.sg`: δῐᾰφθερεῖ / δῐᾰφθερῇ
-- διαφθείρω `fut.pass.ind.2.sg`: δῐᾰφθᾰρήσῃ / δῐᾰφθᾰρήσει
 - βάλλω `pres.mp.ind.2.sg`: βᾰ́λλῃ / βᾰ́λλει
 - βάλλω `fut.mid.ind.2.sg`: βᾰλεῖ / βᾰλῇ
 - βάλλω `fut.pass.ind.2.sg`: βληθήσῃ / βληθήσει
@@ -401,7 +392,6 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - τέμνω `fut.mid.ind.2.sg`: τεμεῖ / τεμῇ
 - ὑπολαμβάνω `pres.mp.ind.2.sg`: ῠ̔πολᾰμβᾰ́νῃ / ῠ̔πολᾰμβᾰ́νει
 - ὑπολαμβάνω `fut.mid.ind.2.sg`: ῠ̔πολήψῃ / ῠ̔πολήψει
-- ὑπολαμβάνω `fut.pass.ind.2.sg`: ῠ̔ποληφθήσῃ / ῠ̔ποληφθήσει
 - λανθάνω `pres.mp.ind.2.sg`: λᾰνθᾰ́νῃ / λᾰνθᾰ́νει
 - λανθάνω `fut.mid.ind.2.sg`: λήσῃ / λήσει
 - πορεύω `pres.mp.ind.2.sg`: πορεύῃ / πορεύει
@@ -409,7 +399,6 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - πορεύω `fut.pass.ind.2.sg`: πορευθήσῃ / πορευθήσει
 - ἀποκρίνω `pres.mp.ind.2.sg`: ᾰ̓ποκρῑ́νῃ / ᾰ̓ποκρῑ́νει
 - ἀποκρίνω `fut.mid.ind.2.sg`: ᾰ̓ποκρῐνεῖ / ᾰ̓ποκρῐνῇ
-- ἀποκρίνω `fut.pass.ind.2.sg`: ᾰ̓ποκρῐθήσῃ / ᾰ̓ποκρῐθήσει
 - τρέπω `pres.mp.ind.2.sg`: τρέπῃ / τρέπει
 - τρέπω `fut.mid.ind.2.sg`: τρέψῃ / τρέψει
 - τρέπω `fut.pass.ind.2.sg`: τραπήσῃ / τραπήσει
@@ -438,7 +427,6 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 - βουλεύω `fut.mid.ind.2.sg`: βουλεύσῃ / βουλεύσει
 - διώκω `pres.mp.ind.2.sg`: δῐώκῃ / δῐώκει
 - διώκω `fut.mid.ind.2.sg`: δῐώξῃ / δῐώξει
-- διώκω `fut.pass.ind.2.sg`: δῐωχθήσῃ / δῐωχθήσει
 - βαίνω `fut.mid.ind.2.sg`: βήσῃ / βήσει
 - φράζω `pres.mp.ind.2.sg`: φρᾰ́ζῃ / φρᾰ́ζει
 - φράζω `fut.mid.ind.2.sg`: φρᾰ́σῃ / φρᾰ́σει
@@ -476,7 +464,7 @@ Included lemmas by class: `adj-212-alpha` 30, `adj-212-eta` 33, `adj-22` 4, `adj
 | empty-cell placeholders skipped | 9 |
 | infinitive with person/number tags | 75 |
 | middle-only present/imperfect/perfect filed as middle/passive | 6 |
-| perf.mp kept without its periphrastic 3rd plural | 36 |
+| perf.mp kept without its periphrastic 3rd plural | 35 |
 | romanization rows dropped | 105 |
 
 Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; used the one glossed 'to say; to speak'), δῆμος (2 entries in dump; used the one glossed 'any relatively distinct territory'), ἕπομαι (2 entries in dump; used the one glossed 'to follow, obey'), οἰκία (2 entries in dump; used the one glossed 'house, dwelling, lair'), γράμμα (2 entries in dump; used the one glossed 'that which is written, that which is drawn, picture'), θύω (2 entries in dump; used the one glossed 'to offer in sacrifice; to slay; to burn; to immolate')
@@ -491,7 +479,6 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - πόλις: Epic declension-3
 - ἄνθρωπος: Epic declension-2, Ionic declension-2
 - λαμβάνω: Koine future, Ionic future, Koine future, Koine future, Epic aorist, Epic aorist, Ionic aorist, Ionic aorist, Tragic-Ancient-Greek perfect, Ionic perfect, Arcadocypriot Doric Ionic perfect, Ionic pluperfect
-- ἕτερος: Ionic declension-2
 - κακός: Epic declension-2
 - σῶμα: Epic declension-3, Ionic declension-3
 - ἀρχή: Doric declension-1
@@ -534,14 +521,12 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - βίος: Epic declension-2, Ionic declension-2
 - πάθος: Old-Attic declension-3, Ionic declension-3
 - ὀνομάζω: Epic imperfect, Aeolic Doric future, Aeolic Doric aorist, Epic perfect
-- ὑμέτερος: Ionic declension-2
 - ἔτος: Epic declension-3, Ionic declension-3
 - πούς: Epic declension-3, Ionic declension-3
 - ἱερός: Epic declension-2
 - ποταμός: Epic declension-2
 - ὕστερος: Epic declension-2, Ionic declension-2
 - καιρός: Epic declension-2, Ionic declension-2
-- ἀμφότερος: Epic declension-2, Ionic declension-2
 - κελεύω: Epic imperfect, Epic aorist
 - τέλος: Epic declension-3
 - μέγεθος: Ionic declension-3, Epic declension-3
@@ -612,7 +597,6 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - τίκτω: Epic imperfect, Epic aorist
 - θυμός: Epic declension-2
 - φόβος: Epic declension-2
-- ἡμέτερος: Epic declension-2, Ionic declension-2
 - θύω: Epic imperfect, Epic aorist
 - ἐλαύνω: Epic present, Epic imperfect, Epic imperfect, Epic future, Epic contracted future, Epic future, Epic aorist, Epic aorist, Epic aorist, Epic aorist, Epic aorist iterative, Epic perfect, Epic pluperfect, Epic pluperfect
 - ἡγεμών: Epic declension-3
@@ -660,127 +644,520 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 
 ## Table choices (see pipeline/select_tables.py)
 
+- λέγω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- λέγω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λέγω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λέγω aor.act: from the first table with a DCC principal part (used `aorist` of 1)
+- λέγω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - λέγω fut.act: has a DCC principal part (used `contracted future` of 2)
-- λέγω fut.mid: from the table with the DCC principal part (used `contracted future` of 2)
+- λέγω fut.mid: from the first table with a DCC principal part (used `contracted future` of 2)
 - λέγω fut.pass: built on the chosen aorist passive (used `future` of 3)
 - λέγω perf.act: has a DCC principal part (used `perfect` of 2)
 - λέγω perf.mp: has a DCC principal part (used `perfect` of 2)
+- γίγνομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- γίγνομαι fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἔχω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἔχω impf.mp: from the first table with a DCC principal part (used `imperfect` of 1)
 - ἔχω aor.act: has a DCC principal part (used `aorist` of 2)
-- ἔχω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- ἔχω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - ἔχω aor.pass: dropped: no table with a DCC principal part has it (used none of 1)
 - ἔχω fut.act: has a DCC principal part (used `future imperfective`, `future` of 2)
-- ἔχω fut.mid: from the table with the DCC principal part (used `future imperfective` of 2)
+- ἔχω fut.mid: from the first table with a DCC principal part (used `future imperfective` of 2)
+- ἔχω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
+- ἔχω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
 - λαμβάνω `aorist`: iterative table dropped
-- ἕτερος `Attic declension-2` (table 2) ignored: nominals use the first Attic table
+- λαμβάνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- λαμβάνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λαμβάνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λαμβάνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- λαμβάνω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- φύω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- φύω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- φύω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
 - φύω aor.act: has a DCC principal part (used `Attic aorist` of 2)
+- φύω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- φύω fut.mid: from the first table with a DCC principal part (used `Attic future` of 1)
+- φύω perf.act: no DCC principal part for this tense; all tables merged (used `Attic perfect` of 1)
 - βούλομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect`, `Attic imperfect` of 2)
+- φαίνω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- φαίνω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- φαίνω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- φαίνω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
 - φαίνω aor.pass: has a DCC principal part (used `Attic aorist` of 2)
+- φαίνω fut.mid: from the first table with a DCC principal part (used `Attic contracted future` of 1)
+- φαίνω fut.pass: built on the chosen aorist passive (used `Attic contracted future` of 1)
 - φαίνω perf.act: has a DCC principal part (used `Attic intransitive perfect` of 2)
 - φαίνω perf.mp: has a DCC principal part (used `Attic perfect`, `Attic intransitive perfect` of 2)
+- γράφω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- γράφω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- γράφω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- γράφω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- γράφω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- γράφω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- φέρω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- φέρω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φέρω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - φέρω aor.act: has a DCC principal part (used `aorist`, `aorist` of 4)
-- φέρω aor.mid: from the table with the DCC principal part (used `aorist` of 4)
+- φέρω aor.mid: from the first table with a DCC principal part (used `aorist` of 4)
+- φέρω fut.mid: from the first table with a DCC principal part (used `future` of 1)
 - φέρω fut.pass: built on the chosen aorist passive (used `future` of 2)
+- ὑπάρχω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ὑπάρχω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ὑπάρχω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ὑπάρχω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- ὑπάρχω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- ἄρχω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἄρχω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἄρχω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἄρχω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- ἄρχω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- ἄρχω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἀκούω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἀκούω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀκούω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀκούω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - ἀκούω fut.act: dropped: DCC gives this tense only in the middle (used none of 1)
-- πράττω `future` taken from the πράσσω entry (it has no -σσ- forms)
-- πράττω `future` taken from the πράσσω entry (it has no -σσ- forms)
-- πράττω `aorist` taken from the πράσσω entry (it has no -σσ- forms)
+- ἀκούω fut.pass: built on the chosen aorist passive (used `Attic future` of 1)
+- πράττω `future` of the πράσσω entry is a candidate (it has no -σσ- forms)
+- πράττω `future` of the πράσσω entry is a candidate (it has no -σσ- forms)
+- πράττω `aorist` of the πράσσω entry is a candidate (it has no -σσ- forms)
+- πράττω `perfect` of the πράσσω entry is a candidate (it has no -σσ- forms)
+- πράττω `perfect` of the πράσσω entry is a candidate (it has no -σσ- forms)
+- πράττω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- πράττω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- πράττω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- πράττω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- πράττω fut.mid: from the first table with a DCC principal part (used `future` of 1)
 - πράττω fut.pass: built on the chosen aorist passive (used `future` of 2)
+- πράττω perf.act: has a DCC principal part (used `Attic perfect`, `perfect` of 3)
+- πράττω perf.mp: has a DCC principal part (used `perfect`, `perfect` of 2)
+- εὑρίσκω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- εὑρίσκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- εὑρίσκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - εὑρίσκω aor.act: has a DCC principal part (used `aorist`, `aorist` of 2)
-- εὑρίσκω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- εὑρίσκω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
+- εὑρίσκω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- εὑρίσκω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἔρχομαι impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- γιγνώσκω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- γιγνώσκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- γιγνώσκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - γιγνώσκω fut.mid: has a DCC principal part (used `future` of 2)
 - γιγνώσκω fut.pass: built on the chosen aorist passive (used `future`, `contracted future` of 2)
+- τυγχάνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- τυγχάνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τυγχάνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τυγχάνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - τυγχάνω aor.pass: dropped: no table with a DCC principal part has it (used none of 1)
 - τυγχάνω perf.act: has a DCC principal part (used `perfect` of 2)
 - τυγχάνω perf.mp: dropped: no table with a DCC principal part has it (used none of 1)
+- ἄγω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἄγω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἄγω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - ἄγω aor.act: has a DCC principal part (used `aorist` of 2)
-- ἄγω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- ἄγω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
+- ἄγω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- ἄγω fut.pass: built on the chosen aorist passive (used `future` of 1)
 - ἄγω perf.act: has a DCC principal part (used `perfect` of 5)
+- συμβαίνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- συμβαίνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- συμβαίνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- συμβαίνω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
 - συμβαίνω fut.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- συμβαίνω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
 - οἴομαι pres.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- οἴομαι aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- πάσχω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πάσχω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- μέλλω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- μέλλω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- μέλλω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- μέλλω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- μέλλω fut.mid: from the first table with a DCC principal part (used `Attic future` of 1)
+- ἐθέλω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πείθω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- πείθω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πείθω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - πείθω aor.act: has a DCC principal part (used `aorist` of 3)
-- πείθω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- πείθω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
+- πείθω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- πείθω fut.pass: built on the chosen aorist passive (used `future` of 1)
 - πείθω perf.act: has a DCC principal part (used `perfect` of 2)
+- νομίζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- νομίζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- νομίζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- νομίζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - νομίζω fut.act: has a DCC principal part (used `contracted future` of 2)
-- νομίζω fut.mid: from the table with the DCC principal part (used `contracted future` of 2)
+- νομίζω fut.mid: from the first table with a DCC principal part (used `contracted future` of 2)
 - νομίζω fut.pass: built on the chosen aorist passive (used `contracted future`, `future` of 2)
 - κύκλος `Attic declension-2` (table 2) ignored: nominals use the first Attic table
+- ὀνομάζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ὀνομάζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ὀνομάζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ὀνομάζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- ὀνομάζω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- ὀνομάζω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- διαφέρω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- διαφέρω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- διαφέρω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - διαφέρω aor.act: has a DCC principal part (used `aorist`, `aorist` of 2)
-- διαφέρω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
-- φυλάττω `aorist` taken from the φυλάσσω entry (it has no -σσ- forms)
-- φυλάττω `perfect` taken from the φυλάσσω entry (it has no -σσ- forms)
-- φυλάττω perf.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- διαφέρω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
+- διαφέρω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- διαφέρω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- φυλάττω `future` of the φυλάσσω entry is a candidate (it has no -σσ- forms)
+- φυλάττω `aorist` of the φυλάσσω entry is a candidate (it has no -σσ- forms)
+- φυλάττω `perfect` of the φυλάσσω entry is a candidate (it has no -σσ- forms)
+- φυλάττω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- φυλάττω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φυλάττω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φυλάττω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- φυλάττω fut.act: has a DCC principal part (used `future`, `future` of 2)
+- φυλάττω fut.mid: from the first table with a DCC principal part (used `future` of 2)
+- φυλάττω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- φυλάττω perf.act: from the first table with a DCC principal part (used `perfect` of 1)
 - παρέχω `aorist`: iterative table dropped
+- παρέχω pres.mp: from the first table with a DCC principal part (used `present` of 1)
 - παρέχω impf.act: has a DCC principal part (used `imperfect` of 2)
-- παρέχω impf.mp: from the table with the DCC principal part (used `imperfect` of 2)
+- παρέχω impf.mp: from the first table with a DCC principal part (used `imperfect` of 2)
 - παρέχω aor.act: has a DCC principal part (used `aorist` of 2)
-- παρέχω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- παρέχω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - παρέχω fut.act: has a DCC principal part (used `future` of 2)
-- παρέχω fut.mid: from the table with the DCC principal part (used `future` of 2)
+- παρέχω fut.mid: from the first table with a DCC principal part (used `future` of 2)
+- παρέχω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- κελεύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- κελεύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κελεύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κελεύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- κελεύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- κελεύω fut.pass: built on the chosen aorist passive (used `future` of 1)
 - κελεύω perf.pass: dropped: no table with a DCC principal part has it (used none of 1)
-- πίνω pres.mp: has a DCC principal part (used `present` of 2)
+- πίνω pres.mp: from the first table with a DCC principal part (used `present` of 2)
+- πίνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πίνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πίνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- πίνω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
 - πίνω fut.mid: has a DCC principal part (used `future` of 2)
 - πίνω fut.pass: built on the chosen aorist passive (used `future`, `contracted future` of 2)
+- πίνω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- μανθάνω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- μανθάνω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- μανθάνω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
 - φεύγω `imperfect`: iterative table dropped
+- φεύγω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- φεύγω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φεύγω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φεύγω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- σῴζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- σῴζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- σῴζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - σῴζω aor.act: has a DCC principal part (used `aorist` of 2)
-- σῴζω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- σῴζω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - σῴζω fut.act: has a DCC principal part (used `future` of 2)
-- σῴζω fut.mid: from the table with the DCC principal part (used `future` of 2)
+- σῴζω fut.mid: from the first table with a DCC principal part (used `future` of 2)
+- σῴζω fut.pass: built on the chosen aorist passive (used `future` of 1)
 - σῴζω perf.act: has a DCC principal part (used `perfect` of 2)
-- σῴζω perf.mp: from the table with the DCC principal part (used `perfect` of 3)
-- ἥκω aor.act: dropped: DCC gives this tense only in the middle (used none of 1)
-- τάττω `future` taken from the τάσσω entry (it has no -σσ- forms)
-- τάττω `future` taken from the τάσσω entry (it has no -σσ- forms)
-- τάττω `aorist` taken from the τάσσω entry (it has no -σσ- forms)
-- τάττω `aorist` taken from the τάσσω entry (it has no -σσ- forms)
-- τάττω `perfect` taken from the τάσσω entry (it has no -σσ- forms)
+- σῴζω perf.mp: from the first table with a DCC principal part (used `perfect` of 3)
+- πέμπω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- πέμπω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πέμπω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πέμπω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- πέμπω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- πέμπω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- μένω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- μένω fut.act: no DCC principal part for this tense; all tables merged (used `Attic contracted future` of 1)
+- ἀποθνῄσκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κρίνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- κρίνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κρίνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κρίνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- κρίνω fut.act: no DCC principal part for this tense; all tables merged (used `contracted future` of 1)
+- κρίνω fut.mid: no DCC principal part for this tense; all tables merged (used `contracted future` of 1)
+- κρίνω fut.pass: built on the chosen aorist passive (used `contracted future` of 1)
+- ἥκω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἥκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἥκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἥκω aor.act: no DCC principal part for this tense; all tables merged (used `aorist` of 1)
+- ἥκω aor.mid: no DCC principal part for this tense; all tables merged (used `aorist` of 1)
+- ἥκω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- ἕπομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πιστεύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- πιστεύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πιστεύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πιστεύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- πιστεύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- πιστεύω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- διδάσκω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- διδάσκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- διδάσκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- διδάσκω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- διδάσκω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- διδάσκω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- τάττω `future` of the τάσσω entry is a candidate (it has no -σσ- forms)
+- τάττω `future` of the τάσσω entry is a candidate (it has no -σσ- forms)
+- τάττω `aorist` of the τάσσω entry is a candidate (it has no -σσ- forms)
+- τάττω `aorist` of the τάσσω entry is a candidate (it has no -σσ- forms)
+- τάττω `perfect` of the τάσσω entry is a candidate (it has no -σσ- forms)
+- τάττω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- τάττω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- τάττω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- τάττω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - τάττω aor.pass: has a DCC principal part (used `aorist` of 2)
+- τάττω fut.mid: from the first table with a DCC principal part (used `future` of 1)
 - τάττω fut.pass: built on the chosen aorist passive (used `future` of 2)
+- δέχομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- δέχομαι aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
 - δέχομαι fut.mid: has a DCC principal part (used `future` of 2)
+- δέχομαι fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἐργάζομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἐργάζομαι aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- ἐργάζομαι fut.pass: built on the chosen aorist passive (used `future` of 1)
+- τρέφω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- τρέφω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τρέφω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - τρέφω aor.act: has a DCC principal part (used `aorist` of 2)
-- τρέφω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- τρέφω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - τρέφω aor.pass: has a DCC principal part (used `aorist` of 2)
-- τρέφω perf.act: dropped: DCC gives this tense only in the middle (used none of 2)
-- προσήκω aor.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- τρέφω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- τρέφω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- τρέφω perf.act: from the first table with a DCC principal part (used `perfect` of 2)
+- προσήκω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- προσήκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- προσήκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- προσήκω aor.act: no DCC principal part for this tense; all tables merged (used `aorist` of 1)
+- προσήκω aor.mid: no DCC principal part for this tense; all tables merged (used `aorist` of 1)
+- προσήκω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- προσήκω perf.act: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
 - παύω `imperfect`: iterative table dropped
+- παύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- παύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- παύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- παύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - παύω aor.pass: has a DCC principal part (used `aorist` of 2)
+- παύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
 - παύω fut.pass: built on the chosen aorist passive (used `future` of 2)
+- θαυμάζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- θαυμάζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- θαυμάζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- θαυμάζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - θαυμάζω fut.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- θαυμάζω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- αἰσθάνομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - αἰσθάνομαι aor.mid: has a DCC principal part (used `aorist` of 2)
-- αἰσθάνομαι aor.pass: from the table with the DCC principal part (used `aorist` of 2)
-- αἰσθάνομαι fut.pass: from the table with the DCC principal part (used `future` of 2)
+- αἰσθάνομαι aor.pass: from the first table with a DCC principal part (used `aorist` of 2)
+- αἰσθάνομαι fut.pass: dropped: not built on a chosen aorist passive (used none of 2)
+- χαίρω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- χαίρω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- χαίρω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - χαίρω aor.act: dropped: no table with a DCC principal part has it (used none of 1)
+- καταλαμβάνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- καταλαμβάνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- καταλαμβάνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- καταλαμβάνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- καταλαμβάνω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
 - καταλαμβάνω perf.act: has a DCC principal part (used `perfect` of 2)
 - καταλαμβάνω perf.mp: has a DCC principal part (used `perfect` of 2)
+- μάχομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - μάχομαι fut.mid: has a DCC principal part (used `Attic contracted future` of 3)
-- μιμνήσκω perf.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- μιμνήσκω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- μιμνήσκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- μιμνήσκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- μιμνήσκω aor.act: from the first table with a DCC principal part (used `aorist` of 1)
+- μιμνήσκω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- μιμνήσκω fut.act: no DCC principal part for this tense; all tables merged (used `future` of 1)
+- μιμνήσκω fut.mid: no DCC principal part for this tense; all tables merged (used `future` of 1)
+- μιμνήσκω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- μιμνήσκω perf.act: from the first table with a DCC principal part (used `perfect` of 1)
+- θνῄσκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- θνῄσκω aor.act: no DCC principal part for this tense; all tables merged (used `aorist` of 1)
 - θνῄσκω fut.mid: has a DCC principal part (used `contracted future` of 2)
+- λύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- λύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- λύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- λύω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- αἴρω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- αἴρω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- αἴρω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- αἴρω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- αἴρω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- αἴρω fut.pass: built on the chosen aorist passive (used `contracted future` of 1)
+- ἀποκτείνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἀποκτείνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀποκτείνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - ἀποκτείνω aor.act: has a DCC principal part (used `aorist` of 2)
-- ἀποκτείνω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- ἀποκτείνω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - ἀποκτείνω aor.pass: dropped: no table with a DCC principal part has it (used none of 1)
-- ἁμαρτάνω aor.act: has a DCC principal part (used `aorist`, `aorist` of 2)
-- ἁμαρτάνω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- ἀποκτείνω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- ἀποκτείνω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- πίπτω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κατασκευάζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- κατασκευάζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κατασκευάζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κατασκευάζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- κατασκευάζω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- κατασκευάζω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- κατασκευάζω perf.act: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- κατασκευάζω perf.mp: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- κωλύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- κωλύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κωλύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κωλύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- κωλύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- κωλύω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἁμαρτάνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἁμαρτάνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἁμαρτάνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἁμαρτάνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - ἁμαρτάνω fut.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- ἁμαρτάνω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- διαφθείρω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- διαφθείρω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- διαφθείρω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- διαφθείρω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- διαφθείρω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- διαφθείρω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
 - διαφθείρω perf.act: has a DCC principal part (used `perfect` of 2)
+- βάλλω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- βάλλω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βάλλω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βάλλω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
 - βάλλω fut.act: has a DCC principal part (used `contracted future` of 2)
-- τέμνω perf.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- βάλλω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- βάλλω fut.pass: built on the chosen aorist passive (used `contracted future` of 1)
+- συμφέρω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- συμφέρω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- συμφέρω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- συμφέρω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- συμφέρω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- συμφέρω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- συμφέρω perf.act: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- συμφέρω perf.mp: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- πυνθάνομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τέμνω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- τέμνω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- τέμνω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- τέμνω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- τέμνω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- τέμνω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
+- τέμνω perf.act: from the first table with a DCC principal part (used `perfect` of 1)
 - χρήσιμος `Attic declension-2` (table 2) ignored: nominals use the first Attic table
-- ἀποκρίνω aor.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- ὑπολαμβάνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ὑπολαμβάνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ὑπολαμβάνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ὑπολαμβάνω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- ὑπολαμβάνω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
+- λανθάνω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- λανθάνω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- λανθάνω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- λανθάνω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- λανθάνω fut.mid: from the first table with a DCC principal part (used `Attic future` of 1)
+- λανθάνω perf.act: no DCC principal part for this tense; all tables merged (used `Attic perfect` of 1)
+- λανθάνω perf.mp: no DCC principal part for this tense; all tables merged (used `Attic perfect` of 1)
+- πορεύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- πορεύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- πορεύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- πορεύω fut.mid: no DCC principal part for this tense; all tables merged (used `future` of 1)
+- πορεύω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἀποκρίνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἀποκρίνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀποκρίνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀποκρίνω aor.act: from the first table with a DCC principal part (used `aorist` of 1)
+- ἀποκρίνω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- ἀποκρίνω fut.act: no DCC principal part for this tense; all tables merged (used `contracted future` of 1)
+- ἀποκρίνω fut.mid: no DCC principal part for this tense; all tables merged (used `contracted future` of 1)
+- ἀποκρίνω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
+- ἀποκρίνω perf.mp: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- τρέπω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- τρέπω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τρέπω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - τρέπω aor.act: has a DCC principal part (used `aorist` of 2)
-- τρέπω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- τρέπω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - τρέπω aor.pass: has a DCC principal part (used `aorist` of 3)
+- τρέπω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- τρέπω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- τρέπω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- λείπω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- λείπω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λείπω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- λείπω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- λείπω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- λείπω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- τίκτω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- τίκτω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τίκτω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- τίκτω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- τίκτω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- κομίζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- κομίζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κομίζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- κομίζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- κομίζω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- κομίζω fut.pass: built on the chosen aorist passive (used `contracted future` of 1)
+- βλέπω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- βλέπω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βλέπω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βλέπω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- βλέπω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- βλέπω perf.act: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- βλέπω perf.mp: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
+- παρασκευάζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- παρασκευάζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- παρασκευάζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- παρασκευάζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- παρασκευάζω aor.pass: from the first table with a DCC principal part (used `aorist` of 1)
+- παρασκευάζω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- παρασκευάζω perf.mp: no DCC principal part for this tense; all tables merged (used `perfect` of 1)
 - θύω `imperfect`: iterative table dropped
+- θύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- θύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- θύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- θύω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- θύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- θύω fut.pass: built on the chosen aorist passive (used `future` of 1)
+- ἐλαύνω pres.mp: from the first table with a DCC principal part (used `Attic present` of 1)
+- ἐλαύνω impf.act: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- ἐλαύνω impf.mp: no DCC principal part for this tense; all tables merged (used `Attic imperfect` of 1)
+- ἐλαύνω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
 - ἐλαύνω fut.act: has a DCC principal part (used `Attic contracted future` of 2)
-- ἐλαύνω perf.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- ἐλαύνω perf.act: from the first table with a DCC principal part (used `Attic perfect` of 1)
+- ἁλίσκομαι impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - ἁλίσκομαι perf.act: has a DCC principal part (used `perfect` of 2)
+- βουλεύω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- βουλεύω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βουλεύω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βουλεύω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- βουλεύω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- διώκω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- διώκω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- διώκω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - διώκω aor.act: has a DCC principal part (used `aorist` of 2)
-- διώκω aor.mid: from the table with the DCC principal part (used `aorist` of 2)
+- διώκω aor.mid: from the first table with a DCC principal part (used `aorist` of 2)
 - διώκω fut.act: dropped: DCC gives this tense only in the middle (used none of 1)
+- διώκω fut.pass: dropped: not built on a chosen aorist passive (used none of 1)
+- διώκω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- βαίνω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- βαίνω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- βαίνω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
 - βαίνω aor.act: has a DCC principal part (used `aorist` of 2)
 - βαίνω aor.pass: dropped: no table with a DCC principal part has it (used none of 2)
 - βαίνω aor.mid: dropped: no table with a DCC principal part has it (used none of 1)
 - βαίνω fut.act: dropped: DCC gives this tense only in the middle (used none of 1)
 - βαίνω perf.act: has a DCC principal part (used `perfect` of 2)
+- βαίνω perf.mp: from the first table with a DCC principal part (used `perfect` of 1)
+- φράζω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- φράζω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φράζω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- φράζω aor.mid: from the first table with a DCC principal part (used `aorist` of 1)
+- φράζω fut.mid: from the first table with a DCC principal part (used `future` of 1)
+- φράζω fut.pass: built on the chosen aorist passive (used `future` of 1)
 - ἀγγέλλω `imperfect`: iterative table dropped
+- ἀγγέλλω pres.mp: from the first table with a DCC principal part (used `present` of 1)
+- ἀγγέλλω impf.act: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀγγέλλω impf.mp: no DCC principal part for this tense; all tables merged (used `imperfect` of 1)
+- ἀγγέλλω aor.mid: from the first table with a DCC principal part (used `Attic aorist` of 1)
+- ἀγγέλλω fut.mid: from the first table with a DCC principal part (used `contracted future` of 1)
+- ἀγγέλλω fut.pass: built on the chosen aorist passive (used `contracted future` of 1)
 
 ## data/exclude.txt rules
 
@@ -794,127 +1171,143 @@ Lemmas with several dump entries of the same POS: λέγω (2 entries in dump; u
 - line 16 `λανθάνω   perf`: removed 18 cells
 - line 17 `οἴομαι    aor.mid`: removed 9 cells
 - line 18 `αἰσθάνομαι  aor.pass`: removed 9 cells
-- line 19 `αἰσθάνομαι  fut.pass`: removed 9 cells
-- line 20 `ἔρχομαι   impf`: removed 8 cells
-- line 21 `ἀποκτείνω perf.mp`: removed 9 cells
-- line 22 `συμφέρω   perf.mp`: removed 9 cells
-- line 23 `βλέπω     perf`: removed 18 cells
-- line 24 `τέμνω     fut.pass`: removed 9 cells
-- line 25 `μέλλω     impf.mp`: removed 8 cells
-- line 26 `βαίνω     aor`: removed 9 cells
-- line 27 `συμβαίνω  aor`: removed 18 cells
-- line 33 `λαμβάνω  perf.mp.ind.3.pl  εἰλήφᾰται`: removed 1 form
-- line 34 `γράφω  perf.mp.ind.3.pl  γεγρᾰ́φᾰται`: removed 1 form
-- line 35 `φέρω  perf.mp.ind.3.pl  ἐνηνέγᾰται`: removed 1 form
-- line 36 `ὑπάρχω  perf.mp.ind.3.pl  ῠ̔πήρχᾰται`: removed 1 form
-- line 37 `ἄρχω  perf.mp.ind.3.pl  ἤρχᾰται`: removed 1 form
-- line 38 `γιγνώσκω  perf.mp.ind.3.pl  ἐγνώσᾰται`: removed 1 form
-- line 39 `ἄγω  perf.mp.ind.3.pl  ἤγᾰται`: removed 1 form
-- line 40 `πείθω  perf.mp.ind.3.pl  πεπείσᾰται`: removed 1 form
-- line 41 `νομίζω  perf.mp.ind.3.pl  νενομῐ́δᾰται`: removed 1 form
-- line 42 `ὀνομάζω  perf.mp.ind.3.pl  ὠνομᾰ́σᾰται`: removed 1 form
-- line 43 `κελεύω  perf.mp.ind.3.pl  κεκελεύσᾰται`: removed 1 form
-- line 44 `φεύγω  perf.mp.ind.3.pl  πεφῠ́γᾰται`: removed 1 form
-- line 45 `σῴζω  perf.mp.ind.3.pl  σεσῴσᾰται`: removed 1 form
-- line 46 `πέμπω  perf.mp.ind.3.pl  πεπέμπᾰται`: removed 1 form
-- line 47 `διδάσκω  perf.mp.ind.3.pl  δεδῐδᾰ́κᾰται`: removed 1 form
-- line 48 `δέχομαι  perf.mp.ind.3.pl  δεδέχᾰται`: removed 1 form
-- line 49 `ἐργάζομαι  perf.mp.ind.3.pl  εἰργᾰ́σᾰται`: removed 1 form
-- line 50 `τρέφω  perf.mp.ind.3.pl  τεθρᾰ́πᾰται`: removed 1 form
-- line 51 `θαυμάζω  perf.mp.ind.3.pl  τεθαυμᾰ́δᾰται`: removed 1 form
-- line 52 `καταλαμβάνω  perf.mp.ind.3.pl  κᾰτειλήφᾰται`: removed 1 form
-- line 53 `αἴρω  perf.mp.ind.3.pl  ἤρᾰται`: removed 1 form
-- line 54 `κατασκευάζω  perf.mp.ind.3.pl  κᾰτεσκευᾰ́σᾰται`: removed 1 form
-- line 55 `διαφθείρω  perf.mp.ind.3.pl  δῐεφθᾰ́ρᾰται`: removed 1 form
-- line 56 `πυνθάνομαι  perf.mp.ind.3.pl  πεπῠ́σᾰται`: removed 1 form
-- line 57 `ὑπολαμβάνω  perf.mp.ind.3.pl  ῠ̔πειλήβᾰται`: removed 1 form
-- line 58 `τρέπω  perf.mp.ind.3.pl  τετράφᾰται`: removed 1 form
-- line 59 `λείπω  perf.mp.ind.3.pl  λελείπᾰται`: removed 1 form
-- line 60 `τίκτω  perf.mp.ind.3.pl  τετέκᾰται`: removed 1 form
-- line 61 `κομίζω  perf.mp.ind.3.pl  κεκομῐ́δᾰται`: removed 1 form
-- line 62 `παρασκευάζω  perf.mp.ind.3.pl  πᾰρεσκευᾰ́σᾰται`: removed 1 form
-- line 63 `διώκω  perf.mp.ind.3.pl  δεδῐώχᾰται`: removed 1 form
-- line 64 `φράζω  perf.mp.ind.3.pl  πεφρᾰ́δᾰται`: removed 1 form
-- line 65 `ἀγγέλλω  perf.mp.ind.3.pl  ἠγγέλᾰται`: removed 1 form
-- line 66 `λέγω  perf.mp.ind.3.pl  λελέγᾰται`: removed 1 form
-- line 67 `τάττω  perf.mp.ind.3.pl  τετᾰ́γᾰται`: removed 1 form
-- line 68 `φυλάττω  perf.mp.ind.3.pl  πεφῠλᾰ́κᾰται`: removed 1 form
-- line 72 `ἔρχομαι  perf.act.ind.2.du  ἐλήλῠτον`: removed 1 form
-- line 73 `ἔρχομαι  perf.act.ind.3.du  ἐλήλῠτον`: removed 1 form
-- line 74 `ἔρχομαι  perf.act.ind.1.pl  ἐλήλῠμεν`: removed 1 form
-- line 75 `ἔρχομαι  perf.act.ind.2.pl  ἐλήλῠτε`: removed 1 form
-- line 76 `πάσχω  perf.act.ind.2.pl  πέπασθε`: removed 1 form
-- line 77 `πάσχω  perf.act.ind.2.pl  πέποσθε`: removed 1 form
-- line 79 `οἴομαι  impf.mp.ind.1.sg  ᾤομην`: removed 1 form
-- line 81 `τρέπω  perf.mp.inf  τετρᾶφθαι`: removed 1 form
-- line 83 `πόλις  gen.pl  πολήων`: removed 1 form
-- line 84 `πόλις  dat.sg  πόλῑ`: removed 1 form
-- line 85 `πόλις  dat.sg  πόλῃ`: removed 1 form
-- line 87 `ἄστυ  nom.pl  ᾰ̓́στεᾰ`: removed 1 form
-- line 88 `ἄστυ  acc.pl  ᾰ̓́στεᾰ`: removed 1 form
-- line 89 `ἄστυ  voc.pl  ᾰ̓́στεᾰ`: removed 1 form
-- line 91 `ἄνθρωπος  voc.sg  ὦνθρωπε`: removed 1 form
-- line 92 `ἄνθρωπος  voc.sg  ὤνθρωπε`: removed 1 form
-- line 94 `κίνδυνος  dat.sg  κῐ́νδῡνῐ`: removed 1 form
-- line 96 `στάδιον  nom.pl  στᾰ́δῐοι`: removed 1 form
-- line 97 `στάδιον  acc.pl  στᾰ́δῐους`: removed 1 form
-- line 98 `στάδιον  voc.pl  στᾰ́δῐοι`: removed 1 form
-- line 102 `ἐλάττων`: removed lemma
-- line 103 `ἥττων`: removed lemma
-- line 104 `κρείττων`: removed lemma
-- line 105 `βελτίων`: removed lemma
-- line 106 `ἀμείνων`: removed lemma
-- line 107 `χείρων`: removed lemma
-- line 108 `πλέων`: removed lemma
-- line 109 `γῆ`: removed lemma
-- line 110 `ἐμός`: removed lemma
-- line 111 `σός`: removed lemma
-- line 112 `οἷος`: removed lemma
-- line 113 `ὅσος`: removed lemma
-- line 114 `ποῖος`: removed lemma
-- line 115 `πότερος`: removed lemma
-- line 118 `ἥκω      aor`: removed 9 cells
-- line 119 `ἥκω      fut.mid`: removed 9 cells
-- line 120 `ἥκω      pres.mp`: removed 9 cells
-- line 121 `ἥκω      impf.mp`: removed 8 cells
-- line 122 `προσήκω  aor`: removed 9 cells
-- line 123 `προσήκω  fut.mid`: removed 9 cells
-- line 124 `προσήκω  pres.mp`: removed 9 cells
-- line 125 `προσήκω  impf.mp`: removed 8 cells
-- line 128 `πάσχω     impf.mp`: removed 8 cells
-- line 129 `χαίρω     pres.mp`: removed 9 cells
-- line 130 `χαίρω     impf.mp`: removed 8 cells
-- line 131 `τυγχάνω   pres.mp`: removed 9 cells
-- line 132 `τυγχάνω   impf.mp`: removed 8 cells
-- line 133 `τυγχάνω   aor.mid`: removed 9 cells
-- line 134 `μέλλω     fut.mid`: removed 9 cells
-- line 135 `μέλλω     aor.mid`: removed 9 cells
-- line 136 `θαυμάζω   aor.mid`: removed 9 cells
-- line 137 `ἀποκτείνω aor.mid`: removed 9 cells
-- line 138 `ἁμαρτάνω  aor.mid`: removed 9 cells
-- line 139 `βλέπω     aor.mid`: removed 9 cells
-- line 140 `βλέπω     aor.pass`: removed 9 cells
-- line 141 `βαίνω     pres.mp`: removed 9 cells
-- line 142 `βαίνω     impf.mp`: removed 8 cells
-- line 143 `βαίνω     perf.mp`: removed 9 cells
-- line 144 `συμβαίνω  pres.mp`: removed 9 cells
-- line 145 `συμβαίνω  impf.mp`: removed 8 cells
-- line 146 `συμβαίνω  perf.mp`: removed 9 cells
-- line 149 `ἐργάζομαι  table  ἠργᾰζόμην`: removed table `imperfect`
-- line 153 `ἔτος  dat.sg  ἔτῃ`: removed 1 form
-- line 155 `χάρις  acc.sg  χᾰ́ρῐτα`: removed 1 form
-- line 157 `χείρ  gen.pl  χερῶν`: removed 1 form
-- line 158 `χείρ  dat.pl  χειρσῐ́`: removed 1 form
-- line 159 `χείρ  dat.pl  χειρσῐ́ν`: removed 1 form
-- line 160 `χείρ  gen.du  χειροῖν`: removed 1 form
-- line 161 `χείρ  dat.du  χειροῖν`: removed 1 form
-- line 163 `βούλομαι  pres.mp.ind.2.sg  βούλῃ`: removed 1 form
-- line 164 `οἴομαι  pres.mp.ind.2.sg  οἴῃ`: removed 1 form
+- line 19 `ἔρχομαι   impf`: removed 8 cells
+- line 20 `ἀποκτείνω perf.mp`: removed 9 cells
+- line 21 `συμφέρω   perf.mp`: removed 9 cells
+- line 22 `βλέπω     perf`: removed 18 cells
+- line 23 `μέλλω     impf.mp`: removed 8 cells
+- line 24 `βαίνω     aor`: removed 9 cells
+- line 25 `συμβαίνω  aor`: removed 18 cells
+- line 31 `λαμβάνω  perf.mp.ind.3.pl  εἰλήφᾰται`: removed 1 form
+- line 32 `γράφω  perf.mp.ind.3.pl  γεγρᾰ́φᾰται`: removed 1 form
+- line 33 `φέρω  perf.mp.ind.3.pl  ἐνηνέγᾰται`: removed 1 form
+- line 34 `ὑπάρχω  perf.mp.ind.3.pl  ῠ̔πήρχᾰται`: removed 1 form
+- line 35 `ἄρχω  perf.mp.ind.3.pl  ἤρχᾰται`: removed 1 form
+- line 36 `γιγνώσκω  perf.mp.ind.3.pl  ἐγνώσᾰται`: removed 1 form
+- line 37 `ἄγω  perf.mp.ind.3.pl  ἤγᾰται`: removed 1 form
+- line 38 `πείθω  perf.mp.ind.3.pl  πεπείσᾰται`: removed 1 form
+- line 39 `νομίζω  perf.mp.ind.3.pl  νενομῐ́δᾰται`: removed 1 form
+- line 40 `ὀνομάζω  perf.mp.ind.3.pl  ὠνομᾰ́σᾰται`: removed 1 form
+- line 41 `κελεύω  perf.mp.ind.3.pl  κεκελεύσᾰται`: removed 1 form
+- line 42 `φεύγω  perf.mp.ind.3.pl  πεφῠ́γᾰται`: removed 1 form
+- line 43 `σῴζω  perf.mp.ind.3.pl  σεσῴσᾰται`: removed 1 form
+- line 44 `πέμπω  perf.mp.ind.3.pl  πεπέμπᾰται`: removed 1 form
+- line 45 `διδάσκω  perf.mp.ind.3.pl  δεδῐδᾰ́κᾰται`: removed 1 form
+- line 46 `δέχομαι  perf.mp.ind.3.pl  δεδέχᾰται`: removed 1 form
+- line 47 `ἐργάζομαι  perf.mp.ind.3.pl  εἰργᾰ́σᾰται`: removed 1 form
+- line 48 `τρέφω  perf.mp.ind.3.pl  τεθρᾰ́πᾰται`: removed 1 form
+- line 49 `θαυμάζω  perf.mp.ind.3.pl  τεθαυμᾰ́δᾰται`: removed 1 form
+- line 50 `καταλαμβάνω  perf.mp.ind.3.pl  κᾰτειλήφᾰται`: removed 1 form
+- line 51 `αἴρω  perf.mp.ind.3.pl  ἤρᾰται`: removed 1 form
+- line 52 `κατασκευάζω  perf.mp.ind.3.pl  κᾰτεσκευᾰ́σᾰται`: removed 1 form
+- line 53 `διαφθείρω  perf.mp.ind.3.pl  δῐεφθᾰ́ρᾰται`: removed 1 form
+- line 54 `πυνθάνομαι  perf.mp.ind.3.pl  πεπῠ́σᾰται`: removed 1 form
+- line 55 `ὑπολαμβάνω  perf.mp.ind.3.pl  ῠ̔πειλήβᾰται`: removed 1 form
+- line 56 `τρέπω  perf.mp.ind.3.pl  τετράφᾰται`: removed 1 form
+- line 57 `λείπω  perf.mp.ind.3.pl  λελείπᾰται`: removed 1 form
+- line 58 `τίκτω  perf.mp.ind.3.pl  τετέκᾰται`: removed 1 form
+- line 59 `κομίζω  perf.mp.ind.3.pl  κεκομῐ́δᾰται`: removed 1 form
+- line 60 `παρασκευάζω  perf.mp.ind.3.pl  πᾰρεσκευᾰ́σᾰται`: removed 1 form
+- line 61 `διώκω  perf.mp.ind.3.pl  δεδῐώχᾰται`: removed 1 form
+- line 62 `φράζω  perf.mp.ind.3.pl  πεφρᾰ́δᾰται`: removed 1 form
+- line 63 `ἀγγέλλω  perf.mp.ind.3.pl  ἠγγέλᾰται`: removed 1 form
+- line 64 `λέγω  perf.mp.ind.3.pl  λελέγᾰται`: removed 1 form
+- line 65 `τάττω  perf.mp.ind.3.pl  τετᾰ́γᾰται`: removed 1 form
+- line 66 `φυλάττω  perf.mp.ind.3.pl  πεφῠλᾰ́κᾰται`: removed 1 form
+- line 70 `ἔρχομαι  perf.act.ind.2.du  ἐλήλῠτον`: removed 1 form
+- line 71 `ἔρχομαι  perf.act.ind.3.du  ἐλήλῠτον`: removed 1 form
+- line 72 `ἔρχομαι  perf.act.ind.1.pl  ἐλήλῠμεν`: removed 1 form
+- line 73 `ἔρχομαι  perf.act.ind.2.pl  ἐλήλῠτε`: removed 1 form
+- line 74 `πάσχω  perf.act.ind.2.pl  πέπασθε`: removed 1 form
+- line 75 `πάσχω  perf.act.ind.2.pl  πέποσθε`: removed 1 form
+- line 77 `οἴομαι  impf.mp.ind.1.sg  ᾤομην`: removed 1 form
+- line 79 `τρέπω  perf.mp.inf  τετρᾶφθαι`: removed 1 form
+- line 81 `πόλις  gen.pl  πολήων`: removed 1 form
+- line 82 `πόλις  dat.sg  πόλῑ`: removed 1 form
+- line 83 `πόλις  dat.sg  πόλῃ`: removed 1 form
+- line 85 `ἄστυ  nom.pl  ᾰ̓́στεᾰ`: removed 1 form
+- line 86 `ἄστυ  acc.pl  ᾰ̓́στεᾰ`: removed 1 form
+- line 87 `ἄστυ  voc.pl  ᾰ̓́στεᾰ`: removed 1 form
+- line 89 `ἄνθρωπος  voc.sg  ὦνθρωπε`: removed 1 form
+- line 90 `ἄνθρωπος  voc.sg  ὤνθρωπε`: removed 1 form
+- line 92 `κίνδυνος  dat.sg  κῐ́νδῡνῐ`: removed 1 form
+- line 94 `στάδιον  nom.pl  στᾰ́δῐοι`: removed 1 form
+- line 95 `στάδιον  acc.pl  στᾰ́δῐους`: removed 1 form
+- line 96 `στάδιον  voc.pl  στᾰ́δῐοι`: removed 1 form
+- line 100 `ἐλάττων`: removed lemma
+- line 101 `ἥττων`: removed lemma
+- line 102 `κρείττων`: removed lemma
+- line 103 `βελτίων`: removed lemma
+- line 104 `ἀμείνων`: removed lemma
+- line 105 `χείρων`: removed lemma
+- line 106 `πλέων`: removed lemma
+- line 107 `γῆ`: removed lemma
+- line 108 `ἐμός`: removed lemma
+- line 109 `σός`: removed lemma
+- line 110 `οἷος`: removed lemma
+- line 111 `ὅσος`: removed lemma
+- line 112 `ποῖος`: removed lemma
+- line 113 `πότερος`: removed lemma
+- line 116 `ἥκω      aor`: removed 18 cells
+- line 117 `ἥκω      fut.mid`: removed 9 cells
+- line 118 `ἥκω      pres.mp`: removed 9 cells
+- line 119 `ἥκω      impf.mp`: removed 8 cells
+- line 120 `προσήκω  aor`: removed 18 cells
+- line 121 `προσήκω  fut.mid`: removed 9 cells
+- line 122 `προσήκω  pres.mp`: removed 9 cells
+- line 123 `προσήκω  impf.mp`: removed 8 cells
+- line 126 `πάσχω     impf.mp`: removed 8 cells
+- line 127 `χαίρω     pres.mp`: removed 9 cells
+- line 128 `χαίρω     impf.mp`: removed 8 cells
+- line 129 `τυγχάνω   pres.mp`: removed 9 cells
+- line 130 `τυγχάνω   impf.mp`: removed 8 cells
+- line 131 `τυγχάνω   aor.mid`: removed 9 cells
+- line 132 `μέλλω     fut.mid`: removed 9 cells
+- line 133 `μέλλω     aor.mid`: removed 9 cells
+- line 134 `θαυμάζω   aor.mid`: removed 9 cells
+- line 135 `ἀποκτείνω aor.mid`: removed 9 cells
+- line 136 `ἁμαρτάνω  aor.mid`: removed 9 cells
+- line 137 `βλέπω     aor.mid`: removed 9 cells
+- line 138 `βλέπω     aor.pass`: removed 9 cells
+- line 139 `βαίνω     pres.mp`: removed 9 cells
+- line 140 `βαίνω     impf.mp`: removed 8 cells
+- line 141 `βαίνω     perf.mp`: removed 9 cells
+- line 142 `συμβαίνω  pres.mp`: removed 9 cells
+- line 143 `συμβαίνω  impf.mp`: removed 8 cells
+- line 144 `συμβαίνω  perf.mp`: removed 9 cells
+- line 147 `ἐργάζομαι  table  ἠργᾰζόμην`: removed table `imperfect`
+- line 151 `ἔτος  dat.sg  ἔτῃ`: removed 1 form
+- line 153 `χάρις  acc.sg  χᾰ́ρῐτα`: removed 1 form
+- line 155 `χείρ  gen.pl  χερῶν`: removed 1 form
+- line 156 `χείρ  dat.pl  χειρσῐ́`: removed 1 form
+- line 157 `χείρ  dat.pl  χειρσῐ́ν`: removed 1 form
+- line 158 `χείρ  gen.du  χειροῖν`: removed 1 form
+- line 159 `χείρ  dat.du  χειροῖν`: removed 1 form
+- line 161 `βούλομαι  pres.mp.ind.2.sg  βούλῃ`: removed 1 form
+- line 162 `οἴομαι  pres.mp.ind.2.sg  οἴῃ`: removed 1 form
+- line 166 `ἡμέτερος`: removed lemma
+- line 167 `ὑμέτερος`: removed lemma
+- line 168 `ἕτερος`: removed lemma
+- line 169 `ἀμφότερος`: removed lemma
+- line 171 `πίνω      perf.mp`: removed 9 cells
+- line 172 `πίνω      aor.pass`: removed 9 cells
+- line 173 `πίνω      fut.pass`: removed 9 cells
+- line 175 `μιμνήσκω  fut.act`: removed 9 cells
+- line 176 `μιμνήσκω  fut.mid`: removed 9 cells
+- line 177 `μιμνήσκω  aor.act`: removed 9 cells
+- line 178 `μιμνήσκω  aor.mid`: removed 9 cells
+- line 180 `θνῄσκω    aor`: removed 9 cells
+- line 182 `φεύγω     perf.mp`: removed 8 cells
+- line 184 `τίκτω     aor.mid`: removed 9 cells
+- line 185 `λανθάνω   aor.mid`: removed 9 cells
+- line 187 `λέγω      fut.mid`: removed 9 cells
+- line 189 `ἁμαρτάνω  table  ἡμᾰ́ρτησᾰ`: removed table `aorist`
+- line 191 `ἀδελφός   voc.sg  ᾰ̓δελφέ`: removed 1 form
 
 <!-- morpheus:start -->
 ## Morpheus cross-check
 
-Checked 12677 forms of 286 lemmas with libmorpheus v0.3.2 (Linux x86-64 glibc release archive), perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e): 12478 agree, 68 feature mismatches, 108 parsed as another lemma, 23 not recognised.
+Checked 12398 forms of 282 lemmas with libmorpheus v0.3.2 (Linux x86-64 glibc release archive), perseids-tools stemlib from defense-humanites/libmorpheus tag v0.3.2 (dc3d3a83bd67506bb9f43a0f8e7faa9217b0ea0e): 12193 agree, 71 feature mismatches, 109 parsed as another lemma, 25 not recognised.
 
 Morpheus does not know every lemma or alternate, so *not recognised* is weak evidence. A *feature mismatch* (Morpheus knows the lemma but parses the form differently) is the strongest signal.
 
@@ -965,6 +1358,7 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - θαυμάζω `perf.act.ind.3.du` τεθαυμᾰ́κᾰτον — Morpheus: verb perf ind act 2 du
 - χαίρω `perf.act.ind.3.du` κεχᾰρήκᾰτον — Morpheus: verb perf ind act 2 du
 - καταλαμβάνω `perf.act.ind.3.du` κᾰτειλήφᾰτον — Morpheus: verb perf ind act 2 du
+- μιμνήσκω `perf.act.ind.3.du` μεμνήκᾰτον — Morpheus: verb perf ind act 2 du
 - θνῄσκω `perf.act.ind.3.du` τεθνήκᾰτον — Morpheus: verb perf ind act 2 du
 - λύω `perf.act.ind.3.du` λελῠ́κᾰτον — Morpheus: verb perf ind act 2 du
 - αἴρω `perf.act.ind.3.du` ἤρκᾰτον — Morpheus: verb perf ind act 2 du
@@ -976,12 +1370,14 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - διαφθείρω `perf.act.ind.3.du` δῐεφθᾰ́ρκᾰτον — Morpheus: verb perf ind act 2 du
 - βάλλω `perf.act.ind.3.du` βεβλήκᾰτον — Morpheus: verb perf ind act 2 du
 - συμφέρω `perf.act.ind.3.du` συνενηνόχᾰτον — Morpheus: verb perf ind act 2 du
+- τέμνω `perf.act.ind.3.du` τετμήκᾰτον — Morpheus: verb perf ind act 2 du
 - ὑπολαμβάνω `perf.act.ind.3.du` ῠ̔πειλήφᾰτον — Morpheus: verb perf ind act 2 du
 - τρέπω `perf.act.ind.3.du` τετρόφᾰτον — Morpheus: verb perf ind act 2 du
 - λείπω `perf.act.ind.3.du` λελοίπᾰτον — Morpheus: verb perf ind act 2 du
 - τίκτω `perf.act.ind.3.du` τετόκᾰτον — Morpheus: verb perf ind act 2 du
 - κομίζω `perf.act.ind.3.du` κεκομῐ́κᾰτον — Morpheus: verb perf ind act 2 du
 - θύω `perf.act.ind.3.du` τεθῠ́κᾰτον — Morpheus: verb perf ind act 2 du
+- ἐλαύνω `perf.act.ind.3.du` ἐληλᾰ́κᾰτον — Morpheus: verb perf ind act 2 du
 - ἁλίσκομαι `perf.act.ind.3.du` ἑᾰλώκᾰτον — Morpheus: verb perf ind act 2 du
 - βουλεύω `perf.act.ind.3.du` βεβουλεύκᾰτον — Morpheus: verb perf ind act 2 du
 - διώκω `perf.act.ind.3.du` δεδῐώχᾰτον — Morpheus: verb perf ind act 2 du
@@ -1020,16 +1416,6 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - λέγω `fut.act.ind.3.pl` ἐροῦσῐ — Morpheus lemma: e)re/w, e)rw=
 - λέγω `fut.act.ind.3.pl` ἐροῦσῐν — Morpheus lemma: e)re/w, e)rw=
 - λέγω `fut.act.inf` ἐρεῖν — Morpheus lemma: e)re/w, e)rw=
-- λέγω `fut.mid.ind.1.sg` ἐροῦμαι — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=
-- λέγω `fut.mid.ind.2.sg` ἐρεῖ — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=
-- λέγω `fut.mid.ind.2.sg` ἐρῇ — Morpheus lemma: e)/ramai, e)ra/omai, e)ra/w1, e)ra/w2, e)re/omai, e)re/w, e)rw=
-- λέγω `fut.mid.ind.3.sg` ἐρεῖται — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=
-- λέγω `fut.mid.ind.2.du` ἐρεῖσθον — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=, r(e/omai, r(e/w
-- λέγω `fut.mid.ind.3.du` ἐρεῖσθον — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=, r(e/omai, r(e/w
-- λέγω `fut.mid.ind.1.pl` ἐρούμεθᾰ — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=, r(e/omai
-- λέγω `fut.mid.ind.2.pl` ἐρεῖσθε — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=, r(e/omai, r(e/w
-- λέγω `fut.mid.ind.3.pl` ἐροῦνται — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=
-- λέγω `fut.mid.inf` ἐρεῖσθαι — Morpheus lemma: e)ra/omai, e)re/omai, e)re/w, e)rw=
 - λέγω `perf.act.ind.1.sg` εἴρηκᾰ — Morpheus lemma: e)rw=
 - λέγω `perf.act.ind.2.sg` εἴρηκᾰς — Morpheus lemma: e)rw=
 - λέγω `perf.act.ind.3.sg` εἴρηκε — Morpheus lemma: e)rw=
@@ -1090,6 +1476,17 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 - συμβαίνω `perf.act.ind.3.pl` σῠμβεβήκᾱσῐ — Morpheus lemma: sumbasei/w
 - συμβαίνω `perf.act.ind.3.pl` σῠμβεβήκᾱσῐν — Morpheus lemma: sumbasei/w
 - συμβαίνω `perf.act.inf` σῠμβεβηκέναι — Morpheus lemma: sumbasei/w
+- φυλάττω `perf.act.ind.1.sg` πεφῠ́λᾰκᾰ — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.2.sg` πεφῠ́λᾰκᾰς — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.3.sg` πεφῠ́λᾰκε — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.3.sg` πεφῠ́λᾰκεν — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.2.du` πεφῠλᾰ́κᾰτον — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.3.du` πεφῠλᾰ́κᾰτον — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.1.pl` πεφῠλᾰ́κᾰμεν — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.2.pl` πεφῠλᾰ́κᾰτε — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.3.pl` πεφῠλᾰ́κᾱσῐ — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.ind.3.pl` πεφῠλᾰ́κᾱσῐν — Morpheus lemma: fula/zw
+- φυλάττω `perf.act.inf` πεφῠλᾰκέναι — Morpheus lemma: fula/zw
 - παρέχω `perf.mp.ind.1.sg` πᾰρέσχημαι — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
 - παρέχω `perf.mp.ind.2.sg` πᾰρέσχησαι — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
 - παρέχω `perf.mp.ind.3.sg` πᾰρέσχηται — Morpheus lemma: para/,ei)s-xa/w, para/-i)sxne/omai, para/-sxa/w
@@ -1103,9 +1500,10 @@ Morpheus does not know every lemma or alternate, so *not recognised* is weak evi
 ### Not recognised, by lemma
 
 - διαφέρω: 4/93: δῐηνέγκετον `aor.act.ind.2.du`, δῐηνεγκέτην `aor.act.ind.3.du`, δῐηνέγκομεν `aor.act.ind.1.pl`, δῐηνέγκετε `aor.act.ind.2.pl`
+- πράττω: 1/116: πεπρᾱ́γᾰται `perf.mp.ind.3.pl`
+- τρέφω: 11/114: τέτρᾰφᾰ `perf.act.ind.1.sg`, τέτρᾰφᾰς `perf.act.ind.2.sg`, τέτρᾰφε `perf.act.ind.3.sg`, τέτρᾰφεν `perf.act.ind.3.sg`, τετρᾰ́φᾰτον `perf.act.ind.2.du`, τετρᾰ́φᾰτον `perf.act.ind.3.du`, τετρᾰ́φᾰμεν `perf.act.ind.1.pl`, τετρᾰ́φᾰτε `perf.act.ind.2.pl`, τετρᾰ́φᾱσῐ `perf.act.ind.3.pl`, τετρᾰ́φᾱσῐν `perf.act.ind.3.pl`, τετρᾰφέναι `perf.act.inf`
 - φέρω: 4/122: ἠνέγκετον `aor.act.ind.2.du`, ἠνεγκέτην `aor.act.ind.3.du`, ἠνέγκομεν `aor.act.ind.1.pl`, ἠνέγκετε `aor.act.ind.2.pl`
 - φῶς: 2/16: φώτοιν `gen.du`, φώτοιν `dat.du`
 - ἀγγέλλω: 3/114: ἤγγελθον `perf.mp.ind.2.du`, ἤγγελθον `perf.mp.ind.3.du`, ἤγγελθε `perf.mp.ind.2.pl`
-- ἔχω: 10/116: σχεθήσομαι `fut.pass.ind.1.sg`, σχεθήσῃ `fut.pass.ind.2.sg`, σχεθήσει `fut.pass.ind.2.sg`, σχεθήσεται `fut.pass.ind.3.sg`, σχεθήσεσθον `fut.pass.ind.2.du`, σχεθήσεσθον `fut.pass.ind.3.du`, σχεθησόμεθᾰ `fut.pass.ind.1.pl`, σχεθήσεσθε `fut.pass.ind.2.pl`, σχεθήσονται `fut.pass.ind.3.pl`, σχεθήσεσθαι `fut.pass.inf`
 
 <!-- morpheus:end -->

@@ -16,12 +16,10 @@
 λανθάνω   perf        # perfect forms are non-Attic; Morpheus does not recognise them or parses them as aorist
 οἴομαι    aor.mid     # not the Attic aorist; Morpheus does not recognise these forms
 αἰσθάνομαι  aor.pass  # rare/late; Morpheus does not recognise these forms
-αἰσθάνομαι  fut.pass  # rare/late; Morpheus does not recognise these forms
 ἔρχομαι   impf        # these are the imperfect of εἶμι, active in form but tagged middle in the source
 ἀποκτείνω perf.mp     # not Attic; Morpheus does not recognise these forms
 συμφέρω   perf.mp     # doubtful forms; Morpheus does not recognise them
 βλέπω     perf        # late forms; Morpheus does not recognise them
-τέμνω     fut.pass    # not the usual Attic future passive; Morpheus does not recognise it
 μέλλω     impf.mp     # Morpheus does not recognise these forms
 βαίνω     aor         # active aorist is a root aorist (out of scope); the middle and passive left over are rare
 συμβαίνω  aor         # as βαίνω
@@ -163,11 +161,42 @@
 βούλομαι  pres.mp.ind.2.sg  βούλῃ
 οἴομαι  pres.mp.ind.2.sg  οἴῃ
 
+## From the second greek-checker audit (2026-10-19)
+# Pronominal adjectives with template-generated vocatives (as ἐμός, πότερος above)
+ἡμέτερος
+ὑμέτερος
+ἕτερος
+ἀμφότερος
+# DCC marks these parts as compound-only ("-πέπομαι, -επόθην"); the simplex forms are doubtful
+πίνω      perf.mp
+πίνω      aor.pass
+πίνω      fut.pass
+# DCC hyphenates the future and aorist; the Attic future middle is μνησθήσομαι (kept)
+μιμνήσκω  fut.act
+μιμνήσκω  fut.mid
+μιμνήσκω  aor.act
+μιμνήσκω  aor.mid
+# DCC "-έθανον": in prose the compound ἀπέθανον is used
+θνῄσκω    aor
+# Homeric perfect middle
+φεύγω     perf.mp
+# middle aorists with no Attic prose use (prose has compounds such as ἐπελαθόμην)
+τίκτω     aor.mid
+λανθάνω   aor.mid
+# ἐροῦμαι is not a middle future of λέγω in Attic
+λέγω      fut.mid
+# post-classical 1st aorist (DCC lists it; Smyth gives only the 2nd aorist); its own table
+ἁμαρτάνω  table  ἡμᾰ́ρτησᾰ
+# later Greek accent; Attic is the recessive vocative, which stays
+ἀδελφός   voc.sg  ᾰ̓δελφέ
+
 ## Reviewed and kept although Morpheus disagrees (see REPORT.md, Morpheus section)
 # - perfect active 3rd dual in -ατον: Morpheus lists only the 2nd dual; the forms are identical.
 # - vocative = nominative (θεός, χείρ, πούς) and contracted plural vocatives: Morpheus omits voc.
 # - φῶτα etc.: Morpheus confuses φῶς with φώς 'man'; φάος, νεανίης, πλείων are Morpheus headwords.
 # - λέγω's ἐρῶ / εἴρηκα: suppletive, filed by Morpheus under ἐρῶ.
 # - συμβαίνω: Morpheus fails to map the compound to its lemma.
-# - ἔχω σχεθήσομαι / ἐσχέθην, ἀγγέλλω ἤγγελθε, φέρω ἠνέγκομεν: attested, unknown to Morpheus.
+# - ἀγγέλλω ἤγγελθε, φέρω ἠνέγκομεν etc.: attested, unknown to Morpheus; ἤνεγκον / διήνεγκον are
+#   both 1st sg. and 3rd pl. (Morpheus lists only the 1st sg.).
+# - ordinals (δεύτερος …) keep their vocatives: regular 2-1-2 adjectives, formally correct.
 # - γίγνομαι ἐγενήθην / γενηθήσομαι: listed by DCC; left for the user's decision (see PROGRESS).

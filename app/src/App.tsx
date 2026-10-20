@@ -7,6 +7,7 @@ import type { Store } from './lib/storage'
 import { Home, MODES } from './pages/Home'
 import { NotFound } from './pages/NotFound'
 import { NotesPage } from './pages/NotesPage'
+import { ParseIt } from './pages/ParseIt'
 import { SettingsPage } from './pages/SettingsPage'
 
 const NAV: { page: Page; name: string }[] = [...MODES, { page: 'notes', name: 'Notes' }, { page: 'settings', name: 'Settings' }]
@@ -28,6 +29,9 @@ function Screen() {
   switch (route.page) {
     case 'home':
       page = <Home />
+      break
+    case 'parse':
+      page = <ParseIt />
       break
     case 'settings':
       page = <SettingsPage />

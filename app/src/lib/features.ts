@@ -211,6 +211,15 @@ export const VOICE_GROUP_LABELS: Record<VoiceGroup, [string, string]> = {
   pass: ['passive', 'pass.'],
   mp: ['middle/passive', 'm/p'],
 }
+export const MOOD_LABELS: Record<Mood, [string, string]> = {
+  ind: ['indicative', 'ind.'],
+  inf: ['infinitive', 'inf.'],
+}
+export const PERSON_LABELS: Record<Person, [string, string]> = {
+  '1': ['1st person', '1'],
+  '2': ['2nd person', '2'],
+  '3': ['3rd person', '3'],
+}
 const ORDINAL: Record<Person, string> = { '1': '1st', '2': '2nd', '3': '3rd' }
 
 export function cellLabel(key: string, opts: { short?: boolean } = {}): string {

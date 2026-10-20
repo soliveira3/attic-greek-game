@@ -109,6 +109,13 @@ kbd {
   background: var(--surface);
 }
 
+button.primary kbd,
+button[aria-pressed='true'] kbd {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
 /* ---------------------------------------------------------------- layout */
 
 header.site {
@@ -321,4 +328,70 @@ mark {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------- modes */
+
+.stage {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  margin-bottom: 0.75rem;
+}
+
+.stage:focus {
+  outline: none;
+}
+
+.shown-form {
+  font-family: var(--greek-font);
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.lemma-line {
+  margin: 0.25rem 0 0;
+}
+
+.lemma-line .lemma {
+  font-size: 1.25rem;
+}
+
+.lemma-line .gender,
+.lemma-line .gloss {
+  color: var(--muted);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.5rem;
+  margin-bottom: 0.35rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.options.active {
+  border-color: var(--accent);
+}
+
+.options-label {
+  min-width: 4.5rem;
+  font-weight: 700;
+}
+
+.options button kbd {
+  font-size: 0.75em;
+  margin-right: 0.15em;
+}
+
+.feedback:focus {
+  outline: none;
+}
+
+.tally {
+  margin-top: 1rem;
 }

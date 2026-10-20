@@ -144,10 +144,13 @@ describe('review fixes (greek-checker, Phase 4)', () => {
     expect(sets.find((s) => s.cls === 'decl3-velar')!.label).not.toMatch(/neuter/)
     expect(sets.find((s) => s.cls === 'decl2-n')!.label).not.toMatch(/\(neuter\)/)
   })
-  it('accepts iota written on the line, as answer checking does outside strict mode', () => {
-    const item = sets.flatMap((s) => sprintItems(s)).find((i) => i.endings.some((e) => e.normalize('NFD').includes(IOTA_SUBSCRIPT)))!
-    const ending = item.endings.find((e) => e.normalize('NFD').includes(IOTA_SUBSCRIPT))!
-    const onTheLine = stripAccents(ending).normalize('NFD').replace(IOTA_SUBSCRIPT, '') + betaToGreek('i')
-    expect(checkEnding(onTheLine, item)).toBe(true)
+  it('accepts iota written on the line, unless that spells another ending of the set', () => {
+    const onLine = (e: string) => stripAccents(e).normalize('NFD').replace(IOTA_SUBSCRIPT, '') + betaToGreek('i')
+    const dative = (cls: string) => sprintItems(sets.find((s) => s.cls === cls)!).find((i) => i.cell === 'dat.sg')!
+    const second = dative('decl2-mf')
+    expect(checkEnding(onLine(second.endings[0]), second)).toBe(true)
+    const first = dative('decl1-a-long')
+    expect(checkEnding(onLine(first.endings[0]), first)).toBe(false) // that is the nominative plural
+    expect(checkEnding(first.endings[0], first)).toBe(true)
   })
 })

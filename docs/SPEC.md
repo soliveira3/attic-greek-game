@@ -155,7 +155,9 @@ Refinements after the code reviews of 2026-10-19/20 (implemented in `app/src/lib
   vowel as different words (a feminine singular in long α is not a neuter plural in short α);
   with the marks hidden, every parse of the spelling is accepted.
 - The *Endings sprint* accepts iota written on the line, as answer checking does outside strict
-  mode; its answers are logged for statistics but do not schedule spaced-repetition cards.
+  mode, unless that spelling is another ending of the set (-αι for the dative singular in -ᾳ is
+  the nominative plural); its answers are logged for statistics but do not schedule
+  spaced-repetition cards.
 
 ## 7. Typing Greek
 

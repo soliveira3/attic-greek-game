@@ -37,6 +37,11 @@ export interface SprintItem {
   forms: string[]
   /** Accent-free endings (breathing and iota subscript kept); any of them is right. */
   endings: string[]
+  /**
+   * Endings with the iota written on the line (-ωι for -ῳ), also right unless that spelling is
+   * another cell's ending (-αι for the dative -ᾳ is the nominative plural).
+   */
+  onTheLine: string[]
 }
 
 // 3rd-declension consonant stems (nouns, and -ων -ον adjectives) fuse stem and ending in these
@@ -150,25 +155,29 @@ export function sprintSets(models: GoldenModel[], aoristTypes: Record<string, re
   return sets
 }
 
+const plain = (e: string) => stripAccents(canon(e))
+
 export function sprintItems(set: SprintSet, opts: { dual?: boolean } = {}): SprintItem[] {
-  return Object.entries(set.cells)
-    .filter(([cell]) => opts.dual || parseCellKey(cell).number !== 'du')
-    .map(([cell, forms]) => ({
-      set: set.id,
-      cell,
-      forms,
-      endings: [...new Set(forms.map((f) => tail(f, set.stemLength)))].filter(Boolean),
-    }))
+  const all = Object.entries(set.cells)
+    .map(([cell, forms]) => ({ cell, forms, endings: [...new Set(forms.map((f) => tail(f, set.stemLength)))].filter(Boolean) }))
     .filter((item) => item.endings.length > 0)
+  return all
+    .filter(({ cell }) => opts.dual || parseCellKey(cell).number !== 'du')
+    .map((item) => {
+      const taken = new Set(all.flatMap((o) => o.endings.map(plain)))
+      const onTheLine = item.endings.map((e) => plain(adscript(e))).filter((e) => !taken.has(e))
+      return { set: set.id, ...item, onTheLine: [...new Set(onTheLine)] }
+    })
 }
 
 /**
  * Accents are ignored in the sprint: they belong to the word, not the ending (SPEC §5). Iota
- * written on the line is accepted, as in answer checking outside strict mode (SPEC §6).
+ * written on the line is accepted, as in answer checking outside strict mode (SPEC §6), unless
+ * that spelling is another ending of the set.
  */
 export function checkEnding(answer: string, item: SprintItem): boolean {
   const typed = stripAccents(canon(answer.replace(/^\s*[-‐–]/u, '')))
-  return typed.length > 0 && item.endings.some((e) => [e, adscript(e)].some((v) => stripAccents(canon(v)) === typed))
+  return typed.length > 0 && [...item.endings, ...item.onTheLine].some((e) => plain(e) === typed)
 }
 
 /** The part of speech of a set's model word. */

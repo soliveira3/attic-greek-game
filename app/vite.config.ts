@@ -4,6 +4,8 @@ import { defineConfig } from 'vitest/config'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // the app reads ../data (paradigms, golden models, grammar notes); ?raw imports need it allowed
+  server: { fs: { allow: ['.', '../data'] } },
   test: {
     environment: 'jsdom',
     setupFiles: ['src/test/setup.ts'],

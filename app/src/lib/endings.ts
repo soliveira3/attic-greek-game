@@ -67,6 +67,12 @@ function clusters(form: string): string[] {
   return out
 }
 
+/** A form split after its first `letters` letters (stem, ending), marks kept. */
+export function splitForm(form: string, letters: number): [string, string] {
+  const c = clusters(form)
+  return [c.slice(0, letters).join('').normalize('NFC'), c.slice(letters).join('').normalize('NFC')]
+}
+
 /** What follows the first `letters` letters of a form, without accents. */
 function tail(form: string, letters: number): string {
   return stripAccents(clusters(form).slice(letters).join(''))

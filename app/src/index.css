@@ -667,3 +667,43 @@ label.file {
   gap: 0.25rem;
   font-size: 0.9rem;
 }
+
+/* ---------------------------------------------------------------- notes */
+
+.note p,
+.note li {
+  max-width: 44rem;
+}
+
+.note .greek {
+  font-size: 1.1em;
+}
+
+.note-table {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+
+.note-table .paradigm {
+  width: auto;
+  min-width: 16rem;
+  margin-bottom: 0.25rem;
+}
+
+.note-table td.given {
+  font-size: 1.15rem;
+}
+
+.ending {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.crumbs {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+}

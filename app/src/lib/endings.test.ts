@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { greekToBeta, betaToGreek } from './betacode'
-import { checkEnding, goldenModels, setsInScope, sprintItems, sprintSets } from './endings'
+import { checkEnding, goldenModels, setsInScope, splitForm, sprintItems, sprintSets } from './endings'
 import { DEFAULT_SETTINGS } from './settings'
 import { parseCellKey } from './features'
 import { IOTA_SUBSCRIPT } from './normalize'
@@ -152,5 +152,16 @@ describe('review fixes (greek-checker, Phase 4)', () => {
     const first = dative('decl1-a-long')
     expect(checkEnding(onLine(first.endings[0]), first)).toBe(false) // that is the nominative plural
     expect(checkEnding(first.endings[0], first)).toBe(true)
+  })
+})
+
+describe('splitForm', () => {
+  it('splits a form into stem and ending, keeping its marks', () => {
+    const set = sprintSets(models).find((s) => s.cls === 'decl2-mf')!
+    for (const item of sprintItems(set)) {
+      const [stem, ending] = splitForm(item.forms[0], set.stemLength)
+      expect(stem + ending).toBe(item.forms[0])
+      expect(stripAccents(ending)).toBe(item.endings[0])
+    }
   })
 })

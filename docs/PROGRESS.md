@@ -8,7 +8,7 @@
 | 3 — Core library | done (2026-10-20) |
 | 4 — Game modes | done (2026-10-20) |
 | 5 — Spaced repetition & progress | done (2026-10-20) |
-| 6 — Grammar notes 🧑 | not started |
+| 6 — Grammar notes 🧑 | in progress (drafts written; review, then user approval) |
 | 7 — Polish & ship 🧑 | not started |
 
 ## Current task
@@ -82,6 +82,10 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 6 tasks 1–3: 18 grammar notes in data/grammar/ (original prose, Smyth
+  sections checked against the Perseus text; every Greek form pulled from the data by
+  placeholders, validated by lib/grammar.ts tests); Notes page with an index, paradigm tables
+  (endings of the verified models set off) and principal-parts tables.
 - 2026-10-20 — Phase 4 done: the greek-checker re-check confirmed the fixes; its one new finding
   (the sprint took -αι, the nominative plural, for the dative -ᾳ written with iota on the line)
   is fixed.

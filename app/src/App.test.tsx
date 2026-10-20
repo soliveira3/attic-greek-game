@@ -38,7 +38,7 @@ describe('App', () => {
     go('#/make')
     expect(screen.getByRole('textbox', { name: /your answer/i })).toHaveFocus()
     go('#/notes/augment')
-    expect(screen.getByRole('heading', { level: 1, name: /grammar notes/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'The augment' })).toBeInTheDocument()
     go('#/nowhere')
     expect(screen.getByRole('heading', { level: 1, name: /not found/i })).toBeInTheDocument()
   })

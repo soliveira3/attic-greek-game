@@ -14,6 +14,9 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['src/test/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
+    // tests over the whole data set take up to ~5 s under coverage on a busy machine (vitest's default
+    // limit), so CI runners with fewer cores would fail them at random
+    testTimeout: 20_000,
     coverage: {
       provider: 'v8',
       include: ['src/lib/**/*.ts'],

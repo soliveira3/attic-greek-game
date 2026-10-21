@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useApp, useSound } from '../app/AppContext'
 import { useKeys } from '../app/useKeys'
 import { href } from '../app/router'
+import { useNow } from '../app/useNow'
 import { Icon } from '../components/Icon'
 import { MakeCard } from '../components/MakeCard'
 import { Owl } from '../components/Owl'
@@ -208,7 +209,7 @@ function Complete({ lesson: id, done, onAgain }: { lesson: string; done: Done; o
   const lesson = findLesson(id)!
   const { store, settings } = useApp()
   const heading = useRef<HTMLHeadingElement>(null)
-  const [now] = useState(() => new Date())
+  const now = useNow()
   const attempts = loadAttempts(store)
   const today = dailyXp(attempts, loadPath(store), now)
   const days = streak(attempts, now)

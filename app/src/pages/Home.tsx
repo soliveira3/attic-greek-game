@@ -1,8 +1,9 @@
 // Learn: the path of units and lessons (docs/plans/redesign.md). Every lesson is open; the start
 // recommended sits a little below the player's level; a unit index jumps to any unit.
-import { type CSSProperties, useEffect, useState } from 'react'
+import { type CSSProperties, useEffect } from 'react'
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import { useNow } from '../app/useNow'
 import { Icon, type IconName } from '../components/Icon'
 import { Owl } from '../components/Owl'
 import { WeakSpots } from '../components/WeakSpots'
@@ -161,7 +162,7 @@ function Hero({ rec, units, placed }: { rec: Recommendation | undefined; units: 
 
 export function Home({ unit }: { unit?: string }) {
   const { data, settings, store } = useApp()
-  const [now] = useState(() => new Date())
+  const now = useNow()
   const queue = reviewQueue(data, settings, loadSrs(store), now, Math.random)
   const due = queue.filter((e) => !e.isNew).length
   const units = unitsInData(data, settings)

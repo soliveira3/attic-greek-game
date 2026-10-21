@@ -1,6 +1,7 @@
 // Forms the player misses often, each with the lesson to revisit and the grammar note.
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import { useNow } from '../app/useNow'
 import { loadAttempts } from '../lib/attempts'
 import { cellLabel, classLabel } from '../lib/features'
 import { NOTE_TITLES } from '../lib/notes'
@@ -31,9 +32,8 @@ function Revisit({ spot }: { spot: WeakSpot }) {
 /** The list of weak spots, or nothing when there are none. */
 export function WeakSpots({ limit = 3 }: { limit?: number }) {
   const { store } = useApp()
-  // reading the clock on render is intended: the list is recomputed on every store change
-  // oxlint-disable-next-line react/purity
-  const spots = weakSpots(loadAttempts(store), new Date(), limit)
+  const now = useNow()
+  const spots = weakSpots(loadAttempts(store), now, limit)
   if (!spots.length) return null
   return (
     <section className="weak-spots" aria-labelledby="weak-title">

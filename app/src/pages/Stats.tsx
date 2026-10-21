@@ -4,6 +4,7 @@
 import { useState } from 'react'
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import { useNow } from '../app/useNow'
 import { loadAttempts } from '../lib/attempts'
 import { CLASS_FAMILIES, classLabel, featureKey } from '../lib/features'
 import { exportProgress, importProgress } from '../lib/progress'
@@ -63,7 +64,7 @@ export function Stats() {
   const [, setVersion] = useState(0)
   const [pending, setPending] = useState<{ name: string; text: string } | null>(null)
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null)
-  const [now] = useState(() => new Date())
+  const now = useNow()
 
   const attempts = loadAttempts(store)
   const path = loadPath(store)

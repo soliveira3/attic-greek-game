@@ -238,8 +238,8 @@ Acceptance
   accounts or change repository settings on its own)
 
 Acceptance
-- [ ] CI green; site live
-- [ ] `docs/PROGRESS.md` marked v1 complete, with a backlog for v2
+- [x] CI green; site live (2026-10-21)
+- [x] `docs/PROGRESS.md` marked v1 complete, with a backlog for v2
 
 ---
 

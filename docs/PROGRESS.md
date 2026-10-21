@@ -1,5 +1,8 @@
 # Progress
 
+**v1 is complete (2026-10-21).** Live at <https://soliveira3.github.io/attic-greek-game/>;
+release [v1.0.0](https://github.com/soliveira3/attic-greek-game/releases/tag/v1.0.0).
+
 | Phase | Status |
 |---|---|
 | 0 — Scaffold | done |
@@ -9,16 +12,24 @@
 | 4 — Game modes | done (2026-10-20) |
 | 5 — Spaced repetition & progress | done (2026-10-20) |
 | 6 — Grammar notes 🧑 | done (approved by the user 2026-10-20) |
-| 7 — Polish & ship 🧑 | in progress (waiting on the user: public repository and Pages) |
+| 7 — Polish & ship 🧑 | done (2026-10-21: repository public, Pages on, CI green, site live, v1.0.0 tagged) |
 | 8 — Professional audit 🧑 | done, merged into main and pushed (2026-10-20) |
 
 ## Current task
-🧑 HUMAN GATE (Phase 7): the user makes the repository public and enables Pages. Then: re-run the
-deploy (or push), check the live site, tag v1.0.0, mark v1 complete.
-CI state (2026-10-20, run 39532549333): the check job is green; deploy fails only because Pages
-is not enabled ("Failed to create deployment (status: 404)"). The first run's hidden failure was
-a pytest test downloading Smyth from Perseus (503 on CI); it now skips without the cache. The
-feedback a11y check had measured colours mid-animation; it runs with reduced motion.
+None: v1 is shipped. Next work comes from the v2 backlog below, player reports (issue forms) or
+the teacher review (docs/REVIEW_GUIDE.md), each with the user's go-ahead.
+
+## Shipping v1 (2026-10-21)
+- The user made the repository public and enabled Pages (GitHub Actions).
+- CI run 39686164356: checks and deploy green. The live site was checked in a browser: the path,
+  review, practice, notes, progress and lesson pages load under /attic-greek-game/, feedback
+  works, the footer shows version 1.0.0, no console errors.
+- Fix shipped with it: the glowing ring on the recommended lesson is centred on the whole coin
+  (it followed the coin's top face only and sat too high).
+- Tagged v1.0.0 and published the GitHub release from CHANGELOG.md, with the user's go-ahead.
+- History of the first CI runs: the first run's hidden failure was a pytest test downloading
+  Smyth from Perseus (503 on CI), now skipped without the cache; the feedback a11y check had
+  measured colours mid-animation, now run with reduced motion.
 
 ## Phase 8 — Professional audit (2026-10-20, at the user's request)
 Plan: docs/plans/phase-8.md; merged into main and pushed at the user's request. Done:
@@ -53,16 +64,11 @@ often (also shown in the feedback after a wrong answer). Rules: docs/plans/redes
 Open questions for the user: keep the unit order? are the thresholds right (solid unit: 12 recent
 answers at 85 %; weak spot: 3 misses in 30 days, under 70 % right)?
 
-## Waiting on the user
-- The repository exists (soliveira3/attic-greek-game, still private; main is pushed and the
-  checks pass). To finish v1:
-  1. Make the repository public (Pages on a free plan needs it; the user will do it later), then
-     Settings → Pages → Source: "GitHub Actions". Then re-run the failed deploy job.
-  2. Optional, once public: Settings → Code security: CodeQL default setup and private
-     vulnerability reporting (SECURITY.md points to it); a branch rule on main requiring the
-     `check` job; a `data` label for the wrong-form issue form.
-  3. Optional: send docs/REVIEW_GUIDE.md to a Greek teacher and two or three learners.
-  Claude must not create accounts or change repository settings.
+## Waiting on the user (optional)
+- Settings → Code security: CodeQL default setup and private vulnerability reporting
+  (SECURITY.md points to it); a branch rule on main requiring the `check` job; a `data` label for
+  the wrong-form issue form. Claude must not change repository settings.
+- Send docs/REVIEW_GUIDE.md to a Greek teacher and two or three learners.
 
 ## Decisions taken
 - 2026-10-20: the user approved the grammar notes and chose the MIT license for the code (data
@@ -144,12 +150,25 @@ A teacher may question these (no form changed; decide case by case after the rev
   non-past form is labelled augment.
 - When ignore-accents rejects another drilled form, the diff also highlights its accent.
 
-## v2 backlog additions
+## v2 backlog
+From the plan (docs/PLAN.md): contract verbs and εἰμί · μι-verbs · participles ·
+subjunctive, optative, imperative · pronouns · comparatives · sentence-level parsing from real
+texts · accent-placement drills · audio.
+
+Found during v1:
 - Periphrastic perfect middle/passive 3rd plural for consonant stems.
 - Split decl1-a-short into the θάλαττα and ἀλήθεια types.
+- Valid Attic alternates lost where DCC gives one principal part (see Known data issues).
+- Outcomes of the teacher review; the questions listed under "Before sending the review sample".
+- Fix the stale -αται comment in data/exclude.txt with the next data change.
+- The feedback a11y check (dark, desktop) failed once in a full local run on 2026-10-21 and
+  passed alone and on CI: watch for flakiness under load.
+- Optional route-level code splitting (the main bundle is 128 KB gzip; Lighthouse mobile 95).
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-21 — v1 shipped: site live, v1.0.0 tagged and released; ring on the recommended lesson
+  centred; v2 backlog gathered.
 - 2026-10-20 — Phase 8 merged into main and pushed (user's go-ahead). CI showed two failures
   hidden before (pytest downloading Smyth; a11y measuring mid-animation), both fixed; checks green,
   deploy waits on Pages.

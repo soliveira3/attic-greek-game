@@ -67,4 +67,4 @@ Findings that started this phase:
 - [x] README has screenshots, badge, live address
 - [x] Performance measured and recorded
 - [x] Merged and pushed (2026-10-20); CI checks green
-- [ ] 🧑 Public repository and Pages (Phase 7 gate)
+- [x] 🧑 Public repository and Pages (Phase 7 gate, 2026-10-21)

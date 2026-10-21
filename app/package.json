@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "screenshots": "vite build && node scripts/screenshots.mjs"
   },
   "dependencies": {
     "@fontsource/gentium-plus": "^5.3.0",

@@ -17,6 +17,8 @@ export interface TodayStats {
 /** Recomputed whenever the store changes (AppState.version). */
 export function useToday(): TodayStats {
   const { store, settings } = useApp()
+  // reading the clock on render is intended: the numbers are recomputed on every store change
+  // oxlint-disable-next-line react/purity
   const now = new Date()
   const attempts = loadAttempts(store)
   return {

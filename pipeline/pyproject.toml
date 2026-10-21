@@ -1,3 +1,11 @@
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["raw"]
+
+[tool.ruff.lint]
+# ruff's default rules, minus the dict() call style (dict(key=...) reads better for test fixtures)
+ignore = ["C408"]

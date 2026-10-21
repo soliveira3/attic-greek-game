@@ -15,6 +15,7 @@ from collections import Counter, defaultdict
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Self
 
 from betacode import to_beta
 from normalize import key
@@ -54,7 +55,7 @@ class MorphParse:
 
     @classmethod
     def from_analysis(cls, a: object) -> "MorphParse":
-        g = lambda name: getattr(a, name)  # noqa: E731
+        g = lambda name: getattr(a, name)
         voices: tuple[str, ...] = ()
         for v in g("voices"):
             voices += _VOICE.get(v, ())
@@ -91,7 +92,7 @@ class Morpheus:
             self._cache[beta] = [MorphParse.from_analysis(a) for a in self._ctx.analyze(beta)]
         return self._cache[beta]
 
-    def __enter__(self) -> "Morpheus":
+    def __enter__(self) -> Self:
         return self
 
     def __exit__(self, *_: object) -> None:
@@ -150,12 +151,12 @@ def render_section(results: list[Result], provenance: str) -> str:
         START,
         "## Morpheus cross-check",
         "",
-        f"Checked {len(results)} forms of {len(lemmas)} lemmas with {provenance}: "
-        f"{kinds['ok']} agree, {kinds['features']} feature mismatches, {kinds['other lemma']} parsed as another lemma, "
-        f"{kinds['unknown']} not recognised.",
+        (f"Checked {len(results)} forms of {len(lemmas)} lemmas with {provenance}: "
+         f"{kinds['ok']} agree, {kinds['features']} feature mismatches, {kinds['other lemma']} parsed as another lemma, "
+         f"{kinds['unknown']} not recognised."),
         "",
-        "Morpheus does not know every lemma or alternate, so *not recognised* is weak evidence. "
-        "A *feature mismatch* (Morpheus knows the lemma but parses the form differently) is the strongest signal.",
+        ("Morpheus does not know every lemma or alternate, so *not recognised* is weak evidence. "
+         "A *feature mismatch* (Morpheus knows the lemma but parses the form differently) is the strongest signal."),
         "",
         "### Feature mismatches",
         "",

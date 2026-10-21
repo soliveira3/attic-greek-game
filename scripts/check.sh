@@ -45,9 +45,13 @@ if [ -d "$ROOT/pipeline/tests" ]; then
   PY="$ROOT/pipeline/.venv/bin/python"
   [ -x "$PY" ] || PY="python3"
   run_suite "pipeline (pytest)" "$ROOT/pipeline" "$PY" -m pytest -q
+  if "$PY" -m ruff --version >/dev/null 2>&1; then
+    run_suite "pipeline (ruff)" "$ROOT/pipeline" "$PY" -m ruff check .
+  fi
 fi
 
 if [ -f "$ROOT/app/package.json" ] && [ -d "$ROOT/app/node_modules" ]; then
+  run_suite "app (lint)" "$ROOT/app" npm run lint --silent
   run_suite "app (vitest)" "$ROOT/app" npm run coverage --silent
   run_suite "app (typecheck)" "$ROOT/app" npx --no-install tsc -b
   # Browser smoke test on the built site (needs `npx playwright install chromium`; SKIP_E2E=1 skips).

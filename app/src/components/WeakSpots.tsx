@@ -31,6 +31,8 @@ function Revisit({ spot }: { spot: WeakSpot }) {
 /** The list of weak spots, or nothing when there are none. */
 export function WeakSpots({ limit = 3 }: { limit?: number }) {
   const { store } = useApp()
+  // reading the clock on render is intended: the list is recomputed on every store change
+  // oxlint-disable-next-line react/purity
   const spots = weakSpots(loadAttempts(store), new Date(), limit)
   if (!spots.length) return null
   return (

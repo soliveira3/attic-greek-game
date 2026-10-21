@@ -1,4 +1,6 @@
-from compare_smyth import summarize
+import pytest
+
+from compare_smyth import CACHE, summarize
 from smyth import Comparison, Diff, FormComparison
 
 
@@ -30,6 +32,8 @@ def test_form_comparison_summary():
     assert summarize(FormComparison(both=["a"], only_ours=[("b", ["nom.sg"])]))[0] == "attention"
 
 
+# needs the Smyth pages cached by compare_smyth.py (git-ignored); never downloads in a test run
+@pytest.mark.skipif(not CACHE.exists(), reason="Smyth pages not cached (python compare_smyth.py fetches them)")
 def test_leipo_regular_tenses_are_checked_by_pattern_with_lyo():
     import json
     from pathlib import Path

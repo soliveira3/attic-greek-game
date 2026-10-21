@@ -2,6 +2,9 @@ import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
 // Automated accessibility checks (WCAG 2.1 A/AA rules axe can test) on every page, in both themes.
+// Reduced motion turns the app's animations off, so axe measures settled colours, not a frame of
+// the feedback sheet fading in (slower CI machines caught it mid-animation).
+test.use({ reducedMotion: 'reduce' })
 const PAGES = ['/', '/#/practice', '/#/lesson/article.1', '/#/lesson/perf.2', '/#/placement', '/#/unit/decl3s', '/#/review', '/#/parse', '/#/fill', '/#/make', '/#/sprint', '/#/stats', '/#/settings', '/#/notes', '/#/notes/decl1', '/#/notes/principal-parts']
 
 for (const scheme of ['light', 'dark'] as const) {

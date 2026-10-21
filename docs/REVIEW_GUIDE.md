@@ -39,7 +39,7 @@ mode points out accents but does not count them.
 
 ### c. Grammar notes (15 minutes)
 Read two or three notes (**Notes** in the menu). Suggested: *The 2nd declension*, *The augment*,
-*Principal parts*. Check:
+*Tense stems and principal parts*. Check:
 - Is anything wrong or misleading for a first-year student?
 - Do the Smyth section numbers point to the right place?
 

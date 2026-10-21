@@ -44,8 +44,8 @@ def _text(cell: str) -> str:
 def parse_dcc_html(page: str) -> list[CoreRow]:
     body = page[page.find("<tbody") :]
     out = []
-    for row in re.findall(r"<tr>(.*?)</tr>", body, re.S):
-        cells = [_text(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
+    for row in re.findall(r"<tr>(.*?)</tr>", body, re.DOTALL):
+        cells = [_text(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.DOTALL)]
         if len(cells) != 5:
             continue
         headword, gloss, dcc_pos, _group, rank = cells

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import { useNow } from '../app/useNow'
 import { Icon } from '../components/Icon'
 import { MakeCard } from '../components/MakeCard'
 import { Owl } from '../components/Owl'
@@ -125,7 +126,7 @@ export function Placement({ rng = Math.random }: { rng?: Rng }) {
 function Result({ level }: { level: number }) {
   const { store } = useApp()
   const heading = useRef<HTMLHeadingElement>(null)
-  const [now] = useState(() => new Date())
+  const now = useNow()
   const rec = recommend(loadPath(store), loadAttempts(store), now)
   useEffect(() => {
     heading.current?.focus()

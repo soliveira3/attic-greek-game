@@ -34,6 +34,11 @@ describe('parseRoute', () => {
 })
 
 describe('href', () => {
+  it('treats a link with broken percent-encoding as not found instead of crashing', () => {
+    expect(parseRoute('#/notes/%E0%A4%A')).toEqual({ page: 'not-found' })
+    expect(parseRoute('#/lesson/%')).toEqual({ page: 'not-found' })
+    expect(parseRoute('#/unit/%zz')).toEqual({ page: 'not-found' })
+  })
   it('builds hash links', () => {
     expect(href('home')).toBe('#/')
     expect(href('make')).toBe('#/make')

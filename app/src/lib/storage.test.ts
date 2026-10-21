@@ -35,6 +35,26 @@ describe('createStore', () => {
     expect(store.read('a', [])).toEqual([1, 2])
     expect(store.persistent).toBe(false)
   })
+  it('still shows what was saved before when a write fails (storage full)', () => {
+    const backing = new Map<string, string>([
+      ['path', '{"done":1}'],
+      ['srs', '{"cards":2}'],
+    ])
+    const full = {
+      getItem: (k: string) => backing.get(k) ?? null,
+      setItem: () => {
+        throw new DOMException('full', 'QuotaExceededError')
+      },
+      removeItem: (k: string) => void backing.delete(k),
+    } as unknown as Storage
+    const store = createStore(full)
+    store.write('attempts', [1])
+    expect(store.persistent).toBe(false)
+    expect(store.read('path', null)).toEqual({ done: 1 })
+    expect(store.read('attempts', null)).toEqual([1])
+    store.remove('srs')
+    expect(store.read('srs', 'gone')).toBe('gone')
+  })
   it('works without any storage, and survives corrupt JSON', () => {
     const store = createStore(null)
     store.write('k', 1)

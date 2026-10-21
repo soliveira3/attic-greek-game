@@ -44,10 +44,10 @@ def parse_tables(page: str) -> list[list[list[str]]]:
     """The tables of the section text: rows of cell texts."""
     body = page[page.find('class="text"') :]
     out = []
-    for table in re.findall(r"<table[^>]*>(.*?)</table>", body, re.S):
+    for table in re.findall(r"<table[^>]*>(.*?)</table>", body, re.DOTALL):
         rows = []
-        for row in re.findall(r"<tr[^>]*>(.*?)</tr>", table, re.S):
-            cells = re.findall(r"<td[^>]*/>|<td[^>]*>(.*?)</td>", row, re.S)
+        for row in re.findall(r"<tr[^>]*>(.*?)</tr>", table, re.DOTALL):
+            cells = re.findall(r"<td[^>]*/>|<td[^>]*>(.*?)</td>", row, re.DOTALL)
             rows.append([_text(c) for c in cells])
         out.append(rows)
     return out
@@ -212,12 +212,12 @@ def compare(ours: dict[str, list[str]], smyth: dict[str, list[str]], model: dict
     column of a model word of the same pattern, by shape."""
     result = Comparison()
     if model is None:
-        mine_of = lambda forms: {key(f) for f in forms}  # noqa: E731
-        theirs_of = lambda forms: set(forms)  # noqa: E731
+        mine_of = lambda forms: {key(f) for f in forms}
+        theirs_of = lambda forms: set(forms)
     else:
         ours_stem, model_stem = stem_length(ours), stem_length(model)
-        mine_of = lambda forms: {shape(f, ours_stem) for f in forms}  # noqa: E731
-        theirs_of = lambda forms: {shape(f, model_stem) for f in forms}  # noqa: E731
+        mine_of = lambda forms: {shape(f, ours_stem) for f in forms}
+        theirs_of = lambda forms: {shape(f, model_stem) for f in forms}
     for cell in sorted(set(ours) | set(smyth)):
         if cell not in smyth:
             result.not_in_smyth.append(cell)

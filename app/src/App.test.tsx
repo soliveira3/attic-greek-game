@@ -61,6 +61,11 @@ describe('App', () => {
     render(<App store={createStore(null)} data={testData} />)
     expect(screen.getByText(/0 due, 20 new today/)).toBeInTheDocument()
   })
+  it('shows the version of the game in the footer', () => {
+    render(<App store={createStore(null)} data={testData} />)
+    expect(screen.getByRole('contentinfo')).toHaveTextContent(`Version ${__APP_VERSION__}`)
+    expect(__APP_VERSION__).toMatch(/^\d+\.\d+\.\d+$/)
+  })
   it('credits the data sources', () => {
     render(<App store={createStore(null)} data={testData} />)
     const footer = screen.getByRole('contentinfo')

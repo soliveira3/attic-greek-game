@@ -1,6 +1,8 @@
 // Today's numbers, shown around the app: day streak, XP against the daily goal, reviews due.
+import { useMemo } from 'react'
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import { useNow } from '../app/useNow'
 import { loadAttempts } from '../lib/attempts'
 import { dailyXp, loadPath } from '../lib/path'
 import { loadSrs } from '../lib/srs'
@@ -14,17 +16,22 @@ export interface TodayStats {
   due: number
 }
 
-/** Recomputed whenever the store changes (AppState.version). */
+/** Recomputed when the store changes (AppState.version) and when the day changes (useNow). */
 export function useToday(): TodayStats {
-  const { store, settings } = useApp()
-  const now = new Date()
-  const attempts = loadAttempts(store)
-  return {
-    streak: streak(attempts, now),
-    xp: dailyXp(attempts, loadPath(store), now),
-    goal: settings.dailyGoal,
-    due: dueToday(loadSrs(store), now),
-  }
+  const { store, settings, version } = useApp()
+  const now = useNow()
+  const goal = settings.dailyGoal
+  return useMemo(() => {
+    const attempts = loadAttempts(store)
+    return {
+      streak: streak(attempts, now),
+      xp: dailyXp(attempts, loadPath(store), now),
+      goal,
+      due: dueToday(loadSrs(store), now),
+    }
+    // version is the store's change counter: a new value means the stored progress changed
+    // oxlint-disable-next-line react-hooks/exhaustive-deps
+  }, [store, version, now, goal])
 }
 
 export function StatChips({ stats }: { stats: TodayStats }) {

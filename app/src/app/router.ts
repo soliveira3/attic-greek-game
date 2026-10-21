@@ -14,6 +14,15 @@ export interface Route {
 const isPage = (s: string): s is Page => (PAGES as readonly string[]).includes(s)
 
 export function parseRoute(hash: string): Route {
+  try {
+    return routeOf(hash)
+  } catch {
+    // decodeURIComponent throws on broken percent-encoding (a mangled link)
+    return { page: 'not-found' }
+  }
+}
+
+function routeOf(hash: string): Route {
   const [first, ...rest] = hash.replace(/^#\/?/, '').split('/').filter(Boolean)
   if (!first) return { page: 'home' }
   if (first === 'notes') return rest.length ? { page: 'notes', topic: decodeURIComponent(rest.join('/')) } : { page: 'notes' }

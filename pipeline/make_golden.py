@@ -44,7 +44,7 @@ def golden_doc(lemma: dict) -> dict:
 
 
 def render_golden(doc: dict) -> str:
-    dump = lambda v: json.dumps(v, ensure_ascii=False)  # noqa: E731
+    dump = lambda v: json.dumps(v, ensure_ascii=False)
     head = [f"  {dump(k)}: {dump(v)}," for k, v in doc.items() if k != "cells"]
     cells = [f"    {dump(k)}: {dump(v)}" for k, v in doc["cells"].items()]
     return "{\n" + "\n".join(head) + '\n  "cells": {\n' + ",\n".join(cells) + "\n  }\n}\n"
@@ -119,8 +119,8 @@ def render_review(docs: list[dict]) -> str:
                     if any(any(r[1:]) for r in rows):
                         out += _table(["person", "singular", "plural", "dual"], rows)
                         if block == "perf.mp" and f"{block}.ind.3.pl" not in cells:
-                            out += ["", "3rd plural left blank on purpose: Attic uses a periphrasis "
-                                    "(perfect participle + the verb 'to be'), which v1 does not model."]
+                            out += ["", ("3rd plural left blank on purpose: Attic uses a periphrasis "
+                                         "(perfect participle + the verb 'to be'), which v1 does not model.")]
                     if cells.get(f"{block}.inf"):
                         out += ["", f"infinitive: {_cell(cells, f'{block}.inf')}"]
                     out.append("")

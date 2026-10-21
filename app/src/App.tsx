@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { AppProvider } from './app/AppContext'
-import { type Page, href, useRoute } from './app/router'
+import { type Page, type Route, href, useRoute } from './app/router'
 import { Icon, type IconName } from './components/Icon'
 import { Owl } from './components/Owl'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import { DailyGoal, StatChips, useToday } from './components/Today'
 import { TypingProvider } from './components/typing'
 import type { Paradigms } from './lib/data'
@@ -33,18 +34,20 @@ const PRACTICE_PAGES: string[] = ['practice', 'parse', 'fill', 'make', 'sprint']
 // pages with the right-hand column of today's numbers (on wide screens)
 const RAIL_PAGES: string[] = ['home', 'practice', 'stats']
 
+const shownKey = (route: Route) => `${route.page}/${route.topic ?? ''}`
+
 function Screen() {
   const route = useRoute()
+  const key = shownKey(route)
   const main = useRef<HTMLElement>(null)
-  const shown = useRef(`${route.page}/${route.topic ?? ''}`)
+  const shown = useRef(key)
   // On a new page, focus its heading so screen readers and keyboard users start there, unless the
   // page has already focused what it is about (a mode focuses its answer box).
   useEffect(() => {
-    const now = `${route.page}/${route.topic ?? ''}`
-    if (shown.current === now) return
-    shown.current = now
+    if (shown.current === key) return
+    shown.current = key
     if (!main.current?.contains(document.activeElement)) main.current?.querySelector<HTMLElement>('h1')?.focus()
-  }, [route.page, route.topic])
+  }, [key])
 
   let page
   switch (route.page) {
@@ -87,6 +90,8 @@ function Screen() {
     default:
       page = <NotFound />
   }
+  // a crash shows a way out; the key gives every page a fresh boundary
+  page = <ErrorBoundary key={key}>{page}</ErrorBoundary>
 
   // a lesson takes the whole screen, like a game level
   if (route.page === 'lesson' || route.page === 'placement') {
@@ -132,6 +137,10 @@ function Screen() {
             <a href="https://kaikki.org/">kaikki.org</a>; word list and glosses from the{' '}
             <a href="https://dcc.dickinson.edu/greek-core-list">DCC Greek Core Vocabulary</a> (CC BY-SA). Grammar
             references: Smyth, <cite>Greek Grammar</cite> (1920). Progress stays in this browser.
+          </p>
+          <p>
+            Version {__APP_VERSION__} ·{' '}
+            <a href="https://github.com/soliveira3/attic-greek-game">Source code and problem reports</a>
           </p>
         </footer>
       </div>

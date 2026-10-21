@@ -336,7 +336,12 @@ function mostCommon<T>(items: T[]): T | undefined {
 export function weakSpots(attempts: Attempt[], now: Date = new Date(), limit = 5): WeakSpot[] {
   const since = now.getTime() - RECENT_DAYS * DAY_MS
   const byFeature = new Map<string, Attempt[]>()
-  for (const a of attempts) if (a.ts >= since) byFeature.set(a.featureKey, [...(byFeature.get(a.featureKey) ?? []), a])
+  for (const a of attempts) {
+    if (a.ts < since) continue
+    const list = byFeature.get(a.featureKey)
+    if (list) list.push(a)
+    else byFeature.set(a.featureKey, [a])
+  }
   const out: (WeakSpot & { last: number })[] = []
   for (const [featureKey, list] of byFeature) {
     const missed = list.filter((a) => !a.correct)

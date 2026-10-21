@@ -119,6 +119,21 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 - Contract verbs, εἰμί, μι-verbs, irregular nouns, comparatives, pronominal adjectives and 3-1-3
   adjectives are out of scope for now.
 
+## Before sending the review sample (greek-checker, 2026-10-20)
+A teacher may question these (no form changed; decide case by case after the review):
+- θνῄσκω keeps its present (Attic prose uses the compound ἀποθνῄσκω; its aorist is already
+  excluded for that reason).
+- βλέπω keeps its present and imperfect middle/passive (rare; its later tenses are excluded).
+- προσήκω keeps a personal future (mostly impersonal in use).
+- Vocatives of superlatives such as πλεῖστος (the template-generated vocative problem behind
+  other adjective exclusions).
+- παύω: the aorist passive follows DCC; the variant with σ is in the dump but not offered.
+- μέλλω: the imperfect has both augments, the aorist only the ε- one.
+- φῶς: genitive plural accent (right per Smyth §252; listed in morpheus_reviewed.txt).
+- data/exclude.txt: the comment on the -αται rule says the perfect middle/passive blocks are
+  dropped, but they are kept without the 3rd plural (REPORT.md). Fix the comment with the next
+  data change.
+
 ## Known answer-checking label edge cases (from the third check.ts review; labels only, verdicts right)
 - An augment carried into a non-past compound form (ἀπεκτεῖναι for ἀποκτεῖναι) is labelled stem or
   ending, not augment.

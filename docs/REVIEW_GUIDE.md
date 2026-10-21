@@ -1,23 +1,24 @@
 # Review guide
 
-Automated checks show that the game's forms match Wiktionary, that Morpheus agrees with them,
-and that the model paradigms match Smyth. They cannot show that the drills teach well, or catch
+Automated checks show that the game's forms match Wiktionary, that Morpheus agrees with them
+(each disagreement was reviewed), and that the model paradigms match Smyth. They cannot show that the drills teach well, or catch
 every doubtful form. Two short human reviews can. This page describes both.
 
-Report what you find through the
-[wrong-form issue form](https://github.com/soliveira3/attic-greek-game/issues/new?template=wrong-form.yml).
-Notes in any format sent to the maintainer work too.
+The game: <https://soliveira3.github.io/attic-greek-game/>. Report what you find through the
+[wrong-form issue form](https://github.com/soliveira3/attic-greek-game/issues/new?template=wrong-form.yml)
+(needs a GitHub account), or send notes in any format to whoever gave you this guide.
 
 ---
 
 ## 1. For a Greek teacher (about an hour)
 
-Nothing to install: open the live site in any browser.
+Nothing to install: open the game in any browser.
 
 ### a. Forms (30 minutes)
-[REVIEW_SAMPLE.md](REVIEW_SAMPLE.md) lists 40 forms drawn at random from the game's data. It
+[REVIEW_SAMPLE.md](REVIEW_SAMPLE.md) lists 40 cells drawn at random from the game's data. It
 covers nouns, adjectives and verbs in proportion to the word list. The model paradigms, already
-compared with Smyth, are left out. For each row, mark the last column:
+compared with Smyth, are left out. Where the game accepts more than one spelling for a cell, all
+of them are listed. For each row, mark the last column:
 
 - ✓ the form is right for Attic prose;
 - ✗ it is wrong (please give the form you expect and your source);
@@ -34,8 +35,12 @@ Play a few rounds of **Make it** and give some answers wrong on purpose:
 - a wrong ending,
 - the right form of a different case or person.
 
-Does the feedback name the mistake fairly? The rules are in [SPEC.md §6](SPEC.md). The default
-mode points out accents but does not count them.
+Does the feedback name the mistake fairly? The rules are in [SPEC.md §6](SPEC.md). Two of them
+may look surprising but are intended:
+- By default an accent slip is pointed out but not counted, except when the slip spells another
+  form of the same word being drilled. Then the answer is wrong.
+- A form that is spelt the same in both cells (a neuter's nominative and accusative, for
+  example) is right for either.
 
 ### c. Grammar notes (15 minutes)
 Read two or three notes (**Notes** in the menu). Suggested: *The 2nd declension*, *The augment*,

@@ -138,6 +138,10 @@ function Screen() {
             <a href="https://dcc.dickinson.edu/greek-core-list">DCC Greek Core Vocabulary</a> (CC BY-SA). Grammar
             references: Smyth, <cite>Greek Grammar</cite> (1920). Progress stays in this browser.
           </p>
+          <p>
+            Version {__APP_VERSION__} ·{' '}
+            <a href="https://github.com/soliveira3/attic-greek-game">Source code and problem reports</a>
+          </p>
         </footer>
       </div>
       {rail && <Rail />}

@@ -243,6 +243,17 @@ Acceptance
 
 ---
 
+## Phase 8 — Professional audit (added 2026-10-20 at the user's request) 🧑 HUMAN GATE
+
+Done before the Phase 7 gate closes, so what goes public is already audited. Plan:
+`docs/plans/phase-8.md`. CI that explains its failures, lint in the checks, a code review,
+site metadata and a CSP, contributor documents and templates, README screenshots, a performance
+measurement, and a review kit for a Greek teacher and learners.
+
+Acceptance: see `docs/plans/phase-8.md`. The gate is shared with Phase 7.
+
+---
+
 ## v2 backlog (not in scope; record ideas here)
 Contract verbs and εἰμί (if not done in v1) · μι-verbs · participles · subjunctive/optative/
 imperative · pronouns · comparatives · sentence-level parsing from real texts (e.g. Xenophon)

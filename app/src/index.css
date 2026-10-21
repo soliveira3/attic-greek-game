@@ -1202,22 +1202,36 @@ a.node:active .coin {
 }
 
 
+/* the glowing ring: a circle centred on the whole coin, its 7px edge included (an outline would
+   follow the oval top face only and sit too high) */
 .node.recommended .coin {
-  outline: 6px solid color-mix(in srgb, var(--fam) 25%, transparent);
-  outline-offset: 6px;
+  position: relative;
+}
+
+.node.recommended .coin::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 3.5px);
+  width: 100px;
+  height: 100px;
+  border: 6px solid color-mix(in srgb, var(--fam) 25%, transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
   animation: breathe 2.2s ease-in-out infinite;
 }
 
 @keyframes breathe {
   50% {
-    outline-offset: 10px;
-    outline-color: color-mix(in srgb, var(--fam) 10%, transparent);
+    transform: translate(-50%, -50%) scale(1.08);
+    border-color: color-mix(in srgb, var(--fam) 10%, transparent);
   }
 }
 
 .start-bubble {
   position: absolute;
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + 18px);
   padding: 6px 14px;
   border: 2px solid var(--line);
   border-radius: var(--radius-small);
@@ -1250,7 +1264,12 @@ a.node:active .coin {
 }
 
 .node-row.recommended {
-  margin-top: 46px;
+  margin-top: 54px;
+}
+
+/* room for the ring below the coin */
+.node.recommended .node-label {
+  margin-top: 16px;
 }
 
 

@@ -1,3 +1,4 @@
-pytest
-jsonschema
-libmorpheus
+# Exact versions so CI and every machine run the same tools (Dependabot proposes updates).
+pytest==9.1.1
+jsonschema==4.26.0
+libmorpheus==0.1.0

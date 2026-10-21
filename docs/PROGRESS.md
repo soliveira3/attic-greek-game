@@ -10,15 +10,18 @@
 | 5 — Spaced repetition & progress | done (2026-10-20) |
 | 6 — Grammar notes 🧑 | done (approved by the user 2026-10-20) |
 | 7 — Polish & ship 🧑 | in progress (waiting on the user: public repository and Pages) |
-| 8 — Professional audit 🧑 | done on branch `phase-8-audit` (2026-10-20); gate shared with Phase 7 |
+| 8 — Professional audit 🧑 | done, merged into main and pushed (2026-10-20) |
 
 ## Current task
-🧑 HUMAN GATE (Phases 7 and 8), see "Waiting on the user". After it: push, read the pytest failure
-from the first CI run in the new per-suite output and fix it, watch CI go green, check the live
-site, tag v1.0.0, mark v1 complete.
+🧑 HUMAN GATE (Phase 7): the user makes the repository public and enables Pages. Then: re-run the
+deploy (or push), check the live site, tag v1.0.0, mark v1 complete.
+CI state (2026-10-20, run 39532549333): the check job is green; deploy fails only because Pages
+is not enabled ("Failed to create deployment (status: 404)"). The first run's hidden failure was
+a pytest test downloading Smyth from Perseus (503 on CI); it now skips without the cache. The
+feedback a11y check had measured colours mid-animation; it runs with reduced motion.
 
 ## Phase 8 — Professional audit (2026-10-20, at the user's request)
-Plan: docs/plans/phase-8.md; branch `phase-8-audit` (not merged, not pushed). Done:
+Plan: docs/plans/phase-8.md; merged into main and pushed at the user's request. Done:
 - CI: the first CI run on GitHub (commit c5975d0) failed in pytest, but check.sh printed only the
   tail of a shared log (Playwright's), so the error is unknown. It does not reproduce locally
   (fresh clone, shallow clone from GitHub, Python 3.14.6 and 3.14.8, empty HOME, container).
@@ -51,16 +54,14 @@ Open questions for the user: keep the unit order? are the thresholds right (soli
 answers at 85 %; weak spot: 3 misses in 30 days, under 70 % right)?
 
 ## Waiting on the user
-- The repository exists (soliveira3/attic-greek-game, private; main pushed up to c5975d0, three
-  local commits on main and the phase-8-audit branch not pushed). To finish v1:
-  1. Say whether to merge `phase-8-audit` into `main`.
-  2. Make the repository public (Pages on a free plan needs it), then Settings → Pages → Source:
-     "GitHub Actions".
-  3. Give Claude the go-ahead to push.
-  4. Optional, once public: Settings → Code security: CodeQL default setup and private
+- The repository exists (soliveira3/attic-greek-game, still private; main is pushed and the
+  checks pass). To finish v1:
+  1. Make the repository public (Pages on a free plan needs it; the user will do it later), then
+     Settings → Pages → Source: "GitHub Actions". Then re-run the failed deploy job.
+  2. Optional, once public: Settings → Code security: CodeQL default setup and private
      vulnerability reporting (SECURITY.md points to it); a branch rule on main requiring the
      `check` job; a `data` label for the wrong-form issue form.
-  5. Optional: send docs/REVIEW_GUIDE.md to a Greek teacher and two or three learners.
+  3. Optional: send docs/REVIEW_GUIDE.md to a Greek teacher and two or three learners.
   Claude must not create accounts or change repository settings.
 
 ## Decisions taken
@@ -149,6 +150,9 @@ A teacher may question these (no form changed; decide case by case after the rev
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Phase 8 merged into main and pushed (user's go-ahead). CI showed two failures
+  hidden before (pytest downloading Smyth; a11y measuring mid-animation), both fixed; checks green,
+  deploy waits on Pages.
 - 2026-10-20 — Phase 8 (professional audit) done on branch phase-8-audit; see the Phase 8 section.
 - 2026-10-20 — Path follow-up: all units open, unit index, placement check, recommended start a
   little below the level, weak spots pointing to lessons and notes; lib coverage back above 95 %.

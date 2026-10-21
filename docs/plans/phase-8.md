@@ -66,4 +66,5 @@ Findings that started this phase:
 - [x] CONTRIBUTING, CHANGELOG, SECURITY, ARCHITECTURE, REVIEW_GUIDE, templates, Dependabot written
 - [x] README has screenshots, badge, live address
 - [x] Performance measured and recorded
-- [ ] 🧑 User gate passed (merge, public repo, Pages, push)
+- [x] Merged and pushed (2026-10-20); CI checks green
+- [ ] 🧑 Public repository and Pages (Phase 7 gate)

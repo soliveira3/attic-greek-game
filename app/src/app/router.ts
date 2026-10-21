@@ -2,12 +2,12 @@
 
 import { useSyncExternalStore } from 'react'
 
-export const PAGES = ['home', 'review', 'practice', 'parse', 'fill', 'make', 'sprint', 'stats', 'settings', 'notes', 'lesson'] as const
+export const PAGES = ['home', 'review', 'practice', 'parse', 'fill', 'make', 'sprint', 'stats', 'settings', 'notes', 'lesson', 'placement'] as const
 export type Page = (typeof PAGES)[number]
 
 export interface Route {
   page: Page | 'not-found'
-  /** Notes: the note shown; lesson: the lesson played. */
+  /** Notes: the note shown; lesson: the lesson played; home: the unit scrolled to. */
   topic?: string
 }
 
@@ -17,13 +17,14 @@ export function parseRoute(hash: string): Route {
   const [first, ...rest] = hash.replace(/^#\/?/, '').split('/').filter(Boolean)
   if (!first) return { page: 'home' }
   if (first === 'notes') return rest.length ? { page: 'notes', topic: decodeURIComponent(rest.join('/')) } : { page: 'notes' }
+  if (first === 'unit') return rest.length === 1 ? { page: 'home', topic: decodeURIComponent(rest[0]) } : { page: 'not-found' }
   if (first === 'lesson') return rest.length === 1 ? { page: 'lesson', topic: decodeURIComponent(rest[0]) } : { page: 'not-found' }
   if (isPage(first) && first !== 'home' && first !== 'lesson' && !rest.length) return { page: first }
   return { page: 'not-found' }
 }
 
 export function href(page: Page, topic?: string): string {
-  if (page === 'home') return '#/'
+  if (page === 'home') return topic ? `#/unit/${encodeURIComponent(topic)}` : '#/'
   return `#/${page}${topic ? `/${encodeURIComponent(topic)}` : ''}`
 }
 

@@ -47,6 +47,27 @@ test('the path: a whole lesson from the keyboard opens the next one', async ({ p
   expect(errors).toEqual([])
 })
 
+test('find my level: the check ends, saves a level and recommends a start', async ({ page }) => {
+  const errors = watch(page)
+  await page.goto('/')
+  await page.getByRole('link', { name: /find my level/i }).click()
+  await expect(page.getByRole('progressbar', { name: /placement progress/i })).toBeVisible()
+  for (let i = 0; i < 80 && !(await page.getByRole('heading', { name: 'Your level', exact: true }).count()); i++) {
+    if (await page.getByRole('region', { name: 'Feedback' }).count()) {
+      await page.keyboard.press('Enter')
+      continue
+    }
+    const box = page.getByRole('textbox', { name: 'Your answer' })
+    if (await box.count()) await box.fill('xyz')
+    else for (let k = 0; k < 3; k++) await page.keyboard.press('1')
+    await page.keyboard.press('Enter')
+  }
+  await expect(page.getByRole('heading', { name: 'Your level', exact: true })).toBeVisible()
+  await page.getByRole('link', { name: /see the path/i }).click()
+  await expect(page.getByRole('link', { name: /check my level again/i })).toBeVisible()
+  expect(errors).toEqual([])
+})
+
 test('Parse it: a round with number keys and Enter', async ({ page }) => {
   const errors = watch(page)
   await page.goto('/#/parse')

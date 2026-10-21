@@ -7,7 +7,8 @@ import { href } from '../app/router'
 import { loadAttempts } from '../lib/attempts'
 import { CLASS_FAMILIES, classLabel, featureKey } from '../lib/features'
 import { exportProgress, importProgress } from '../lib/progress'
-import { LESSONS, lessonState, loadPath, xpHistory } from '../lib/path'
+import { LESSONS, UNITS, estimateLevel, lessonDone, loadPath, xpHistory } from '../lib/path'
+import { WeakSpots } from '../components/WeakSpots'
 import { loadSettings } from '../lib/settings'
 import { loadSrs, localDay } from '../lib/srs'
 import { accuracyByFeature, dueToday, heatLayout, streak } from '../lib/stats'
@@ -66,7 +67,8 @@ export function Stats() {
 
   const attempts = loadAttempts(store)
   const path = loadPath(store)
-  const lessonsDone = LESSONS.filter((l) => lessonState(path, l.id) === 'done').length
+  const lessonsDone = LESSONS.filter((l) => lessonDone(path, l.id)).length
+  const playerLevel = estimateLevel(path, attempts, now)
   const accuracy = accuracyByFeature(attempts)
   const right = attempts.filter((a) => a.correct).length
   const played = Object.values(CLASS_FAMILIES)
@@ -104,6 +106,10 @@ export function Stats() {
       )}
       <div className="stat-row">
         <div className="stat">
+          <span className="stat-label">Level</span>
+          <strong title={playerLevel >= 0 ? UNITS[playerLevel].title : undefined}>{playerLevel >= 0 ? `Unit ${playerLevel + 1}` : '—'}</strong>
+        </div>
+        <div className="stat">
           <span className="stat-label">Lessons done</span>
           <strong>
             {lessonsDone} of {LESSONS.length}
@@ -126,6 +132,8 @@ export function Stats() {
           <strong>{attempts.length ? `${Math.round((100 * right) / attempts.length)}%` : '—'}</strong>
         </div>
       </div>
+
+      <WeakSpots limit={5} />
 
       <XpChart days={xpHistory(attempts, path, now)} goal={settings.dailyGoal} />
 

@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import { greekToBeta } from '../lib/betacode'
-import { LESSONS, completeLesson, emptyPath, findLesson, lessonState, loadPath, savePath } from '../lib/path'
+import { LESSONS, completeLesson, emptyPath, findLesson, lessonDone, loadPath, savePath } from '../lib/path'
 import { seededRng } from '../lib/prompts'
 import { createStore } from '../lib/storage'
 import { testData } from '../test/data'
@@ -35,7 +35,7 @@ describe('Lesson', () => {
     renderWithApp(<Lesson id="article.1" rng={seededRng(1)} />)
     expect(screen.getByRole('heading', { level: 1, name: 'Spot the form' })).toBeInTheDocument()
     expect(screen.getByRole('progressbar', { name: /lesson progress/i })).toHaveAttribute('aria-valuenow', '0')
-    expect(screen.getByRole('link', { name: /quit the lesson/i })).toHaveAttribute('href', '#/')
+    expect(screen.getByRole('link', { name: /quit the lesson/i })).toHaveAttribute('href', '#/unit/article')
     expect(screen.getByTestId('form')).toBeInTheDocument()
   })
 
@@ -48,8 +48,8 @@ describe('Lesson', () => {
     const path = loadPath(store)
     expect(path.log).toHaveLength(1)
     expect(path.log[0].lesson).toBe('article.1')
-    expect(lessonState(path, 'article.2')).toBe('current')
-    expect(screen.getByRole('link', { name: /continue/i })).toHaveAttribute('href', '#/')
+    expect(lessonDone(path, 'article.1')).toBe(true)
+    expect(screen.getByRole('link', { name: /continue/i })).toHaveAttribute('href', '#/unit/article')
   }, 30_000)
 
   it('brings a missed exercise back once, at the end', async () => {
@@ -64,12 +64,10 @@ describe('Lesson', () => {
     expect(screen.getByRole('progressbar', { name: /lesson progress/i })).toHaveAttribute('aria-valuenow', '1')
   }, 15_000)
 
-  it('keeps a locked lesson closed, but lets a unit test be taken early', () => {
-    const { unmount } = renderWithApp(<Lesson id="decl2.2" rng={seededRng(1)} />)
-    expect(screen.getByRole('heading', { name: /locked/i })).toBeInTheDocument()
-    unmount()
-    renderWithApp(<Lesson id="decl2.5" rng={seededRng(1)} />)
-    expect(screen.getByRole('heading', { level: 1, name: 'Unit test' })).toBeInTheDocument()
+  it('opens any lesson, however far along the path', () => {
+    renderWithApp(<Lesson id="perf.2" rng={seededRng(1)} />)
+    expect(screen.getByRole('heading', { level: 1, name: 'Build the form' })).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /your answer/i })).toBeInTheDocument()
   })
 
   it('replays a lesson already done', () => {

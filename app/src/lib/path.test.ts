@@ -11,14 +11,23 @@ import {
   completeLesson,
   dailyXp,
   emptyPath,
+  estimateLevel,
   findLesson,
-  lessonState,
+  lessonDone,
+  lessonsOf,
   loadPath,
-  nextLesson,
   parsePath,
   passed,
+  placementExercises,
+  recommend,
+  scorePlacement,
+  setPlacement,
+  unitIndexOf,
   unitSettings,
   unitsInData,
+  weakSpot,
+  weakSpots,
+  xpHistory,
 } from './path'
 import { DEFAULT_SETTINGS } from './settings'
 import { createStore } from './storage'
@@ -63,33 +72,21 @@ describe('lessons', () => {
     expect(findLesson('nope.1')).toBeUndefined()
   })
 
-  it('unlock one after the other', () => {
-    const path = emptyPath()
-    expect(lessonState(path, 'article.1')).toBe('current')
-    expect(lessonState(path, 'article.2')).toBe('locked')
-    const after = completeLesson(path, 'article.1', { right: 8, total: 8 }, day.getTime())
-    expect(lessonState(after, 'article.1')).toBe('done')
-    expect(lessonState(after, 'article.2')).toBe('current')
-    expect(nextLesson(after)?.id).toBe('article.2')
+  it('are all open; a lesson is done once finished', () => {
+    const path = completeLesson(emptyPath(), 'perf.2', { right: 3, total: 8 }, day.getTime())
+    expect(lessonDone(path, 'perf.2')).toBe(true)
+    expect(lessonDone(path, 'perf.1')).toBe(false)
+    expect(lessonDone(path, 'article.1')).toBe(false)
   })
 
-  it('a failed unit test does not count as done', () => {
-    let path = emptyPath()
-    for (const l of LESSONS.slice(0, 4)) path = completeLesson(path, l.id, { right: 8, total: 8 }, day.getTime())
+  it('a unit test counts at the pass mark, and then marks its whole unit done', () => {
     expect(passed('article.5', { right: 7, total: 12 })).toBe(false)
-    path = completeLesson(path, 'article.5', { right: 7, total: 12 }, day.getTime())
-    expect(lessonState(path, 'article.5')).toBe('current')
     expect(passed('article.5', { right: 10, total: 12 })).toBe(true)
-    path = completeLesson(path, 'article.5', { right: 10, total: 12 }, day.getTime())
-    expect(lessonState(path, 'decl2.1')).toBe('current')
-  })
-
-  it('a unit test passed ahead of time unlocks everything up to the next unit', () => {
-    expect(lessonState(emptyPath(), 'decl1f.5')).toBe('jump')
-    const path = completeLesson(emptyPath(), 'decl1f.5', { right: 12, total: 12 }, day.getTime())
-    expect(lessonState(path, 'decl2.5')).toBe('done')
-    expect(lessonState(path, 'decl1f.5')).toBe('done')
-    expect(lessonState(path, 'pres-act.1')).toBe('current')
+    let path = completeLesson(emptyPath(), 'decl2.5', { right: 7, total: 12 }, day.getTime())
+    expect(lessonDone(path, 'decl2.5')).toBe(false)
+    path = completeLesson(path, 'decl2.5', { right: 12, total: 12 }, day.getTime())
+    for (const l of lessonsOf(UNITS[1])) expect(lessonDone(path, l.id)).toBe(true)
+    expect(lessonDone(path, 'article.1')).toBe(false)
   })
 
   it('survive a round trip through the store and ignore junk', () => {
@@ -98,6 +95,142 @@ describe('lessons', () => {
     store.write('path', { log: [{ lesson: 'article.1', ts: 5, right: 3, total: 4 }, { lesson: 7 }, 'junk'] })
     expect(loadPath(store).log).toEqual([{ lesson: 'article.1', ts: 5, right: 3, total: 4 }])
     expect(parsePath('junk')).toEqual(emptyPath())
+  })
+})
+
+function answered(featureKey: string, correct: boolean, ts = day.getTime(), mode: Attempt['mode'] = 'make'): Attempt {
+  return { itemKey: `x|${featureKey}`, featureKey, correct, errorKind: correct ? null : 'ending', ts, mode }
+}
+const unitAt = (id: string) => UNITS.findIndex((u) => u.id === id)
+
+describe('level and recommendation', () => {
+  it('maps a form to its unit', () => {
+    expect(unitIndexOf('decl2-mf:gen.sg')).toBe(unitAt('decl2'))
+    expect(unitIndexOf('article:gen.pl.f')).toBe(unitAt('article'))
+    expect(unitIndexOf('verb-thematic:impf.act.ind.1.sg')).toBe(unitAt('impf-act'))
+    expect(unitIndexOf('verb-thematic:pres.mp.inf')).toBe(unitAt('pres-mp'))
+    expect(unitIndexOf('verb-thematic:fut.pass.ind.3.sg')).toBe(unitAt('pass'))
+    expect(unitIndexOf('nothing:here')).toBe(-1)
+  })
+
+  it('starts a newcomer at the beginning', () => {
+    expect(estimateLevel(emptyPath(), [])).toBe(-1)
+    expect(recommend(emptyPath(), [])).toMatchObject({ lesson: { id: 'article.1' }, level: -1, reason: 'new' })
+  })
+
+  it('goes on with the first unfinished lesson', () => {
+    const path = completeLesson(emptyPath(), 'article.1', { right: 8, total: 8 }, day.getTime())
+    expect(recommend(path, [])).toMatchObject({ lesson: { id: 'article.2' }, reason: 'next' })
+  })
+
+  it('after a placement, warms up a little below the level, then moves on', () => {
+    const placed = setPlacement(emptyPath(), unitAt('adj-12'), day.getTime())
+    expect(estimateLevel(placed, [])).toBe(unitAt('adj-12'))
+    expect(recommend(placed, [])).toMatchObject({ lesson: { id: 'adj-12.3' }, reason: 'warm-up' })
+    const warmed = completeLesson(placed, 'adj-12.3', { right: 9, total: 10 }, day.getTime())
+    expect(recommend(warmed, [])).toMatchObject({ lesson: { id: 'decl1m.1' }, reason: 'next' })
+  })
+
+  it('counts a unit as solid from enough good recent answers or a passed unit test', () => {
+    const good = Array.from({ length: 12 }, () => answered('decl2-n:dat.pl', true))
+    expect(estimateLevel(emptyPath(), good)).toBe(unitAt('decl2'))
+    expect(estimateLevel(emptyPath(), good.slice(0, 11))).toBe(-1)
+    const mixed = [...good, ...Array.from({ length: 4 }, () => answered('decl2-n:dat.pl', false))]
+    expect(estimateLevel(emptyPath(), mixed)).toBe(-1)
+    const tested = completeLesson(emptyPath(), 'decl1f.5', { right: 11, total: 12 }, day.getTime())
+    expect(estimateLevel(tested, [])).toBe(unitAt('decl1f'))
+  })
+
+  it('scores a placement check: the highest unit answered fully right, over after two units missed', () => {
+    expect(scorePlacement([])).toEqual({ over: false, level: -1 })
+    expect(scorePlacement([{ right: 2, total: 2 }, { right: 1, total: 2 }])).toEqual({ over: false, level: 0 })
+    expect(scorePlacement([{ right: 2, total: 2 }, { right: 1, total: 2 }, { right: 2, total: 2 }, { right: 0, total: 2 }])).toEqual({
+      over: true,
+      level: 2,
+    })
+    const all = UNITS.map(() => ({ right: 2, total: 2 }))
+    expect(scorePlacement(all)).toEqual({ over: true, level: UNITS.length - 1 })
+  })
+
+  it('gives two placement exercises per unit: one to parse, one to make', () => {
+    const items = placementExercises(testData, DEFAULT_SETTINGS, UNITS[1], seededRng(5))
+    expect(items.map((e) => e.kind)).toEqual(['parse', 'make'])
+    for (const e of items) expect(['decl2-mf', 'decl2-n']).toContain(e.prompt.lemma.class)
+  })
+
+  it('keeps the placement in the store', () => {
+    const store = createStore(null)
+    store.write('path', { log: [], placement: { level: 3, ts: 9 } })
+    expect(loadPath(store).placement).toEqual({ level: 3, ts: 9 })
+    store.write('path', { log: [], placement: { level: 'high' } })
+    expect(loadPath(store).placement).toBeUndefined()
+  })
+})
+
+describe('edge cases', () => {
+  it('know nothing of lessons that do not exist', () => {
+    expect(lessonDone(emptyPath(), 'nope.1')).toBe(false)
+    expect(passed('nope.1', { right: 1, total: 1 })).toBe(false)
+    expect(passed('article.1', { right: 0, total: 0 })).toBe(false)
+  })
+  it('ignore old answers and answers outside the path for the level', () => {
+    const old = day.getTime() - 40 * 24 * 3600 * 1000
+    const attempts = [
+      ...Array.from({ length: 12 }, () => answered('decl2-n:dat.pl', true, old)),
+      ...Array.from({ length: 12 }, () => answered('elsewhere:x', true)),
+    ]
+    expect(estimateLevel(emptyPath(), attempts, day)).toBe(-1)
+  })
+  it('recommend an earlier unfinished lesson once everything after the level is done, and nothing at the very end', () => {
+    let path = setPlacement(emptyPath(), 0, day.getTime())
+    for (const l of LESSONS.slice(5)) path = completeLesson(path, l.id, { right: 12, total: 12 }, day.getTime())
+    path = completeLesson(path, 'article.3', { right: 1, total: 1 }, day.getTime())
+    expect(recommend(path, [], day)?.lesson.id).toBe('article.1')
+    for (const l of LESSONS.slice(0, 5)) path = completeLesson(path, l.id, { right: 12, total: 12 }, day.getTime())
+    expect(recommend(path, [], day)).toBeUndefined()
+  })
+  it('look up one form, and forms outside the path or without an error kind', () => {
+    const attempts = Array.from({ length: 3 }, () => ({ ...answered('elsewhere:x', false), errorKind: null }))
+    expect(weakSpot(attempts, 'elsewhere:x', day)).toMatchObject({ unit: undefined, lesson: undefined, misses: 3 })
+    expect(weakSpot(attempts, 'decl2-mf:gen.pl', day)).toBeUndefined()
+  })
+  it('order weak spots with as many misses by the latest miss', () => {
+    const t = day.getTime()
+    const attempts = [
+      ...Array.from({ length: 3 }, () => answered('decl2-mf:gen.pl', false, t - 1000)),
+      ...Array.from({ length: 3 }, () => answered('decl2-mf:dat.pl', false, t)),
+    ]
+    expect(weakSpots(attempts, day).map((w) => w.featureKey)).toEqual(['decl2-mf:dat.pl', 'decl2-mf:gen.pl'])
+  })
+  it('give the XP of the last seven days, oldest first', () => {
+    const t = day.getTime()
+    const history = xpHistory([answered('a:b', true, t), answered('a:b', true, t - 2 * 24 * 3600 * 1000)], emptyPath(), day)
+    expect(history.map((d) => d.xp)).toEqual([0, 0, 0, 0, 1, 0, 1])
+  })
+})
+
+describe('weak spots', () => {
+  const now = day
+  it('are forms missed often lately, pointing to a lesson and a note', () => {
+    const attempts = [
+      ...Array.from({ length: 4 }, () => answered('decl2-mf:gen.pl', false)),
+      answered('decl2-mf:gen.pl', true),
+      ...Array.from({ length: 3 }, () => answered('verb-thematic:aor.act.ind.3.sg', false, day.getTime(), 'parse')),
+      ...Array.from({ length: 2 }, () => answered('decl1-eta:dat.sg', false)),
+    ]
+    const spots = weakSpots(attempts, now)
+    expect(spots.map((w) => w.featureKey)).toEqual(['decl2-mf:gen.pl', 'verb-thematic:aor.act.ind.3.sg'])
+    expect(spots[0]).toMatchObject({ misses: 4, total: 5, unit: { id: 'decl2' }, lesson: { id: 'decl2.2' }, topic: 'decl2' })
+    expect(spots[1]).toMatchObject({ unit: { id: 'aor-act' }, lesson: { id: 'aor-act.1' }, topic: 'aorist' })
+  })
+  it('leave out old answers and forms mostly right', () => {
+    const old = day.getTime() - 40 * 24 * 3600 * 1000
+    const attempts = [
+      ...Array.from({ length: 5 }, () => answered('decl2-mf:gen.pl', false, old)),
+      ...Array.from({ length: 3 }, () => answered('decl2-n:nom.pl', false)),
+      ...Array.from({ length: 8 }, () => answered('decl2-n:nom.pl', true)),
+    ]
+    expect(weakSpots(attempts, now)).toEqual([])
   })
 })
 

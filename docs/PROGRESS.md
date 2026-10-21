@@ -22,8 +22,12 @@ unlocks, unit tests to jump ahead, frequent words first), focused lesson player 
 combos, bottom check bar and feedback sheet, missed items return, completion screen), XP and a
 daily goal, sound effects (switchable), owl mascot, sidebar / tab-bar shell, Practice hub, weekly
 XP chart, new light and dark theme. All suites pass, including axe on every page.
-Open questions for the user: keep the unit order? an option to unlock every unit? hearts were
-left out on purpose.
+Follow-up the same day (user request): every unit and lesson open, a unit index and #/unit/<id>
+links (leaving a lesson returns to its unit), a placement check (#/placement), a recommended start
+a little below the level found, and "Needs practice" pointers to lessons and notes for forms missed
+often (also shown in the feedback after a wrong answer). Rules: docs/plans/redesign.md, Follow-up.
+Open questions for the user: keep the unit order? are the thresholds right (solid unit: 12 recent
+answers at 85 %; weak spot: 3 misses in 30 days, under 70 % right)?
 
 ## Waiting on the user
 - Phase 7 gate: create the GitHub repository, push this repo to it (or give Claude the remote URL
@@ -101,6 +105,8 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Path follow-up: all units open, unit index, placement check, recommended start a
+  little below the level, weak spots pointing to lessons and notes; lib coverage back above 95 %.
 - 2026-10-20 — Redesign merged into main: learning path, lessons, XP and daily goal, new visual
   system; Parse and table exercises extracted into ParseCard / TableCard; progress export includes
   the path log. No change to data/, pipeline/ or check.ts.

@@ -21,6 +21,11 @@ describe('parseRoute', () => {
     expect(parseRoute('#/lesson')).toEqual({ page: 'not-found' })
     expect(parseRoute('#/lesson/a/b')).toEqual({ page: 'not-found' })
   })
+  it('reads a unit of the path, and the placement check', () => {
+    expect(parseRoute(href('home', 'decl2'))).toEqual({ page: 'home', topic: 'decl2' })
+    expect(href('home', 'decl2')).toBe('#/unit/decl2')
+    expect(parseRoute('#/placement')).toEqual({ page: 'placement' })
+  })
   it('sends anything else to "not found"', () => {
     expect(parseRoute('#/nope')).toEqual({ page: 'not-found' })
     expect(parseRoute('#/parse/extra')).toEqual({ page: 'not-found' })

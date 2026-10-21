@@ -15,13 +15,13 @@ import { lemmaRef } from '../lib/data'
 import { featureKey } from '../lib/features'
 import {
   type Exercise,
+  LESSONS,
   LESSON_BONUS,
   PASS_MARK,
   buildLesson,
   completeLesson,
   dailyXp,
   findLesson,
-  lessonState,
   lessonsOf,
   loadPath,
   passed,
@@ -61,13 +61,8 @@ function Blocked({ title, text }: { title: string; text: string }) {
 
 export function Lesson({ id, rng = Math.random }: { id: string; rng?: Rng }) {
   const lesson = findLesson(id)
-  const { store } = useApp()
-  const [state] = useState(() => (lesson ? lessonState(loadPath(store), lesson.id) : 'locked'))
   const [round, setRound] = useState(0)
   if (!lesson) return <Blocked title="No such lesson" text="The link points to a lesson that does not exist." />
-  if (state === 'locked') {
-    return <Blocked title="This lesson is locked" text="Finish the lessons before it on the path to open it, or take a unit test to jump ahead." />
-  }
   return <Play key={`${id}/${round}`} id={id} rng={rng} onAgain={() => setRound((r) => r + 1)} />
 }
 
@@ -119,7 +114,7 @@ function Play({ id, rng, onAgain }: { id: string; rng: Rng; onAgain(): void }) {
   return (
     <div className={`page lesson family-${unit.family}`}>
       <div className="lesson-top">
-        <a className="icon-btn" href={href('home')} aria-label="Quit the lesson">
+        <a className="icon-btn" href={href('home', unit.id)} aria-label="Quit the lesson">
           <Icon name="close" />
         </a>
         <div
@@ -142,7 +137,7 @@ function Play({ id, rng, onAgain }: { id: string; rng: Rng; onAgain(): void }) {
         </span>
       </div>
       <p className="lesson-unit">
-        {unit.title}, lesson {position} of 5
+        <a href={href('home', unit.id)}>{unit.title}</a>, lesson {position} of 5
       </p>
       <h1 tabIndex={-1} className="lesson-title">
         {lesson.title}
@@ -227,7 +222,7 @@ function Complete({ lesson: id, done, onAgain }: { lesson: string; done: Done; o
   useKeys((e) => {
     if (e.key === 'Enter') {
       e.preventDefault()
-      window.location.hash = href('home')
+      window.location.hash = href('home', lesson.unit.id)
     }
   })
 
@@ -286,7 +281,12 @@ function Complete({ lesson: id, done, onAgain }: { lesson: string; done: Done; o
         <button type="button" className="btn" onClick={onAgain}>
           {isTest && !done.passed ? 'Try again' : 'Practise again'}
         </button>
-        <a className="btn primary big" href={href('home')}>
+        {LESSONS[lesson.index + 1] && (
+          <a className="btn" href={href('lesson', LESSONS[lesson.index + 1].id)}>
+            Next lesson: {LESSONS[lesson.index + 1].title}
+          </a>
+        )}
+        <a className="btn primary big" href={href('home', lesson.unit.id)}>
           Continue <kbd>Enter</kbd>
         </a>
       </p>

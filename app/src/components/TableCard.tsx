@@ -5,7 +5,9 @@ import { useApp, useSound } from '../app/AppContext'
 import { useKeys } from '../app/useKeys'
 import { type CheckResult, checkAnswer } from '../lib/check'
 import { lemmaRef } from '../lib/data'
-import { blockLabel, cellLabel, classLabel } from '../lib/features'
+import { blockLabel, cellLabel, classLabel, featureKey } from '../lib/features'
+import { loadAttempts } from '../lib/attempts'
+import { weakSpot } from '../lib/path'
 import { listWords } from '../lib/feedback'
 import { displayForm } from '../lib/normalize'
 import { classTopic, topicFor } from '../lib/notes'
@@ -17,6 +19,7 @@ import { GreekKeyboard } from './GreekKeyboard'
 import { Icon } from './Icon'
 import { LemmaLine } from './LemmaLine'
 import { TypingHint } from './TypingHint'
+import { WeakHint } from './WeakSpots'
 
 interface Props {
   table: TablePrompt
@@ -26,7 +29,7 @@ interface Props {
 }
 
 export function TableCard({ table, onChecked, onNext }: Props) {
-  const { settings } = useApp()
+  const { settings, store } = useApp()
   const sound = useSound()
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [results, setResults] = useState<Record<string, CheckResult> | null>(null)
@@ -62,6 +65,13 @@ export function TableCard({ table, onChecked, onNext }: Props) {
 
   const firstWrong = results ? Object.entries(results).find(([, r]) => !r.correct) : undefined
   const topic = firstWrong ? topicFor(table.lemma.class, firstWrong[0], firstWrong[1].errorKind) : classTopic(table.lemma.class)
+  const attempts = results ? loadAttempts(store) : []
+  const weak = results
+    ? Object.entries(results)
+        .filter(([, r]) => !r.correct)
+        .map(([key]) => featureKey(table.lemma.class, key))
+        .find((fk) => weakSpot(attempts, fk))
+    : undefined
   const total = results ? Object.keys(results).length : 0
   const right = results ? Object.values(results).filter((r) => r.correct).length : 0
 
@@ -153,6 +163,7 @@ export function TableCard({ table, onChecked, onNext }: Props) {
                   {right} of {total} right
                 </strong>
               </SheetHead>
+              {weak && <WeakHint featureKey={weak} />}
               <NoteLink topic={topic} />
             </div>
             <button type="button" className={`btn big ${right === total ? 'primary' : 'danger'}`} onClick={onNext}>

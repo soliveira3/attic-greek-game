@@ -838,13 +838,185 @@ footer.site a {
   margin: 0 0 4px;
 }
 
-.hero-next {
+.hero-next,
+.hero-rec {
   margin: 0;
   color: var(--muted);
 }
 
+.hero-rec {
+  margin-top: 4px;
+}
+
+.hero-rec strong {
+  color: var(--ink);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: none;
+}
+
 .hero-next strong {
   color: var(--ink);
+}
+
+/* every unit is open: an index to jump to any of them */
+.unit-index {
+  margin-top: 18px;
+}
+
+.unit-index ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.unit-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  padding: 0.25rem 0.75rem 0.25rem 0.35rem;
+  font-size: 0.85rem;
+  border-bottom-width: 3px;
+}
+
+.unit-chip-number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--fam);
+  color: var(--on-fill);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.unit-chip.complete .unit-chip-number {
+  background: var(--gold);
+  color: var(--gold-ink);
+}
+
+.unit-chip.recommended {
+  border-color: var(--fam);
+}
+
+.unit {
+  scroll-margin-top: 16px;
+}
+
+.unit-banner h2:focus {
+  outline: none;
+}
+
+.unit.recommended .unit-banner {
+  box-shadow:
+    0 4px 0 var(--fam-edge),
+    0 0 0 4px color-mix(in srgb, var(--fam) 25%, transparent);
+}
+
+.pill {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0 10px;
+  border-radius: 99px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+/* forms missed often */
+.weak-spots {
+  margin-top: 14px;
+  padding: 16px 20px;
+  border: 2px solid var(--line);
+  border-left: 6px solid var(--red);
+  border-radius: var(--radius);
+}
+
+.weak-spots h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.weak-spots h2 .icon {
+  color: var(--red-ink);
+}
+
+.weak-spots > p {
+  margin: 4px 0 10px;
+  font-size: 0.92rem;
+}
+
+.weak-spots ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.weak-spots li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  padding-top: 10px;
+  border-top: 2px solid var(--line);
+}
+
+.weak-count {
+  color: var(--red-ink);
+  font-weight: 800;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.revisit {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.revisit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.92rem;
+}
+
+.weak-hint {
+  margin: 8px 0 2px;
+  padding: 8px 12px;
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.weak-hint .revisit {
+  display: inline-flex;
+  margin-left: 4px;
+}
+
+.feedback.bad .weak-hint a {
+  color: var(--red-ink);
+}
+
+.placement-rec {
+  max-width: 34rem;
+  font-size: 1.05rem;
 }
 
 .review-strip {
@@ -983,7 +1155,7 @@ footer.site a {
   color: var(--ink);
 }
 
-/* a lesson is a coin: the family's colour while open, gold once done, grey while locked */
+/* a lesson is a coin: outlined while open, the family's colour when recommended, gold once done */
 .coin {
   display: grid;
   place-items: center;
@@ -1007,6 +1179,13 @@ a.node:active .coin {
   box-shadow: 0 2px 0 var(--fam-edge);
 }
 
+.node.open .coin {
+  background: var(--surface);
+  color: var(--fam);
+  border: 3px solid var(--fam);
+  box-shadow: 0 7px 0 var(--fam-edge);
+}
+
 .node.done .coin {
   background: var(--gold);
   color: var(--gold-ink);
@@ -1015,11 +1194,6 @@ a.node:active .coin {
     inset 0 0 0 5px color-mix(in srgb, #fff 35%, transparent);
 }
 
-.node.locked .coin {
-  background: var(--locked);
-  color: var(--locked-ink);
-  box-shadow: 0 7px 0 var(--locked-edge);
-}
 
 .node-label {
   margin-top: 6px;
@@ -1027,12 +1201,8 @@ a.node:active .coin {
   font-size: 0.92rem;
 }
 
-.node.locked .node-label {
-  color: var(--muted);
-  font-weight: 700;
-}
 
-.node.current .coin {
+.node.recommended .coin {
   outline: 6px solid color-mix(in srgb, var(--fam) 25%, transparent);
   outline-offset: 6px;
   animation: breathe 2.2s ease-in-out infinite;
@@ -1079,22 +1249,10 @@ a.node:active .coin {
   }
 }
 
-.node-row.current {
-  margin-top: 30px;
+.node-row.recommended {
+  margin-top: 46px;
 }
 
-.jump {
-  margin-top: 4px;
-  padding: 2px 12px;
-  border: 2px solid var(--line);
-  border-radius: 99px;
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-
-.jump:hover {
-  border-color: var(--sea);
-}
 
 .unit.complete .unit-banner h2::after {
   content: ' ✓';
@@ -1104,7 +1262,8 @@ a.node:active .coin {
   .hero {
     flex-wrap: wrap;
   }
-  .hero .btn {
+  .hero .btn,
+  .hero-actions {
     width: 100%;
   }
   .hero-owl {
@@ -1284,6 +1443,16 @@ a.node:active .coin {
   margin: 18px 0 0;
   color: var(--fam);
   font-weight: 800;
+}
+
+.lesson-unit a {
+  color: inherit;
+}
+
+.placement-title {
+  margin-top: 18px;
+  color: var(--ink);
+  font-size: 1.4rem;
 }
 
 .lesson-title {

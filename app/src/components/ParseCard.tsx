@@ -12,6 +12,7 @@ import type { ParsePrompt } from '../lib/prompts'
 import { NoteLink, SheetHead } from './Feedback'
 import { LemmaLine } from './LemmaLine'
 import { Owl } from './Owl'
+import { WeakHint } from './WeakSpots'
 
 export interface ParseAnswer {
   correct: boolean
@@ -170,6 +171,7 @@ export function ParseCard({ prompt, onAnswer, onNext }: Props) {
                     <li key={c.key}>{cellLabel(c.key)}</li>
                   ))}
                 </ul>
+                {!answer.correct && <WeakHint featureKey={prompt.featureKey} />}
                 <NoteLink topic={topicFor(prompt.lemma.class, prompt.cell.key, answer.correct ? null : 'parse')} />
               </div>
               <button type="button" className={`btn big ${answer.correct ? 'primary' : 'danger'}`} onClick={onNext}>

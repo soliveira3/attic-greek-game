@@ -49,9 +49,11 @@ interface Props {
   forms: string[]
   topic: NoteTopic
   onNext?: () => void
+  /** More to say under the verdict (a pointer back to a lesson). */
+  extra?: ReactNode
 }
 
-export function Feedback({ result, forms, topic, onNext }: Props) {
+export function Feedback({ result, forms, topic, onNext, extra }: Props) {
   const { settings } = useApp()
   const v = verdict(result)
   const others = forms.filter((f) => key(f) !== key(result.closest))
@@ -94,6 +96,7 @@ export function Feedback({ result, forms, topic, onNext }: Props) {
               Also right: <span lang="grc">{others.map(show).join(', ')}</span>
             </p>
           )}
+          {extra}
           <NoteLink topic={topic} />
         </div>
         {onNext && (

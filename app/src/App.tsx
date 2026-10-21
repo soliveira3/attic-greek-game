@@ -15,6 +15,7 @@ import { MakeIt } from './pages/MakeIt'
 import { NotFound } from './pages/NotFound'
 import { NotesPage } from './pages/NotesPage'
 import { ParseIt } from './pages/ParseIt'
+import { Placement } from './pages/Placement'
 import { Practice } from './pages/Practice'
 import { Review } from './pages/Review'
 import { SettingsPage } from './pages/SettingsPage'
@@ -48,7 +49,7 @@ function Screen() {
   let page
   switch (route.page) {
     case 'home':
-      page = <Home />
+      page = <Home unit={route.topic} />
       break
     case 'review':
       page = <Review />
@@ -80,12 +81,15 @@ function Screen() {
     case 'lesson':
       page = <Lesson id={route.topic ?? ''} />
       break
+    case 'placement':
+      page = <Placement />
+      break
     default:
       page = <NotFound />
   }
 
   // a lesson takes the whole screen, like a game level
-  if (route.page === 'lesson') {
+  if (route.page === 'lesson' || route.page === 'placement') {
     return (
       <div className="app focus-mode">
         <main ref={main}>{page}</main>

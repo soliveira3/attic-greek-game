@@ -14,6 +14,7 @@ import { Icon } from './Icon'
 import { LemmaLine } from './LemmaLine'
 import { Owl } from './Owl'
 import { TypingHint } from './TypingHint'
+import { WeakHint } from './WeakSpots'
 
 interface Props {
   prompt: MakePrompt
@@ -93,6 +94,7 @@ export function MakeCard({ prompt, onAnswer, onNext }: Props) {
             forms={prompt.forms}
             topic={topicFor(prompt.lemma.class, prompt.cell.key, result.errorKind)}
             onNext={onNext}
+            extra={!result.correct && <WeakHint featureKey={prompt.featureKey} />}
           />
         )}
       </div>

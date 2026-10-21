@@ -1,10 +1,12 @@
-// The learning path (docs/plans/redesign.md): units in textbook order, five lessons each, unlocked
-// one after the other, and the XP the daily goal counts.
+// The learning path (docs/plans/redesign.md): units in textbook order, five lessons each, all open;
+// the player's level and a recommended start a little below it; forms missed often; and the XP the
+// daily goal counts.
 
 import type { Attempt } from './attempts'
 import type { Paradigms } from './data'
 import type { LemmaClass, Pos, Tense, VoiceGroup } from './features'
-import type { NoteTopic } from './notes'
+import { type NoteTopic, topicFor } from './notes'
+import type { ErrorKind } from './check'
 import {
   type MakePrompt,
   type ParsePrompt,
@@ -164,6 +166,8 @@ export interface LogEntry {
 
 export interface PathState {
   log: LogEntry[]
+  /** The last placement check: the highest unit (index) answered fully right, -1 for none. */
+  placement?: { level: number; ts: number }
 }
 
 const KEY = 'path'
@@ -180,8 +184,13 @@ function isEntry(v: unknown): v is LogEntry {
 }
 
 export function parsePath(raw: unknown): PathState {
-  const log = raw && typeof raw === 'object' && Array.isArray((raw as { log?: unknown }).log) ? (raw as { log: unknown[] }).log : []
-  return { log: log.filter(isEntry) }
+  const r = raw && typeof raw === 'object' ? (raw as { log?: unknown; placement?: unknown }) : {}
+  const out: PathState = { log: Array.isArray(r.log) ? r.log.filter(isEntry) : [] }
+  const p = r.placement as { level?: unknown; ts?: unknown } | undefined
+  if (p && Number.isInteger(p.level) && typeof p.ts === 'number' && (p.level as number) >= -1 && (p.level as number) < UNITS.length) {
+    out.placement = { level: p.level as number, ts: p.ts }
+  }
+  return out
 }
 
 export function loadPath(store: Store): PathState {
@@ -200,40 +209,170 @@ export function passed(lessonId: string, result: { right: number; total: number 
 }
 
 export function completeLesson(path: PathState, lessonId: string, result: { right: number; total: number }, ts: number): PathState {
-  return { log: [...path.log, { lesson: lessonId, ts, ...result }].slice(-MAX_LOG) }
+  return { ...path, log: [...path.log, { lesson: lessonId, ts, ...result }].slice(-MAX_LOG) }
 }
 
-/** Index of the furthest lesson done; a passed unit test counts every lesson before it as done. */
-function furthest(path: PathState): number {
-  let max = -1
+export function setPlacement(path: PathState, level: number, ts: number): PathState {
+  return { ...path, placement: { level, ts } }
+}
+
+/** A lesson is done once finished (a unit test at the pass mark); a passed unit test does the whole unit. */
+export function lessonDone(path: PathState, lessonId: string): boolean {
+  const lesson = findLesson(lessonId)
+  if (!lesson) return false
+  const test = `${lesson.unit.id}.${PLAN.length}`
+  return path.log.some((e) => (e.lesson === lessonId || e.lesson === test) && passed(e.lesson, e))
+}
+
+/** The unit (index in UNITS) a feature cell belongs to, -1 for none. */
+export function unitIndexOf(featureKey: string): number {
+  const [cls, cell = ''] = featureKey.split(':')
+  const [tense, group] = cell.split('.')
+  return UNITS.findIndex((u) =>
+    u.pos.includes('verb')
+      ? cls.startsWith('verb') && (u.tenses ?? []).includes(tense as Tense) && (u.voices ?? []).includes(group as VoiceGroup)
+      : (u.classes ?? []).includes(cls as LemmaClass),
+  )
+}
+
+/** Answers of the last 30 days count towards the level and the weak spots. */
+const RECENT_DAYS = 30
+const DAY_MS = 24 * 3600 * 1000
+/** A unit is solid with this many recent answers (its latest) at this share right. */
+const SOLID_ANSWERS = 12
+const SOLID_SHARE = 0.85
+
+/** The highest unit (index) that is solid: a passed unit test, the placement, or good recent answers. */
+export function estimateLevel(path: PathState, attempts: Attempt[], now: Date = new Date()): number {
+  let level = path.placement?.level ?? -1
   for (const e of path.log) {
     const lesson = findLesson(e.lesson)
-    if (lesson && passed(e.lesson, e) && lesson.index > max) max = lesson.index
+    if (lesson?.kind === 'test' && passed(e.lesson, e)) level = Math.max(level, UNITS.indexOf(lesson.unit))
   }
-  return max
+  const since = now.getTime() - RECENT_DAYS * DAY_MS
+  const byUnit = new Map<number, boolean[]>()
+  for (const a of attempts) {
+    if (a.ts < since) continue
+    const u = unitIndexOf(a.featureKey)
+    if (u < 0) continue
+    byUnit.set(u, [...(byUnit.get(u) ?? []), a.correct].slice(-SOLID_ANSWERS))
+  }
+  for (const [u, results] of byUnit) {
+    if (results.length >= SOLID_ANSWERS && results.filter(Boolean).length / results.length >= SOLID_SHARE) level = Math.max(level, u)
+  }
+  return level
 }
 
-/** `jump`: a unit test ahead of the current lesson, which can be taken to skip there. */
-export type LessonState = 'done' | 'current' | 'locked' | 'jump'
-
-export function lessonState(path: PathState, lessonId: string): LessonState {
-  const lesson = findLesson(lessonId)
-  if (!lesson) return 'locked'
-  const f = furthest(path)
-  if (lesson.index <= f) return 'done'
-  if (lesson.index === f + 1) return 'current'
-  return lesson.kind === 'test' ? 'jump' : 'locked'
+export interface Recommendation {
+  lesson: Lesson
+  /** estimateLevel. */
+  level: number
+  /** `new`: no history yet; `warm-up`: a lesson in the highest solid unit; `next`: the first lesson not done after it. */
+  reason: 'new' | 'warm-up' | 'next'
 }
 
-export function nextLesson(path: PathState): Lesson | undefined {
-  return LESSONS[furthest(path) + 1]
+/**
+ * Where to start: a little below the player's level. With a solid unit, its Mixed practice lesson
+ * as a warm-up (until done), then the first unfinished lesson from the next unit on; without one,
+ * the first unfinished lesson from the start. Undefined once every lesson is done.
+ */
+export function recommend(path: PathState, attempts: Attempt[], now: Date = new Date()): Recommendation | undefined {
+  const level = estimateLevel(path, attempts, now)
+  if (level >= 0) {
+    const warmUp = lessonsOf(UNITS[level]).find((l) => l.kind === 'mixed')!
+    if (!lessonDone(path, warmUp.id)) return { lesson: warmUp, level, reason: 'warm-up' }
+  }
+  const from = Math.max(0, level + 1) * PLAN.length
+  const lesson = LESSONS.slice(from).find((l) => !lessonDone(path, l.id)) ?? LESSONS.find((l) => !lessonDone(path, l.id))
+  if (!lesson) return undefined
+  const fresh = !path.log.length && !attempts.length && !path.placement
+  return { lesson, level, reason: fresh ? 'new' : 'next' }
 }
 
-/** How many times each lesson has been finished. */
-export function timesPlayed(path: PathState): Map<string, number> {
-  const out = new Map<string, number>()
-  for (const e of path.log) out.set(e.lesson, (out.get(e.lesson) ?? 0) + 1)
+// ---------------------------------------------------------------------------- placement
+
+/** Two exercises of a unit for the placement check: one to parse, one to make, frequent words. */
+export function placementExercises(data: Paradigms, settings: Settings, unit: Unit, rng: Rng): Exercise[] {
+  const mixed = lessonsOf(unit).find((l) => l.kind === 'mixed')!
+  return buildLesson(data, settings, { ...mixed, size: 2, pool: 3 }, rng)
+}
+
+/** The placement so far, unit by unit in path order: over after two units with a miss, or at the end. */
+export function scorePlacement(units: { right: number; total: number }[]): { over: boolean; level: number } {
+  let level = -1
+  units.forEach((u, i) => {
+    if (u.total && u.right === u.total) level = i
+  })
+  const missed = units.filter((u) => u.right < u.total).length
+  return { over: missed >= 2 || units.length >= UNITS.length, level }
+}
+
+// ---------------------------------------------------------------------------- weak spots
+
+/** A form is a weak spot once missed this often lately, while right less than this share of the time. */
+const WEAK_MISSES = 3
+const WEAK_SHARE = 0.7
+
+export interface WeakSpot {
+  featureKey: string
+  cls: LemmaClass
+  cell: string
+  right: number
+  total: number
+  misses: number
+  unit: Unit | undefined
+  /** The lesson to revisit: Spot the form for parsing misses, Build the form otherwise. */
+  lesson: Lesson | undefined
+  topic: NoteTopic
+}
+
+function mostCommon<T>(items: T[]): T | undefined {
+  const counts = new Map<T, number>()
+  for (const i of items) counts.set(i, (counts.get(i) ?? 0) + 1)
+  return [...counts].sort((a, b) => b[1] - a[1])[0]?.[0]
+}
+
+/** Forms missed often in the last 30 days, most missed first. */
+export function weakSpots(attempts: Attempt[], now: Date = new Date(), limit = 5): WeakSpot[] {
+  const since = now.getTime() - RECENT_DAYS * DAY_MS
+  const byFeature = new Map<string, Attempt[]>()
+  for (const a of attempts) if (a.ts >= since) byFeature.set(a.featureKey, [...(byFeature.get(a.featureKey) ?? []), a])
+  const out: (WeakSpot & { last: number })[] = []
+  for (const [featureKey, list] of byFeature) {
+    const missed = list.filter((a) => !a.correct)
+    const right = list.length - missed.length
+    if (missed.length < WEAK_MISSES || right / list.length >= WEAK_SHARE) continue
+    const [cls, cell] = featureKey.split(':') as [LemmaClass, string]
+    const u = unitIndexOf(featureKey)
+    const unit = u >= 0 ? UNITS[u] : undefined
+    const parsing = mostCommon(missed.map((a) => a.mode)) === 'parse'
+    const errorKind = mostCommon(missed.map((a) => a.errorKind).filter((k): k is ErrorKind => k !== null)) ?? null
+    out.push({
+      featureKey,
+      cls,
+      cell,
+      right,
+      total: list.length,
+      misses: missed.length,
+      unit,
+      lesson: unit && lessonsOf(unit).find((l) => l.kind === (parsing ? 'parse' : 'make')),
+      topic: topicFor(cls, cell, errorKind),
+      last: Math.max(...missed.map((a) => a.ts)),
+    })
+  }
   return out
+    .sort((a, b) => b.misses - a.misses || b.last - a.last)
+    .slice(0, limit)
+    .map(({ last: _, ...w }) => w)
+}
+
+/** The weak spot for one form, if it is one. */
+export function weakSpot(attempts: Attempt[], featureKey: string, now: Date = new Date()): WeakSpot | undefined {
+  return weakSpots(
+    attempts.filter((a) => a.featureKey === featureKey),
+    now,
+    1,
+  )[0]
 }
 
 // ---------------------------------------------------------------------------- XP

@@ -41,3 +41,22 @@ Progress keep working; the free modes stay under Practice.
 5. Pages: Learn (path), Lesson, Practice; restyle every other page.
 6. New stylesheet (tokens, light and dark), screenshots on desktop and phone, axe and smoke
    tests updated, PROGRESS.md.
+
+## Follow-up (2026-10-20): free navigation, a recommended start, pointers for frequent misses
+Requested by the user: "make the units easily enterable and exitable for anyone so they can go at
+their own pace; keep all units unlocked; a recommended start a little below their actual level;
+reference lessons when they miss something often."
+
+1. Every lesson of every unit is open. A lesson is done when it was finished (a unit test only at
+   80 %); a passed unit test marks the whole unit done. A unit index on the path jumps to any unit,
+   and leaving a lesson returns to its unit on the path.
+2. Level: the highest unit that is solid, from a passed unit test, a placement check, or at least
+   12 recent answers in that unit at 85 % or better. The recommendation sits a little below it:
+   the Mixed practice lesson of the highest solid unit as a warm-up, then the first unfinished
+   lesson after it. With no history: unit 1, with an offer to take the placement check.
+3. Placement check ("Find my level", retakeable): two exercises per unit in path order, stopping
+   after two units with a miss; the level is the highest unit answered fully right.
+4. Frequent misses: a form (class × cell) missed at least 3 times in the last 30 days and right
+   less than 70 % of the time is a weak spot. Weak spots are listed on the path and on Progress
+   with the lesson to revisit (Spot the form for parsing misses, Build the form otherwise) and the
+   grammar note; the feedback after a wrong answer says so when the form is a weak spot.

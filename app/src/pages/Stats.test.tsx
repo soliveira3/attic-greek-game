@@ -1,7 +1,8 @@
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { loadAttempts } from '../lib/attempts'
+import { loadAttempts, recordAttempt } from '../lib/attempts'
+import { emptyPath, savePath, setPlacement } from '../lib/path'
 import { answer, exportProgress } from '../lib/progress'
 import { Grade } from '../lib/srs'
 import { type Store, createStore } from '../lib/storage'
@@ -75,5 +76,15 @@ describe('Stats', () => {
     expect(within(chart).getAllByRole('listitem')).toHaveLength(7)
     expect(within(chart).getAllByRole('listitem')[6]).toHaveTextContent(/today: \d+ XP/i)
     expect(screen.getByText('Lessons done').parentElement).toHaveTextContent(/0 of \d+/)
+  })
+  it('shows the level and what needs practice', () => {
+    const store = createStore(null)
+    savePath(store, setPlacement(emptyPath(), 2, Date.now()))
+    for (let i = 0; i < 3; i++) {
+      recordAttempt(store, { itemKey: 'x|y', featureKey: 'decl2-mf:gen.pl', correct: false, errorKind: 'ending', ts: Date.now(), mode: 'make' })
+    }
+    renderWithApp(<Stats />, { store })
+    expect(screen.getByText('Level').parentElement).toHaveTextContent(/unit 3/i)
+    expect(screen.getByRole('region', { name: /needs practice/i })).toBeInTheDocument()
   })
 })

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from normalize import nfc
-from review_sample import cell_label, load_lemmas, render_markdown, sample
+from review_sample import _golden_ids, cell_label, load_lemmas, render_markdown, sample
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -19,16 +19,16 @@ def test_every_sampled_form_is_in_the_data_exactly():
     by_ref = {(lem["pos"], lem["id"]): lem for lem in lemmas()}
     for item in sample(lemmas(), 60, seed=3):
         cells = {c["key"]: c for c in by_ref[(item["pos"], item["id"])]["cells"]}
-        assert item["form"] in cells[item["cell"]]["forms"]
-        assert item["form"] == nfc(item["form"])
+        assert item["forms"] == cells[item["cell"]]["forms"]
+        assert all(f == nfc(f) for f in item["forms"])
 
 
 def test_no_duplicates_no_duals_no_verified_models():
-    golden = {p.stem for p in (ROOT / "data" / "golden").glob("*.json")}
+    golden = {nfc(p.stem) for p in (ROOT / "data" / "golden").glob("*.json")}
     items = sample(lemmas(), 80, seed=4)
     assert len({(i["pos"], i["id"], i["cell"]) for i in items}) == len(items) == 80
     assert all(".du" not in f".{i['cell']}." and not i["cell"].endswith(".du") for i in items)
-    assert not {i["id"] for i in items} & golden
+    assert not {nfc(i["id"]) for i in items} & golden
 
 
 def test_spread_over_the_parts_of_speech_in_proportion():
@@ -53,9 +53,17 @@ def test_markdown_lists_each_item_with_a_place_to_mark_it():
     rows = [line for line in text.splitlines() if line.startswith("| ") and line[2:3].isdigit()]
     assert len(rows) == 5
     for item, row in zip(items, rows):
-        assert item["form"] in row and item["lemma"] in row and row.rstrip().endswith("|  |")
+        assert " / ".join(item["forms"]) in row and item["lemma"] in row and row.rstrip().endswith("|  |")
+        assert f"| {item['gloss'].split(';')[0]} |" in row
 
 
 def test_the_committed_sample_is_the_scripts_output():
     text = (ROOT / "docs" / "REVIEW_SAMPLE.md").read_text(encoding="utf-8")
-    assert text.endswith(render_markdown(sample(lemmas(), 40, seed=1), seed=1))
+    assert text == render_markdown(sample(lemmas(), 40, seed=1), seed=1)
+
+
+def test_only_verified_golden_models_are_left_out(tmp_path):
+    (tmp_path / "golden").mkdir()
+    (tmp_path / "golden" / "a.json").write_text('{"verified": true}', encoding="utf-8")
+    (tmp_path / "golden" / "b.json").write_text('{"verified": false}', encoding="utf-8")
+    assert _golden_ids(tmp_path) == {"a"}

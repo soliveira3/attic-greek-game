@@ -1,0 +1,36 @@
+name: Bug
+description: Something in the game does not work as it should
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: And what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Type …
+        3. See …
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Firefox 140 on Windows 11, Safari on iPhone 15, …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version (at the bottom of the page)
+  - type: textarea
+    id: more
+    attributes:
+      label: Screenshot or console output

@@ -1,0 +1,55 @@
+name: Wrong or doubtful form
+description: A Greek form, parse or grammar note that looks wrong
+labels: [bug, data]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Forms are never corrected by hand: a wrong form is fixed at its source or left
+        out of the game, so the more precise the report, the faster it is settled.
+  - type: input
+    id: form
+    attributes:
+      label: Form shown by the game
+      description: Copy it from the page if you can.
+    validations:
+      required: true
+  - type: input
+    id: word
+    attributes:
+      label: Word (dictionary form)
+    validations:
+      required: true
+  - type: input
+    id: asked
+    attributes:
+      label: What was asked or shown
+      description: For example "aorist middle 3rd plural", "genitive singular", or the note's title.
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: What you expected
+  - type: input
+    id: source
+    attributes:
+      label: Your source
+      description: A Smyth section, a textbook and page, LSJ, or a passage of an Attic author.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where in the game
+      options: [Lesson, Review, Parse it, Fill the table, Make it, Endings sprint, Grammar note, Other]
+  - type: dropdown
+    id: strictness
+    attributes:
+      label: Answer checking (Settings)
+      options: [Ignore accents (default), Strict, Lenient, Not sure]
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: A screenshot helps.

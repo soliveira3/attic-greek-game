@@ -15,6 +15,16 @@
 🧑 HUMAN GATE (Phase 7): the user creates the GitHub repository and enables Pages. Then: push
 (with the user's go-ahead), watch CI go green, check the live site, mark v1 complete.
 
+## Redesign (2026-10-20, on branch `redesign`, not merged)
+Requested by the user: a Duolingo-like look and flow with attention to learning progression.
+Plan: docs/plans/redesign.md. Done: guided path (17 units in textbook order × 5 lessons, sequential
+unlocks, unit tests to jump ahead, frequent words first), focused lesson player (progress bar,
+combos, bottom check bar and feedback sheet, missed items return, completion screen), XP and a
+daily goal, sound effects (switchable), owl mascot, sidebar / tab-bar shell, Practice hub, weekly
+XP chart, new light and dark theme. All suites pass, including axe on every page.
+Open questions for the user: merge into main? keep the unit order? hearts were left out on
+purpose.
+
 ## Waiting on the user
 - Phase 7 gate: create the GitHub repository, push this repo to it (or give Claude the remote URL
   and the go-ahead to push), and enable GitHub Pages with "GitHub Actions" as the source
@@ -91,6 +101,9 @@ See data/paradigms/REPORT.md and the commented rules in data/exclude.txt. Notabl
 
 ## Log
 <!-- newest first: YYYY-MM-DD — what was done -->
+- 2026-10-20 — Redesign (branch `redesign`): learning path, lessons, XP and daily goal, new visual
+  system; Parse and table exercises extracted into ParseCard / TableCard; progress export includes
+  the path log. No change to data/, pipeline/ or check.ts.
 - 2026-10-20 — Phase 6 done (notes approved). MIT LICENSE for the code, data/LICENSE for the
   CC BY-SA data.
 - 2026-10-20 — Phase 6: third greek-checker round: one wording point, fixed; no remaining issues.

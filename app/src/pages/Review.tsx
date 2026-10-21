@@ -4,6 +4,8 @@ import { useRef, useState } from 'react'
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
 import { MakeCard } from '../components/MakeCard'
+import { ModeHeader } from '../components/ModeHeader'
+import { Owl } from '../components/Owl'
 import { answer } from '../lib/progress'
 import type { Rng } from '../lib/prompts'
 import { type QueueEntry, reviewQueue } from '../lib/review'
@@ -25,16 +27,23 @@ export function Review({ rng = Math.random }: { rng?: Rng }) {
     const next = nextDue(loadSrs(store))
     return (
       <div className="page review">
-        <h1 tabIndex={-1}>Review</h1>
-        <h2>Done for now</h2>
-        <p>
-          {done ? `${done} answered this session. ` : 'Nothing to review right now. '}
-          {next ? `Next review: ${when(next)}.` : 'Answers in any mode add words to your reviews.'}
-        </p>
-        <p>
-          Keep practising: <a href={href('make')}>Make it</a> · <a href={href('parse')}>Parse it</a> ·{' '}
-          <a href={href('fill')}>Fill the table</a>
-        </p>
+        <ModeHeader title="Review" back="home" />
+        <div className="empty-state">
+          <Owl mood="happy" size={140} />
+          <h2>Done for now</h2>
+          <p>
+            {done ? `${done} answered this session. ` : 'Nothing to review right now. '}
+            {next ? `Next review: ${when(next)}.` : 'Answers in any mode add words to your reviews.'}
+          </p>
+          <p className="empty-actions">
+            <a className="btn primary" href={href('home')}>
+              Continue the path
+            </a>
+            <a className="btn" href={href('practice')}>
+              Free practice
+            </a>
+          </p>
+        </div>
       </div>
     )
   }
@@ -42,11 +51,12 @@ export function Review({ rng = Math.random }: { rng?: Rng }) {
   const due = queue.filter((e) => !e.isNew).length
   const fresh = queue.length - due
   return (
-    <div className="page review">
-      <h1 tabIndex={-1}>Review</h1>
-      <p className="muted" aria-live="polite">
-        {due} to review · {fresh} new
-      </p>
+    <div className="page review play">
+      <ModeHeader title="Review" back="home">
+        <p className="tally" aria-live="polite">
+          {due} to review · {fresh} new
+        </p>
+      </ModeHeader>
       <MakeCard
         key={turn}
         prompt={entry.prompt}

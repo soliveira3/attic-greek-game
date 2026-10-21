@@ -107,7 +107,12 @@ export interface ParsePrompt extends Item {
 
 export function parsePrompt(data: Paradigms, settings: Settings, rng: Rng, avoid?: string): ParsePrompt | null {
   const it = pickCell(data, settings, rng, avoid)
-  if (!it) return null
+  return it ? parsePromptFor(data, settings, it.lemma, it.cell, rng) : null
+}
+
+/** A Parse it prompt for a given lemma and cell (one of the cell's forms is shown). */
+export function parsePromptFor(data: Paradigms, settings: Settings, lemma: Lemma, cell: Cell, rng: Rng): ParsePrompt {
+  const it = item(lemma, cell)
   const form = pick(it.cell.forms, rng)
   // With length marks shown, a long and a short vowel make different words (fem. sg. vs neut. pl.)
   const parses = data
@@ -141,7 +146,11 @@ export interface TablePrompt {
 export function tablePrompt(data: Paradigms, settings: Settings, rng: Rng, difficulty: Difficulty): TablePrompt | null {
   const lemmas = lemmasInScope(data, settings)
   if (!lemmas.length) return null
-  const lemma = pick(lemmas, rng)
+  return tablePromptFor(data, settings, pick(lemmas, rng), rng, difficulty)
+}
+
+/** A Fill the table prompt for a given lemma. */
+export function tablePromptFor(data: Paradigms, settings: Settings, lemma: Lemma, rng: Rng, difficulty: Difficulty): TablePrompt {
   let cells = data.cellsInScope(lemma, scopeOf(settings))
   let block: string | null = null
   if (lemma.pos === 'verb') {

@@ -7,9 +7,50 @@ import { href } from '../app/router'
 import { loadAttempts } from '../lib/attempts'
 import { CLASS_FAMILIES, classLabel, featureKey } from '../lib/features'
 import { exportProgress, importProgress } from '../lib/progress'
+import { LESSONS, lessonState, loadPath, xpHistory } from '../lib/path'
 import { loadSettings } from '../lib/settings'
 import { loadSrs, localDay } from '../lib/srs'
 import { accuracyByFeature, dueToday, heatLayout, streak } from '../lib/stats'
+
+const WEEKDAY = new Intl.DateTimeFormat(undefined, { weekday: 'short' })
+
+/** XP of the last seven days as bars, with the daily goal as a dashed line. */
+function XpChart({ days, goal }: { days: { day: Date; xp: number }[]; goal: number }) {
+  const top = Math.max(goal, ...days.map((d) => d.xp)) * 1.15
+  return (
+    <figure className="xp-chart">
+      <figcaption>
+        <h2>XP, last 7 days</h2>
+        <span className="muted">Dashed line: your daily goal of {goal} XP</span>
+      </figcaption>
+      <div className="xp-plot">
+        <span className="goal-line" style={{ bottom: `${(100 * goal) / top}%` }} aria-hidden="true" />
+        <ol aria-label="XP, last 7 days">
+          {days.map((d, i) => {
+            const today = i === days.length - 1
+            const name = today ? 'Today' : WEEKDAY.format(d.day)
+            return (
+              <li key={i} className={today ? 'today' : undefined}>
+                <span className="bar-wrap">
+                  <span className="bar-value" aria-hidden="true">
+                    {d.xp}
+                  </span>
+                  <span className="bar" style={{ height: `${(100 * d.xp) / top}%` }} title={`${name}: ${d.xp} XP`} />
+                </span>
+                <span className="bar-day">
+                  <span aria-hidden="true">{name}</span>
+                  <span className="sr-only">
+                    {name}: {d.xp} XP
+                  </span>
+                </span>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
+    </figure>
+  )
+}
 
 function level(right: number, total: number): number {
   const p = right / total
@@ -24,6 +65,8 @@ export function Stats() {
   const [now] = useState(() => new Date())
 
   const attempts = loadAttempts(store)
+  const path = loadPath(store)
+  const lessonsDone = LESSONS.filter((l) => lessonState(path, l.id) === 'done').length
   const accuracy = accuracyByFeature(attempts)
   const right = attempts.filter((a) => a.correct).length
   const played = Object.values(CLASS_FAMILIES)
@@ -61,6 +104,12 @@ export function Stats() {
       )}
       <div className="stat-row">
         <div className="stat">
+          <span className="stat-label">Lessons done</span>
+          <strong>
+            {lessonsDone} of {LESSONS.length}
+          </strong>
+        </div>
+        <div className="stat">
           <span className="stat-label">Day streak</span>
           <strong>{streak(attempts, now)}</strong>
         </div>
@@ -77,6 +126,8 @@ export function Stats() {
           <strong>{attempts.length ? `${Math.round((100 * right) / attempts.length)}%` : '—'}</strong>
         </div>
       </div>
+
+      <XpChart days={xpHistory(attempts, path, now)} goal={settings.dailyGoal} />
 
       <h2>Accuracy by form</h2>
       {played.length ? (

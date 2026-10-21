@@ -2,11 +2,14 @@
 // derived from the verified model paradigms. Accents never count here.
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useApp } from '../app/AppContext'
+import { useApp, useSound } from '../app/AppContext'
 import { useKeys } from '../app/useKeys'
 import { EmptyScope } from '../components/EmptyScope'
 import { GreekInput } from '../components/GreekInput'
 import { GreekKeyboard } from '../components/GreekKeyboard'
+import { Icon } from '../components/Icon'
+import { ModeHeader } from '../components/ModeHeader'
+import { Owl } from '../components/Owl'
 import { TypingHint } from '../components/TypingHint'
 import { recordAttempt } from '../lib/attempts'
 import { type SprintItem, type SprintSet, checkEnding, goldenModels, setPos, setsInScope, sprintItems, sprintSets } from '../lib/endings'
@@ -43,6 +46,7 @@ function shuffled<T>(items: T[], rng: Rng): T[] {
 
 export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
   const { data, settings, store } = useApp()
+  const sound = useSound()
   const all = useMemo(
     () => sprintSets(goldenModels(), Object.fromEntries(data.lemmasWhere({ pos: ['verb'] }).map((l) => [l.lemma, 'aoristType' in l ? l.aoristType : []]))),
     [data],
@@ -88,10 +92,11 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
       const record = store.read<Record<string, number>>(BEST_KEY, {})
       const previous = record[phase.set.id] ?? 0
       if (final > previous) store.write(BEST_KEY, { ...record, [phase.set.id]: final })
+      sound('done')
       setPhase({ kind: 'done', set: phase.set, score: final, best: Math.max(final, previous), newBest: final > previous })
     }, 250)
     return () => clearInterval(timer)
-  }, [phase, store])
+  }, [phase, store, sound])
 
   function answer() {
     if (phase.kind !== 'play') return
@@ -108,6 +113,7 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
       mode: 'sprint',
     })
     if (correct) setScore((s) => s + 1)
+    sound(correct ? 'right' : 'wrong')
     setLast({ item, typed: value, correct })
     setValue('')
     const rest = queue.slice(1)
@@ -131,7 +137,7 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
     const record = best()
     return (
       <div className="page sprint">
-        <h1 tabIndex={-1}>Endings sprint</h1>
+        <ModeHeader title="Endings sprint" />
         {sets.length ? (
           <>
             <p>
@@ -147,12 +153,16 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
                       .filter((s) => setPos(s) === pos)
                       .map((s) => (
                         <li key={s.id}>
-                          <button type="button" onClick={() => start(s)}>
+                          <button type="button" className="set-tile" onClick={() => start(s)}>
                             <span className="set-label">{s.label}</span>
                             <span className="set-model">
                               model: <span lang="grc">{s.lemma}</span>
-                              {record[s.id] ? ` · best ${record[s.id]}` : ''}
                             </span>
+                            {record[s.id] ? (
+                              <span className="set-best">
+                                <Icon name="trophy" size={16} /> best {record[s.id]}
+                              </span>
+                            ) : null}
                           </button>
                         </li>
                       ))}
@@ -171,18 +181,20 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
   if (phase.kind === 'done') {
     return (
       <div className="page sprint">
-        <h1 tabIndex={-1}>Endings sprint</h1>
-        <section className="feedback ok" aria-live="polite">
+        <ModeHeader title="Endings sprint" />
+        <section className="sprint-done" aria-live="polite">
+          <Owl mood={phase.newBest ? 'cheer' : 'happy'} size={140} />
           <h2>Time’s up</h2>
-          <p className="verdict">
-            <strong>Score: {phase.score}</strong> · {phase.set.label}
+          <p className="sprint-score">
+            <strong data-testid="final-score">{phase.score}</strong>
+            <span>endings · {phase.set.label}</span>
           </p>
-          <p>{phase.newBest ? 'New best!' : `Best: ${phase.best}`}</p>
-          <p className="actions">
-            <button type="button" onClick={() => setPhase({ kind: 'choose' })}>
+          <p className={phase.newBest ? 'new-best' : 'muted'}>{phase.newBest ? 'New best!' : `Best: ${phase.best}`}</p>
+          <p className="done-actions">
+            <button type="button" className="btn" onClick={() => setPhase({ kind: 'choose' })}>
               Choose another set
             </button>
-            <button type="button" className="primary" onClick={() => start(phase.set)}>
+            <button type="button" className="btn primary big" onClick={() => start(phase.set)}>
               Play again <kbd>Enter</kbd>
             </button>
           </p>
@@ -194,17 +206,21 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
   const item = queue[0]
   const left = Math.max(0, Math.ceil((phase.endsAt - now) / 1000))
   return (
-    <div className="page sprint">
-      <h1 tabIndex={-1}>Endings sprint</h1>
-      <p className="sprint-bar">
-        <span>{phase.set.label}</span>
-        <span className="clock" aria-live="off">
+    <div className="page sprint play">
+      <ModeHeader title="Endings sprint" />
+      <div className="sprint-bar">
+        <span className="sprint-set">{phase.set.label}</span>
+        <span className={`clock${left <= 10 ? ' low' : ''}`} aria-live="off">
+          <Icon name="timer" size={20} />
           {left} s
         </span>
-        <span>
+        <span className="sprint-points">
           Score: <strong data-testid="score">{score}</strong>
         </span>
-      </p>
+      </div>
+      <div className="time-bar" aria-hidden="true">
+        <span style={{ width: `${(100 * Math.max(0, phase.endsAt - now)) / (SECONDS * 1000)}%` }} />
+      </div>
       <div
         className="stage"
         data-testid="sprint-item"
@@ -213,7 +229,7 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
         data-endings={item.endings.join('|')}
       >
         <p className="lemma-line">
-          model: <span lang="grc" className="lemma">{phase.set.lemma}</span>
+          model <span lang="grc" className="lemma">{phase.set.lemma}</span>
         </p>
         <p className="target">
           <strong>{cellLabel(item.cell)}</strong>
@@ -235,7 +251,9 @@ export function EndingsSprint({ rng = Math.random }: { rng?: Rng }) {
         )}
       </p>
       <details className="keyboard-toggle">
-        <summary>Greek keyboard and typing help</summary>
+        <summary>
+          <Icon name="keyboard" size={20} /> Greek keyboard and typing help
+        </summary>
         <TypingHint />
         <GreekKeyboard />
       </details>

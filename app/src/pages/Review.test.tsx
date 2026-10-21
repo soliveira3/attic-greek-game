@@ -41,6 +41,7 @@ describe('Review', () => {
   it('says when there is nothing to review', () => {
     renderWithApp(<Review rng={seededRng(3)} />, { settings: { newPerDay: 0 } })
     expect(screen.getByRole('heading', { name: /done for now/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /make it/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /continue the path/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /free practice/i })).toBeInTheDocument()
   })
 })

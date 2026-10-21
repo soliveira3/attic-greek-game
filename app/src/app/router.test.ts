@@ -15,6 +15,12 @@ describe('parseRoute', () => {
     expect(parseRoute('#/notes/augment')).toEqual({ page: 'notes', topic: 'augment' })
     expect(parseRoute(href('notes', 'decl3 s'))).toEqual({ page: 'notes', topic: 'decl3 s' })
   })
+  it('reads the practice page and a lesson id', () => {
+    expect(parseRoute('#/practice')).toEqual({ page: 'practice' })
+    expect(parseRoute(href('lesson', 'decl2.3'))).toEqual({ page: 'lesson', topic: 'decl2.3' })
+    expect(parseRoute('#/lesson')).toEqual({ page: 'not-found' })
+    expect(parseRoute('#/lesson/a/b')).toEqual({ page: 'not-found' })
+  })
   it('sends anything else to "not found"', () => {
     expect(parseRoute('#/nope')).toEqual({ page: 'not-found' })
     expect(parseRoute('#/parse/extra')).toEqual({ page: 'not-found' })

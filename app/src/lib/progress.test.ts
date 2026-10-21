@@ -28,6 +28,7 @@ describe('export and import', () => {
     store.write('settings', { ...DEFAULT_SETTINGS, strictness: 'strict' })
     store.write('sprint.best', { 'x:decl2-mf': 12 })
     store.write('fill.difficulty', 'half')
+    store.write('path', { log: [{ lesson: 'article.1', ts: t0.getTime(), right: 7, total: 8 }] })
     return store
   }
   it('round-trips everything the app stores', () => {
@@ -45,6 +46,7 @@ describe('export and import', () => {
     expect(loadAttempts(to)).toEqual([])
     expect(loadSettings(to)).toEqual(DEFAULT_SETTINGS)
     expect(to.read('sprint.best', null)).toBeNull()
+    expect(to.read('path', null)).toBeNull()
   })
   it('refuses files that are not progress files', () => {
     const to = filled()
@@ -62,11 +64,13 @@ describe('export and import', () => {
       'sprint.best': { ok: 3, bad: 'x' },
       'fill.difficulty': 'impossible',
       settings: { strictness: 'nonsense' },
+      path: { log: [{ lesson: 'article.1', ts: 1, right: 1, total: 1 }, { lesson: 2 }] },
     }
     expect(importProgress(to, JSON.stringify({ app: 'attic-greek-game', version: 1, data }))).toEqual({ ok: true, answers: 1 })
     expect(loadSrs(to).cards).toEqual({})
     expect(to.read('sprint.best', null)).toEqual({ ok: 3 })
     expect(to.read('fill.difficulty', null)).toBeNull()
+    expect(to.read('path', null)).toEqual({ log: [{ lesson: 'article.1', ts: 1, right: 1, total: 1 }] })
     expect(loadSettings(to).strictness).toBe(DEFAULT_SETTINGS.strictness)
   })
 })

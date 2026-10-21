@@ -2,7 +2,7 @@ import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
 // Automated accessibility checks (WCAG 2.1 A/AA rules axe can test) on every page, in both themes.
-const PAGES = ['/', '/#/review', '/#/parse', '/#/fill', '/#/make', '/#/sprint', '/#/stats', '/#/settings', '/#/notes', '/#/notes/decl1', '/#/notes/principal-parts']
+const PAGES = ['/', '/#/practice', '/#/lesson/article.1', '/#/lesson/decl2.2', '/#/review', '/#/parse', '/#/fill', '/#/make', '/#/sprint', '/#/stats', '/#/settings', '/#/notes', '/#/notes/decl1', '/#/notes/principal-parts']
 
 for (const scheme of ['light', 'dark'] as const) {
   test.describe(`${scheme} theme`, () => {

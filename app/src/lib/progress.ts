@@ -2,6 +2,7 @@
 // export / import as a JSON file (SPEC §8).
 
 import { type Attempt, recordAttempt } from './attempts'
+import { parsePath, savePath } from './path'
 import { loadSettings } from './settings'
 import { type Grade, loadSrs, parseSrs, review, saveSrs } from './srs'
 import { type Store, createStore } from './storage'
@@ -13,7 +14,7 @@ export function answer(store: Store, attempt: Attempt, grade: Grade, opts: { int
 }
 
 /** Every key the app keeps in the store. */
-export const PROGRESS_KEYS = ['settings', 'attempts', 'srs', 'sprint.best', 'fill.difficulty'] as const
+export const PROGRESS_KEYS = ['settings', 'attempts', 'srs', 'sprint.best', 'fill.difficulty', 'path'] as const
 
 const APP = 'attic-greek-game'
 const VERSION = 1
@@ -79,6 +80,7 @@ export function importProgress(store: Store, text: string): ImportResult {
   if (attempts.length) store.write('attempts', attempts)
   if (data.srs !== undefined) saveSrs(store, parseSrs(data.srs))
   if (best) store.write('sprint.best', best)
+  if (data.path !== undefined) savePath(store, parsePath(data.path))
   if (['few', 'half', 'all'].includes(data['fill.difficulty'] as string)) store.write('fill.difficulty', data['fill.difficulty'])
   return { ok: true, answers: attempts.length }
 }

@@ -2,12 +2,12 @@
 
 import { useSyncExternalStore } from 'react'
 
-export const PAGES = ['home', 'review', 'parse', 'fill', 'make', 'sprint', 'stats', 'settings', 'notes'] as const
+export const PAGES = ['home', 'review', 'practice', 'parse', 'fill', 'make', 'sprint', 'stats', 'settings', 'notes', 'lesson'] as const
 export type Page = (typeof PAGES)[number]
 
 export interface Route {
   page: Page | 'not-found'
-  /** Notes only: the note shown. */
+  /** Notes: the note shown; lesson: the lesson played. */
   topic?: string
 }
 
@@ -17,7 +17,8 @@ export function parseRoute(hash: string): Route {
   const [first, ...rest] = hash.replace(/^#\/?/, '').split('/').filter(Boolean)
   if (!first) return { page: 'home' }
   if (first === 'notes') return rest.length ? { page: 'notes', topic: decodeURIComponent(rest.join('/')) } : { page: 'notes' }
-  if (isPage(first) && first !== 'home' && !rest.length) return { page: first }
+  if (first === 'lesson') return rest.length === 1 ? { page: 'lesson', topic: decodeURIComponent(rest[0]) } : { page: 'not-found' }
+  if (isPage(first) && first !== 'home' && first !== 'lesson' && !rest.length) return { page: first }
   return { page: 'not-found' }
 }
 

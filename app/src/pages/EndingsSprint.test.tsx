@@ -69,7 +69,7 @@ describe('EndingsSprint', () => {
     act(() => {
       vi.advanceTimersByTime(61_000)
     })
-    expect(screen.getByText(/score: 0/i)).toBeInTheDocument()
+    expect(screen.getByTestId('final-score')).toHaveTextContent('0')
     await user.keyboard('{Enter}')
     expect(screen.getByRole('textbox', { name: /ending/i })).toBeInTheDocument()
     act(() => {

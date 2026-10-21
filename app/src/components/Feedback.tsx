@@ -3,10 +3,12 @@
 
 import { useApp } from '../app/AppContext'
 import { href } from '../app/router'
+import type { ReactNode } from 'react'
 import type { CheckResult, Segment } from '../lib/check'
 import { verdict } from '../lib/feedback'
 import { displayForm, key } from '../lib/normalize'
 import { NOTE_TITLES, type NoteTopic } from '../lib/notes'
+import { Icon } from './Icon'
 
 export function Diff({ segments }: { segments: Segment[] }) {
   const { settings } = useApp()
@@ -23,8 +25,21 @@ export function Diff({ segments }: { segments: Segment[] }) {
 export function NoteLink({ topic }: { topic: NoteTopic }) {
   return (
     <a className="note-link" href={href('notes', topic)}>
+      <Icon name="notes" size={18} />
       Grammar note: {NOTE_TITLES[topic]}
     </a>
+  )
+}
+
+/** The verdict line of a feedback sheet, with its badge. */
+export function SheetHead({ ok, children }: { ok: boolean; children: ReactNode }) {
+  return (
+    <p className="verdict">
+      <span className="badge" aria-hidden="true">
+        <Icon name={ok ? 'check' : 'wrong'} size={22} />
+      </span>
+      {children}
+    </p>
   )
 }
 
@@ -42,43 +57,51 @@ export function Feedback({ result, forms, topic, onNext }: Props) {
   const others = forms.filter((f) => key(f) !== key(result.closest))
   const show = (f: string) => displayForm(f, { lengthMarks: settings.lengthMarks })
   return (
-    <section className={`feedback ${v.ok ? 'ok' : 'bad'}`} aria-label="Feedback">
-      <p className="verdict">
-        <strong>{v.headline}</strong>
-        {v.details.map((d) => (
-          <span key={d}> {d}</span>
-        ))}
-      </p>
-      {!result.exact && (
-        <dl className="comparison">
-          {result.errorKind !== 'blank' && (
-            <>
-              <dt>You typed:</dt>
-              <dd>
-                <Diff segments={result.diff.answer} />
-              </dd>
-            </>
+    <section className={`feedback sheet ${v.ok ? 'ok' : 'bad'}`} aria-label="Feedback">
+      <div className="sheet-inner">
+        <div className="sheet-body">
+          <SheetHead ok={v.ok}>
+            <strong>{v.headline}</strong>
+          </SheetHead>
+          {v.details.length > 0 && (
+            <p className="verdict-detail">
+              {v.details.map((d, i) => (
+                <span key={d}>
+                  {i > 0 && ' '}
+                  {d}
+                </span>
+              ))}
+            </p>
           )}
-          <dt>Correct form:</dt>
-          <dd>
-            <Diff segments={result.diff.expected} />
-          </dd>
-        </dl>
-      )}
-      {others.length > 0 && (
-        <p className="also">
-          Also right:{' '}
-          <span lang="grc">{others.map(show).join(', ')}</span>
-        </p>
-      )}
-      <p className="actions">
-        <NoteLink topic={topic} />
+          {!result.exact && (
+            <dl className="comparison">
+              {result.errorKind !== 'blank' && (
+                <>
+                  <dt>You typed:</dt>
+                  <dd>
+                    <Diff segments={result.diff.answer} />
+                  </dd>
+                </>
+              )}
+              <dt>Correct form:</dt>
+              <dd>
+                <Diff segments={result.diff.expected} />
+              </dd>
+            </dl>
+          )}
+          {others.length > 0 && (
+            <p className="also">
+              Also right: <span lang="grc">{others.map(show).join(', ')}</span>
+            </p>
+          )}
+          <NoteLink topic={topic} />
+        </div>
         {onNext && (
-          <button type="button" className="primary" onClick={onNext}>
-            Next <kbd>Enter</kbd>
+          <button type="button" className={`btn big ${v.ok ? 'primary' : 'danger'}`} onClick={onNext}>
+            Continue <kbd>Enter</kbd>
           </button>
         )}
-      </p>
+      </div>
     </section>
   )
 }

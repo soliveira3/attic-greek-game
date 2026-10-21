@@ -1,8 +1,9 @@
 // App-wide state: the paradigm data (loaded once), the store and the player's settings.
 
-import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react'
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { type Paradigms, loadParadigms } from '../lib/data'
 import { type Settings, loadSettings, saveSettings } from '../lib/settings'
+import { type Sound, playSound } from '../lib/sound'
 import type { Store } from '../lib/storage'
 
 export interface AppState {
@@ -10,6 +11,8 @@ export interface AppState {
   store: Store
   settings: Settings
   setSettings(settings: Settings): void
+  /** Goes up on every write to the store, so summaries of the progress can refresh. */
+  version: number
 }
 
 const AppContext = createContext<AppState | null>(null)
@@ -18,6 +21,12 @@ export function useApp(): AppState {
   const state = useContext(AppContext)
   if (!state) throw new Error('useApp needs an AppProvider')
   return state
+}
+
+/** Plays a sound effect unless the player has switched them off. */
+export function useSound(): (sound: Sound) => void {
+  const { settings } = useApp()
+  return useCallback((sound: Sound) => settings.sound && playSound(sound), [settings.sound])
 }
 
 interface Props {
@@ -33,6 +42,24 @@ export function AppProvider({ store, data: given, load = loadParadigms, children
   const [failed, setFailed] = useState(false)
   const [attempt, setAttempt] = useState(0)
   const [settings, setSettingsState] = useState(() => loadSettings(store))
+  const [version, setVersion] = useState(0)
+  const watched = useMemo<Store>(
+    () => ({
+      read: (key, fallback) => store.read(key, fallback),
+      write(key, value) {
+        store.write(key, value)
+        setVersion((n) => n + 1)
+      },
+      remove(key) {
+        store.remove(key)
+        setVersion((n) => n + 1)
+      },
+      get persistent() {
+        return store.persistent
+      },
+    }),
+    [store],
+  )
 
   useEffect(() => {
     if (data) return
@@ -48,10 +75,10 @@ export function AppProvider({ store, data: given, load = loadParadigms, children
 
   const setSettings = useCallback(
     (next: Settings) => {
-      saveSettings(store, next)
+      saveSettings(watched, next)
       setSettingsState(next)
     },
-    [store],
+    [watched],
   )
 
   if (!data) {
@@ -59,6 +86,8 @@ export function AppProvider({ store, data: given, load = loadParadigms, children
       <div className="page" role="alert">
         <p>Could not load the paradigm data. Check your connection and try again.</p>
         <button
+          type="button"
+          className="btn primary"
           onClick={() => {
             setFailed(false)
             setAttempt((n) => n + 1)
@@ -68,10 +97,11 @@ export function AppProvider({ store, data: given, load = loadParadigms, children
         </button>
       </div>
     ) : (
-      <p className="page" role="status">
+      <p className="page loading" role="status">
+        <span className="spinner" aria-hidden="true" />
         Loading the paradigms…
       </p>
     )
   }
-  return <AppContext.Provider value={{ data, store, settings, setSettings }}>{children}</AppContext.Provider>
+  return <AppContext.Provider value={{ data, store: watched, settings, setSettings, version }}>{children}</AppContext.Provider>
 }

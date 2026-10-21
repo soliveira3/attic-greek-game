@@ -190,11 +190,11 @@ export function NotesPage({ topic }: { topic?: string }) {
     return (
       <div className="page notes">
         <h1 tabIndex={-1}>Grammar notes</h1>
-        <p>Short notes on the forms drilled here, with references to Smyth’s Greek Grammar (1920).</p>
+        <p className="lead">Short notes on the forms drilled here, with references to Smyth’s Greek Grammar (1920).</p>
         {GROUPS.map(([title, topics]) => (
-          <section key={title}>
+          <section key={title} className="note-group">
             <h2>{title}</h2>
-            <ul>
+            <ul className="note-list">
               {topics.filter(isNoteTopic).map((t) => (
                 <li key={t}>
                   <a href={href('notes', t)}>{NOTE_TITLES[t]}</a>

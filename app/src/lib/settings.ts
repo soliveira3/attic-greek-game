@@ -29,13 +29,21 @@ export interface Settings {
   lengthMarks: boolean
   /** New cards Review introduces per day (SPEC §8). */
   newPerDay: number
+  /** XP a day that fills the daily goal ring (lib/path.ts). */
+  dailyGoal: number
+  /** Sound effects for right and wrong answers and finished lessons. */
+  sound: boolean
 }
+
+export const DAILY_GOALS = [10, 20, 30, 50] as const
 
 export const DEFAULT_SETTINGS: Settings = {
   strictness: 'ignore-accents',
   scope: { pos: [...POS], classes: [], tenses: [...TENSES], voices: [...VOICE_GROUPS], dual: false },
   lengthMarks: true,
   newPerDay: 20,
+  dailyGoal: 20,
+  sound: true,
 }
 
 export const MAX_NEW_PER_DAY = 200
@@ -65,6 +73,8 @@ export function loadSettings(store: Store): Settings {
       Number.isInteger(raw.newPerDay) && (raw.newPerDay as number) >= 0 && (raw.newPerDay as number) <= MAX_NEW_PER_DAY
         ? (raw.newPerDay as number)
         : d.newPerDay,
+    dailyGoal: (DAILY_GOALS as readonly unknown[]).includes(raw.dailyGoal) ? (raw.dailyGoal as number) : d.dailyGoal,
+    sound: typeof raw.sound === 'boolean' ? raw.sound : d.sound,
   }
 }
 

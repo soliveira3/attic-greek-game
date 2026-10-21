@@ -72,4 +72,11 @@ describe('SettingsPage', () => {
     renderWithApp(<SettingsPage />)
     expect(screen.getByRole('status')).toHaveTextContent(/\d+ words in scope/)
   })
+  it('sets the daily goal and the sound effects', async () => {
+    const { store } = renderWithApp(<SettingsPage />)
+    await userEvent.click(screen.getByRole('radio', { name: /serious/i }))
+    expect(loadSettings(store).dailyGoal).toBe(30)
+    await userEvent.click(screen.getByRole('checkbox', { name: /sound effects/i }))
+    expect(loadSettings(store).sound).toBe(false)
+  })
 })

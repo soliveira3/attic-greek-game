@@ -23,14 +23,14 @@ describe('Feedback', () => {
     expect(screen.getByText('Correct form:')).toBeInTheDocument()
     expect(container.querySelectorAll('mark').length).toBeGreaterThan(0)
     expect(screen.getByRole('link', { name: /2nd declension/i })).toHaveAttribute('href', '#/notes/decl2')
-    await userEvent.click(screen.getByRole('button', { name: /next/i }))
+    await userEvent.click(screen.getByRole('button', { name: /continue/i }))
     expect(onNext).toHaveBeenCalled()
   })
   it('keeps a right answer short', () => {
     renderWithApp(<Feedback result={checkAnswer(gen[0], gen, 'strict')} forms={gen} topic="decl2" />)
     expect(screen.getByText('Correct')).toBeInTheDocument()
     expect(screen.queryByText('Correct form:')).not.toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: /next/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /continue/i })).not.toBeInTheDocument()
   })
   it('shows what was forgiven', () => {
     const plain = stripAccents(gen[0])

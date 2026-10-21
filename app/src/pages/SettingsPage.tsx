@@ -14,13 +14,14 @@ import {
   classLabel,
 } from '../lib/features'
 import { lemmasInScope } from '../lib/prompts'
-import { MAX_NEW_PER_DAY, type Settings } from '../lib/settings'
+import { DAILY_GOALS, MAX_NEW_PER_DAY, type Settings } from '../lib/settings'
 
 const STRICTNESS_LABELS: Record<Strictness, [string, string]> = {
   strict: ['Strict', 'letters, breathings, iota subscript and accents must all be right'],
   'ignore-accents': ['Ignore accents', 'letters, breathings and iota subscript must be right (default)'],
   lenient: ['Lenient', 'only the letters must be right'],
 }
+const GOAL_NAMES: Record<(typeof DAILY_GOALS)[number], string> = { 10: 'Casual', 20: 'Regular', 30: 'Serious', 50: 'Intense' }
 const POS_LABELS: Record<Pos, string> = { noun: 'Nouns', adj: 'Adjectives', article: 'The article', verb: 'Verbs' }
 const ALL_CLASSES = Object.values(CLASS_FAMILIES).flat()
 
@@ -47,6 +48,26 @@ export function SettingsPage() {
         {words ? `${words} words in scope.` : 'Nothing to practise with these settings: choose at least one part of speech, class, tense and voice.'}
       </p>
 
+      <fieldset className="goal-choices">
+        <legend>Daily goal</legend>
+        <div className="segmented">
+          {DAILY_GOALS.map((g) => (
+            <label key={g}>
+              <input
+                type="radio"
+                name="daily-goal"
+                checked={settings.dailyGoal === g}
+                onChange={() => setSettings({ ...settings, dailyGoal: g })}
+              />
+              <span>
+                <strong>{GOAL_NAMES[g]}</strong> {g} XP a day
+              </span>
+            </label>
+          ))}
+        </div>
+        <p className="muted">One XP for each right answer, and ten more for each lesson finished.</p>
+      </fieldset>
+
       <fieldset>
         <legend>Answer checking</legend>
         {STRICTNESS.map((s) => (
@@ -64,6 +85,10 @@ export function SettingsPage() {
         ))}
         <p className="muted">Vowel-length marks are never required. Accents never count in the endings sprint.</p>
       </fieldset>
+
+      <p className="section-note">
+        What to practise: these choices apply to Practice and Review. The path picks the words of each unit itself.
+      </p>
 
       <fieldset>
         <legend>Parts of speech</legend>
@@ -165,6 +190,10 @@ export function SettingsPage() {
             onChange={(e) => setSettings({ ...settings, lengthMarks: e.target.checked })}
           />
           Show vowel-length marks (macron, breve) in forms
+        </label>
+        <label className="choice">
+          <input type="checkbox" checked={settings.sound} onChange={(e) => setSettings({ ...settings, sound: e.target.checked })} />
+          Sound effects
         </label>
       </fieldset>
     </div>

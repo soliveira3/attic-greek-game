@@ -69,4 +69,11 @@ describe('Stats', () => {
     renderWithApp(<Stats />, { store })
     expect(screen.getByText(/not saving your progress/i)).toBeInTheDocument()
   })
+  it('charts the XP of the last seven days against the goal, and the path so far', () => {
+    renderWithApp(<Stats />)
+    const chart = screen.getByRole('list', { name: /XP, last 7 days/i })
+    expect(within(chart).getAllByRole('listitem')).toHaveLength(7)
+    expect(within(chart).getAllByRole('listitem')[6]).toHaveTextContent(/today: \d+ XP/i)
+    expect(screen.getByText('Lessons done').parentElement).toHaveTextContent(/0 of \d+/)
+  })
 })

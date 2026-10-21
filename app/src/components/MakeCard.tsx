@@ -1,7 +1,7 @@
 // One "type the form" exercise: used by Make it and by Review (Phase 5).
 
 import { useEffect, useRef, useState } from 'react'
-import { useApp } from '../app/AppContext'
+import { useApp, useSound } from '../app/AppContext'
 import { useKeys } from '../app/useKeys'
 import { type CheckResult, checkAnswer } from '../lib/check'
 import { lemmaRef } from '../lib/data'
@@ -10,7 +10,9 @@ import type { MakePrompt } from '../lib/prompts'
 import { Feedback } from './Feedback'
 import { GreekInput } from './GreekInput'
 import { GreekKeyboard } from './GreekKeyboard'
+import { Icon } from './Icon'
 import { LemmaLine } from './LemmaLine'
+import { Owl } from './Owl'
 import { TypingHint } from './TypingHint'
 
 interface Props {
@@ -21,6 +23,7 @@ interface Props {
 
 export function MakeCard({ prompt, onAnswer, onNext }: Props) {
   const { settings } = useApp()
+  const sound = useSound()
   const [value, setValue] = useState('')
   const [result, setResult] = useState<CheckResult | null>(null)
   const input = useRef<HTMLInputElement>(null)
@@ -36,6 +39,7 @@ export function MakeCard({ prompt, onAnswer, onNext }: Props) {
       return
     }
     const r = checkAnswer(value, prompt.forms, settings.strictness, prompt.context)
+    sound(r.correct ? 'right' : 'wrong')
     setResult(r)
     onAnswer(r)
   }
@@ -47,27 +51,41 @@ export function MakeCard({ prompt, onAnswer, onNext }: Props) {
   })
 
   return (
-    <>
+    <div className="exercise">
+      <p className="instruction">Write this form</p>
       <div className="stage" data-testid="prompt" data-lemma={lemmaRef(prompt.lemma)} data-cell={prompt.cell.key}>
-        <LemmaLine lemma={prompt.lemma} />
-        <p className="target">
-          Give the <strong>{prompt.label}</strong>
-        </p>
+        <Owl size={92} mood="calm" className="stage-owl" />
+        <div className="bubble">
+          <LemmaLine lemma={prompt.lemma} />
+          <p className="target">{prompt.label}</p>
+        </div>
+      </div>
+      <div className="answer-field">
         <GreekInput
           ref={input}
           aria-label="Your answer"
           aria-describedby="typing-hint"
+          placeholder="Type in Greek or beta code"
           value={value}
           readOnly={Boolean(result)}
           onValueChange={setValue}
           onEnter={submit}
         />
-        {!result && (
-          <button type="button" className="primary check" onClick={submit}>
+      </div>
+      <details className="keyboard-toggle">
+        <summary>
+          <Icon name="keyboard" size={20} /> Greek keyboard and typing help
+        </summary>
+        <TypingHint id="typing-hint" />
+        <GreekKeyboard />
+      </details>
+      {!result && (
+        <div className="answer-bar">
+          <button type="button" className={`btn primary big${value.trim() ? '' : ' waiting'}`} onClick={submit}>
             Check <kbd>Enter</kbd>
           </button>
-        )}
-      </div>
+        </div>
+      )}
       <div aria-live="polite">
         {result && (
           <Feedback
@@ -78,11 +96,6 @@ export function MakeCard({ prompt, onAnswer, onNext }: Props) {
           />
         )}
       </div>
-      <details className="keyboard-toggle">
-        <summary>Greek keyboard and typing help</summary>
-        <TypingHint id="typing-hint" />
-        <GreekKeyboard />
-      </details>
-    </>
+    </div>
   )
 }

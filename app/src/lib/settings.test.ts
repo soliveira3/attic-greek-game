@@ -31,4 +31,17 @@ describe('settings', () => {
       expect(loadSettings(store).newPerDay).toBe(expected)
     }
   })
+  it('keeps a daily XP goal from the offered ones, and a sound switch', () => {
+    const store = createStore(null)
+    expect(DEFAULT_SETTINGS.dailyGoal).toBe(20)
+    expect(DEFAULT_SETTINGS.sound).toBe(true)
+    for (const [stored, expected] of [[50, 50], [10, 10], [15, 20], ['30', 20]] as const) {
+      store.write('settings', { dailyGoal: stored })
+      expect(loadSettings(store).dailyGoal).toBe(expected)
+    }
+    store.write('settings', { sound: false })
+    expect(loadSettings(store).sound).toBe(false)
+    store.write('settings', { sound: 'no' })
+    expect(loadSettings(store).sound).toBe(true)
+  })
 })

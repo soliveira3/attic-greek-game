@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useApp } from '../app/AppContext'
 import { EmptyScope } from '../components/EmptyScope'
 import { MakeCard } from '../components/MakeCard'
+import { ModeHeader } from '../components/ModeHeader'
 import { Tally } from '../components/Tally'
 import { answer } from '../lib/progress'
 import { type Rng, makePrompt } from '../lib/prompts'
@@ -16,8 +17,10 @@ export function MakeIt({ rng = Math.random }: { rng?: Rng }) {
   const [turn, setTurn] = useState(0)
 
   return (
-    <div className="page make-it">
-      <h1 tabIndex={-1}>Make it</h1>
+    <div className="page make-it play">
+      <ModeHeader title="Make it">
+        <Tally {...score} />
+      </ModeHeader>
       {prompt ? (
         <MakeCard
           key={turn}
@@ -45,7 +48,6 @@ export function MakeIt({ rng = Math.random }: { rng?: Rng }) {
       ) : (
         <EmptyScope />
       )}
-      <Tally {...score} />
     </div>
   )
 }

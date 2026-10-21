@@ -16,13 +16,34 @@ function watch(page: Page): string[] {
   return errors
 }
 
-test('home links every mode', async ({ page }) => {
+test('Practice links every mode', async ({ page }) => {
+  const errors = watch(page)
+  await page.goto('/#/practice')
+  await expect(page.getByRole('heading', { level: 1, name: 'Practice' })).toBeVisible()
+  for (const name of ['Parse it', 'Fill the table', 'Make it', 'Endings sprint']) {
+    await expect(page.getByRole('main').getByRole('link', { name: new RegExp(name) })).toBeVisible()
+  }
+  expect(errors).toEqual([])
+})
+
+test('the path: a whole lesson from the keyboard opens the next one', async ({ page }) => {
   const errors = watch(page)
   await page.goto('/')
-  await expect(page.getByRole('heading', { level: 1, name: 'Attic Greek Morphology' })).toBeVisible()
-  for (const name of ['Parse it', 'Fill the table', 'Make it', 'Endings sprint']) {
-    await expect(page.getByRole('main').getByRole('link', { name })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: 'Your path' })).toBeVisible()
+  await page.getByRole('link', { name: /^start lesson/i }).click()
+  await expect(page.getByRole('progressbar', { name: /lesson progress/i })).toBeVisible()
+  for (let i = 0; i < 60 && !(await page.getByRole('heading', { name: /lesson complete/i }).count()); i++) {
+    if (await page.getByRole('region', { name: 'Feedback' }).count()) {
+      await page.keyboard.press('Enter')
+      continue
+    }
+    for (let k = 0; k < 3; k++) await page.keyboard.press('1')
+    await page.keyboard.press('Enter')
   }
+  await expect(page.getByRole('heading', { name: /lesson complete/i })).toBeVisible()
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('link', { name: /^start lesson/i })).toHaveAttribute('href', '#/lesson/article.2')
+  await expect(page.getByRole('link', { name: /done, practise again: spot the form/i })).toBeVisible()
   expect(errors).toEqual([])
 })
 
@@ -127,10 +148,10 @@ test('Review: a round, then progress survives a reload', async ({ page }) => {
   await expect(page.getByText(/1 to review · 19 new/)).toBeVisible() // the missed one comes back
 
   await page.goto('/#/stats')
-  await expect(page.getByText('Answers').locator('..')).toContainText('1')
+  await expect(page.getByText('Answers', { exact: true }).locator('..')).toContainText('1')
   await page.reload()
-  await expect(page.getByText('Answers').locator('..')).toContainText('1')
-  await expect(page.getByText('Day streak').locator('..')).toContainText('1')
+  await expect(page.getByText('Answers', { exact: true }).locator('..')).toContainText('1')
+  await expect(page.getByText('Day streak', { exact: true }).locator('..')).toContainText('1')
   await expect(page.locator('table.heat-map').first()).toBeVisible()
   expect(errors).toEqual([])
 })
@@ -149,7 +170,8 @@ test('the app still works when localStorage throws', async ({ page }) => {
   await page.keyboard.press('Enter')
   await expect(page.getByRole('region', { name: 'Feedback' })).toBeVisible()
   await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Progress' }).click()
+  await expect(page.getByRole('heading', { level: 1, name: 'Progress' })).toBeVisible()
   await expect(page.getByText(/not saving your progress/i)).toBeVisible()
-  await expect(page.getByText('Answers').locator('..')).toContainText('1')
+  await expect(page.getByText('Answers', { exact: true }).locator('..')).toContainText('1')
   expect(errors).toEqual([])
 })

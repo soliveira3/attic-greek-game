@@ -15,17 +15,32 @@ describe('App', () => {
   afterEach(() => {
     window.location.hash = ''
   })
-  it('renders the game title', () => {
+  it('opens on the path', () => {
     render(<App store={createStore(null)} data={testData} />)
-    expect(screen.getByRole('heading', { level: 1, name: /attic greek morphology/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Your path' })).toBeInTheDocument()
   })
-  it('links every mode from the navigation and the home page', () => {
+  it('links every section from the navigation, and every mode from Practice', () => {
     render(<App store={createStore(null)} data={testData} />)
     const nav = screen.getByRole('navigation', { name: 'Main' })
-    for (const name of ['Review', 'Parse it', 'Fill the table', 'Make it', 'Endings sprint', 'Notes', 'Settings']) {
+    for (const name of ['Learn', 'Review', 'Practice', 'Progress', 'Notes', 'Settings']) {
       expect(within(nav).getByRole('link', { name })).toBeInTheDocument()
     }
-    expect(within(screen.getByRole('main')).getAllByRole('link').length).toBeGreaterThanOrEqual(4)
+    go('#/practice')
+    for (const name of ['Parse it', 'Fill the table', 'Make it', 'Endings sprint']) {
+      expect(within(screen.getByRole('main')).getByRole('link', { name: new RegExp(name) })).toBeInTheDocument()
+    }
+    go('#/make')
+    expect(within(nav).getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page')
+  })
+  it('plays a lesson full screen, without the navigation', () => {
+    render(<App store={createStore(null)} data={testData} />)
+    go('#/lesson/article.1')
+    expect(screen.queryByRole('navigation', { name: 'Main' })).not.toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: /lesson progress/i })).toBeInTheDocument()
+  })
+  it('shows today’s streak, XP and reviews', () => {
+    render(<App store={createStore(null)} data={testData} />)
+    expect(screen.getAllByRole('list', { name: 'Today' })[0]).toHaveTextContent(/0 day streak.*0 XP today.*0 reviews due/)
   })
   it('shows the page of the current hash and marks it in the navigation', () => {
     render(<App store={createStore(null)} data={testData} />)
@@ -54,6 +69,7 @@ describe('App', () => {
   })
   it('gives a typing example taken from the data', () => {
     render(<App store={createStore(null)} data={testData} />)
+    go('#/practice')
     const verb = testData.lemmas.find((l) => l.pos === 'verb')!
     expect(screen.getByText(verb.lemma, { exact: false })).toBeInTheDocument()
   })

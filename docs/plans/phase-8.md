@@ -59,11 +59,11 @@ Findings that started this phase:
 5. Optional: send `docs/REVIEW_GUIDE.md` to a Greek teacher and two or three learners.
 
 ## Acceptance
-- [ ] A failing suite's own output appears in the CI log (checked locally by forcing failures)
-- [ ] `check.sh` runs lint (oxlint with no warnings, ruff) and passes
-- [ ] Code review done; confirmed findings fixed with tests
-- [ ] No console errors or CSP violations on any page (e2e)
-- [ ] CONTRIBUTING, CHANGELOG, SECURITY, ARCHITECTURE, REVIEW_GUIDE, templates, Dependabot written
-- [ ] README has screenshots, badge, live address
-- [ ] Performance measured and recorded
+- [x] A failing suite's own output appears in the CI log (checked locally by forcing failures)
+- [x] `check.sh` runs lint (oxlint with no warnings, ruff) and passes
+- [x] Code review done; confirmed findings fixed with tests
+- [x] No console errors or CSP violations on any page (e2e)
+- [x] CONTRIBUTING, CHANGELOG, SECURITY, ARCHITECTURE, REVIEW_GUIDE, templates, Dependabot written
+- [x] README has screenshots, badge, live address
+- [x] Performance measured and recorded
 - [ ] 🧑 User gate passed (merge, public repo, Pages, push)

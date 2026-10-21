@@ -10,10 +10,12 @@ export interface Store {
 }
 
 export function createStore(backing: Storage | null | undefined): Store {
-  const memory = new Map<string, string>()
+  // what this session wrote (null: removed); it wins over the backing storage, which may be stale
+  // once a write has failed
+  const memory = new Map<string, string | null>()
   let persistent = Boolean(backing)
   const attempt = <T>(fn: () => T): T | undefined => {
-    if (!persistent || !backing) return undefined
+    if (!backing) return undefined
     try {
       return fn()
     } catch {
@@ -23,7 +25,9 @@ export function createStore(backing: Storage | null | undefined): Store {
   }
   return {
     read<T>(key: string, fallback: T): T {
-      const raw = memory.get(key) ?? attempt(() => backing!.getItem(key)) ?? null
+      // keys this session has not touched are still read from the backing storage after a write
+      // fails (a full storage must not hide the progress saved before)
+      const raw = memory.has(key) ? memory.get(key)! : (attempt(() => backing!.getItem(key)) ?? null)
       if (raw === null) return fallback
       try {
         return JSON.parse(raw) as T
@@ -34,11 +38,11 @@ export function createStore(backing: Storage | null | undefined): Store {
     write(key, value) {
       const raw = JSON.stringify(value)
       memory.set(key, raw)
-      attempt(() => backing!.setItem(key, raw))
+      if (persistent) attempt(() => backing!.setItem(key, raw))
     },
     remove(key) {
-      memory.delete(key)
-      attempt(() => backing!.removeItem(key))
+      memory.set(key, null)
+      if (persistent) attempt(() => backing!.removeItem(key))
     },
     get persistent() {
       return persistent

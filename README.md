@@ -1,5 +1,7 @@
 # Attic Greek Morphology
 
+**This Game was entirely vibe coded for my sister.**
+
 [![CI](https://github.com/soliveira3/attic-greek-game/actions/workflows/ci.yml/badge.svg)](https://github.com/soliveira3/attic-greek-game/actions/workflows/ci.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 [![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-lightgrey)](data/LICENSE)
